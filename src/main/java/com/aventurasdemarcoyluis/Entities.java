@@ -1,13 +1,13 @@
 package com.aventurasdemarcoyluis;
 
-public abstract class Entities {
+public abstract class Entities implements IEntities {
     private int LVL;
     private int ATK;
     private int DEF;
     private int HP;
     private int FP;
 
-    public abstract Entities(int level, int attack, int defense, int healPoints, int fightPoints) {
+    public Entities(int level, int attack, int defense, int healPoints, int fightPoints) {
         this.LVL = level;
         this.ATK = attack;
         this.DEF = defense;
@@ -15,7 +15,7 @@ public abstract class Entities {
         this.FP = fightPoints;
     }
 
-    public abstract void attack();
+    public abstract void attack(IEntities entities);
 
     public int getLVL() {
         return LVL;
@@ -56,6 +56,5 @@ public abstract class Entities {
     public void setFP(int FP) {
         this.FP = FP;
     }
-
 
 }
