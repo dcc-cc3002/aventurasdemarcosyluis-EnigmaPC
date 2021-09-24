@@ -7,11 +7,11 @@ public abstract class Entities {
     private int HP;
     private int FP;
 
-    public abstract Entities(int level, int attack, int defense, int healthPoints, int fightPoints){
+    public abstract Entities(int level, int attack, int defense, int healPoints, int fightPoints) {
         this.LVL = level;
         this.ATK = attack;
         this.DEF = defense;
-        this.HP = healthPoints;
+        this.HP = healPoints;
         this.FP = fightPoints;
     }
 
