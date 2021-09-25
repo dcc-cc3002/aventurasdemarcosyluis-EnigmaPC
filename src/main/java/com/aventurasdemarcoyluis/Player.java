@@ -2,7 +2,7 @@ package com.aventurasdemarcoyluis;
 
 import java.util.Hashtable;
 
-public class Player extends Entities {
+public class Player extends Entities implements IObject {
     private Hashtable<Item, Integer> inventory; // Variable to put Items
 
     public Player(int level, int attack, int defense, int healPoints, int fightPoints) {
@@ -41,6 +41,11 @@ public class Player extends Entities {
 
     public boolean hasItem(Item item) {
         return inventory.containsKey(item);
+    }
+
+    @Override
+    public void useItem(Item item) {
+
     }
 
     @Override
