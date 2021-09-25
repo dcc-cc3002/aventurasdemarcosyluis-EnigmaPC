@@ -4,18 +4,32 @@ public abstract class Entities implements IEntities {
     private int LVL;
     private int ATK;
     private int DEF;
-    private int HP;
+    private int maxHP;
     private int FP;
+    private int HP;
 
     public Entities(int level, int attack, int defense, int healPoints, int fightPoints) {
         this.LVL = level;
         this.ATK = attack;
         this.DEF = defense;
+        this.maxHP = healPoints;
         this.HP = healPoints;
         this.FP = fightPoints;
     }
 
     public abstract void attack(IEntities entities);
+
+    public void setHP(int nuevoHP) {
+        if (nuevoHP <= 0) {
+            this.HP = 0;
+        } else {
+            this.HP = nuevoHP;
+        }
+    }
+
+    public int getHP() {
+        return this.HP;
+    }
 
     public int getLVL() {
         return LVL;
@@ -41,12 +55,12 @@ public abstract class Entities implements IEntities {
         this.DEF = DEF;
     }
 
-    public int getHP() {
-        return HP;
+    public int getMaxHP() {
+        return maxHP;
     }
 
-    public void setHP(int HP) {
-        this.HP = HP;
+    public void setMaxHP(int HP) {
+        this.maxHP = HP;
     }
 
     public int getFP() {
@@ -56,5 +70,4 @@ public abstract class Entities implements IEntities {
     public void setFP(int FP) {
         this.FP = FP;
     }
-
 }
