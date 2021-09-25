@@ -8,6 +8,10 @@ public class Enemy extends Entities {
         this.K = K;
     }
 
+    public double getK() {
+        return K;
+    }
+
     @Override
     public void attack(IEntities entities) {
         entities.enemyAttack(this);
@@ -15,13 +19,12 @@ public class Enemy extends Entities {
 
     @Override
     public void enemyAttack(Enemy enemy) {
-        double damageDeal = K*enemy.getATK()*((double) enemy.getLVL()/this.getDEF());
-        int nuevoHP = (int) (this.getHP() - damageDeal);
-        this.setHP(nuevoHP);
+
     }
 
     @Override
     public void playerAttack(Player player) {
 
     }
+
 }
