@@ -14,7 +14,9 @@ public class Enemy extends Entities {
 
     @Override
     public void attack(IEntities entities) {
-        entities.enemyAttack(this);
+        if (this.isDead() == false) {
+            entities.enemyAttack(this);
+        }
     }
 
     @Override
@@ -23,8 +25,12 @@ public class Enemy extends Entities {
     }
 
     @Override
-    public void playerAttack(Player player) {
+    public void playerAttackSalto(Player player) {
 
     }
 
+    @Override
+    public void playerAttackMartillo(Player player) {
+
+    }
 }
