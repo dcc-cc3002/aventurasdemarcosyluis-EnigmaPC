@@ -3,9 +3,9 @@ package com.aventurasdemarcoyluis;
 public class Enemy extends Entities {
     private double K;
 
-    public Enemy(int level, int attack, int defense, int healPoints, int fightPoints, double K) {
+    public Enemy(int level, int attack, int defense, int healPoints, int fightPoints) {
         super(level, attack, defense, healPoints, fightPoints);
-        this.K = K;
+        this.K = 0.75;
     }
 
     public double getK() {
