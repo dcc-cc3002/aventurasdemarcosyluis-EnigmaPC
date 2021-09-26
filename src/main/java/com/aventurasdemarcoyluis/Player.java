@@ -3,11 +3,13 @@ package com.aventurasdemarcoyluis;
 import java.util.Hashtable;
 
 public class Player extends Entities implements IObject {
+    private boolean invincible;
     private Hashtable<Item, Integer> inventory; // Variable to put Items
 
     public Player(int level, int attack, int defense, int healPoints, int fightPoints) {
         super(level, attack, defense, healPoints, fightPoints);
         this.inventory = new Hashtable<>(3);
+        this.invincible = false;
     }
 
     public Hashtable<Item, Integer> getInventory() {
@@ -45,7 +47,21 @@ public class Player extends Entities implements IObject {
 
     @Override
     public void useItem(Item item) {
-
+        if (item.equals(new Star())) {
+            this.invincible = true;
+        } else {
+            if (item.equals(new HoneySyrup())) {
+                double amountOfHeal = this.getMaxHP()*0.1;
+                int HP = this.getHP();
+                int newHP = (int) (HP + amountOfHeal);
+                this.setHP(newHP);
+            } else if (item.equals(new HoneySyrup())) {
+                int FPs = 3;
+                int PlayerFP = this.getFP();
+                int newFPs = PlayerFP + FPs;
+                this.setFP(newFPs);
+            }
+        }
     }
 
     @Override
