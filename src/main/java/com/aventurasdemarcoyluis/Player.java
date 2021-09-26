@@ -18,18 +18,18 @@ public abstract class Player extends Entities implements IObject {
         return inventory;
     }
 
-    public void addItem(Item item) {
-        if (hasItem(item)) {
-            int amount = inventory.get(item);
-            amount += 1;
+    public void addItem(Item item, int amount) {
+        if (this.hasItem(item)) {
+            int amountFinal = inventory.get(item);
+            amountFinal += amount;
             inventory.replace(item,amount);
         } else {
-            inventory.put(item, 1);
+            inventory.put(item, amount);
         }
     }
 
     public int amountOfItem(Item item) {
-        if (hasItem(item)) {
+        if (this.hasItem(item)) {
             int amount = inventory.get(item);
             return amount;
         } else {
@@ -37,14 +37,14 @@ public abstract class Player extends Entities implements IObject {
         }
     }
 
-    public void removeItem(Item item) {
-        if (hasItem(item)) {
-            int amount = inventory.get(item);
-            amount -= 1;
-            if (amount == 0) {
+    public void removeItem(Item item, int amount) {
+        if (this.hasItem(item)) {
+            int amountFinal = inventory.get(item);
+            amountFinal -= amount;
+            if (amountFinal == 0) {
                 inventory.remove(item);
             } else {
-                inventory.replace(item, amount);
+                inventory.replace(item, amountFinal);
             }
         }
     }
@@ -68,7 +68,10 @@ public abstract class Player extends Entities implements IObject {
     }
 
     public void useItem(Item item) {
-        item.use(this);
+        if (hasItem(item)) {
+            item.use(this);
+            this.removeItem(item, 1);
+        }
     }
     public void isAttacked(Enemy enemy) {
         double damageDeal = enemy.getK()*enemy.getATK()*((double) enemy.getLVL()/this.getDEF());
