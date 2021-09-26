@@ -8,7 +8,7 @@ public class Boo extends Enemy {
     @Override
     public void attack(Player player) {
         if (this.isDead() == false) {
-            if (player instanceof Marco) {
+            if ((player instanceof Marco) == false) {
                 player.enemyAttack(this);
             }
         }
