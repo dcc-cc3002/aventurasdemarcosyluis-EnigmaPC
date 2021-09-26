@@ -36,8 +36,6 @@ public class Player extends Entities implements IObject {
                 inventory.replace(item, amount);
             }
             return item;
-        } else {
-            return null;
         }
     }
 
@@ -65,8 +63,8 @@ public class Player extends Entities implements IObject {
     }
 
     @Override
-    public void attack(IEntities entities) {
-        entities.playerAttack(this);
+    public void attack(IEntities entities, AttackType attack) {
+        if (attack.equals(AttackType.MARTILLO))
     }
 
     @Override
@@ -77,7 +75,12 @@ public class Player extends Entities implements IObject {
     }
 
     @Override
-    public void playerAttack(Player player) {
+    public void playerAttackSalto(Player player) {
+
+    }
+
+    @Override
+    public void playerAttackMartillo(Player player) {
 
     }
 }
