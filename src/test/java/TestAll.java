@@ -20,6 +20,11 @@ public class TestAll {
     private HoneySyrup honeySyrup;
     private Star star;
     private RedMushroom redMushroom;
+    private Marco copiamarco;
+    private Luis copialuis;
+    private Goomba copiagoomba;
+    private Spiny copiaspiny;
+    private Boo copiaboo;
 
     @BeforeEach
     public void setUp() {
@@ -29,6 +34,12 @@ public class TestAll {
         goomba = new Goomba(2, 3, 4, 7, 0);
         spiny = new Spiny(17, 25, 20, 90, 0);
         boo = new Boo(9, 13, 11, 35, 0);
+
+        copiamarco = new Marco(7, 8, 15, 4, 3);
+        copialuis = new Luis(9, 10, 6, 51, 6);
+        copiagoomba = new Goomba(1, 2, 7, 7, 0);
+        copiaspiny = new Spiny(16, 24, 35, 50, 0);
+        copiaboo = new Boo(3, 6, 6, 35, 0);
 
         // Objetos
         honeySyrup = new HoneySyrup();
@@ -103,8 +114,60 @@ public class TestAll {
     }
 
     @Test
+    public void testType() {
+        // Se testean en cuanto a tipo de Clase, pero para
+        // simplificar la explicación se escribirá como
+        // X es igual a X.
+
+        // Marco
+        // Marco es igual a Marco
+        assertEquals(marco.getClass(), copiamarco.getClass());
+        // Marco es distinto de Luis
+        assertNotEquals(marco.getClass(), luis.getClass());
+        // Marco es distinto de Goomba
+        assertNotEquals(marco.getClass(), goomba.getClass());
+        // Marco es distinto de Spiny
+        assertNotEquals(marco.getClass(), spiny.getClass());
+        // Marco es distinto de Boo
+        assertNotEquals(marco.getClass(), boo.getClass());
+
+        // Luis
+        // Luis es igual a Luis
+        assertEquals(luis.getClass(), copialuis.getClass());
+        // Luis es distinto de Goomba
+        assertNotEquals(luis.getClass(), goomba.getClass());
+        // Luis es distinto de Spiny
+        assertNotEquals(luis.getClass(), spiny.getClass());
+        // Luis es distinto de Boo
+        assertNotEquals(luis.getClass(), boo.getClass());
+        // Luis se prueba con Mario los test de Mario.
+
+        // Goomba
+        // Goomba es igual a Goomba
+        assertEquals(goomba.getClass(), copiagoomba.getClass());
+        // Goomba es distinto de Spiny
+        assertNotEquals(goomba.getClass(), spiny.getClass());
+        // Goomba es distinto de Boo
+        assertNotEquals(goomba.getClass(), boo.getClass());
+        // Goomba se prueba con los demás en los test anteriores.
+
+        // Spiny
+        // Spiny es igual a Spiny
+        assertEquals(spiny.getClass(), copiaspiny.getClass());
+        // Spiny es distinto de Boo
+        assertNotEquals(spiny.getClass(), boo.getClass());
+        // Spiny se prueba con los demás en los test anteriores.
+
+        // Boo
+        // Boo es igual a Boo
+        assertEquals(boo.getClass(), copiaboo.getClass());
+        // Boo se prueba con los demás en los test anteriores.
+    }
+
+    @Test
     public void testInventoryAndItem() {
-        // Marco y Luis son players, testeamos con ellos.
+        // Marco y Luis son players los cuales tienen inventario
+        // como también pueden tener items, testeamos con ellos.
         // Inicialmente el inventario no tiene ningún item.
 
         // Star e Inventario
@@ -191,8 +254,21 @@ public class TestAll {
     }
 
     @Test
-    public void testFight() {
+    public void testAttacks() {
+        // Se testearan los ataques tanto de los players
+        // a los enemigos, como de los enemigos a los players.
+
+        // Primero, se testea que todos tengan la vida máxima.
+        assertEquals(marco.getHP(),marco.getMaxHP());
+        assertEquals(luis.getHP(),luis.getMaxHP());
+        assertEquals(goomba.getHP(),goomba.getMaxHP());
+        assertEquals(spiny.getHP(),spiny.getMaxHP());
+        assertEquals(boo.getHP(),boo.getMaxHP());
+
+        // SALTO
         
+
+
     }
 
 }
