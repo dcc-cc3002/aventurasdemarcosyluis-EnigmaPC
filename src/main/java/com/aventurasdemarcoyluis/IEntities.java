@@ -1,8 +1,7 @@
 package com.aventurasdemarcoyluis;
 
 public interface IEntities {
-
     void enemyAttack(Enemy enemy);
-
-    void playerAttack(Player player);
+    void playerAttackSalto(Player player);
+    void playerAttackMartillo(Player player);
 }
