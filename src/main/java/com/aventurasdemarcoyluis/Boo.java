@@ -9,8 +9,17 @@ public class Boo extends Enemy {
     public void attack(Player player) {
         if (this.isDead() == false) {
             if ((player instanceof Marco) == false) {
-                player.enemyAttack(this);
+                player.isAttacked(this);
             }
+        }
+    }
+
+    @Override
+    public void playerAttack(Player player, AttackType attack) {
+        if (attack.equals(AttackType.MARTILLO)) {
+            this.dodge();
+        } else {
+            this.isAttacked(player, attack);
         }
     }
 }

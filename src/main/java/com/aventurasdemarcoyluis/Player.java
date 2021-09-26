@@ -12,6 +12,8 @@ public abstract class Player extends Entities implements IObject {
         this.invincible = false;
     }
 
+    public abstract void attack(Enemy enemy, AttackType attack);
+
     public Hashtable<Item, Integer> getInventory() {
         return inventory;
     }
@@ -26,7 +28,16 @@ public abstract class Player extends Entities implements IObject {
         }
     }
 
-    public Item extractItem(Item item) {
+    public int amountOfItem(Item item) {
+        if (hasItem(item)) {
+            int amount = inventory.get(item);
+            return amount;
+        } else {
+            return 0;
+        }
+    }
+
+    public void removeItem(Item item) {
         if (hasItem(item)) {
             int amount = inventory.get(item);
             amount -= 1;
@@ -35,9 +46,6 @@ public abstract class Player extends Entities implements IObject {
             } else {
                 inventory.replace(item, amount);
             }
-            return item;
-        } else {
-            return null;
         }
     }
 
@@ -53,22 +61,18 @@ public abstract class Player extends Entities implements IObject {
         this.invincible = bool;
     }
 
-    public abstract void attack(Enemy enemy, AttackType attack);
-
-    @Override
-    public void useItem(Item item) {
-        item.use(this);
-    }
-
-    @Override
-    public void enemyAttack(Enemy enemy) {
-        double damageDeal = enemy.getK()*enemy.getATK()*((double) enemy.getLVL()/this.getDEF());
+    public void thornsSpiny(Player player) {
+        double damageDeal = 0.05*player.getHP();
         int nuevoHP = (int) (this.getHP() - damageDeal);
         this.setHP(nuevoHP);
     }
 
-    @Override
-    public void playerAttack(Player player, AttackType attack) {
-
+    public void useItem(Item item) {
+        item.use(this);
+    }
+    public void isAttacked(Enemy enemy) {
+        double damageDeal = enemy.getK()*enemy.getATK()*((double) enemy.getLVL()/this.getDEF());
+        int nuevoHP = (int) (this.getHP() - damageDeal);
+        this.setHP(nuevoHP);
     }
 }

@@ -1,8 +1,5 @@
 package com.aventurasdemarcoyluis;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 public abstract class Enemy extends Entities {
     private double K;
 
@@ -17,18 +14,15 @@ public abstract class Enemy extends Entities {
 
     public abstract void attack(Player player);
 
-    @Override
-    public void enemyAttack(Enemy enemy) {
+    public abstract void playerAttack(Player player, AttackType attack);
 
-    }
-
-    @Override
-    public void playerAttack(Player player, AttackType attack) {
+    public void isAttacked(Player player, AttackType attack) {
         double damageDeal = attack.getK()*player.getATK()*((double) player.getLVL()/this.getDEF());
         if (attack.equals(AttackType.MARTILLO)) {
             int dado = (int) (Math.random()*4);
             if (dado != 1) {
                 damageDeal = 0;
+                this.dodge();
             }
         }
         int nuevoHP = (int) (this.getHP() - damageDeal);

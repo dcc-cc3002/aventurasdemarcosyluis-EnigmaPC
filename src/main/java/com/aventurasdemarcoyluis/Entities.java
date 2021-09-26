@@ -19,6 +19,10 @@ public abstract class Entities implements IEntities {
         this.FP = fightPoints;
     }
 
+    public void dodge() {
+
+    }
+
     protected boolean isDead() {
         if (this.getHP() == 0) {
             return true;
@@ -27,7 +31,7 @@ public abstract class Entities implements IEntities {
         }
     }
 
-    protected void setFP(int nuevoFP) {
+    public void setFP(int nuevoFP) {
         if (nuevoFP <= 0) {
             this.FP = 0;
         } else {
@@ -39,7 +43,7 @@ public abstract class Entities implements IEntities {
         }
     }
 
-    protected int getFP() {
+    public int getFP() {
         return this.FP;
     }
 
