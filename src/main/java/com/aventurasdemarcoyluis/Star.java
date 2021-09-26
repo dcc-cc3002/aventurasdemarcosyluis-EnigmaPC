@@ -5,4 +5,9 @@ public class Star extends Item {
     public void useItem(Item item) {
 
     }
+
+    @Override
+    public void use(Player player) {
+        player.setInvincible(true);
+    }
 }

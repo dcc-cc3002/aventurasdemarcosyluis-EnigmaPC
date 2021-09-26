@@ -19,8 +19,6 @@ public abstract class Entities implements IEntities {
         this.FP = fightPoints;
     }
 
-    public abstract void attack(IEntities entities);
-
     protected boolean isDead() {
         if (this.getHP() == 0) {
             return true;

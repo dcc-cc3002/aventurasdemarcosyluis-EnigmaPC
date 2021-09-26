@@ -36,6 +36,8 @@ public class Player extends Entities implements IObject {
                 inventory.replace(item, amount);
             }
             return item;
+        } else {
+            return null;
         }
     }
 
@@ -43,28 +45,17 @@ public class Player extends Entities implements IObject {
         return inventory.containsKey(item);
     }
 
-    @Override
-    public void useItem(Item item) {
-        if (item.equals(new Star())) {
-            this.invincible = true;
-        } else {
-            if (item.equals(new HoneySyrup())) {
-                double amountOfHeal = this.getMaxHP()*0.1;
-                int HP = this.getHP();
-                int newHP = (int) (HP + amountOfHeal);
-                this.setHP(newHP);
-            } else if (item.equals(new HoneySyrup())) {
-                int FPs = 3;
-                int PlayerFP = this.getFP();
-                int newFPs = PlayerFP + FPs;
-                this.setFP(newFPs);
-            }
-        }
+    public boolean getInvincible() {
+        return invincible;
+    }
+
+    public void setInvincible(boolean bool) {
+        this.invincible = bool;
     }
 
     @Override
-    public void attack(IEntities entities, AttackType attack) {
-        if (attack.equals(AttackType.MARTILLO))
+    public void useItem(Item item) {
+        item.use(this);
     }
 
     @Override

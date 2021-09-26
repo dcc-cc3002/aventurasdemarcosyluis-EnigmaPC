@@ -12,7 +12,6 @@ public class Enemy extends Entities {
         return K;
     }
 
-    @Override
     public void attack(IEntities entities) {
         if (this.isDead() == false) {
             entities.enemyAttack(this);
