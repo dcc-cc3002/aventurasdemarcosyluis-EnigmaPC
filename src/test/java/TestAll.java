@@ -155,10 +155,11 @@ public class TestAll {
 
         // Honey Syrup
         marco.setFP(10); // FP Máximos son 23
+        marco.addItem(honeySyrup,2);
         marco.useItem(honeySyrup);
-        assertEquals(marco.getFP(), 13); /*
+        assertEquals(marco.getFP(), 13);
         marco.useItem(honeySyrup);
         assertEquals(marco.getFP(), 16);
-        marco.setFP(23);*/
+        marco.setFP(23);
     }
 }
