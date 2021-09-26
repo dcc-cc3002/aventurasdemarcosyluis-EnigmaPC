@@ -21,6 +21,14 @@ public abstract class Entities implements IEntities {
 
     public abstract void attack(IEntities entities);
 
+    protected boolean isDead() {
+        if (this.getHP() == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     protected void setFP(int nuevoFP) {
         if (nuevoFP <= 0) {
             this.FP = 0;
