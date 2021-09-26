@@ -1,3 +1,4 @@
+import com.aventurasdemarcoyluis.Marco;
 import com.aventurasdemarcoyluis.Player;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,7 +11,7 @@ public class TestPlayer {
 
     @BeforeEach
     public void setUp() {
-        p1 = new Player(8, 9, 11, 40, 23);
+        p1 = new Marco(8, 9, 11, 40, 23);
     }
 
     @Test

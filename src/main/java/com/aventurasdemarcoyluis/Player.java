@@ -2,7 +2,7 @@ package com.aventurasdemarcoyluis;
 
 import java.util.Hashtable;
 
-public class Player extends Entities implements IObject {
+public abstract class Player extends Entities implements IObject {
     private boolean invincible;
     private Hashtable<Item, Integer> inventory; // Variable to put Items
 
@@ -45,13 +45,15 @@ public class Player extends Entities implements IObject {
         return inventory.containsKey(item);
     }
 
-    public boolean getInvincible() {
+    public boolean isInvincible() {
         return invincible;
     }
 
     public void setInvincible(boolean bool) {
         this.invincible = bool;
     }
+
+    public abstract void attack(Enemy enemy, AttackType attack);
 
     @Override
     public void useItem(Item item) {
@@ -66,12 +68,7 @@ public class Player extends Entities implements IObject {
     }
 
     @Override
-    public void playerAttackSalto(Player player) {
-
-    }
-
-    @Override
-    public void playerAttackMartillo(Player player) {
+    public void playerAttack(Player player, AttackType attack) {
 
     }
 }

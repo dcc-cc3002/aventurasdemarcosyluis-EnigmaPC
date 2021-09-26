@@ -1,6 +1,9 @@
 package com.aventurasdemarcoyluis;
 
-public class Enemy extends Entities {
+import java.util.ArrayList;
+import java.util.Collection;
+
+public abstract class Enemy extends Entities {
     private double K;
 
     public Enemy(int level, int attack, int defense, int healPoints, int fightPoints) {
@@ -12,11 +15,7 @@ public class Enemy extends Entities {
         return K;
     }
 
-    public void attack(IEntities entities) {
-        if (this.isDead() == false) {
-            entities.enemyAttack(this);
-        }
-    }
+    public abstract void attack(Player player);
 
     @Override
     public void enemyAttack(Enemy enemy) {
@@ -24,12 +23,17 @@ public class Enemy extends Entities {
     }
 
     @Override
-    public void playerAttackSalto(Player player) {
-
-    }
-
-    @Override
-    public void playerAttackMartillo(Player player) {
-
+    public void playerAttack(Player player, AttackType attack) {
+        double damageDeal = attack.getK()*player.getATK()*((double) player.getLVL()/this.getDEF());
+        if (attack.equals(AttackType.MARTILLO)) {
+            int dado = (int) (Math.random()*4);
+            if (dado != 1) {
+                damageDeal = 0;
+            }
+        }
+        int nuevoHP = (int) (this.getHP() - damageDeal);
+        this.setHP(nuevoHP);
+        int nuevoFP = player.getFP() - attack.getFPCost();
+        player.setFP(nuevoFP);
     }
 }

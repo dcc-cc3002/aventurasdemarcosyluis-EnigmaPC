@@ -6,5 +6,22 @@ package com.aventurasdemarcoyluis;
  *
  */
 public enum AttackType {
-    MARTILLO,SALTO
+    MARTILLO(2,1.5),
+    SALTO(1,1);
+
+    public int FPCost;
+    public double K;
+
+    AttackType(int FPCost, double K) {
+        this.FPCost = FPCost;
+        this.K = K;
+    }
+
+    int getFPCost() {
+        return FPCost;
+    }
+
+    double getK() {
+        return K;
+    }
 }

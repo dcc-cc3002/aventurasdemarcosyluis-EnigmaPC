@@ -2,6 +2,5 @@ package com.aventurasdemarcoyluis;
 
 public interface IEntities {
     void enemyAttack(Enemy enemy);
-    void playerAttackSalto(Player player);
-    void playerAttackMartillo(Player player);
+    void playerAttack(Player player, AttackType attack);
 }
