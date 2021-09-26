@@ -23,7 +23,7 @@ public abstract class Entities implements IEntities {
 
     }
 
-    protected boolean isDead() {
+    public boolean isDead() {
         if (this.getHP() == 0) {
             return true;
         } else {
