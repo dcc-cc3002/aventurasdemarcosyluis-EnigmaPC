@@ -1,6 +1,6 @@
 package com.aventurasdemarcoyluis;
 
-public abstract class Entities implements IEntities {
+public abstract class AbstractEntities {
     private int LVL;
     private int ATK;
     private int DEF;
@@ -9,7 +9,7 @@ public abstract class Entities implements IEntities {
     private int HP;
     private int FP;
 
-    public Entities(int level, int attack, int defense, int healPoints, int fightPoints) {
+    public AbstractEntities(int level, int attack, int defense, int healPoints, int fightPoints) {
         this.LVL = level;
         this.ATK = attack;
         this.DEF = defense;

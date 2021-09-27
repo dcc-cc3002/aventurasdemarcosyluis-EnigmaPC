@@ -2,17 +2,17 @@ package com.aventurasdemarcoyluis;
 
 import java.util.Hashtable;
 
-public abstract class Player extends Entities implements IObject {
+public abstract class AbstractPlayer extends AbstractEntities implements IObject {
     private boolean invincible;
     private Hashtable<Item, Integer> inventory; // Variable to put Items
 
-    public Player(int level, int attack, int defense, int healPoints, int fightPoints) {
+    public AbstractPlayer(int level, int attack, int defense, int healPoints, int fightPoints) {
         super(level, attack, defense, healPoints, fightPoints);
         this.inventory = new Hashtable<>(3);
         this.invincible = false;
     }
 
-    public abstract void attack(Enemy enemy, AttackType attack);
+    public abstract void attack(AbstractEnemy enemy, AttackType attack);
 
     public Hashtable<Item, Integer> getInventory() {
         return inventory;
@@ -41,7 +41,7 @@ public abstract class Player extends Entities implements IObject {
         if (this.hasItem(item)) {
             int amountFinal = inventory.get(item);
             amountFinal -= amount;
-            if (amountFinal == 0) {
+            if (amountFinal <= 0) {
                 inventory.remove(item);
             } else {
                 inventory.replace(item, amountFinal);
@@ -61,7 +61,7 @@ public abstract class Player extends Entities implements IObject {
         this.invincible = bool;
     }
 
-    public void thornsSpiny(Player player) {
+    public void thornsSpiny(AbstractPlayer player) {
         double damageDeal = 0.05*player.getHP();
         int nuevoHP = (int) (this.getHP() - damageDeal);
         this.setHP(nuevoHP);
@@ -73,7 +73,8 @@ public abstract class Player extends Entities implements IObject {
             this.removeItem(item, 1);
         }
     }
-    public void isAttacked(Enemy enemy) {
+
+    public void isAttacked(AbstractEnemy enemy) { // Acá arreglar lo de enemy abstracto con interfaz
         double damageDeal = enemy.getK()*enemy.getATK()*((double) enemy.getLVL()/this.getDEF());
         int nuevoHP = (int) (this.getHP() - damageDeal);
         this.setHP(nuevoHP);

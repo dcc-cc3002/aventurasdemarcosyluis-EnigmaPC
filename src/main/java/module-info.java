@@ -1,8 +1,8 @@
-module com.example.aventurasdemarcoyluis {
+module com.aventurasdemarcoyluis {
     requires javafx.controls;
     requires javafx.fxml;
 
 
-    opens com.example.aventurasdemarcoyluis to javafx.fxml;
-    exports com.example.aventurasdemarcoyluis;
+    opens com.aventurasdemarcoyluis to javafx.fxml;
+    exports com.aventurasdemarcoyluis;
 }

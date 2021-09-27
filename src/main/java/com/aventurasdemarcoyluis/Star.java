@@ -2,7 +2,7 @@ package com.aventurasdemarcoyluis;
 
 public class Star extends Item {
     @Override
-    public void use(Player player) {
+    public void use(AbstractPlayer player) {
         player.setInvincible(true);
     }
 }

@@ -266,7 +266,7 @@ public class TestAll {
         assertEquals(boo.getHP(),boo.getMaxHP());
 
         // SALTO
-        
+
 
 
     }
