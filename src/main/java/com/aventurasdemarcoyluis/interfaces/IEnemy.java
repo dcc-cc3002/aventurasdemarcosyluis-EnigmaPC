@@ -8,5 +8,5 @@ public interface IEnemy {
     int getATK();
     int getLVL();
 
-    void marcoAttack(Marco marco, AttackType attack);
+    void attackedByMarco(Marco marco, AttackType attack);
 }

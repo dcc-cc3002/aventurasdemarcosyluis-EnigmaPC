@@ -11,7 +11,7 @@ public class Marco extends AbstractPlayer {
 
     public void attack(IEnemy enemy, AttackType attack) {
         if (this.getFP() != 0) {
-            enemy.playerAttack(this, attack);
+            enemy.attackedByMarco(this, attack);
         }
     }
 }

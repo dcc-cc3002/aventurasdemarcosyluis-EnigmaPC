@@ -15,8 +15,6 @@ public abstract class AbstractEnemy extends AbstractEntities implements IEnemy {
         return K;
     }
 
-    public abstract void attack(IPlayer player);
-
     public void isAttacked(IPlayer player, AttackType attack) {
         double damageDeal = attack.getK()*player.getATK()*((double) player.getLVL()/this.getDEF());
         if (attack.equals(AttackType.MARTILLO)) {

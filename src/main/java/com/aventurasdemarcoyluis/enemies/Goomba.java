@@ -21,12 +21,12 @@ public class Goomba extends AbstractEnemy implements IAttackedByLuis {
     }
 
     @Override
-    public void marcoAttack(Marco marco, AttackType attack) {
+    public void attackedByMarco(Marco marco, AttackType attack) {
         this.isAttacked(marco, attack);
     }
 
     @Override
-    public void luisAttack(Luis luis, AttackType attack) {
+    public void attackedByLuis(Luis luis, AttackType attack) {
 
     }
 }

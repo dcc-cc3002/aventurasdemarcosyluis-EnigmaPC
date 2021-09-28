@@ -18,12 +18,12 @@ public class Spiny extends AbstractEnemy implements IAttackedByLuis {
         }
     }
 
-    public void luisAttack(Luis luis, AttackType attack) {
+    public void attackedByLuis(Luis luis, AttackType attack) {
 
     }
 
     @Override
-    public void marcoAttack(Marco marco, AttackType attack) {
+    public void attackedByMarco(Marco marco, AttackType attack) {
 
     }
 }
