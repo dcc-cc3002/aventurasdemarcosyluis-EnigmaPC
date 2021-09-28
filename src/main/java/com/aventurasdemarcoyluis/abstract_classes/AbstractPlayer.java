@@ -1,6 +1,6 @@
 package com.aventurasdemarcoyluis.abstract_classes;
 
-import com.aventurasdemarcoyluis.attacks.AttackType;
+import com.aventurasdemarcoyluis.interfaces.IAttack;
 import com.aventurasdemarcoyluis.interfaces.IEnemy;
 import com.aventurasdemarcoyluis.interfaces.IObject;
 import com.aventurasdemarcoyluis.interfaces.IPlayer;
@@ -95,12 +95,8 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
         return 0.75*enemy.getATK()*((double) enemy.getLVL()/this.getDEF());
     }
 
-
-
-    public void isAttacked(IEnemy enemy) {
-        double damageDeal = enemy.getK()*enemy.getATK()*((double) enemy.getLVL()/this.getDEF());
-        this.getDamage(damageDeal);
+    public void attackCost(IAttack attack) {
+        int nuevoFP = this.getFP() - attack.getFPCost();
+        this.setFP(nuevoFP);
     }
-
-
 }

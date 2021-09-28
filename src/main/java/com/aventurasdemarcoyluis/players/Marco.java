@@ -1,9 +1,9 @@
 package com.aventurasdemarcoyluis.players;
 
-import com.aventurasdemarcoyluis.attacks.AttackType;
 import com.aventurasdemarcoyluis.abstract_classes.AbstractPlayer;
 import com.aventurasdemarcoyluis.enemies.Goomba;
 import com.aventurasdemarcoyluis.enemies.Spiny;
+import com.aventurasdemarcoyluis.interfaces.IAttack;
 import com.aventurasdemarcoyluis.interfaces.IEnemy;
 
 public class Marco extends AbstractPlayer {
@@ -11,7 +11,7 @@ public class Marco extends AbstractPlayer {
         super(level, attack, defense, healPoints, fightPoints);
     }
 
-    public void attack(IEnemy enemy, AttackType attack) {
+    public void attack(IEnemy enemy, IAttack attack) {
         if (this.getFP() != 0) {
             enemy.attackedByMarco(this, attack);
         }

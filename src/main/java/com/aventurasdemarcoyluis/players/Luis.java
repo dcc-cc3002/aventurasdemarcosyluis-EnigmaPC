@@ -1,11 +1,11 @@
 package com.aventurasdemarcoyluis.players;
 
-import com.aventurasdemarcoyluis.attacks.AttackType;
 import com.aventurasdemarcoyluis.abstract_classes.AbstractPlayer;
 
 import com.aventurasdemarcoyluis.enemies.Boo;
 import com.aventurasdemarcoyluis.enemies.Goomba;
 import com.aventurasdemarcoyluis.enemies.Spiny;
+import com.aventurasdemarcoyluis.interfaces.IAttack;
 import com.aventurasdemarcoyluis.interfaces.IAttackedByBoo;
 import com.aventurasdemarcoyluis.interfaces.IAttackedByLuis;
 
@@ -16,8 +16,8 @@ public class Luis extends AbstractPlayer implements IAttackedByBoo {
         super(level, attack, defense, healPoints, fightPoints);
     }
 
-    public void attack(IAttackedByLuis enemy, AttackType attack) {
-        enemy.attackedByLuis(this,attack);
+    public void attack(IAttackedByLuis enemy, IAttack attack) {
+        enemy.attackedByLuis(this, attack);
     }
 
     @Override
