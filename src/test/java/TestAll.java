@@ -1,11 +1,11 @@
-import com.aventurasdemarcoyluis.Marco;
-import com.aventurasdemarcoyluis.Luis;
-import com.aventurasdemarcoyluis.Goomba;
-import com.aventurasdemarcoyluis.Spiny;
-import com.aventurasdemarcoyluis.Boo;
-import com.aventurasdemarcoyluis.HoneySyrup;
-import com.aventurasdemarcoyluis.Star;
-import com.aventurasdemarcoyluis.RedMushroom;
+import com.aventurasdemarcoyluis.players.Marco;
+import com.aventurasdemarcoyluis.players.Luis;
+import com.aventurasdemarcoyluis.enemies.Goomba;
+import com.aventurasdemarcoyluis.enemies.Spiny;
+import com.aventurasdemarcoyluis.enemies.Boo;
+import com.aventurasdemarcoyluis.items.HoneySyrup;
+import com.aventurasdemarcoyluis.items.Star;
+import com.aventurasdemarcoyluis.items.RedMushroom;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

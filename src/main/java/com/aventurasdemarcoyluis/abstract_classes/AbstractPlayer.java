@@ -1,4 +1,9 @@
-package com.aventurasdemarcoyluis;
+package com.aventurasdemarcoyluis.abstract_classes;
+
+import com.aventurasdemarcoyluis.attacks.AttackType;
+import com.aventurasdemarcoyluis.interfaces.IEnemy;
+import com.aventurasdemarcoyluis.interfaces.IObject;
+import com.aventurasdemarcoyluis.interfaces.IPlayer;
 
 import java.util.Hashtable;
 
@@ -11,8 +16,6 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
         this.inventory = new Hashtable<>(3);
         this.invincible = false;
     }
-
-    public abstract void attack(IEnemy enemy, AttackType attack);
 
     public Hashtable<IObject, Integer> getInventory() {
         return inventory;
@@ -61,6 +64,22 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
         this.invincible = bool;
     }
 
+    public void useHoneySyrup() {
+        int newFP = this.getFP()+3;
+        this.setFP(newFP);
+    }
+
+    public void useRedMushroom() {
+        double amountOfHeal = this.getMaxHP()*0.1;
+        int HP = this.getHP();
+        int newHP = (int) (HP + amountOfHeal);
+        this.setHP(newHP);
+    }
+
+    public void useStar() {
+        this.setInvincible(true);
+    }
+
     public void thornsSpiny(IPlayer player) {
         double damageDeal = 0.05*player.getHP();
         int nuevoHP = (int) (this.getHP() - damageDeal);
@@ -74,7 +93,7 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
         }
     }
 
-    public void isAttacked(IEnemy enemy) { // Acá arreglar lo de enemy abstracto con interfaz
+    public void isAttacked(IEnemy enemy) {
         double damageDeal = enemy.getK()*enemy.getATK()*((double) enemy.getLVL()/this.getDEF());
         int nuevoHP = (int) (this.getHP() - damageDeal);
         this.setHP(nuevoHP);

@@ -1,5 +1,8 @@
-package com.aventurasdemarcoyluis;
+package com.aventurasdemarcoyluis.abstract_classes;
 
+import com.aventurasdemarcoyluis.attacks.AttackType;
+import com.aventurasdemarcoyluis.interfaces.IEnemy;
+import com.aventurasdemarcoyluis.interfaces.IPlayer;
 public abstract class AbstractEnemy extends AbstractEntities implements IEnemy {
     private double K;
 
@@ -13,8 +16,6 @@ public abstract class AbstractEnemy extends AbstractEntities implements IEnemy {
     }
 
     public abstract void attack(IPlayer player);
-
-    public abstract void playerAttack(IPlayer player, AttackType attack);
 
     public void isAttacked(IPlayer player, AttackType attack) {
         double damageDeal = attack.getK()*player.getATK()*((double) player.getLVL()/this.getDEF());

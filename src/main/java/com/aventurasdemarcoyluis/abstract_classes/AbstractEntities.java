@@ -1,4 +1,4 @@
-package com.aventurasdemarcoyluis;
+package com.aventurasdemarcoyluis.abstract_classes;
 
 public abstract class AbstractEntities {
     private int LVL;

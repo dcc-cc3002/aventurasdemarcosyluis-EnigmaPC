@@ -1,4 +1,4 @@
-package com.aventurasdemarcoyluis;
+package com.aventurasdemarcoyluis.attacks;
 
 /**
  * Enumerator that represents de type of attack that a
@@ -17,11 +17,11 @@ public enum AttackType {
         this.K = K;
     }
 
-    int getFPCost() {
+    public int getFPCost() {
         return FPCost;
     }
 
-    double getK() {
+    public double getK() {
         return K;
     }
 }
