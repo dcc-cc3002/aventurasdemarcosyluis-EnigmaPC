@@ -5,14 +5,14 @@ public class Spiny extends AbstractEnemy {
         super(level, attack, defense, healPoints, fightPoints);
     }
 
-    public void attack(AbstractPlayer player) {
+    public void attack(IPlayer player) {
         if (this.isDead() == false) {
             player.isAttacked(this);
         }
     }
 
     @Override
-    public void playerAttack(AbstractPlayer player, AttackType attack) {
+    public void playerAttack(IPlayer player, AttackType attack) {
         if (attack.equals(AttackType.SALTO)) {
             player.thornsSpiny(player);
             this.dodge();

@@ -1,6 +1,6 @@
 package com.aventurasdemarcoyluis;
 
-public abstract class AbstractEnemy extends AbstractEntities implements IEntities {
+public abstract class AbstractEnemy extends AbstractEntities implements IEnemy {
     private double K;
 
     public AbstractEnemy(int level, int attack, int defense, int healPoints, int fightPoints) {
@@ -16,7 +16,7 @@ public abstract class AbstractEnemy extends AbstractEntities implements IEntitie
 
     public abstract void playerAttack(IPlayer player, AttackType attack);
 
-    public void isAttacked(AbstractPlayer player, AttackType attack) {
+    public void isAttacked(IPlayer player, AttackType attack) {
         double damageDeal = attack.getK()*player.getATK()*((double) player.getLVL()/this.getDEF());
         if (attack.equals(AttackType.MARTILLO)) {
             int dado = (int) (Math.random()*4);

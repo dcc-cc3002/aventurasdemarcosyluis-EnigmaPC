@@ -7,7 +7,7 @@ public class Luis extends AbstractPlayer {
     }
 
     @Override
-    public void attack(AbstractEnemy enemy, AttackType attack) {
+    public void attack(IEnemy enemy, AttackType attack) {
         if (this.getFP() != 0 || this.isDead() == false) {
             if ((enemy instanceof Boo) == false) {   // Podría crear un método enemy.LuisAttack.
                 enemy.playerAttack(this, attack);

@@ -6,7 +6,7 @@ public class Boo extends AbstractEnemy {
     }
 
     @Override
-    public void attack(AbstractPlayer player) {
+    public void attack(IPlayer player) {
         if (this.isDead() == false) {
             if ((player instanceof Marco) == false) {
                 player.isAttacked(this);
@@ -15,7 +15,7 @@ public class Boo extends AbstractEnemy {
     }
 
     @Override
-    public void playerAttack(AbstractPlayer player, AttackType attack) {
+    public void playerAttack(IPlayer player, AttackType attack) {
         if (attack.equals(AttackType.MARTILLO)) {
             this.dodge();
         } else {

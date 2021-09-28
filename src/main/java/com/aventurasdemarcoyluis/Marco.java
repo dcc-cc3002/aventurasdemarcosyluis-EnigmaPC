@@ -6,7 +6,7 @@ public class Marco extends AbstractPlayer {
     }
 
     @Override
-    public void attack(AbstractEnemy enemy, AttackType attack) {
+    public void attack(IEnemy enemy, AttackType attack) {
         if (this.getFP() != 0) {
             enemy.playerAttack(this, attack);
         }
