@@ -25,7 +25,7 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
         if (this.hasItem(item)) {
             int amountFinal = inventory.get(item);
             amountFinal += amount;
-            inventory.replace(item,amount);
+            inventory.replace(item,amountFinal);
         } else {
             inventory.put(item, amount);
         }
@@ -80,10 +80,8 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
         this.setInvincible(true);
     }
 
-    public void thornsSpiny(IPlayer player) {
-        double damageDeal = 0.05*player.getHP();
-        int nuevoHP = (int) (this.getHP() - damageDeal);
-        this.setHP(nuevoHP);
+    public double damageThornsSpiny(IPlayer player) {
+        return 0.05*player.getHP();
     }
 
     public void useItem(IObject item) {
@@ -93,9 +91,16 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
         }
     }
 
+    public double enemyDoDamage(IEnemy enemy) {
+        return 0.75*enemy.getATK()*((double) enemy.getLVL()/this.getDEF());
+    }
+
+
+
     public void isAttacked(IEnemy enemy) {
         double damageDeal = enemy.getK()*enemy.getATK()*((double) enemy.getLVL()/this.getDEF());
-        int nuevoHP = (int) (this.getHP() - damageDeal);
-        this.setHP(nuevoHP);
+        this.getDamage(damageDeal);
     }
+
+
 }

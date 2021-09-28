@@ -4,11 +4,9 @@ import com.aventurasdemarcoyluis.attacks.AttackType;
 import com.aventurasdemarcoyluis.interfaces.IEnemy;
 import com.aventurasdemarcoyluis.interfaces.IPlayer;
 public abstract class AbstractEnemy extends AbstractEntities implements IEnemy {
-    private double K;
 
     public AbstractEnemy(int level, int attack, int defense, int healPoints, int fightPoints) {
         super(level, attack, defense, healPoints, fightPoints);
-        this.K = 0.75;
     }
 
     public double getK() {

@@ -31,6 +31,11 @@ public abstract class AbstractEntities {
         }
     }
 
+    public void getDamage(Double damageDeal) {
+        int nuevoHP = (int) (this.getHP() - damageDeal);
+        this.setHP(nuevoHP);
+    }
+
     public void setFP(int nuevoFP) {
         if (nuevoFP <= 0) {
             this.FP = 0;

@@ -14,7 +14,7 @@ public class Spiny extends AbstractEnemy implements IAttackedByLuis {
 
     public void attack(IPlayer player) {
         if (this.isDead() == false) {
-            player.isAttacked(this);
+            player.attackedBySpiny(this);
         }
     }
 
