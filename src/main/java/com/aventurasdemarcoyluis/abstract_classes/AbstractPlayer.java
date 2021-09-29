@@ -1,6 +1,6 @@
 package com.aventurasdemarcoyluis.abstract_classes;
 
-import com.aventurasdemarcoyluis.interfaces.IAttack;
+import com.aventurasdemarcoyluis.interfaces.IAttacks;
 import com.aventurasdemarcoyluis.interfaces.IEnemy;
 import com.aventurasdemarcoyluis.interfaces.IObject;
 import com.aventurasdemarcoyluis.interfaces.IPlayer;
@@ -17,10 +17,6 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
         this.invincible = false;
     }
 
-    public Hashtable<IObject, Integer> getInventory() {
-        return inventory;
-    }
-
     public void addItem(IObject item, int amount) {
         if (this.hasItem(item)) {
             int amountFinal = inventory.get(item);
@@ -33,8 +29,7 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
 
     public int amountOfItem(IObject item) {
         if (this.hasItem(item)) {
-            int amount = inventory.get(item);
-            return amount;
+            return inventory.get(item);
         } else {
             return 0;
         }
@@ -80,8 +75,8 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
         this.setInvincible(true);
     }
 
-    public double damageThornsSpiny(IPlayer player) {
-        return 0.05*player.getHP();
+    public double damageThornsSpiny() {
+        return 0.05*this.getHP();
     }
 
     public void useItem(IObject item) {
@@ -95,7 +90,7 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
         return 0.75*enemy.getATK()*((double) enemy.getLVL()/this.getDEF());
     }
 
-    public void attackCost(IAttack attack) {
+    public void attackCost(IAttacks attack) {
         int nuevoFP = this.getFP() - attack.getFPCost();
         this.setFP(nuevoFP);
     }

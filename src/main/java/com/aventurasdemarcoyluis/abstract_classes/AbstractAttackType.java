@@ -1,8 +1,8 @@
 package com.aventurasdemarcoyluis.abstract_classes;
 
-import com.aventurasdemarcoyluis.interfaces.IAttack;
+import com.aventurasdemarcoyluis.interfaces.IAttacks;
 
-public abstract class AbstractAttackType implements IAttack {
+public abstract class AbstractAttackType implements IAttacks {
     public int FPCost;
     public double K;
 

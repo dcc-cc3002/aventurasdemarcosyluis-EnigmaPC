@@ -1,13 +1,12 @@
 package com.aventurasdemarcoyluis.enemies;
 
-import com.aventurasdemarcoyluis.interfaces.IAttack;
-import com.aventurasdemarcoyluis.interfaces.IEnemy;
+import com.aventurasdemarcoyluis.interfaces.IAttacks;
 import com.aventurasdemarcoyluis.players.Luis;
 import com.aventurasdemarcoyluis.players.Marco;
 import com.aventurasdemarcoyluis.abstract_classes.AbstractEnemy;
 
 
-public class Boo extends AbstractEnemy implements IEnemy {
+public class Boo extends AbstractEnemy {
 
     public Boo(int level, int attack, int defense, int healPoints, int fightPoints) {
         super(level, attack, defense, healPoints, fightPoints);
@@ -18,9 +17,12 @@ public class Boo extends AbstractEnemy implements IEnemy {
     }
 
     @Override
-    public void attackedByMarco(Marco marco, IAttack attack) {
-        double damageDeal = attack.getK()*marco.getATK()*((double) marco.getLVL()/this.getDEF());
+    public void attackedByMarco(Marco marco, IAttacks attack) {
         marco.attackCost(attack);
-        attack.hurtsBoo(this,damageDeal);
+        if (attack.hurtsBoo()) {
+            attack.hurts(this, this.damageToHurt(marco, attack));
+        } else {
+            this.dodge();
+        }
     }
 }

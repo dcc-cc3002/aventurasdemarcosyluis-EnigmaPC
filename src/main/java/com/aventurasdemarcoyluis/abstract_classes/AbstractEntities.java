@@ -24,14 +24,10 @@ public abstract class AbstractEntities {
     }
 
     public boolean isDead() {
-        if (this.getHP() == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.getHP() == 0;
     }
 
-    public void getDamage(Double damageDeal) {
+    public void getDamage(double damageDeal) {
         int nuevoHP = (int) (this.getHP() - damageDeal);
         this.setHP(nuevoHP);
     }
@@ -40,11 +36,7 @@ public abstract class AbstractEntities {
         if (nuevoFP <= 0) {
             this.FP = 0;
         } else {
-            if (nuevoFP > this.getMaxFP()) {
-                this.FP = this.getMaxFP();
-            } else {
-                this.FP = nuevoFP;
-            }
+            this.FP = Math.min(nuevoFP, this.getMaxFP());
         }
     }
 
@@ -56,11 +48,7 @@ public abstract class AbstractEntities {
         if (nuevoHP <= 0) {
             this.HP = 0;
         } else {
-            if (nuevoHP > this.getMaxHP()) {
-                this.HP = this.getMaxHP();
-            } else {
-                this.HP = nuevoHP;
-            }
+            this.HP = Math.min(nuevoHP, this.getMaxHP());
         }
     }
 

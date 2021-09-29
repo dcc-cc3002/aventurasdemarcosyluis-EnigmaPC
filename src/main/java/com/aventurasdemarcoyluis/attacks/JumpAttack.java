@@ -1,7 +1,6 @@
 package com.aventurasdemarcoyluis.attacks;
 
 import com.aventurasdemarcoyluis.abstract_classes.AbstractAttackType;
-import com.aventurasdemarcoyluis.enemies.Boo;
 import com.aventurasdemarcoyluis.interfaces.IEnemy;
 
 public class JumpAttack extends AbstractAttackType {
@@ -11,7 +10,17 @@ public class JumpAttack extends AbstractAttackType {
     }
 
     @Override
-    public void hurtsBoo(Boo boo, double damageDeal) {
+    public boolean hurtsBoo() {
+        return true;
+    }
 
+    @Override
+    public boolean hurtsSpiny() {
+        return false;
+    }
+
+    @Override
+    public void hurts(IEnemy enemy, double damageToHurt) {
+        enemy.getDamage(damageToHurt);
     }
 }
