@@ -1,6 +1,8 @@
 package com.aventurasdemarcoyluis.abstract_classes;
 
-public abstract class AbstractEntities {
+import com.aventurasdemarcoyluis.interfaces.IEntities;
+
+public abstract class AbstractEntities implements IEntities{
     private int LVL;
     private int ATK;
     private int DEF;
@@ -24,7 +26,7 @@ public abstract class AbstractEntities {
     }
 
     public boolean isDead() {
-        return this.getHP() == 0;
+        return this.getHP() != 0;
     }
 
     public void getDamage(double damageDeal) {
@@ -32,7 +34,11 @@ public abstract class AbstractEntities {
         this.setHP(nuevoHP);
     }
 
-    public void setFP(int nuevoFP) {
+    public double preDamage(IEntities entities) {
+        return entities.getATK()*((double) entities.getLVL()/this.getDEF());
+    }
+
+    void setFP(int nuevoFP) {
         if (nuevoFP <= 0) {
             this.FP = 0;
         } else {
@@ -40,11 +46,11 @@ public abstract class AbstractEntities {
         }
     }
 
-    public int getFP() {
+    protected int getFP() {
         return this.FP;
     }
 
-    public void setHP(int nuevoHP) {
+    void setHP(int nuevoHP) {
         if (nuevoHP <= 0) {
             this.HP = 0;
         } else {
@@ -52,7 +58,7 @@ public abstract class AbstractEntities {
         }
     }
 
-    public int getHP() {
+    protected int getHP() {
         return this.HP;
     }
 
@@ -60,7 +66,7 @@ public abstract class AbstractEntities {
         return LVL;
     }
 
-    public void setLVL(int LVL) {
+    protected void setLVL(int LVL) {
         this.LVL = LVL;
     }
 
@@ -68,31 +74,31 @@ public abstract class AbstractEntities {
         return ATK;
     }
 
-    public void setATK(int ATK) {
+    protected void setATK(int ATK) {
         this.ATK = ATK;
     }
 
-    public int getDEF() {
+    protected int getDEF() {
         return DEF;
     }
 
-    public void setDEF(int DEF) {
+    protected void setDEF(int DEF) {
         this.DEF = DEF;
     }
 
-    public int getMaxHP() {
+    protected int getMaxHP() {
         return maxHP;
     }
 
-    public void setMaxHP(int mHP) {
+    protected void setMaxHP(int mHP) {
         this.maxHP = mHP;
     }
 
-    public int getMaxFP() {
+    protected int getMaxFP() {
         return maxFP;
     }
 
-    public void setMaxFP(int mFP) {
+    protected void setMaxFP(int mFP) {
         this.maxFP = mFP;
     }
 }

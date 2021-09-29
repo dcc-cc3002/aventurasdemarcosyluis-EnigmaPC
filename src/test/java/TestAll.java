@@ -26,6 +26,7 @@ public class TestAll {
     private Spiny copiaspiny;
     private Boo copiaboo;
 
+    /**
     @BeforeEach
     public void setUp() {
         // Entidades
@@ -270,5 +271,5 @@ public class TestAll {
 
 
     }
-
+    */
 }
