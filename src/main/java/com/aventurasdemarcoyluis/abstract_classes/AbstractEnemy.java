@@ -11,6 +11,6 @@ public abstract class AbstractEnemy extends AbstractEntities implements IEnemy {
     }
 
     public double damageToHurt(IPlayer player, IAttacks attack) {
-        return attack.getK()*player.getATK()*((double) player.getLVL()/this.getDEF());
+        return attack.getK()*this.preDamage(player);
     }
 }

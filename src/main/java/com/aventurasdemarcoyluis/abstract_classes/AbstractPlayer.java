@@ -87,7 +87,7 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
     }
 
     public double enemyDoDamage(IEnemy enemy) {
-        return 0.75*enemy.getATK()*((double) enemy.getLVL()/this.getDEF());
+        return 0.75*this.preDamage(enemy);
     }
 
     public void attackCost(IAttacks attack) {

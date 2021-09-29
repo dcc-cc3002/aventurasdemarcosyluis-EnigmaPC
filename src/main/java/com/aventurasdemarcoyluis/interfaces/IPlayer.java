@@ -3,10 +3,7 @@ package com.aventurasdemarcoyluis.interfaces;
 import com.aventurasdemarcoyluis.enemies.Goomba;
 import com.aventurasdemarcoyluis.enemies.Spiny;
 
-public interface IPlayer {
-    int getATK();
-    int getLVL();
-
+public interface IPlayer extends IEntities {
     void setInvincible(boolean b);
     void useHoneySyrup();
     void useRedMushroom();

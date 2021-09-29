@@ -2,9 +2,7 @@ package com.aventurasdemarcoyluis.interfaces;
 
 import com.aventurasdemarcoyluis.players.Marco;
 
-public interface IEnemy {
-    int getATK();
-    int getLVL();
+public interface IEnemy extends IEntities {
     void dodge();
     void getDamage(double damageToHurt);
 
