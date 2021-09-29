@@ -15,7 +15,7 @@ public class Goomba extends AbstractEnemy implements IAttackedByLuis {
     }
 
     public void attack(IPlayer player) {
-        if (this.isNotDead()) {
+        if (this.isNotDead() && player.isNotDead()) {
             player.attackedByGoomba(this);
         }
     }

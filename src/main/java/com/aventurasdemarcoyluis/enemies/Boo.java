@@ -13,7 +13,7 @@ public class Boo extends AbstractEnemy {
     }
 
     public void attack(Luis luis) {
-        if (this.isNotDead()) {
+        if (this.isNotDead() && luis.isNotDead()) {
             luis.attackedByBoo(this);
         }
     }

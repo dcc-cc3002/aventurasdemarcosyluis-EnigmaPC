@@ -12,7 +12,7 @@ public class Marco extends AbstractPlayer {
     }
 
     public void attack(IEnemy enemy, IAttacks attack) {
-        if (this.canAttack() && this.isNotDead()) {
+        if (this.canAttack() && this.isNotDead() && enemy.isNotDead()) {
             enemy.attackedByMarco(this, attack);
         }
     }

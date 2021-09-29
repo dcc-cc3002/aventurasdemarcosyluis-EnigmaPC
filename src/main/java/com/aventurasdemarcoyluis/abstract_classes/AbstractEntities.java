@@ -29,12 +29,8 @@ public abstract class AbstractEntities implements IEntities{
         return this.getHP() != 0;
     }
 
-    protected boolean canAttack() {
-        return this.getFP() != 0;
-    }
-
     public void getDamage(double damageDeal) {
-        int nuevoHP = (int) (this.getHP() - damageDeal);
+        int nuevoHP = (int) (this.getHP() - Math.round(damageDeal));
         this.setHP(nuevoHP);
     }
 
@@ -62,7 +58,7 @@ public abstract class AbstractEntities implements IEntities{
         }
     }
 
-    int getHP() {
+    public int getHP() {
         return this.HP;
     }
 
@@ -90,7 +86,7 @@ public abstract class AbstractEntities implements IEntities{
         this.DEF = DEF;
     }
 
-    int getMaxHP() {
+    public int getMaxHP() {
         return maxHP;
     }
 

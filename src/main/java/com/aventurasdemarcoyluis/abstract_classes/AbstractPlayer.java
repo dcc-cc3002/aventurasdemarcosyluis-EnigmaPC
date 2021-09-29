@@ -59,6 +59,10 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
         this.invincible = bool;
     }
 
+    protected boolean canAttack() {
+        return this.getFP() != 0;
+    }
+
     public void useHoneySyrup() {
         int newFP = this.getFP()+3;
         this.setFP(newFP);

@@ -17,7 +17,7 @@ public class Luis extends AbstractPlayer implements IAttackedByBoo {
     }
 
     public void attack(IAttackedByLuis enemy, IAttacks attack) {
-        if (this.canAttack() && this.isNotDead()) {
+        if (this.canAttack() && this.isNotDead() && enemy.isNotDead()) {
             enemy.attackedByLuis(this, attack);
         }
     }

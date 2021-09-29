@@ -26,7 +26,7 @@ public class TestAll {
     private Spiny copiaspiny;
     private Boo copiaboo;
 
-    /**
+
     @BeforeEach
     public void setUp() {
         // Entidades
@@ -48,6 +48,12 @@ public class TestAll {
         redMushroom = new RedMushroom();
     }
 
+    @Test
+    public void testEntities() {
+        assertEquals(marco.getMaxHP(), 40);
+        assertEquals(marco.getHP(), 40);
+    }
+    /**
     @Test
     public void testEntities() {
         // Todos los Player y Enemigos vienen de Entities
