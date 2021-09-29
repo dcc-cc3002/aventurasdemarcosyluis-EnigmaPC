@@ -13,7 +13,9 @@ public class Boo extends AbstractEnemy {
     }
 
     public void attack(Luis luis) {
-        luis.attackedByBoo(this);
+        if (this.isNotDead()) {
+            luis.attackedByBoo(this);
+        }
     }
 
     @Override

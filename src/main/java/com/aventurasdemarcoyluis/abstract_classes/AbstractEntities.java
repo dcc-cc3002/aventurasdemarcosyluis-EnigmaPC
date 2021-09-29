@@ -25,8 +25,12 @@ public abstract class AbstractEntities implements IEntities{
 
     }
 
-    public boolean isDead() {
+    public boolean isNotDead() {
         return this.getHP() != 0;
+    }
+
+    protected boolean canAttack() {
+        return this.getFP() != 0;
     }
 
     public void getDamage(double damageDeal) {
@@ -46,7 +50,7 @@ public abstract class AbstractEntities implements IEntities{
         }
     }
 
-    protected int getFP() {
+    int getFP() {
         return this.FP;
     }
 
@@ -58,7 +62,7 @@ public abstract class AbstractEntities implements IEntities{
         }
     }
 
-    protected int getHP() {
+    int getHP() {
         return this.HP;
     }
 
@@ -66,7 +70,7 @@ public abstract class AbstractEntities implements IEntities{
         return LVL;
     }
 
-    protected void setLVL(int LVL) {
+    void setLVL(int LVL) {
         this.LVL = LVL;
     }
 
@@ -74,31 +78,31 @@ public abstract class AbstractEntities implements IEntities{
         return ATK;
     }
 
-    protected void setATK(int ATK) {
+    void setATK(int ATK) {
         this.ATK = ATK;
     }
 
-    protected int getDEF() {
+    int getDEF() {
         return DEF;
     }
 
-    protected void setDEF(int DEF) {
+    void setDEF(int DEF) {
         this.DEF = DEF;
     }
 
-    protected int getMaxHP() {
+    int getMaxHP() {
         return maxHP;
     }
 
-    protected void setMaxHP(int mHP) {
+    void setMaxHP(int mHP) {
         this.maxHP = mHP;
     }
 
-    protected int getMaxFP() {
+    int getMaxFP() {
         return maxFP;
     }
 
-    protected void setMaxFP(int mFP) {
+    void setMaxFP(int mFP) {
         this.maxFP = mFP;
     }
 }

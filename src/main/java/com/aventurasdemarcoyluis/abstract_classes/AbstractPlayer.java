@@ -17,7 +17,7 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
         this.invincible = false;
     }
 
-    public void addItem(IObject item, int amount) {
+    protected void addItem(IObject item, int amount) {
         if (this.hasItem(item)) {
             int amountFinal = inventory.get(item);
             amountFinal += amount;
@@ -27,7 +27,7 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
         }
     }
 
-    public int amountOfItem(IObject item) {
+    protected int amountOfItem(IObject item) {
         if (this.hasItem(item)) {
             return inventory.get(item);
         } else {
@@ -35,7 +35,7 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
         }
     }
 
-    public void removeItem(IObject item, int amount) {
+    protected void removeItem(IObject item, int amount) {
         if (this.hasItem(item)) {
             int amountFinal = inventory.get(item);
             amountFinal -= amount;
@@ -47,7 +47,7 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
         }
     }
 
-    public boolean hasItem(IObject item) {
+    protected boolean hasItem(IObject item) {
         return inventory.containsKey(item);
     }
 
@@ -79,7 +79,7 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
         return 0.05*this.getHP();
     }
 
-    public void useItem(IObject item) {
+    private void useItem(IObject item) {
         if (hasItem(item)) {
             item.use(this);
             this.removeItem(item, 1);

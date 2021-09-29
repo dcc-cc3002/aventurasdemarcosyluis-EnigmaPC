@@ -10,7 +10,7 @@ public abstract class AbstractEnemy extends AbstractEntities implements IEnemy {
         super(level, attack, defense, healPoints, fightPoints);
     }
 
-    public double damageToHurt(IPlayer player, IAttacks attack) {
+    protected double damageToHurt(IPlayer player, IAttacks attack) {
         return attack.getK()*this.preDamage(player);
     }
 }
