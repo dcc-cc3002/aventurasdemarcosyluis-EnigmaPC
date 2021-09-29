@@ -105,4 +105,32 @@ public abstract class AbstractEntities implements IEntities{
     void setMaxFP(int mFP) {
         this.maxFP = mFP;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof AbstractEntities)) return false;
+
+        AbstractEntities that = (AbstractEntities) o;
+
+        if (getLVL() != that.getLVL()) return false;
+        if (getATK() != that.getATK()) return false;
+        if (getDEF() != that.getDEF()) return false;
+        if (getMaxHP() != that.getMaxHP()) return false;
+        if (getMaxFP() != that.getMaxFP()) return false;
+        if (getHP() != that.getHP()) return false;
+        return getFP() == that.getFP();
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getLVL();
+        result = 31 * result + getATK();
+        result = 31 * result + getDEF();
+        result = 31 * result + getMaxHP();
+        result = 31 * result + getMaxFP();
+        result = 31 * result + getHP();
+        result = 31 * result + getFP();
+        return result;
+    }
 }

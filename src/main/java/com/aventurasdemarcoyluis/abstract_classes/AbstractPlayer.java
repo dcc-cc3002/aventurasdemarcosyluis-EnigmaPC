@@ -94,4 +94,5 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
         int nuevoFP = this.getFP() - attack.getFPCost();
         this.setFP(nuevoFP);
     }
+
 }
