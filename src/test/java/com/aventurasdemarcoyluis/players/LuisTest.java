@@ -3,7 +3,6 @@ package com.aventurasdemarcoyluis.players;
 import com.aventurasdemarcoyluis.abstract_classes.BaseTest;
 import com.aventurasdemarcoyluis.attacks.HammerAttack;
 import com.aventurasdemarcoyluis.attacks.JumpAttack;
-import com.aventurasdemarcoyluis.enemies.Boo;
 import com.aventurasdemarcoyluis.enemies.Goomba;
 import com.aventurasdemarcoyluis.enemies.Spiny;
 import org.junit.jupiter.api.BeforeEach;

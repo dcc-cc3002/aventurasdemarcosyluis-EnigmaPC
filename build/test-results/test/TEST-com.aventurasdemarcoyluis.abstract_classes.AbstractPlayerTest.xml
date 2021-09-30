@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.aventurasdemarcoyluis.abstract_classes.AbstractPlayerTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2021-09-30T08:59:23" hostname="LAPTOP-BPDICMJD" time="0.019">
+<testsuite name="com.aventurasdemarcoyluis.abstract_classes.AbstractPlayerTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2021-09-30T17:49:31" hostname="LAPTOP-BPDICMJD" time="0.012">
   <properties/>
   <testcase name="useHoneySyrup()" classname="com.aventurasdemarcoyluis.abstract_classes.AbstractPlayerTest" time="0.001"/>
-  <testcase name="useRedMushroom()" classname="com.aventurasdemarcoyluis.abstract_classes.AbstractPlayerTest" time="0.0"/>
-  <testcase name="inventoryTest()" classname="com.aventurasdemarcoyluis.abstract_classes.AbstractPlayerTest" time="0.001"/>
+  <testcase name="useRedMushroom()" classname="com.aventurasdemarcoyluis.abstract_classes.AbstractPlayerTest" time="0.001"/>
+  <testcase name="inventoryTest()" classname="com.aventurasdemarcoyluis.abstract_classes.AbstractPlayerTest" time="0.0"/>
   <testcase name="useFPtoAttack()" classname="com.aventurasdemarcoyluis.abstract_classes.AbstractPlayerTest" time="0.001"/>
   <testcase name="canAttack()" classname="com.aventurasdemarcoyluis.abstract_classes.AbstractPlayerTest" time="0.001"/>
-  <testcase name="useStar()" classname="com.aventurasdemarcoyluis.abstract_classes.AbstractPlayerTest" time="0.001"/>
+  <testcase name="useStar()" classname="com.aventurasdemarcoyluis.abstract_classes.AbstractPlayerTest" time="0.0"/>
   <testcase name="damageThornsSpiny()" classname="com.aventurasdemarcoyluis.abstract_classes.AbstractPlayerTest" time="0.001"/>
   <testcase name="testHashCode()" classname="com.aventurasdemarcoyluis.abstract_classes.AbstractPlayerTest" time="0.001"/>
   <testcase name="enemyDoDamage()" classname="com.aventurasdemarcoyluis.abstract_classes.AbstractPlayerTest" time="0.001"/>

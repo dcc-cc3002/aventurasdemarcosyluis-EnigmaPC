@@ -102,12 +102,12 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof AbstractPlayer)) return false;
-        if (!super.equals(o)) return false;
+    public boolean equals(Object entities) {
+        if (this == entities) return true;
+        if (!(entities instanceof AbstractPlayer)) return false;
+        if (!super.equals(entities)) return false;
 
-        AbstractPlayer that = (AbstractPlayer) o;
+        AbstractPlayer that = (AbstractPlayer) entities;
 
         if (isInvincible() != that.isInvincible()) return false;
         return inventory.equals(that.inventory);
