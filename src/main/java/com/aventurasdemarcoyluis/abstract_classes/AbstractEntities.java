@@ -47,7 +47,7 @@ public abstract class AbstractEntities implements IEntities{
         }
     }
 
-    protected int getFP() {
+    public int getFP() {
         return this.FP;
     }
 
@@ -59,7 +59,7 @@ public abstract class AbstractEntities implements IEntities{
         }
     }
 
-    protected int getHP() {
+    public int getHP() {
         return this.HP;
     }
 
