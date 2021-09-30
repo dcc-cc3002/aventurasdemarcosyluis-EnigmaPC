@@ -39,10 +39,12 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
         if (this.hasItem(item)) {
             int amountFinal = inventory.get(item);
             amountFinal -= amount;
-            if (amountFinal <= 0) {
-                inventory.remove(item);
-            } else {
-                inventory.replace(item, amountFinal);
+            if (amount > 0) {
+                if (amountFinal <= 0) {
+                    inventory.remove(item);
+                } else {
+                    inventory.replace(item, amountFinal);
+                }
             }
         }
     }
@@ -83,7 +85,7 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
         return 0.05*this.getHP();
     }
 
-    private void useItem(IObject item) {
+    protected void useItem(IObject item) {
         if (hasItem(item)) {
             item.use(this);
             this.removeItem(item, 1);
