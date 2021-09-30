@@ -27,8 +27,8 @@ public class HoneySyrup extends AbstractItem {
     }
 
     /**
-     * Permite a un item ser usado por un Jugador (los enemigos no pueden usar items).
-     * @param player Jugador que quiere usar el item
+     * Permite a Honey Syrup ser usado por un Jugador (los enemigos no pueden usar items).
+     * @param player Jugador que quiere usar Honey Syrup
      */
     @Override
     public void use(IPlayer player) {

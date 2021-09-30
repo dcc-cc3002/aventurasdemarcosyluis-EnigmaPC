@@ -8,7 +8,7 @@ import com.aventurasdemarcoyluis.players.Luis;
 import com.aventurasdemarcoyluis.players.Marco;
 
 /**
- * <b>Clase abstracta Spiny:</b> <br>
+ * <b>Clase Spiny:</b> <br>
  * Modela el ENEMIGO SPINY <br>
  * Se heredan los campos de la clase madre AbstractEnemy. <br>
  *
@@ -51,7 +51,6 @@ public class Spiny extends AbstractEnemy implements IAttackedByLuis {
      */
     @Override
     public void attackedByLuis(Luis luis, IAttacks attack) {
-        luis.useFPtoAttack(attack);
         if (attack.hurtsSpiny()) {
             attack.hurts(this, this.damageToHurt(luis, attack));
         } else {
@@ -67,7 +66,6 @@ public class Spiny extends AbstractEnemy implements IAttackedByLuis {
      */
     @Override
     public void attackedByMarco(Marco marco, IAttacks attack) {
-        marco.useFPtoAttack(attack);
         if (attack.hurtsSpiny()) {
             attack.hurts(this, this.damageToHurt(marco, attack));
         } else {

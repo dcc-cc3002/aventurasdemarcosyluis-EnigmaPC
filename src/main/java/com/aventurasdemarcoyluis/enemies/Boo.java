@@ -6,7 +6,7 @@ import com.aventurasdemarcoyluis.players.Marco;
 import com.aventurasdemarcoyluis.abstract_classes.AbstractEnemy;
 
 /**
- * <b>Clase abstracta Boo:</b> <br>
+ * <b>Clase Boo:</b> <br>
  * Modela el ENEMIGO BOO <br>
  * Se heredan los campos de la clase madre AbstractEnemy. <br>
  *
@@ -48,7 +48,6 @@ public class Boo extends AbstractEnemy {
      */
     @Override
     public void attackedByMarco(Marco marco, IAttacks attack) {
-        marco.useFPtoAttack(attack);
         if (attack.hurtsBoo()) {
             attack.hurts(this, this.damageToHurt(marco, attack));
         } else {

@@ -8,7 +8,7 @@ import com.aventurasdemarcoyluis.players.Luis;
 import com.aventurasdemarcoyluis.players.Marco;
 
 /**
- * <b>Clase abstracta Goomba:</b> <br>
+ * <b>Clase Goomba:</b> <br>
  * Modela el ENEMIGO GOOMBA <br>
  * Se heredan los campos de la clase madre AbstractEnemy. <br>
  *
@@ -50,7 +50,6 @@ public class Goomba extends AbstractEnemy implements IAttackedByLuis {
      */
     @Override
     public void attackedByLuis(Luis luis, IAttacks attack) {
-        luis.useFPtoAttack(attack);
         attack.hurts(this, this.damageToHurt(luis, attack));
     }
 
@@ -61,7 +60,6 @@ public class Goomba extends AbstractEnemy implements IAttackedByLuis {
      */
     @Override
     public void attackedByMarco(Marco marco, IAttacks attack) {
-        marco.useFPtoAttack(attack);
         attack.hurts(this, this.damageToHurt(marco, attack));
     }
 }

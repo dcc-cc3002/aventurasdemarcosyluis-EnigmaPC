@@ -116,12 +116,13 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
     }
 
     /**
-     * Determina si un jugador tiene suficientes FP para atacar.
-     * Para atacar los FP tienen que ser mayores a 0
+     * Determina si un jugador tiene suficientes FP para atacar con cierto ataque.
+     * Para atacar los FP tienen que ser mayores al costo del ataque.
+     * @param attack Ataque utilizado
      * @return Verdadero si puede atacar, Falso si no.
      */
-    protected boolean canAttack() {
-        return this.getFP() != 0;
+    protected boolean enoughFP(IAttacks attack) {
+        return this.getFP() >= attack.getFPCost();
     }
 
     /**

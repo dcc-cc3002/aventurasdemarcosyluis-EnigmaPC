@@ -57,6 +57,7 @@ public abstract class AbstractEntities implements IEntities {
      * Creado principalmente para referenciar el "esquivar"
      */
     public void dodge() {
+        System.out.println("Se ha esquivado el ataque");
     }
 
     /**
@@ -81,9 +82,9 @@ public abstract class AbstractEntities implements IEntities {
      * contar el uso de alguna habilidad o característica.
      * Se calcula como (ATK entidad externa) * ((LVL entidad externa)/(DEF entidad))
      * @param entities Entidad externa (la que está atacando)
-     * @return Daño previo que hace la entidad externa a la entidad (this)
+     * @return Daño previo que hace la entidad externa a la entidad (this) [Redondeado]
      */
-    public double preDamage(@NotNull IEntities entities) {
+    public double preDamage(IEntities entities) {
         return Math.round(entities.getATK()*((double) entities.getLVL()/this.getDEF()));
     }
 
@@ -127,7 +128,7 @@ public abstract class AbstractEntities implements IEntities {
      * Entrega la cantidad de HP que tiene la entidad en el momento.
      * @return Cantidad de HP que posee la entidad
      */
-    protected int getHP() {
+    public int getHP() {
         return this.HP;
     }
 

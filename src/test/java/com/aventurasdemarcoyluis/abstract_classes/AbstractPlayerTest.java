@@ -101,11 +101,15 @@ class AbstractPlayerTest extends BaseTest {
     }
 
     @Test
-    void canAttack() {
+    void enoughFP() {
         // Un player puede atacar si tiene más de 0 FP
-        assertTrue(marco.canAttack()); // marco tiene 42 FP
+        assertTrue(marco.enoughFP(hammer)); // marco tiene 42 FP
         luis.setFP(0); // seteamos para que luis tenga 0 de FP
-        assertFalse(luis.canAttack());
+        assertFalse(luis.enoughFP(jump));
+        luis.setFP(1); // seteamos para que luis tenga 1 de FP
+        assertFalse(luis.enoughFP(hammer)); // No puede atacar con Martillo
+        luis.setFP(1); // seteamos para que luis tenga 0 de FP
+        assertTrue(luis.enoughFP(jump));
 
         luis.setFP(2);
     }
