@@ -36,10 +36,10 @@ public abstract class AbstractEntities implements IEntities{
     }
 
     public double preDamage(IEntities entities) {
-        return entities.getATK()*((double) entities.getLVL()/this.getDEF());
+        return (double) (Math.round(entities.getATK()*((double) entities.getLVL()/this.getDEF())));
     }
 
-    void setFP(int nuevoFP) {
+    protected void setFP(int nuevoFP) {
         if (nuevoFP <= 0) {
             this.FP = 0;
         } else {
@@ -47,11 +47,11 @@ public abstract class AbstractEntities implements IEntities{
         }
     }
 
-    int getFP() {
+    protected int getFP() {
         return this.FP;
     }
 
-    void setHP(int nuevoHP) {
+    protected void setHP(int nuevoHP) {
         if (nuevoHP <= 0) {
             this.HP = 0;
         } else {
@@ -59,7 +59,7 @@ public abstract class AbstractEntities implements IEntities{
         }
     }
 
-    public int getHP() {
+    protected int getHP() {
         return this.HP;
     }
 
@@ -75,11 +75,11 @@ public abstract class AbstractEntities implements IEntities{
         return DEF;
     }
 
-    public int getMaxHP() {
+    protected int getMaxHP() {
         return maxHP;
     }
 
-    int getMaxFP() {
+    protected int getMaxFP() {
         return maxFP;
     }
 

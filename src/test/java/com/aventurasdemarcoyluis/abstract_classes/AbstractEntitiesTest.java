@@ -21,19 +21,10 @@ class AbstractEntitiesTest extends BaseTest {
         spiny = new Spiny(17, 25, 20, 90, 0);
         boo = new Boo(9, 13, 11, 35, 0);
 
-        marco2 = new Marco(7, 8, 15, 0, 4);
-        luis2 = new Luis(9, 10, 6, 51, 6);
+        marco2 = new Marco(7, 8, 15, 6, 4);
         goomba2 = new Goomba(8, 9, 11, 40, 23);
         spiny2 = new Spiny(16, 24, 35, 50, 0);
         boo2 = new Boo(3, 6, 6, 35, 0);
-    }
-
-    @Test
-    void isNotDead() {
-        // Actualmente marco esta vivo
-        // Actualmente merco2 esta muerto
-        assertTrue(marco.isNotDead());
-        assertFalse(marco2.isNotDead());
     }
 
     @Test
@@ -47,6 +38,47 @@ class AbstractEntitiesTest extends BaseTest {
         // este se aproxima y termina recibiendo 50. Su próxima vida es 0.
         boo.getDamage(50.3);
         assertEquals(boo.getHP(),0);
+    }
+
+    @Test
+    void testHP() {
+        // Testearemos que no se pueda dar más HP al personaje que el maxHP.
+        // marco tiene 40 de maxHP, y 40 de HP (no ha bajado su vida)
+        assertEquals(marco.getMaxHP(),40);
+        assertEquals(marco.getHP(),40);
+        // seteamos la vida en "70", como sobrepasa maxHP, queda en el maxHP
+        marco.setHP(70);
+        assertEquals(marco.getMaxHP(),40); // No se modifica
+        assertEquals(marco.getMaxHP(),marco.getHP());
+        // seteamos la vida en "-70", como es menor a 0 de vida, queda en 0
+        // pues no se puede tener -70 de vida
+        marco.setHP(-70);
+        assertEquals(marco.getMaxHP(),40); // No se modifica
+        assertEquals(marco.getHP(),0);
+        // seteamos la vida en 20
+        marco.setHP(20);
+        assertEquals(marco.getMaxHP(),40); // No se modifica
+        assertEquals(marco.getHP(),20);
+    }
+
+    @Test
+    void isNotDead() {
+        // Actualmente marco está vivo, tiene 40 de maxHP
+        assertTrue(marco.isNotDead());
+        marco.setHP(-30); // Si queremos setear una vida<0 se vuelve 0
+        assertFalse(marco.isNotDead());
+
+        // Actualmente marco2 está vivo, tiene 6 de maxHP
+        assertTrue(marco2.isNotDead());
+        marco2.setHP(0); // La vida queda en 0
+        assertFalse(marco2.isNotDead());
+
+        // Actualmente luis está vivo, tiene 51 de maxHP
+        assertTrue(luis.isNotDead());
+        luis.setHP(40); // La vida queda en 40, sigue vivo
+        assertTrue(luis.isNotDead());
+        luis.setHP(-40); // La vida queda en 0
+        assertFalse(luis.isNotDead());
     }
 
     @Test

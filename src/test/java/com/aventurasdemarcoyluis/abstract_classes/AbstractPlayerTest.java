@@ -1,5 +1,7 @@
 package com.aventurasdemarcoyluis.abstract_classes;
 
+import com.aventurasdemarcoyluis.attacks.HammerAttack;
+import com.aventurasdemarcoyluis.attacks.JumpAttack;
 import com.aventurasdemarcoyluis.enemies.Goomba;
 import com.aventurasdemarcoyluis.enemies.Spiny;
 import com.aventurasdemarcoyluis.items.HoneySyrup;
@@ -18,7 +20,7 @@ class AbstractPlayerTest extends BaseTest {
     void setUp() {
         // Jugadores
         marco = new Marco(16,28,31,57,42);
-        luis = new Luis(4,10,25,2,0);
+        luis = new Luis(4,10,25,2,2);
         marco2 = new Marco(16,28,31,57,42);
         luis2 = new Luis(9,12,11,18,7);
 
@@ -28,8 +30,12 @@ class AbstractPlayerTest extends BaseTest {
         redMushroom = new RedMushroom();
 
         // Enemigos
-        goomba2 = new Goomba(8, 9, 11, 40, 23);
-        spiny2 = new Spiny(16, 24, 35, 50, 0);
+        goomba = new Goomba(8, 9, 11, 40, 23);
+        spiny = new Spiny(16, 24, 35, 50, 0);
+
+        // Ataques
+        hammer = new HammerAttack();
+        jump = new JumpAttack();
     }
 
     /**
@@ -102,28 +108,154 @@ class AbstractPlayerTest extends BaseTest {
     }
 
     @Test
-    void useHoneySyrup() {
-        // 
-    }
-
-    @Test
-    void useRedMushroom() {
-    }
-
-    @Test
-    void useStar() {
-    }
-
-    @Test
     void damageThornsSpiny() {
+        // Las espinas de Spiny hacen que el atacante reciba un daño del 5 % de su HP
+        // (se testea el daño que debería hacer)
+
+        // luis tiene 2 de HP => el daño debería ser 0.1, redondeado = 0.0
+        // luis2 tiene 18 de HP => el daño debería ser 0.9, redondeado = 1.0
+        // marco tiene 57 de HP => el daño debería ser 2.85, redondeado = 3.0
+        assertEquals(luis.damageThornsSpiny(), 0);
+        assertEquals(luis2.damageThornsSpiny(), 1.0);
+        assertEquals(marco.damageThornsSpiny(), 3.0);
     }
 
+    /**
+     * Se testean:
+     * {@code enemyDoDamage},
+     * {@code preDamage} (metodo de AbstractEntities).
+     */
     @Test
     void enemyDoDamage() {
+        // Se testa la cantidad de daño que debiese hacer un enemigo a un player
+        // con la fórmula dada en el enunciado. (Solo queremos la cantidad)
+        // Todos los enemigos tienen un K = 0.75
+        // spiny : ATK(24) LVL(16)
+        // goomba : ATK(9) LVL(8)
+        // marco : DEF(31)
+        // luis2 : DEF(11)
+        assertEquals(marco.enemyDoDamage(spiny),9);
+        assertEquals(marco.enemyDoDamage(goomba),2);
+        assertEquals(luis2.enemyDoDamage(spiny),26);
+        assertEquals(luis2.enemyDoDamage(goomba),5);
+    }
+
+    /**
+     * Se testará:
+     * {@code useHoneySyrup} por sí solo y
+     * {@code useItem} que invocará el uso de honeySyrup.
+     */
+    @Test
+    void useHoneySyrup() {
+        // Restaura al personaje una cantidad de 3 FP
+        // Como todos los jugadores están con el máximo de FP, seteamos menos FP.
+        marco.setFP(20); // FP = 20, MaxFP = 42
+        luis.setFP(0); // FP = 0, MaxFP = 2
+        luis2.setFP(0); // FP = 0, MaxFP = 7
+        // Los jugadores tienen inicialmente el inventario vacío,
+        // así que les damos algunos items.
+        marco.addItem(honeySyrup,2);
+        luis.addItem(honeySyrup,1);
+        luis2.addItem(honeySyrup,4);
+        // Probamos que los FP aumenten si son menos que el maxFP
+        assertEquals(marco.getFP(),20);
+        marco.useHoneySyrup();
+        assertEquals(marco.getFP(),23);
+        marco.useItem(honeySyrup);
+        assertEquals(marco.getFP(),26);
+        // Probamos que los FP no sobrepasen el maxFP
+        assertEquals(luis.getFP(),0);
+        luis.useHoneySyrup();
+        assertEquals(luis.getFP(),2);
+        assertEquals(luis.getFP(),luis.getMaxFP());
+        // Probamos que los FP no sobrepasen el maxFP
+        assertEquals(luis2.getFP(),0);
+        luis2.useHoneySyrup();
+        assertEquals(luis2.getFP(),3);
+        luis2.useItem(honeySyrup);
+        assertEquals(luis2.getFP(),6);
+        luis2.useHoneySyrup();
+        assertEquals(luis2.getFP(),7); // Llegó al máximo de FP
+        assertEquals(luis2.getFP(),luis2.getMaxFP());
+        luis2.useHoneySyrup();
+        assertEquals(luis2.getFP(),luis2.getMaxFP());
+    }
+
+    /**
+     * Se testará:
+     * {@code useRedMushroom} por sí solo y
+     * {@code useItem} que invocará el uso de redMushroom.
+     */
+    @Test
+    void useRedMushroom() {
+        // Cura al jugador una cantidad de 10 % del HP máximo del personaje.
+        // Como todos los jugadores están con el máximo de vida, seteamos menos HP.
+        marco.setHP(30); // Vida = 30, MaxVida = 57, 10% = 5.7 aprox 6
+        luis.setHP(0); // Vida = 0, MaxVida = 2, 10% = 0.2 aprox 0
+        luis2.setHP(13); // Vida = 13, MaxVida = 18, 10% = 1.8 aprox 2
+        // Los jugadores tienen inicialmente el inventario vacío,
+        // así q les damos algunos items.
+        marco.addItem(redMushroom,2);
+        luis.addItem(redMushroom,1);
+        luis2.addItem(redMushroom,4);
+        // Probamos que la vida aumente si el 10% > 0
+        assertEquals(marco.getHP(),30);
+        marco.useRedMushroom();
+        assertEquals(marco.getHP(),36);
+        marco.useItem(redMushroom);
+        assertEquals(marco.getHP(),42);
+        // Probamos que la vida no aumente si el 10% = 0
+        assertEquals(luis.getHP(),0);
+        luis.useRedMushroom();
+        assertEquals(luis.getHP(),0);
+        // Probamos que la vida aumente si el 10% > 0
+        // pero que no sobrepase el máximo de vida posible
+        assertEquals(luis2.getHP(),13);
+        luis2.useRedMushroom();
+        assertEquals(luis2.getHP(),15);
+        luis2.useItem(redMushroom);
+        assertEquals(luis2.getHP(),17);
+        luis2.useRedMushroom();
+        assertEquals(luis2.getHP(),18); // Llegó al máximo de vida
+        assertEquals(luis2.getHP(),luis2.getMaxHP());
+        luis2.useRedMushroom();
+        assertEquals(luis2.getHP(),luis2.getMaxHP());
+    }
+
+    /**
+     * Se testará:
+     * {@code useStar} por sí solo y
+     * {@code useItem} que invocará el uso de star.
+     */
+    @Test
+    void useStar() {
+        // Hace que el personaje que la consuma entre al estado invencible.
+        // Inicialmente ningún personaje está en el estado invencible
+        // ni tienen items.
+        assertFalse(marco.isInvincible());
+        assertFalse(luis.isInvincible());
+        marco.addItem(star,2);
+        luis.addItem(star,2);
+        // Usamos y ahora deben estar en estado invencible
+        marco.useStar();
+        luis.useStar();
+        assertTrue(marco.isInvincible());
+        assertTrue(luis.isInvincible());
+        // Seteamos no invencible y ahora probamos con useItem
+        marco.setInvincible(false);
+        luis.setInvincible(false);
+        marco.useItem(star);
+        luis.useItem(star);
+        assertTrue(marco.isInvincible());
+        assertTrue(luis.isInvincible());
+        // Seteamos no invencible para que no afecte el código
+        marco.setInvincible(false);
+        luis.setInvincible(false);
     }
 
     @Test
     void attackCost() {
+
     }
 
     @Test

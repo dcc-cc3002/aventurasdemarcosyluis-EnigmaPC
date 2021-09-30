@@ -73,7 +73,7 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
     public void useRedMushroom() {
         double amountOfHeal = this.getMaxHP()*0.1;
         int HP = this.getHP();
-        int newHP = (int) (HP + amountOfHeal);
+        int newHP = (int) Math.round(HP + amountOfHeal);
         this.setHP(newHP);
     }
 
@@ -82,7 +82,7 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
     }
 
     public double damageThornsSpiny() {
-        return 0.05*this.getHP();
+        return (double) Math.round(0.05*this.getHP());
     }
 
     protected void useItem(IObject item) {
@@ -93,7 +93,7 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
     }
 
     public double enemyDoDamage(IEnemy enemy) {
-        return 0.75*this.preDamage(enemy);
+        return (double) (Math.round(0.75*this.preDamage(enemy)));
     }
 
     public void attackCost(IAttacks attack) {
@@ -109,6 +109,7 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
 
         AbstractPlayer that = (AbstractPlayer) o;
 
+        if (isInvincible() != that.isInvincible()) return false;
         return inventory.equals(that.inventory);
     }
 

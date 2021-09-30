@@ -12,15 +12,23 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.aventurasdemarcoyluis.abstract_classes.AbstractEntitiesTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/abstract_classes/AbstractEntities.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/abstract_classes/AbstractEntities.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/abstract_classes/AbstractPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/abstract_classes/AbstractPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/aventurasdemarcoyluis/abstract_classes/AbstractEntitiesTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/aventurasdemarcoyluis/abstract_classes/AbstractEntitiesTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/aventurasdemarcoyluis/abstract_classes/AbstractPlayerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/aventurasdemarcoyluis/abstract_classes/AbstractPlayerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/aventurasdemarcoyluis/abstract_classes/BaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/aventurasdemarcoyluis/abstract_classes/BaseTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.aventurasdemarcoyluis.abstract_classes.AbstractPlayerTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.aventurasdemarcoyluis.abstract_classes.AbstractPlayerTest.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.aventurasdemarcoyluis.abstract_classes.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/com.aventurasdemarcoyluis.abstract_classes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.aventurasdemarcoyluis.abstract_classes.AbstractEntitiesTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.aventurasdemarcoyluis.abstract_classes.AbstractPlayerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.aventurasdemarcoyluis.abstract_classes.AbstractPlayerTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/abstract_classes/AbstractEntities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/abstract_classes/AbstractEntities.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/abstract_classes/AbstractPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/abstract_classes/AbstractPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/abstract_classes/AbstractEntitiesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/abstract_classes/AbstractEntitiesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/abstract_classes/AbstractPlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/abstract_classes/AbstractPlayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/abstract_classes/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/abstract_classes/BaseTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +86,7 @@
       <recent name="com.aventurasdemarcoyluis.abstract_classes" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.AbstractPlayerTest.canAttack">
+  <component name="RunManager" selected="Gradle.AbstractPlayerTest.useStar">
     <configuration name="AbstractEntitiesTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -100,12 +108,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="AbstractEntitiesTest.testEquals" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AbstractPlayerTest.enemyDoDamage" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.aventurasdemarcoyluis.abstract_classes.AbstractEntitiesTest.testEquals&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.aventurasdemarcoyluis.abstract_classes.AbstractPlayerTest.enemyDoDamage&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -121,12 +129,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="AbstractEntitiesTest.testHashCode" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AbstractPlayerTest.useHoneySyrup" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.aventurasdemarcoyluis.abstract_classes.AbstractEntitiesTest.testHashCode&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.aventurasdemarcoyluis.abstract_classes.AbstractPlayerTest.useHoneySyrup&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -142,12 +150,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="AbstractPlayerTest.canAttack" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AbstractPlayerTest.useRedMushroom" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.aventurasdemarcoyluis.abstract_classes.AbstractPlayerTest.canAttack&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.aventurasdemarcoyluis.abstract_classes.AbstractPlayerTest.useRedMushroom&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -163,12 +171,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="AbstractPlayerTest.inventoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="AbstractPlayerTest.useStar" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.aventurasdemarcoyluis.abstract_classes.AbstractPlayerTest.inventoryTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.aventurasdemarcoyluis.abstract_classes.AbstractPlayerTest.useStar&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -186,11 +194,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.AbstractPlayerTest.canAttack" />
-        <item itemvalue="Gradle.AbstractPlayerTest.inventoryTest" />
+        <item itemvalue="Gradle.AbstractPlayerTest.useStar" />
+        <item itemvalue="Gradle.AbstractPlayerTest.useHoneySyrup" />
+        <item itemvalue="Gradle.AbstractPlayerTest.useRedMushroom" />
+        <item itemvalue="Gradle.AbstractPlayerTest.enemyDoDamage" />
         <item itemvalue="Gradle.AbstractEntitiesTest" />
-        <item itemvalue="Gradle.AbstractEntitiesTest.testHashCode" />
-        <item itemvalue="Gradle.AbstractEntitiesTest.testEquals" />
       </list>
     </recent_temporary>
   </component>
@@ -207,7 +215,7 @@
       <workItem from="1632887547039" duration="1806000" />
       <workItem from="1632925105837" duration="1822000" />
       <workItem from="1632927215857" duration="2591000" />
-      <workItem from="1632971512080" duration="4772000" />
+      <workItem from="1632971512080" duration="9987000" />
     </task>
     <servers />
   </component>
