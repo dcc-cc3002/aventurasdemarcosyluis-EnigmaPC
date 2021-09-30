@@ -50,20 +50,6 @@ class HammerAttackTest extends BaseTest {
         // goomba : HP = 12
         // spiny : HP = 50
         hammer.hurts(goomba, 5);
-        assertTrue(goomba.getHP() == 7 || goomba.getHP() == 12);
-        hammer.hurts(goomba, 11);
-        assertTrue(goomba.getHP() == 0 || goomba.getHP() == 1
-                || goomba.getHP() == 12 || goomba.getHP() == 7);
-        hammer.hurts(goomba, 50);
-        assertTrue(goomba.getHP() == 0 || goomba.getHP() == 1
-                || goomba.getHP() == 12 || goomba.getHP() == 7);
-        // Ya no hace reduce daño si el enemigo está KO
-        // (Pero esta no es la aplicación real, lo real está
-        // en el método attack de cada Player)
-        hammer.hurts(spiny, 11);
-        assertTrue(spiny.getHP() == 39 || spiny.getHP() == 50);
-        hammer.hurts(spiny, 5);
-        assertTrue(spiny.getHP() == 34 || spiny.getHP() == 45
-                || spiny.getHP() == 39 || spiny.getHP() == 50);
+
     }
 }

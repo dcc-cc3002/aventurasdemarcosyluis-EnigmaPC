@@ -31,18 +31,7 @@ class LuisTest extends BaseTest {
         // El daño del ataque se calcula con la fórmula entregada en el enunciado
         // Probemos que también se van gastando los FP
         luis.attack(goomba,hammer);
-        assertTrue(goomba.getHP() == 50 || goomba.getHP() == 27);
-        assertTrue(luis.getFP() == 7 || luis.getFP() == 5);
-        luis.attack(goomba,hammer);
-        assertTrue(goomba.getHP() == 50 || goomba.getHP() == 27
-                || goomba.getHP() == 4);
-        assertTrue(luis.getFP() == 7 || luis.getFP() == 5
-                || luis.getFP() == 3);
-        // Ahora con spiny
-        luis.attack(spiny,hammer);
-        assertTrue(spiny.getHP() == 0 || spiny.getHP() == 20);
-        assertTrue(luis.getFP() == 7 || luis.getFP() == 5
-                || luis.getFP() == 3 || luis.getFP() == 1);
+
     }
 
     @Test

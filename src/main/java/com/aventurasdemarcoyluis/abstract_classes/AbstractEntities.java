@@ -1,6 +1,7 @@
 package com.aventurasdemarcoyluis.abstract_classes;
 
 import com.aventurasdemarcoyluis.interfaces.IEntities;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * <b>Clase abstracta Entities:</b> <br>
@@ -82,7 +83,7 @@ public abstract class AbstractEntities implements IEntities {
      * @param entities Entidad externa (la que está atacando)
      * @return Daño previo que hace la entidad externa a la entidad (this)
      */
-    public double preDamage(IEntities entities) {
+    public double preDamage(@NotNull IEntities entities) {
         return Math.round(entities.getATK()*((double) entities.getLVL()/this.getDEF()));
     }
 
@@ -126,7 +127,7 @@ public abstract class AbstractEntities implements IEntities {
      * Entrega la cantidad de HP que tiene la entidad en el momento.
      * @return Cantidad de HP que posee la entidad
      */
-    public int getHP() {
+    protected int getHP() {
         return this.HP;
     }
 

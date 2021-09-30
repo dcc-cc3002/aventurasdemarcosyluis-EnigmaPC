@@ -15,6 +15,7 @@ import com.aventurasdemarcoyluis.interfaces.IObject;
  * @see com.aventurasdemarcoyluis.items.Star
  */
 public abstract class AbstractItem implements IObject {
+    // Campos
     private String name;
 
     /**
@@ -29,7 +30,7 @@ public abstract class AbstractItem implements IObject {
     /**
      * Determina si un item es igual a otro.
      * Solamente se compara el nombre.
-     * @param obj item a comparar
+     * @param obj Item a comparar
      * @return Si el item es igual al item a comparar.
      */
     @Override
