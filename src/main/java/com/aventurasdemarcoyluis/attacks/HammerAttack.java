@@ -11,7 +11,7 @@ public class HammerAttack extends AbstractAttackType {
 
     public boolean attackFailed() {
         int dado = (int) (Math.random()*4);
-        return dado != 0;
+        return dado == 0;
     }
 
     @Override
