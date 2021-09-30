@@ -10,6 +10,9 @@ import com.aventurasdemarcoyluis.interfaces.IAttacks;
  * <b>K</b>: Constante K de daño del tipo de ataque <br>
  *
  * @author Andrea PC
+ *
+ * @see com.aventurasdemarcoyluis.attacks.HammerAttack
+ * @see com.aventurasdemarcoyluis.attacks.JumpAttack
  */
 public abstract class AbstractAttackType implements IAttacks {
     // Campos
@@ -25,24 +28,34 @@ public abstract class AbstractAttackType implements IAttacks {
     }
 
     /**
-     * 
-     * @return
+     * Entrega la constante K de daño del tipo de ataque
+     * @return Constante K de daño del tipo de ataque
      */
     public double getK() {
         return K;
     }
 
+    /**
+     * Determina si un tipo de ataque es igual a otra.
+     * Se comparan tanto el costo en FP como la constante K de daño.
+     * @param obj Tipo de ataque a comparar
+     * @return Si el tipo de ataque a comparar es el mismo tipo de ataque (this)
+     */
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof AbstractAttackType)) return false;
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof AbstractAttackType)) return false;
 
-        AbstractAttackType that = (AbstractAttackType) o;
+        AbstractAttackType that = (AbstractAttackType) obj;
 
         if (getFPCost() != that.getFPCost()) return false;
         return Double.compare(that.getK(), getK()) == 0;
     }
 
+    /**
+     * Entrega el hashCode de un tipo de ataque
+     * @return hashCode de un tipo de ataque
+     */
     @Override
     public int hashCode() {
         int result;

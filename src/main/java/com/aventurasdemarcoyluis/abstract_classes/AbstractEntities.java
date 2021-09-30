@@ -16,6 +16,9 @@ import com.aventurasdemarcoyluis.interfaces.IEntities;
  * <b>name</b>: Nombre de la entidad (Diferenciará cada tipo de entidad) <br>
  *
  * @author Andrea PC
+ *
+ * @see AbstractEnemy
+ * @see AbstractPlayer
  */
 public abstract class AbstractEntities implements IEntities {
     // Campos
@@ -170,13 +173,13 @@ public abstract class AbstractEntities implements IEntities {
     /**
      * Determina si una entidad es igual a otra.
      * Se comparan tanto estadísticas como el nombre.
-     * @param entities Entidad a comparar
+     * @param obj Entidad a comparar
      * @return Si la entidad a comparar es la misma que la entidad (this)
      */
     @Override
-    public boolean equals(Object entities) {
-        if (this == entities) return true;
-        if (!(entities instanceof AbstractEntities that)) return false;
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof AbstractEntities that)) return false;
 
         if (!name.equals(that.name)) return false;
         if (getLVL() != that.getLVL()) return false;

@@ -2,23 +2,50 @@ package com.aventurasdemarcoyluis.abstract_classes;
 
 import com.aventurasdemarcoyluis.interfaces.IObject;
 
+/**
+ * <b>Clase abstracta Item:</b> <br>
+ * Modela los items que existirán en el mundo. <br>
+ * Tiene un único campo: <br>
+ * <b>name</b>: Nombre del item <br>
+ *
+ * @author Andrea PC
+ *
+ * @see com.aventurasdemarcoyluis.items.HoneySyrup
+ * @see com.aventurasdemarcoyluis.items.RedMushroom
+ * @see com.aventurasdemarcoyluis.items.Star
+ */
 public abstract class AbstractItem implements IObject {
     private String name;
 
-    public AbstractItem(String item) {
-        this.name = item;
+    /**
+     * <b>Constructor:</b> <br>
+     * Modela un item
+     * @param aName Nombre del item
+     */
+    public AbstractItem(String aName) {
+        this.name = aName;
     }
 
+    /**
+     * Determina si un item es igual a otro.
+     * Solamente se compara el nombre.
+     * @param obj item a comparar
+     * @return Si el item es igual al item a comparar.
+     */
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof AbstractItem)) return false;
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof AbstractItem)) return false;
 
-        AbstractItem that = (AbstractItem) o;
+        AbstractItem that = (AbstractItem) obj;
 
         return name.equals(that.name);
     }
 
+    /**
+     * Entrega el hashCode de un item
+     * @return hashCode de un item
+     */
     @Override
     public int hashCode() {
         return name.hashCode();

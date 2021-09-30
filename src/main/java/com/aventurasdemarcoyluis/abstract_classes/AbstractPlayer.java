@@ -7,6 +7,17 @@ import com.aventurasdemarcoyluis.interfaces.IPlayer;
 
 import java.util.Hashtable;
 
+/**
+ * <b>Clase abstracta Player:</b> <br>
+ * Modela el tipo de entidad JUGADOR <br>
+ * Se heredan los campos de la clase madre AbstractEntities.
+ * Y se añaden los siguientes: <br>
+ *
+ * @author Andrea PC
+ *
+ * @see com.aventurasdemarcoyluis.players.Marco
+ * @see com.aventurasdemarcoyluis.players.Luis
+ * */
 public abstract class AbstractPlayer extends AbstractEntities implements IPlayer {
     private boolean invincible;
     private Hashtable<IObject, Integer> inventory; // Variable to put Items
@@ -102,12 +113,12 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
     }
 
     @Override
-    public boolean equals(Object entities) {
-        if (this == entities) return true;
-        if (!(entities instanceof AbstractPlayer)) return false;
-        if (!super.equals(entities)) return false;
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof AbstractPlayer)) return false;
+        if (!super.equals(obj)) return false;
 
-        AbstractPlayer that = (AbstractPlayer) entities;
+        AbstractPlayer that = (AbstractPlayer) obj;
 
         if (isInvincible() != that.isInvincible()) return false;
         return inventory.equals(that.inventory);
