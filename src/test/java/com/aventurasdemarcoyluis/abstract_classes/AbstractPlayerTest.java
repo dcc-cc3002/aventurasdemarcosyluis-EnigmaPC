@@ -30,8 +30,8 @@ class AbstractPlayerTest extends BaseTest {
         redMushroom = new RedMushroom();
 
         // Enemigos
-        goomba = new Goomba(8, 9, 11, 40, 23);
-        spiny = new Spiny(16, 24, 35, 50, 0);
+        goomba = new Goomba(8, 9, 11, 40);
+        spiny = new Spiny(16, 24, 35, 50);
 
         // Ataques
         hammer = new HammerAttack();
@@ -104,7 +104,10 @@ class AbstractPlayerTest extends BaseTest {
     void canAttack() {
         // Un player puede atacar si tiene más de 0 FP
         assertTrue(marco.canAttack()); // marco tiene 42 FP
-        assertFalse(luis.canAttack()); // luis tiene 0
+        luis.setFP(0); // seteamos para que luis tenga 0 de FP
+        assertFalse(luis.canAttack());
+
+        luis.setFP(2);
     }
 
     @Test
@@ -112,12 +115,12 @@ class AbstractPlayerTest extends BaseTest {
         // Las espinas de Spiny hacen que el atacante reciba un daño del 5 % de su HP
         // (se testea el daño que debería hacer)
 
-        // luis tiene 2 de HP => el daño debería ser 0.1, redondeado = 0.0
-        // luis2 tiene 18 de HP => el daño debería ser 0.9, redondeado = 1.0
-        // marco tiene 57 de HP => el daño debería ser 2.85, redondeado = 3.0
-        assertEquals(luis.damageThornsSpiny(), 0);
-        assertEquals(luis2.damageThornsSpiny(), 1.0);
-        assertEquals(marco.damageThornsSpiny(), 3.0);
+        // luis tiene 2 de HP => el daño debería ser 0.1
+        // luis2 tiene 18 de HP => el daño debería ser 0.9
+        // marco tiene 57 de HP => el daño debería ser 2.85
+        assertEquals(luis.damageThornsSpiny(), 0.1);
+        assertEquals(luis2.damageThornsSpiny(), 0.9);
+        assertEquals(marco.damageThornsSpiny(), 2.85);
     }
 
     /**
@@ -179,6 +182,11 @@ class AbstractPlayerTest extends BaseTest {
         assertEquals(luis2.getFP(),luis2.getMaxFP());
         luis2.useHoneySyrup();
         assertEquals(luis2.getFP(),luis2.getMaxFP());
+
+        // Seteamos los FP otra vez para que no afecte el código
+        marco.setFP(42);
+        luis.setFP(2);
+        luis2.setFP(7);
     }
 
     /**
@@ -220,6 +228,11 @@ class AbstractPlayerTest extends BaseTest {
         assertEquals(luis2.getHP(),luis2.getMaxHP());
         luis2.useRedMushroom();
         assertEquals(luis2.getHP(),luis2.getMaxHP());
+
+        // Seteamos la vida otra vez para que no afecte el código
+        marco.setHP(57);
+        luis.setHP(2);
+        luis2.setHP(18);
     }
 
     /**
@@ -253,16 +266,93 @@ class AbstractPlayerTest extends BaseTest {
         luis.setInvincible(false);
     }
 
+    /**
+     * Se prueban:
+     * {@code attackCost} de AbstractPlayer y
+     * {@code getFPCost} de AbstractAttackType.
+     */
     @Test
-    void attackCost() {
+    void useFPtoAttack() {
+        // Setea un nuevo FP, luego del uso de un ataque
+        // hammer : FPCost = 2
+        // jump : FPCost = 1
+        // marco tiene 42 de FP
+        assertEquals(marco.getFP(),42);
+        marco.useFPtoAttack(hammer);
+        assertEquals(marco.getFP(), 40);
+        marco.useFPtoAttack(hammer);
+        assertEquals(marco.getFP(), 38);
+        marco.useFPtoAttack(jump);
+        assertEquals(marco.getFP(), 37);
+        marco.useFPtoAttack(jump);
+        assertEquals(marco.getFP(), 36);
+        // luis2 tiene 7 de FP
+        assertEquals(luis2.getFP(),7);
+        luis2.useFPtoAttack(hammer);
+        assertEquals(luis2.getFP(), 5);
+        luis2.useFPtoAttack(hammer);
+        assertEquals(luis2.getFP(), 3);
+        luis2.useFPtoAttack(jump);
+        assertEquals(luis2.getFP(), 2);
+        luis2.useFPtoAttack(jump);
+        assertEquals(luis2.getFP(), 1);
+        luis2.useFPtoAttack(hammer);
+        assertEquals(luis2.getFP(), 0); // Sobran -1 de FP pero llega a 0.
 
+        // Volvemos a setear los FP para que no afecte el código
+        marco.setFP(42);
+        luis2.setFP(7);
     }
 
     @Test
     void testEquals() {
+        // Sabemos por los test de AbstractEntities que se cumple que
+        // marco =/= luis, goomba =/= spiny, spiny =/= marco, etc.
+        // Ahora se probará que marco =/= marco2, si tienen distinto inventario
+        // o estado (cambio de FP, invenciblidad, etc), aunque tengan las mismas estadísticas.
+        // Primero, sabemos que marco y marco2 tienen las mismas estadísticas,
+        // inventario (vacío) y estado, por lo que son iguales.
+        assertTrue(marco.equals(marco2));
+        // Si añadimos items, ya no son iguales
+        marco.addItem(star,1);
+        assertFalse(marco.equals(marco2));
+        // Si añadimos los mismos items, sí.
+        marco2.addItem(star,1);
+        assertTrue(marco.equals(marco2));
+        // Si cambia el estado de uno, ya no son iguales
+        marco.useItem(star);
+        assertFalse(marco.equals(marco2));
+        // Si cambia el estado del otro al mismo, son iguales
+        marco2.useItem(star);
+        assertTrue(marco.equals(marco2));
+        // Si se cambia algun estado FP, HP, etc, ya no son iguales
+        marco.useFPtoAttack(hammer);
+        assertFalse(marco.equals(marco2));
+        // Si el otro sí ocupa el mismo ataque, sí.
+        marco2.useFPtoAttack(hammer);
+        assertTrue(marco.equals(marco2));
     }
 
     @Test
     void testHashCode() {
+        assertEquals(marco.hashCode(),marco2.hashCode());
+        // Si añadimos items, ya no son iguales
+        marco.addItem(star,1);
+        assertNotEquals(marco.hashCode(),marco2.hashCode());
+        // Si añadimos los mismos items, sí.
+        marco2.addItem(star,1);
+        assertEquals(marco.hashCode(),marco2.hashCode());
+        // Si cambia el estado de uno, ya no son iguales
+        marco.useItem(star);
+        assertNotEquals(marco.hashCode(),marco2.hashCode());
+        // Si cambia el estado del otro al mismo, son iguales
+        marco2.useItem(star);
+        assertEquals(marco.hashCode(),marco2.hashCode());
+        // Si se cambia algun estado FP, HP, etc, ya no son iguales
+        marco.useFPtoAttack(hammer);
+        assertNotEquals(marco.hashCode(),marco2.hashCode());
+        // Si el otro sí ocupa el mismo ataque, sí.
+        marco2.useFPtoAttack(hammer);
+        assertEquals(marco.hashCode(),marco2.hashCode());
     }
 }

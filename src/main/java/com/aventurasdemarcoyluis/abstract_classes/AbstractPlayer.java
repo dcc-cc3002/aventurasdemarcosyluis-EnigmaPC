@@ -82,7 +82,7 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
     }
 
     public double damageThornsSpiny() {
-        return (double) Math.round(0.05*this.getHP());
+        return 0.05*this.getHP();
     }
 
     protected void useItem(IObject item) {
@@ -96,7 +96,7 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
         return (double) (Math.round(0.75*this.preDamage(enemy)));
     }
 
-    public void attackCost(IAttacks attack) {
+    public void useFPtoAttack(IAttacks attack) {
         int nuevoFP = this.getFP() - attack.getFPCost();
         this.setFP(nuevoFP);
     }

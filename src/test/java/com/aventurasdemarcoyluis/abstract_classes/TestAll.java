@@ -34,15 +34,15 @@ public class TestAll {
         // Entidades
         marco = new Marco(8, 9, 11, 40, 23);
         luis = new Luis(10, 11, 6, 51, 6);
-        goomba = new Goomba(2, 3, 4, 7, 0);
-        spiny = new Spiny(17, 25, 20, 90, 0);
-        boo = new Boo(9, 13, 11, 35, 0);
+        goomba = new Goomba(2, 3, 4, 7);
+        spiny = new Spiny(17, 25, 20, 90);
+        boo = new Boo(9, 13, 11, 35);
 
         copiamarco = new Marco(7, 8, 15, 4, 3);
         copialuis = new Luis(9, 10, 6, 51, 6);
-        copiagoomba = new Goomba(1, 2, 7, 7, 0);
-        copiaspiny = new Spiny(16, 24, 35, 50, 0);
-        copiaboo = new Boo(3, 6, 6, 35, 0);
+        copiagoomba = new Goomba(1, 2, 7, 7);
+        copiaspiny = new Spiny(16, 24, 35, 50);
+        copiaboo = new Boo(3, 6, 6, 35);
 
         // Objetos
         honeySyrup = new HoneySyrup();

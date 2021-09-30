@@ -36,7 +36,7 @@ public abstract class AbstractEntities implements IEntities{
     }
 
     public double preDamage(IEntities entities) {
-        return (double) (Math.round(entities.getATK()*((double) entities.getLVL()/this.getDEF())));
+        return Math.round(entities.getATK()*((double) entities.getLVL()/this.getDEF()));
     }
 
     protected void setFP(int nuevoFP) {

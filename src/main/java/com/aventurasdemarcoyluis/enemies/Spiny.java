@@ -8,8 +8,9 @@ import com.aventurasdemarcoyluis.players.Luis;
 import com.aventurasdemarcoyluis.players.Marco;
 
 public class Spiny extends AbstractEnemy implements IAttackedByLuis {
-    public Spiny(int level, int attack, int defense, int healPoints, int fightPoints) {
-        super(level, attack, defense, healPoints, fightPoints, "Spiny");
+
+    public Spiny(int level, int attack, int defense, int healPoints) {
+        super(level, attack, defense, healPoints, 0, "Spiny");
     }
 
     public void attack(IPlayer player) {
@@ -19,7 +20,7 @@ public class Spiny extends AbstractEnemy implements IAttackedByLuis {
     }
 
     public void attackedByLuis(Luis luis, IAttacks attack) {
-        luis.attackCost(attack);
+        luis.useFPtoAttack(attack);
         if (attack.hurtsSpiny()) {
             attack.hurts(this, this.damageToHurt(luis, attack));
         } else {
@@ -29,7 +30,7 @@ public class Spiny extends AbstractEnemy implements IAttackedByLuis {
 
     @Override
     public void attackedByMarco(Marco marco, IAttacks attack) {
-        marco.attackCost(attack);
+        marco.useFPtoAttack(attack);
         if (attack.hurtsSpiny()) {
             attack.hurts(this, this.damageToHurt(marco, attack));
         } else {

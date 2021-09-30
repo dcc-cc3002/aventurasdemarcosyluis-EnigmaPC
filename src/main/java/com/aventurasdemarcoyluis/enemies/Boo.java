@@ -8,8 +8,8 @@ import com.aventurasdemarcoyluis.abstract_classes.AbstractEnemy;
 
 public class Boo extends AbstractEnemy {
 
-    public Boo(int level, int attack, int defense, int healPoints, int fightPoints) {
-        super(level, attack, defense, healPoints, fightPoints, "Boo");
+    public Boo(int level, int attack, int defense, int healPoints) {
+        super(level, attack, defense, healPoints, 0, "Boo");
     }
 
     public void attack(Luis luis) {
@@ -20,7 +20,7 @@ public class Boo extends AbstractEnemy {
 
     @Override
     public void attackedByMarco(Marco marco, IAttacks attack) {
-        marco.attackCost(attack);
+        marco.useFPtoAttack(attack);
         if (attack.hurtsBoo()) {
             attack.hurts(this, this.damageToHurt(marco, attack));
         } else {
