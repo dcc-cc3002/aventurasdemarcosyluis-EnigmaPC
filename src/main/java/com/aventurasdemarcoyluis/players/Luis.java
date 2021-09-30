@@ -13,7 +13,7 @@ import com.aventurasdemarcoyluis.interfaces.IAttackedByLuis;
 public class Luis extends AbstractPlayer implements IAttackedByBoo {
 
     public Luis(int level, int attack, int defense, int healPoints, int fightPoints) {
-        super(level, attack, defense, healPoints, fightPoints);
+        super(level, attack, defense, healPoints, fightPoints, "Luis");
     }
 
     public void attack(IAttackedByLuis enemy, IAttacks attack) {

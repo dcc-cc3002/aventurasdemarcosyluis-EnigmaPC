@@ -1,4 +1,4 @@
-package com.aventurasdemarcoyluis;
+package com.aventurasdemarcoyluis.abstract_classes;
 
 import com.aventurasdemarcoyluis.players.Marco;
 import com.aventurasdemarcoyluis.players.Luis;

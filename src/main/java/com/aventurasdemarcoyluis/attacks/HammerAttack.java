@@ -9,7 +9,6 @@ public class HammerAttack extends AbstractAttackType {
         this.K = 1.5;
     }
 
-
     public boolean attackFailed() {
         int dado = (int) (Math.random()*4);
         return dado != 0;

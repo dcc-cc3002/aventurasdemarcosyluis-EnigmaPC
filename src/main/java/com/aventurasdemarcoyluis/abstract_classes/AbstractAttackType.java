@@ -13,4 +13,25 @@ public abstract class AbstractAttackType implements IAttacks {
     public double getK() {
         return K;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof AbstractAttackType)) return false;
+
+        AbstractAttackType that = (AbstractAttackType) o;
+
+        if (getFPCost() != that.getFPCost()) return false;
+        return Double.compare(that.getK(), getK()) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = getFPCost();
+        temp = Double.doubleToLongBits(getK());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
+    }
 }

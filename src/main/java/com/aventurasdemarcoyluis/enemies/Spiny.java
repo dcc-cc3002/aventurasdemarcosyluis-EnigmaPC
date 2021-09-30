@@ -9,7 +9,7 @@ import com.aventurasdemarcoyluis.players.Marco;
 
 public class Spiny extends AbstractEnemy implements IAttackedByLuis {
     public Spiny(int level, int attack, int defense, int healPoints, int fightPoints) {
-        super(level, attack, defense, healPoints, fightPoints);
+        super(level, attack, defense, healPoints, fightPoints, "Spiny");
     }
 
     public void attack(IPlayer player) {

@@ -1,6 +1,5 @@
 package com.aventurasdemarcoyluis.abstract_classes;
 
-import com.aventurasdemarcoyluis.BaseTest;
 import com.aventurasdemarcoyluis.enemies.Boo;
 import com.aventurasdemarcoyluis.enemies.Goomba;
 import com.aventurasdemarcoyluis.enemies.Spiny;
@@ -50,77 +49,24 @@ class AbstractEntitiesTest extends BaseTest {
         assertEquals(boo.getHP(),0);
     }
 
-
-
-    @Test
-    void getFP() {
-    }
-
-    @Test
-    void setHP() {
-    }
-
-    @Test
-    void getHP() {
-    }
-
-    @Test
-    void getLVL() {
-    }
-
-    @Test
-    void setLVL() {
-    }
-
-    @Test
-    void getATK() {
-    }
-
-    @Test
-    void setATK() {
-    }
-
-    @Test
-    void getDEF() {
-    }
-
-    @Test
-    void setDEF() {
-    }
-
-    @Test
-    void getMaxHP() {
-    }
-
-    @Test
-    void setMaxHP() {
-    }
-
-    @Test
-    void getMaxFP() {
-    }
-
-    @Test
-    void setMaxFP() {
-    }
-
     @Test
     void testEquals() {
-        assertFalse(marco.equals(marco2)); // Diferentes estadísticas
-        assertFalse(marco.equals(luis)); // Diferentes estadísticas
-        assertTrue(marco.equals(goomba2)); // Mismas estadísticas
-        assertFalse(luis.equals(boo)); // Diferentes estadísticas
-        assertTrue(boo.equals(boo)); // Mismas estadísticas
-        assertFalse(spiny.equals(spiny2)); // Diferentes estadísticas
+        assertFalse(marco.equals(marco2)); // Diferentes estadísticas, mismo Tipo (Marco) = diferentes
+        assertFalse(marco.equals(luis)); // Diferentes estadísticas, diferente Tipo = diferentes
+        assertFalse(marco.equals(goomba2)); // Mismas estadísticas, diferente Tipo = diferentes
+        assertFalse(luis.equals(boo)); // Diferentes estadísticas, diferente Tipo = diferentes
+        assertTrue(boo.equals(boo)); // Mismas estadísticas, mismo Tipo = iguales
+        assertFalse(spiny.equals(spiny2)); // Diferentes estadísticas, mismo Tipo (Spiny) = diferentes
     }
 
     @Test
     void testHashCode() {
-        assertNotEquals(marco.hashCode(),marco2.hashCode()); // Diferentes estadísticas
-        assertNotEquals(marco.hashCode(),luis.hashCode()); // Diferentes estadísticas
-        assertEquals(marco.hashCode(),goomba2.hashCode()); // Mismas estadísticas
-        assertNotEquals(luis,boo); // Diferentes estadísticas
-        assertEquals(boo,boo); // Mismas estadísticas
-        assertNotEquals(spiny,spiny2); // Diferentes estadísticas
+        assertNotEquals(marco.hashCode(),marco2.hashCode()); // Diferentes
+        assertNotEquals(marco.hashCode(),luis.hashCode()); // Diferentes
+        assertNotEquals(marco.hashCode(),goomba2.hashCode()); // Diferentes
+        assertNotEquals(luis.hashCode(),boo.hashCode()); // Diferentes
+        assertEquals(boo.hashCode(),boo.hashCode()); // Iguales
+        assertNotEquals(spiny.hashCode(),spiny2.hashCode()); // Diferentes
+        assertEquals(goomba.hashCode(),goomba.hashCode()); // Iguales
     }
 }

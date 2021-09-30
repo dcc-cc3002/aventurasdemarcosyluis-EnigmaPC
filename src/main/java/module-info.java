@@ -3,8 +3,6 @@ module com.aventurasdemarcoyluis {
     requires javafx.fxml;
 
 
-    opens com.aventurasdemarcoyluis to javafx.fxml;
-    exports com.aventurasdemarcoyluis;
     exports com.aventurasdemarcoyluis.abstract_classes;
     opens com.aventurasdemarcoyluis.abstract_classes to javafx.fxml;
     exports com.aventurasdemarcoyluis.interfaces;

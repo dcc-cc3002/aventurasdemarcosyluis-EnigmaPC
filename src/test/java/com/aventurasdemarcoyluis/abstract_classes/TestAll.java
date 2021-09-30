@@ -1,3 +1,5 @@
+package com.aventurasdemarcoyluis.abstract_classes;
+
 import com.aventurasdemarcoyluis.players.Marco;
 import com.aventurasdemarcoyluis.players.Luis;
 import com.aventurasdemarcoyluis.enemies.Goomba;

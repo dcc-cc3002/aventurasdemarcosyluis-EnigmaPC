@@ -3,15 +3,16 @@ package com.aventurasdemarcoyluis.abstract_classes;
 import com.aventurasdemarcoyluis.interfaces.IEntities;
 
 public abstract class AbstractEntities implements IEntities{
-    private int LVL;
-    private int ATK;
-    private int DEF;
-    private int maxHP;
-    private int maxFP;
+    private final int LVL;
+    private final int ATK;
+    private final int DEF;
+    private final int maxHP;
+    private final int maxFP;
     private int HP;
     private int FP;
+    private final String name;
 
-    public AbstractEntities(int level, int attack, int defense, int healPoints, int fightPoints) {
+    public AbstractEntities(int level, int attack, int defense, int healPoints, int fightPoints, String name) {
         this.LVL = level;
         this.ATK = attack;
         this.DEF = defense;
@@ -19,10 +20,10 @@ public abstract class AbstractEntities implements IEntities{
         this.HP = healPoints;
         this.maxFP = fightPoints;
         this.FP = fightPoints;
+        this.name = name;
     }
 
     public void dodge() {
-
     }
 
     public boolean isNotDead() {
@@ -66,56 +67,35 @@ public abstract class AbstractEntities implements IEntities{
         return LVL;
     }
 
-    void setLVL(int LVL) {
-        this.LVL = LVL;
-    }
-
     public int getATK() {
         return ATK;
-    }
-
-    void setATK(int ATK) {
-        this.ATK = ATK;
     }
 
     int getDEF() {
         return DEF;
     }
 
-    void setDEF(int DEF) {
-        this.DEF = DEF;
-    }
-
     public int getMaxHP() {
         return maxHP;
-    }
-
-    void setMaxHP(int mHP) {
-        this.maxHP = mHP;
     }
 
     int getMaxFP() {
         return maxFP;
     }
 
-    void setMaxFP(int mFP) {
-        this.maxFP = mFP;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof AbstractEntities)) return false;
+        if (!(o instanceof AbstractEntities that)) return false;
 
-        AbstractEntities that = (AbstractEntities) o;
-
+        if (!name.equals(that.name)) return false;
         if (getLVL() != that.getLVL()) return false;
         if (getATK() != that.getATK()) return false;
         if (getDEF() != that.getDEF()) return false;
         if (getMaxHP() != that.getMaxHP()) return false;
         if (getMaxFP() != that.getMaxFP()) return false;
         if (getHP() != that.getHP()) return false;
-        return getFP() == that.getFP();
+        return (getFP() == that.getFP());
     }
 
     @Override
@@ -127,6 +107,7 @@ public abstract class AbstractEntities implements IEntities{
         result = 31 * result + getMaxFP();
         result = 31 * result + getHP();
         result = 31 * result + getFP();
+        result = 31 * result + name.hashCode();
         return result;
     }
 }

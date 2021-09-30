@@ -8,7 +8,7 @@ import com.aventurasdemarcoyluis.interfaces.IEnemy;
 
 public class Marco extends AbstractPlayer {
     public Marco(int level, int attack, int defense, int healPoints, int fightPoints) {
-        super(level, attack, defense, healPoints, fightPoints);
+        super(level, attack, defense, healPoints, fightPoints, "Marco");
     }
 
     public void attack(IEnemy enemy, IAttacks attack) {

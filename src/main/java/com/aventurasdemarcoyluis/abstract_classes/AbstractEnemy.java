@@ -6,8 +6,8 @@ import com.aventurasdemarcoyluis.interfaces.IPlayer;
 
 public abstract class AbstractEnemy extends AbstractEntities implements IEnemy {
 
-    public AbstractEnemy(int level, int attack, int defense, int healPoints, int fightPoints) {
-        super(level, attack, defense, healPoints, fightPoints);
+    public AbstractEnemy(int level, int attack, int defense, int healPoints, int fightPoints, String name) {
+        super(level, attack, defense, healPoints, fightPoints, name);
     }
 
     protected double damageToHurt(IPlayer player, IAttacks attack) {

@@ -11,7 +11,7 @@ import com.aventurasdemarcoyluis.players.Marco;
 public class Goomba extends AbstractEnemy implements IAttackedByLuis {
 
     public Goomba(int level, int attack, int defense, int healPoints, int fightPoints) {
-        super(level, attack, defense, healPoints, fightPoints);
+        super(level, attack, defense, healPoints, fightPoints, "Goomba");
     }
 
     public void attack(IPlayer player) {

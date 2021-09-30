@@ -9,7 +9,7 @@ import com.aventurasdemarcoyluis.abstract_classes.AbstractEnemy;
 public class Boo extends AbstractEnemy {
 
     public Boo(int level, int attack, int defense, int healPoints, int fightPoints) {
-        super(level, attack, defense, healPoints, fightPoints);
+        super(level, attack, defense, healPoints, fightPoints, "Boo");
     }
 
     public void attack(Luis luis) {

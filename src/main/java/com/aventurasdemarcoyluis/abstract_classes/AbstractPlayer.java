@@ -11,8 +11,8 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
     private boolean invincible;
     private Hashtable<IObject, Integer> inventory; // Variable to put Items
 
-    public AbstractPlayer(int level, int attack, int defense, int healPoints, int fightPoints) {
-        super(level, attack, defense, healPoints, fightPoints);
+    public AbstractPlayer(int level, int attack, int defense, int healPoints, int fightPoints, String name) {
+        super(level, attack, defense, healPoints, fightPoints, name);
         this.inventory = new Hashtable<>(3);
         this.invincible = false;
     }
@@ -99,4 +99,21 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
         this.setFP(nuevoFP);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof AbstractPlayer)) return false;
+        if (!super.equals(o)) return false;
+
+        AbstractPlayer that = (AbstractPlayer) o;
+
+        return inventory.equals(that.inventory);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + inventory.hashCode();
+        return result;
+    }
 }
