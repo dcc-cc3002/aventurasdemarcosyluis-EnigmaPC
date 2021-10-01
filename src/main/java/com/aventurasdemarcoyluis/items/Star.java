@@ -30,6 +30,7 @@ public class Star extends AbstractItem {
      */
     @Override
     public void use(IPlayer player) {
+        System.out.println(player.getName()+" ha usado Star");
         player.useStar();
     }
 }

@@ -1,16 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.aventurasdemarcoyluis.players.MarcoTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-10-01T04:28:08" hostname="LAPTOP-BPDICMJD" time="0.004">
+<testsuite name="com.aventurasdemarcoyluis.players.MarcoTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-10-01T05:44:22" hostname="LAPTOP-BPDICMJD" time="0.009">
   <properties/>
-  <testcase name="attackedBySpiny()" classname="com.aventurasdemarcoyluis.players.MarcoTest" time="0.0"/>
-  <testcase name="attack()" classname="com.aventurasdemarcoyluis.players.MarcoTest" time="0.002"/>
-  <testcase name="attackedByGoomba()" classname="com.aventurasdemarcoyluis.players.MarcoTest" time="0.001"/>
-  <system-out><![CDATA[Se ha esquivado el ataque
+  <testcase name="attackedBySpiny()" classname="com.aventurasdemarcoyluis.players.MarcoTest" time="0.001"/>
+  <testcase name="attack()" classname="com.aventurasdemarcoyluis.players.MarcoTest" time="0.006"/>
+  <testcase name="attackedByGoomba()" classname="com.aventurasdemarcoyluis.players.MarcoTest" time="0.0"/>
+  <system-out><![CDATA[Marco es atacado por Spiny y recibe 2 de daño
+Marco es atacado por Spiny y recibe 2 de daño
+Marco es atacado por Spiny y recibe 2 de daño
+Marco es atacado por Spiny y recibe 2 de daño
+Marco es atacado por Spiny y recibe 2 de daño
+Marco es atacado por Spiny y recibe 2 de daño
+Marco usa Martillo y le hace21.0de daño a Goomba
+Marco usa Martillo y le hace21.0de daño a Goomba
+Se ha esquivado el ataque
+Marco usa Salto y le hace14.0de daño a Goomba
+Marco usa Salto y le hace14.0de daño a Goomba
+Marco usa Salto y le hace14.0de daño a Goomba
+Marco usa Salto y le hace14.0de daño a Goomba
 Spiny se protege con sus pinchos
+Spiny le hace 2 de daño a Marco
 Spiny se protege con sus pinchos
+Spiny le hace 2 de daño a Marco
 Spiny se protege con sus pinchos
+Spiny le hace 2 de daño a Marco
 Spiny se protege con sus pinchos
+Spiny le hace 2 de daño a Marco
+Marco usa Salto y le hace 22 de daño a Boo
+Marco no puede atacar
 Spiny se protege con sus pinchos
+Spiny le hace 2 de daño a Marco
+Marco no puede atacar
 Spiny se protege con sus pinchos
+Spiny le hace 2 de daño a Marco
+Marco no puede atacar
+Marco no puede atacar
+Marco es atacado por Goomba y recibe 29 de daño
+Marco es atacado por Goomba y recibe 29 de daño
+Marco es atacado por Goomba y recibe 29 de daño
+Marco es atacado por Goomba y recibe 29 de daño
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

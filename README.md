@@ -13,7 +13,7 @@ en donde se programaron
 todas las clases, métodos, interfaces, etc. Se divide en: <br>
 
   - [MODEL_abstract_classes](src/main/java/com/aventurasdemarcoyluis/abstract_classes):
-  En este package se encuentran todas las clases abstractas creadas.
+  En este package se encuentran todas las clases abstractas creadas y una clase ejecutable de ejemplo de juego.
 Las cuales referencian a cada modelo: **Item** _(AbstractItem)_, **Entidad** _(AbstractEntities)_,
   **Enemigo** _(AbstractEnemy)_, **Player** _(AbstractPlayer)_, **Tipo de Ataque** _(AbstractAttackType)_. <br>
   - [MODEL_interfaces](src/main/java/com/aventurasdemarcoyluis/interfaces):
@@ -82,7 +82,8 @@ Para simular de mejor manera las peleas:
 
 - **Por ahora** el "esquivar" será considerado como el método ***dodge*** (en _AbstractEntities_)
 que printeará un mensaje que dice "Se ha esquivado el ataque".
-- **Por ahora** al atacar a Spiny con un Salto se lanzará un mensaje que dirá "Spiny se 
+- **Por ahora** se añadieron mensajes que printean las interacciones de items y pelea 
+entre los jugadores y enemigos. Por ejemplo, al atacar a Spiny con un Salto se lanzará un mensaje que dirá "Spiny se 
 protege con sus pinchos".
 
 El ataque es calculado con la fórmula de la sección 1.1.3 del
@@ -109,6 +110,16 @@ El programa en sí se basa meramente en la interacción de Marco y Luis con el m
 enemigos. Los métodos que estos utilizan llamarán a los métodos necesarios en las clases necesarias
 para realizar lo que necesiten. Por lo que meramente todo se basa en los métodos de Marco, Luis (y los
 que estos heredan de _AbstractPlayer_ para el inventario) y los enemigos.
+
+Como se añadieron mensajes que printean lo que sucede en batalla, para probar el funcionamiento
+del programa se pueden revisar los tests de los Jugadores
+([TEST_players](src/test/java/com/aventurasdemarcoyluis/players)) o de los Enemigos
+([TEST_enemies](src/test/java/com/aventurasdemarcoyluis/enemies)). Al ejecutar estos tests
+se imprimirá en pantalla lo que sucede.
+
+Además, se añade la Clase Ejecutable 
+[GAME_EXAMPLE](src/main/java/com/aventurasdemarcoyluis/abstract_classes/GameExample.java)
+la cual contiene un código  ejecutable bastante visual parecido al que se presenta a continuación.
 
 > Imaginemos que Marco y Luis se pasean juntos. <br>
 > Si Marco encuentra un Star y un Honey Syrup se ejecuta: <br>

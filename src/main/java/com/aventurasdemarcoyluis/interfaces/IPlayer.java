@@ -13,6 +13,7 @@ public interface IPlayer extends IEntities {
     void useHoneySyrup();
     void useRedMushroom();
     void useStar();
+    String getName();
 
     void attackedByGoomba(Goomba goomba);
     void attackedBySpiny(Spiny spiny);

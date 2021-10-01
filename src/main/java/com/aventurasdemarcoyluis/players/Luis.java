@@ -45,6 +45,8 @@ public class Luis extends AbstractPlayer implements IAttackedByBoo {
         if (this.enoughFP(attack) && this.isNotDead() && enemy.isNotDead()) {
             this.useFPtoAttack(attack);
             enemy.attackedByLuis(this, attack);
+        } else {
+            System.out.println("Luis no puede atacar");
         }
     }
 
@@ -55,6 +57,7 @@ public class Luis extends AbstractPlayer implements IAttackedByBoo {
     @Override
     public void attackedByBoo(Boo boo) {
         double damageDeal = this.enemyDoDamage(boo);
+        System.out.println("Luis es atacado por Boo y recibe "+(int) Math.round(damageDeal)+" de daño");
         this.getDamage(damageDeal);
     }
 
@@ -65,6 +68,7 @@ public class Luis extends AbstractPlayer implements IAttackedByBoo {
     @Override
     public void attackedByGoomba(Goomba goomba) {
         double damageDeal = this.enemyDoDamage(goomba);
+        System.out.println("Luis es atacado por Goomba y recibe "+(int) Math.round(damageDeal)+" de daño");
         this.getDamage(damageDeal);
     }
 
@@ -75,6 +79,7 @@ public class Luis extends AbstractPlayer implements IAttackedByBoo {
     @Override
     public void attackedBySpiny(Spiny spiny) {
         double damageDeal = this.enemyDoDamage(spiny);
+        System.out.println("Luis es atacado por Spiny y recibe "+(int) Math.round(damageDeal)+" de daño");
         this.getDamage(damageDeal);
     }
 }

@@ -61,6 +61,14 @@ public abstract class AbstractEntities implements IEntities {
     }
 
     /**
+     * Entrega el nombre de la entidad.
+     * @return Nombre de la entidad.
+     */
+    public String getName() {
+        return this.name;
+    }
+
+    /**
      * Determina si un personaje está muerto o no
      * @return Si un personaje tiene 0 de HP
      */

@@ -40,6 +40,8 @@ public class Goomba extends AbstractEnemy implements IAttackedByLuis {
     public void attack(IPlayer player) {
         if (this.isNotDead() && player.isNotDead() && !player.isInvincible()) {
             player.attackedByGoomba(this);
+        } else {
+            System.out.println("Goomba no puede atacar");
         }
     }
 
@@ -52,9 +54,15 @@ public class Goomba extends AbstractEnemy implements IAttackedByLuis {
     public void attackedByLuis(Luis luis, IAttacks attack) {
         if (attack.hurtsSpiny()) { // Entonces el ataque es Martillo
             if (!attack.attackFailed()) {
+                System.out.println("Luis usa Martillo y le hace "+(int) Math.round(this.damageToHurt(luis, attack))
+                +" de daño a Goomba");
                 this.getDamage(this.damageToHurt(luis, attack));
+            } else {
+                System.out.println("Luis usa Martillo, pero ha fallado");
             }
         } else {
+            System.out.println("Luis usa Salto y le hace "+(int) Math.round(this.damageToHurt(luis, attack))
+                    +" de daño a Goomba");
             this.getDamage(this.damageToHurt(luis, attack));
         }
     }
@@ -68,9 +76,15 @@ public class Goomba extends AbstractEnemy implements IAttackedByLuis {
     public void attackedByMarco(Marco marco, IAttacks attack) {
         if (attack.hurtsSpiny()) { // Entonces el ataque es Martillo
             if (!attack.attackFailed()) {
+                System.out.println("Marco usa Martillo y le hace "+(int) Math.round(this.damageToHurt(marco, attack))
+                        +" de daño a Goomba");
                 this.getDamage(this.damageToHurt(marco, attack));
+            } else {
+                System.out.println("Marco usa Martillo, pero ha fallado");
             }
         } else {
+            System.out.println("Marco usa Salto y le hace "+(int) Math.round(this.damageToHurt(marco, attack))
+                    +" de daño a Goomba");
             this.getDamage(this.damageToHurt(marco, attack));
         }
     }

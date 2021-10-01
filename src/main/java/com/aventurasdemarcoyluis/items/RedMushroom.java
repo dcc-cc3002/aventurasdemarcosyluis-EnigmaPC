@@ -30,6 +30,7 @@ public class RedMushroom extends AbstractItem {
      */
     @Override
     public void use(IPlayer player) {
+        System.out.println(player.getName()+" ha usado Red Mushroom");
         player.useRedMushroom();
     }
 }

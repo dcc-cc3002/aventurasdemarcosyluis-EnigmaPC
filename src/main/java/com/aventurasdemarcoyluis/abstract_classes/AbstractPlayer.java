@@ -171,7 +171,7 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
      * El item que se use se consume del inventario.
      * @param item Item que se quiere usar.
      */
-    protected void useItem(IObject item) {
+    public void useItem(IObject item) {
         if (hasItem(item)) {
             item.use(this);
             this.removeItem(item, 1);

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.aventurasdemarcoyluis.enemies.GoombaTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-01T04:28:08" hostname="LAPTOP-BPDICMJD" time="0.001">
+<testsuite name="com.aventurasdemarcoyluis.enemies.GoombaTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-01T05:44:22" hostname="LAPTOP-BPDICMJD" time="0.002">
   <properties/>
-  <testcase name="attackTest()" classname="com.aventurasdemarcoyluis.enemies.GoombaTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="attackTest()" classname="com.aventurasdemarcoyluis.enemies.GoombaTest" time="0.002"/>
+  <system-out><![CDATA[Luis es atacado por Goomba y recibe 13 de daño
+Luis es atacado por Goomba y recibe 13 de daño
+Goomba no puede atacar
+Marco es atacado por Goomba y recibe 7 de daño
+Marco es atacado por Goomba y recibe 7 de daño
+Marco es atacado por Goomba y recibe 7 de daño
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
