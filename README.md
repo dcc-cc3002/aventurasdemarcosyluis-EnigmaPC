@@ -105,24 +105,83 @@ derivados de la clase abstracta _AbstractItem_. Además, los ataques disponibles
 ocupar son Martillo (HammerAttack) y Salto (JumpAttack) derivados de la clase abstracta
 _AbstractAttackType_.
 
-> Si Marco encuentra una estrella se ejecuta: <br>
-> Marco.addItem(Star) <br>
-> Ahora Marco tiene una estrella en su inventario. Si se quiere comprobar se ejecuta: <br>
-> Marco.hasItem(Star) <br>
+> Si Marco encuentra un Star y un Honey Syrup se ejecuta: <br>
+> _Marco.addItem(Star) <br>
+> _Marco.addItem(Honey Syrup) <br>
+> Ahora Marco tiene un Star y Honey Syrup en su inventario. Si se quiere comprobar se ejecuta: <br>
+> _Marco.hasItem(Star) <br>
+> _Marco.hasItem(Honey Syrup) <br>
 > Si Marco y Luis se encuentran a Boo y quieren atacar, deben elegir con qué.
 > Si Marco ataca con Martillo se ejecuta: <br>
-> Marco.attack(Boo, Martillo) <br>
-> Marco pierde 2 FP. <br>
+> _Marco.attack(Boo, Martillo) <br>
+> _Marco pierde 2 FP. <br>
 > Pero Boo esquiva el ataque! Boo no puede atacar a Marco 
 > por lo que solo ataca a Luis. <br>
-> Boo.attack(Luis) **[Sería un error ejecutar Boo.attack(Marco)]** <br>
+> _Boo.attack(Luis) <br>
+> **[Sería un error ejecutar Boo.attack(Marco)]** <br>
 > Auch! Luis es herido por Boo, ahora quiere vengarse, pero
 > le dan demasiado miedo los fantasmas, sabe que la debilidad de Boo es Salto, así
 > que le dice a Marco que lo utilice.<br>
-> Marco.attack(Boo, Salto) <br>
-> Marco pierde 1 FP <br>
-> Eureka! Marco ha matado a Boo! Si intenta atacar otra vez no pasará nada.
-> Marco.attack(Boo, Salto)
+> _Marco.attack(Boo, Salto) <br>
+> _Marco pierde 1 FP <br>
+> _Marco mata a Boo
+> Eureka! Marco ha matado a Boo! Si intenta atacar otra vez no pasará nada. <br>
+> _Marco.attack(Boo, Salto) <br>
+> _Marco no pierde FP pues no puede atacar a un muerto. <br>
+> Spiny vio como se piteaban a su amigo y decide ir en venganza. <br>
+> _Spiny.attack(Marco) <br>
+> Auch! Marco es herido por Spiny, como la debilidad de Boo es Salto, decide
+> saltar para golpearle. <br>
+> _Marco.attack(Spiny, Salto) <br>
+> _Marco pierde 1 FP <br>
+> _Marco se queda sin FP <br>
+> _Spiny no es tonto y se protege con sus pinchos. <br>
+> Ay! Marco es herido por los pinchos de Spiny, por lo menos no es grave. 
+> Pero está re mal, no le quedan FP así que le dice a Luis que ataque por él, pero que 
+> no use Salto porque Spiny se protegerá. <br>
+> _Luis.attack(Spiny, Martillo) <br>
+> _Luis falla el ataque <br>
+> Por cosas del destino (y nada que ver con el 25% de probabilidad de fallar
+> un ataque con Martillo) Luis falla. Spiny contraataca. <br>
+> _Spiny.attack(Luis) <br>
+> Marco comienza a tener miedo de que Luis falle todos sus ataques así que
+> consume el Honey Syrup que tenía y ataca a Spiny. <br>
+> _Marco.useItem(Honey Syrup) <br>
+> _Marco ya no tiene Honey Syrup <br>
+> _Marco pasó de tener 0 a 3 FP <br>
+> _Marco.attack(Spiny, Martillo) <br>
+> _Marco ahora tiene 2 FP <br>
+> _Spiny muere. <br>
+> Chao Spiny! Se murió. Sin embargo, Goomba aparece de la nada y le pega
+> sendo combo al Luis.  <br>
+> _Goomba.attack(Luis) <br>
+> _Luis agoniza en el piso, tiene 1 HP. <br>
+> NoooOOooOOo! Grita Marco, con su sed de venganza consume la Star que
+> tenía en el inventario. <br>
+> _Marco.useItem(Star) <br>
+> _Ahora Marco es invencible <br>
+> Goomba le ataca ¡Pero no le hace nada, no puede es invencible!
+> _Goomba.attack(Marco) <br>
+> _No pasa nada <br>
+> _Marco.attack(Goomba, Salto) <br>
+> _Marco pierde 1 FP ahora tiene 1. <br>
+> A Goomba le dolió ese golpe pero sigue vivo! <br>
+> _Goomba.attack(Marco) <br>
+> _Marco sigue siendo invencible <br>
+> _Marco.attack(Goomba, Salto) <br>
+> _Marco se queda sin FP <br>
+> _Goomba muere <br>
+> Bien! Goomba murió y Marco corre a socorrer a Luis. Luis, en el piso
+> le dice a Marco que lamentablemente ha llegado su día. Pero Marco no se
+> rinde y le reza a los dioses para que Luis no muera. <br>
+> ... <br>
+> ... <br>
+> Es su día de suerte pues de la nada le han dado un Red Mushroom a Luis. <br>
+> _Luis.addItem(Red Mushroom) <br>
+> Luis en un último intento de vida, la consume. <br>
+> _Luis.useItem(Red Mushroom) <br>
+> ¡Luis ahora tiene suficiente vida para ir de copas con Marco! <br>
+> Todos son felices. Marco y Luis se besan. <br>
 
 
 
