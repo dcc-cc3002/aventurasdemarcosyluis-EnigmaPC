@@ -45,12 +45,14 @@ si quiere observar el código del modelo Luis, debe hacer click en **[MODEL_play
 el cual le llevará al package que contiene el modelo Luis. <br>
 
 Se recomienda ejecutar los test uno por uno, dirigiéndose al package donde
-se encuentra el test, haciendo click encima del nombre, luego otro click en **[Run 'Test' in...]**.<br>
+se encuentra el test, haciendo click encima del nombre y luego otro click en **[Run 'Test' in...]**.<br>
 
 Si se requiere revisar el coverage de los test del código, diríjase a la carpeta **[test]**, haga click derecho sobre ella,
 busque **[More Run/Debug]** y haga click en **[Run 'Test' With Coverage]**.
 
 ### Supuestos
+Siguiendo la tabla de ataques descrita en la sección 1.1.5 del
+[Enunciado](https://www.u-cursos.cl/ingenieria/2021/2/CC3002/1/tareas/r/2021091617049EBCB4003D150FF0__Enunciado_Tarea_01.pdf)
 
 
 
