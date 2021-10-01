@@ -77,7 +77,7 @@
       <recent name="com.aventurasdemarcoyluis.players" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.SpinyTest.attack">
+  <component name="RunManager" selected="Gradle.Tests in 'AventurasdeMarcoyLuis.test'">
     <configuration name="AbstractItemTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -185,10 +185,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Tests in 'AventurasdeMarcoyLuis.test'" />
         <item itemvalue="Gradle.SpinyTest.attack" />
         <item itemvalue="Gradle.GoombaTest" />
         <item itemvalue="Gradle.AbstractItemTest" />
-        <item itemvalue="Gradle.Tests in 'AventurasdeMarcoyLuis.test'" />
         <item itemvalue="Gradle.MarcoTest.attackedBySpiny" />
       </list>
     </recent_temporary>
