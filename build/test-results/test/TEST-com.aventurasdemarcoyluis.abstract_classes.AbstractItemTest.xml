@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.aventurasdemarcoyluis.abstract_classes.AbstractItemTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-10-01T00:51:59" hostname="LAPTOP-BPDICMJD" time="0.019">
-  <properties/>
-  <testcase name="testHashCode()" classname="com.aventurasdemarcoyluis.abstract_classes.AbstractItemTest" time="0.017"/>
-  <testcase name="testEquals()" classname="com.aventurasdemarcoyluis.abstract_classes.AbstractItemTest" time="0.002"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

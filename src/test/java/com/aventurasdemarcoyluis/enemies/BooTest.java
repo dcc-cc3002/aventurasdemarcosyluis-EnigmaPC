@@ -23,6 +23,7 @@ class BooTest extends BaseTest {
         // El daño que hace boo a luis es 23
         boo.attack(luis);
         assertEquals(luis.getHP(),0);
+        // Si está muerto luis ya no le hace más daño
         boo.attack(luis);
         assertEquals(luis.getHP(),0);
     }
