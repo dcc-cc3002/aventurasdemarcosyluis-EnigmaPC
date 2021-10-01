@@ -32,6 +32,10 @@ class AbstractAttackTypeTest extends BaseTest {
         assertEquals(jump.hashCode(),jump.hashCode());
     }
 
+    /**
+     * Creado para revisar que la probabilidad de fallo sea de un 25%.
+     * Siguiendo la ley de los grandes números
+     */
     @Test
     void attackFailedTest() {
         int counterFailed = 0;

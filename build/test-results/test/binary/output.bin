@@ -29,7 +29,7 @@
  1Marco es atacado por Spiny y recibe 13 de daño
  Spiny no puede atacar
 "!2Luis usa Martillo y le hace 23 de daño a Goomba
-"!2Luis usa Martillo y le hace 23 de daño a Goomba
+"!$Luis usa Martillo, pero ha fallado
 "!1Luis usa Martillo y le hace 47 de daño a Spiny
 "!/Luis usa Salto y le hace 15 de daño a Goomba
 "!/Luis usa Salto y le hace 15 de daño a Goomba
@@ -67,8 +67,8 @@
 '&0Marco es atacado por Spiny y recibe 2 de daño
 '&0Marco es atacado por Spiny y recibe 2 de daño
 '&0Marco es atacado por Spiny y recibe 2 de daño
-'(%Marco usa Martillo, pero ha fallado
 '(3Marco usa Martillo y le hace 21 de daño a Goomba
+'(%Marco usa Martillo, pero ha fallado
 '(2Marco usa Martillo y le hace 45 de daño a Spiny
 '(Se ha esquivado el ataque
 '(0Marco usa Salto y le hace 14 de daño a Goomba
