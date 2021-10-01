@@ -97,6 +97,15 @@ algunos ejemplos de las funcionalidades de algunos métodos.
 Tenemos a Marco y Luis como jugadores derivados de la clase abstracta _AbstractPlayer_,
 y a Goomba, Boo y Spiny como enemigos derivados de la clase abstracta _AbstractEnemy_.
 
+Marco y Luis pueden añadir a su inventario los items Honey Syrup, Red Mushroom y Star
+derivados de la clase abstracta _AbstractItem_. Además, los ataques disponibles que pueden
+ocupar son Martillo (HammerAttack) y Salto (JumpAttack) derivados de la clase abstracta
+_AbstractAttackType_.
+
+'''
+Marco 
+'''
+
 
 
 
