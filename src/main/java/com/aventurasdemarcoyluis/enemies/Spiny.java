@@ -56,6 +56,7 @@ public class Spiny extends AbstractEnemy implements IAttackedByLuis {
                 this.getDamage(this.damageToHurt(luis, attack));
             }
         } else {
+            System.out.println("Spiny se protege con sus pinchos");
             luis.getDamage(luis.damageThornsSpiny());
         }
     }
@@ -73,6 +74,7 @@ public class Spiny extends AbstractEnemy implements IAttackedByLuis {
                 this.getDamage(this.damageToHurt(marco, attack));
             }
         } else {
+            System.out.println("Spiny se protege con sus pinchos");
             marco.getDamage(marco.damageThornsSpiny());
         }
     }

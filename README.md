@@ -53,11 +53,33 @@ busque **[More Run/Debug]** y haga click en **[Run 'Test' With Coverage]**.
 ### Supuestos
 Siguiendo la tabla de ataques descrita en la sección 1.1.5 del
 [Enunciado](https://www.u-cursos.cl/ingenieria/2021/2/CC3002/1/tareas/r/2021091617049EBCB4003D150FF0__Enunciado_Tarea_01.pdf)
-se hacen los siguientes supuestos:
+se hacen los siguientes supuestos de ataque:
 - Luis **NO** puede atacar a Boo. (No hay métodos que lo permitan)
 - Boo **NO** puede atacar a Marco. (No hay métodos que lo permitan)
 - Marco puede atacar a **TODOS** los enemigos.
 - Spiny y Goomba pueden atacar a **TODOS** los jugadores.
+
+Además se considera que:
+
+- Los enemigos no pueden usar objetos.
+- Ninguna de las estadísticas de las entidades (enemigos y players) es negativa.
+    - En definitiva, los métodos para la **Vida (HP)** y los **Puntos de Ataque (FP)**
+  no permiten que estos sean menores a 0 ni mayores que el máximo (**maxHP** y **maxFP**).
+
+Para simular de mejor manera las peleas:
+
+- **Por ahora** el "esquivar" será considerado como el método ***dodge*** (en _AbstractEntities_)
+que printeará un mensaje que dice "Se ha esquivado el ataque".
+- **Por ahora** al atacar a Spiny con un Salto se lanzará un mensaje que dirá "Spiny se 
+protege con sus pinchos".
+
+El ataque es calculado con la fórmula de la sección 1.1.3 del
+[Enunciado](https://www.u-cursos.cl/ingenieria/2021/2/CC3002/1/tareas/r/2021091617049EBCB4003D150FF0__Enunciado_Tarea_01.pdf)
+pero con una modificación de redondeo, pues para limpiar código, la parte del
+cálculo con el ATK del personaje atacante con su LVL y la DEF del personaje atacado, 
+se condensa en el método ***preDamage*** (en _AbstractEntities_)
+![Calculo del daño](assets/Dano.png)
+
 
 
 
