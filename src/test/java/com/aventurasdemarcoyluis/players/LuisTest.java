@@ -30,8 +30,13 @@ class LuisTest extends BaseTest {
 
     @Test
     void attackTest() {
-        // El daño del ataque se calcula con la fórmula entregada en el enunciado
+        // El daño del ataque se calcula con la fórmula entregada en el ReadMe
         // Probemos que también se van gastando los FP
+        // goomba, daño martillo = 23, salto = 15
+        // spiny, daño martillo = 35, salto no le hace daño
+
+        // Luis ataca con Martillo
+        // Goomba
         luis.attack(goomba,hammer);
         assertTrue(goomba.getHP() == 50 || goomba.getHP() == 27);
         assertTrue(luis.getFP() == 7 || luis.getFP() == 5);
@@ -40,11 +45,67 @@ class LuisTest extends BaseTest {
                 || goomba.getHP() == 4);
         assertTrue(luis.getFP() == 7 || luis.getFP() == 5
                 || luis.getFP() == 3);
-        // Ahora con spiny
+        // Spiny
         luis.attack(spiny,hammer);
         assertTrue(spiny.getHP() == 0 || spiny.getHP() == 20);
         assertTrue(luis.getFP() == 7 || luis.getFP() == 5
                 || luis.getFP() == 3 || luis.getFP() == 1);
+
+        // Luis ataca con Salto
+        goomba = new Goomba(25,27,30,50);
+        spiny = new Spiny(13,6,15,20);
+        luis = new Luis(20,23,17,60,7);
+        // Goomba
+        luis.attack(goomba,jump);
+        assertTrue(goomba.getHP() == 35);
+        assertTrue(luis.getFP() == 6);
+        luis.attack(goomba,jump);
+        assertTrue(goomba.getHP() == 20);
+        assertTrue(luis.getFP() == 5);
+        luis.attack(goomba,jump);
+        assertTrue(goomba.getHP() == 5);
+        assertTrue(luis.getFP() == 4);
+        luis.attack(goomba,jump);
+        assertTrue(goomba.getHP() == 0);
+        assertTrue(luis.getFP() == 3);
+        // Si un enemigo muere, luis, no ataca y no pierde FP
+        luis.attack(goomba,jump);
+        assertTrue(goomba.getHP() == 0);
+        assertTrue(luis.getFP() == 3);
+        // Spiny no recibe daño y daña a Luis con un 5% de su HP
+        luis.attack(spiny,jump);
+        assertTrue(spiny.getHP() == 20);
+        assertTrue(luis.getFP() == 2);
+        assertTrue(luis.getHP() == 57);
+        luis.attack(spiny,jump);
+        assertTrue(spiny.getHP() == 20);
+        assertTrue(luis.getFP() == 1);
+        assertTrue(luis.getHP() == 54);
+        // Ahora que luis tiene 1 FP veamos que no puede atacar con
+        // Martillo pues cuesta 2 FP
+        luis.attack(spiny,hammer);
+        assertTrue(spiny.getHP() == 20);
+        assertTrue(luis.getFP() == 1);
+        assertTrue(luis.getHP() == 54);
+        luis.attack(spiny,jump);
+        assertTrue(spiny.getHP() == 20);
+        assertTrue(luis.getFP() == 0);
+        assertTrue(luis.getHP() == 51);
+
+        // Si se queda sin FP no hace nada, no puede atacar
+        // aunque use Martillo o Salto
+        luis.attack(spiny,jump);
+        assertTrue(spiny.getHP() == 20);
+        assertTrue(luis.getFP() == 0);
+        assertTrue(luis.getHP() == 51);
+        luis.attack(spiny,jump);
+        assertTrue(spiny.getHP() == 20);
+        assertTrue(luis.getFP() == 0);
+        assertTrue(luis.getHP() == 51);
+        luis.attack(spiny,hammer);
+        assertTrue(spiny.getHP() == 20);
+        assertTrue(luis.getFP() == 0);
+        assertTrue(luis.getHP() == 51);
     }
 
     @Test

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.aventurasdemarcoyluis.players.LuisTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-09-30T23:58:53" hostname="LAPTOP-BPDICMJD" time="0.003">
+<testsuite name="com.aventurasdemarcoyluis.players.LuisTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-10-01T00:42:56" hostname="LAPTOP-BPDICMJD" time="0.007">
   <properties/>
   <testcase name="attackTest()" classname="com.aventurasdemarcoyluis.players.LuisTest" time="0.001"/>
   <testcase name="attackedBySpinyTest()" classname="com.aventurasdemarcoyluis.players.LuisTest" time="0.001"/>
-  <testcase name="attackedByGoombaTest()" classname="com.aventurasdemarcoyluis.players.LuisTest" time="0.0"/>
-  <testcase name="attackedByBooTest()" classname="com.aventurasdemarcoyluis.players.LuisTest" time="0.0"/>
-  <system-out><![CDATA[Se ha esquivado el ataque
-]]></system-out>
+  <testcase name="attackedByGoombaTest()" classname="com.aventurasdemarcoyluis.players.LuisTest" time="0.001"/>
+  <testcase name="attackedByBooTest()" classname="com.aventurasdemarcoyluis.players.LuisTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
