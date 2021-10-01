@@ -35,7 +35,7 @@ public class Boo extends AbstractEnemy {
      * @param luis Luis que está siendo atacado
      */
     public void attack(Luis luis) {
-        if (this.isNotDead() && luis.isNotDead()) {
+        if (this.isNotDead() && luis.isNotDead() && !luis.isInvincible()) {
             luis.attackedByBoo(this);
         }
     }

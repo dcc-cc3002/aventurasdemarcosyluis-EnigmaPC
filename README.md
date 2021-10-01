@@ -66,6 +66,9 @@ Además se considera que:
 - Un jugador no puede ocupar un item que no esté en su inventario.
 - Un jugador no puede tener cantidades negativas de un item en su inventario.
 - Al usar un item, este se consume y se reduce la cantidad en el inventario.
+- Si un jugador tiene su vida en máximo y usa Red Mushroom, no pasa nada.
+- Si un jugador ya es invencible y usa Star, no pasa nada.
+- Si un jugador tiene sus puntos de ataque en máximo y usa Honey Syrup, no pasa nada.
 - Los enemigos no tienen **Puntos de Ataque (FP)** (estos son igual a 0), es decir,
 ellos saben que pueden atacar siempre y cuando no estén muertos.
 - Ninguna de las estadísticas de las entidades (enemigos y players) es negativa.
@@ -102,9 +105,24 @@ derivados de la clase abstracta _AbstractItem_. Además, los ataques disponibles
 ocupar son Martillo (HammerAttack) y Salto (JumpAttack) derivados de la clase abstracta
 _AbstractAttackType_.
 
-'''
-Marco 
-'''
+> Si Marco encuentra una estrella se ejecuta: <br>
+> Marco.addItem(Star) <br>
+> Ahora Marco tiene una estrella en su inventario. Si se quiere comprobar se ejecuta: <br>
+> Marco.hasItem(Star) <br>
+> Si Marco y Luis se encuentran a Boo y quieren atacar, deben elegir con qué.
+> Si Marco ataca con Martillo se ejecuta: <br>
+> Marco.attack(Boo, Martillo) <br>
+> Marco pierde 2 FP. <br>
+> Pero Boo esquiva el ataque! Boo no puede atacar a Marco 
+> por lo que solo ataca a Luis. <br>
+> Boo.attack(Luis) **[Sería un error ejecutar Boo.attack(Marco)]** <br>
+> Auch! Luis es herido por Boo, ahora quiere vengarse, pero
+> le dan demasiado miedo los fantasmas, sabe que la debilidad de Boo es Salto, así
+> que le dice a Marco que lo utilice.<br>
+> Marco.attack(Boo, Salto) <br>
+> Marco pierde 1 FP <br>
+> Eureka! Marco ha matado a Boo! Si intenta atacar otra vez no pasará nada.
+> Marco.attack(Boo, Salto)
 
 
 

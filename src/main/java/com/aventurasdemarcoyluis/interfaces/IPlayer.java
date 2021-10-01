@@ -16,4 +16,5 @@ public interface IPlayer extends IEntities {
 
     void attackedByGoomba(Goomba goomba);
     void attackedBySpiny(Spiny spiny);
+    boolean isInvincible();
 }
