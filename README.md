@@ -53,7 +53,11 @@ busque **[More Run/Debug]** y haga click en **[Run 'Test' With Coverage]**.
 ### Supuestos
 Siguiendo la tabla de ataques descrita en la sección 1.1.5 del
 [Enunciado](https://www.u-cursos.cl/ingenieria/2021/2/CC3002/1/tareas/r/2021091617049EBCB4003D150FF0__Enunciado_Tarea_01.pdf)
-
+se hacen los siguientes supuestos:
+- Luis **NO** puede atacar a Boo. (No hay métodos que lo permitan)
+- Boo **NO** puede atacar a Marco. (No hay métodos que lo permitan)
+- Marco puede atacar a **TODOS** los enemigos.
+- Spiny y Goomba pueden atacar a **TODOS** los jugadores.
 
 
 
