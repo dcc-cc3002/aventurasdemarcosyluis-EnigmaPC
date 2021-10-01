@@ -13,9 +13,8 @@ en donde se programaron
 todas las clases, métodos, interfaces, etc. Se divide en: <br>
 
   - [MODEL_abstract_classes](src/main/java/com/aventurasdemarcoyluis/abstract_classes):
-  En este package se encuentran todas las clases abstractas creadas y una clase ejecutable de ejemplo de juego 
-[GAME_EXAMPLE](src/test/java/com/aventurasdemarcoyluis/abstract_classes/GameExample.java).
-Las clases abstractas referencian a cada modelo: **Item** _(AbstractItem)_, **Entidad** _(AbstractEntities)_,
+  En este package se encuentran todas las clases abstractas creadas.
+Las cuales referencian a cada modelo: **Item** _(AbstractItem)_, **Entidad** _(AbstractEntities)_,
   **Enemigo** _(AbstractEnemy)_, **Player** _(AbstractPlayer)_, **Tipo de Ataque** _(AbstractAttackType)_. <br>
   - [MODEL_interfaces](src/main/java/com/aventurasdemarcoyluis/interfaces):
   En este package se encuentran todas las interfaces ocupadas. <br>
@@ -25,11 +24,13 @@ Las clases abstractas referencian a cada modelo: **Item** _(AbstractItem)_, **En
   En este package se encuentran los modelos de Enemigos. Los cuales son **Boo**, **Goomba** y **Spiny**. <br>
   - [MODEL_items](src/main/java/com/aventurasdemarcoyluis/items):
   En este package se encuentran los modelos de Item: **Honey Syrup**, **Red Mushroom** y **Star**. <br>
-  - [MODEL_attacks](src/main/java/com/aventurasdemarcoyluis/items):
+  - [MODEL_attacks](src/main/java/com/aventurasdemarcoyluis/attacks):
   En este packege se encuentran los modelos de Ataque: **Martillo** _(HammerAttack)_ y **Salto** _(JumpAttack)_.<br>
 
 - [TEST_main](src/test/java/com/aventurasdemarcoyluis): Aquí se encuentran todos los test realizados
-sobre el modelo. Se testean primero las clases abstractas que darán vida a los modelos mencionados anteriormente
+sobre el modelo y una clase ejecutable de ejemplo de juego
+[GAME_EXAMPLE](src/test/java/com/aventurasdemarcoyluis/abstract_classes/GameExample.java). 
+Se testean primero las clases abstractas que darán vida a los modelos mencionados anteriormente
 y luego se testean por separado los enemigos y jugadores. <br>
   - [TEST_abstract_classes](src/test/java/com/aventurasdemarcoyluis/abstract_classes):
 Se testean todos los métodos de las clases abstractas los cuales serán ocupados por cada modelo de item,
