@@ -124,7 +124,7 @@ _AbstractAttackType_.
 > que le dice a Marco que lo utilice.<br>
 > _Marco.attack(Boo, Salto) <br>
 > _Marco pierde 1 FP <br>
-> _Marco mata a Boo
+> _Marco mata a Boo <br>
 > Eureka! Marco ha matado a Boo! Si intenta atacar otra vez no pasará nada. <br>
 > _Marco.attack(Boo, Salto) <br>
 > _Marco no pierde FP pues no puede atacar a un muerto. <br>
@@ -156,11 +156,11 @@ _AbstractAttackType_.
 > sendo combo al Luis.  <br>
 > _Goomba.attack(Luis) <br>
 > _Luis agoniza en el piso, tiene 1 HP. <br>
-> NoooOOooOOo! Grita Marco, con su sed de venganza consume la Star que
+> NoooOOooOOo! Grita Marco. Con su sed de venganza consume la Star que
 > tenía en el inventario. <br>
 > _Marco.useItem(Star) <br>
 > _Ahora Marco es invencible <br>
-> Goomba le ataca ¡Pero no le hace nada, no puede es invencible!
+> Goomba le ataca ¡Pero no le hace nada, no puede es invencible! <br>
 > _Goomba.attack(Marco) <br>
 > _No pasa nada <br>
 > _Marco.attack(Goomba, Salto) <br>
@@ -178,7 +178,7 @@ _AbstractAttackType_.
 > ... <br>
 > Es su día de suerte pues de la nada le han dado un Red Mushroom a Luis. <br>
 > _Luis.addItem(Red Mushroom) <br>
-> Luis en un último intento de vida, la consume. <br>
+> Luis en un último intento de moverse, la consume. <br>
 > _Luis.useItem(Red Mushroom) <br>
 > ¡Luis ahora tiene suficiente vida para ir de copas con Marco! <br>
 > Todos son felices. Marco y Luis se besan. <br>
