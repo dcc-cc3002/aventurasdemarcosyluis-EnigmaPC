@@ -91,7 +91,11 @@ se condensa en el método ***preDamage*** (en _AbstractEntities_):
 
 ## Funcionamiento y Lógica del Programa
 
-Tomando en cuenta los supuestos mencionados en la sección anterior. 
+Tomando en cuenta los supuestos mencionados en la sección anterior. Se realizarán
+algunos ejemplos de las funcionalidades de algunos métodos.
+
+Tenemos a Marco y Luis como jugadores derivados de la clase abstracta _AbstractPlayer_,
+y a Goomba, Boo y Spiny como enemigos derivados de la clase abstracta _AbstractEnemy_.
 
 
 

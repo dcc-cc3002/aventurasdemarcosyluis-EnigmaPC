@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.aventurasdemarcoyluis.abstract_classes.AbstractItemTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-10-01T03:08:24" hostname="LAPTOP-BPDICMJD" time="0.003">
+<testsuite name="com.aventurasdemarcoyluis.abstract_classes.AbstractItemTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-10-01T04:28:08" hostname="LAPTOP-BPDICMJD" time="0.003">
   <properties/>
   <testcase name="testHashCode()" classname="com.aventurasdemarcoyluis.abstract_classes.AbstractItemTest" time="0.001"/>
   <testcase name="testEquals()" classname="com.aventurasdemarcoyluis.abstract_classes.AbstractItemTest" time="0.001"/>

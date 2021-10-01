@@ -7,8 +7,5 @@ import com.aventurasdemarcoyluis.players.Marco;
  * por Marco.
  */
 public interface IEnemy extends IEntities {
-    void dodge();
-    void getDamage(double damageToHurt);
-
     void attackedByMarco(Marco marco, IAttacks attack);
 }
