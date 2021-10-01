@@ -105,6 +105,12 @@ derivados de la clase abstracta _AbstractItem_. Además, los ataques disponibles
 ocupar son Martillo (HammerAttack) y Salto (JumpAttack) derivados de la clase abstracta
 _AbstractAttackType_.
 
+El programa en sí se basa meramente en la interacción de Marco y Luis con el mundo y los
+enemigos. Los métodos que estos utilizan llamarán a los métodos necesarios en las clases necesarias
+para realizar lo que necesiten. Por lo que meramente todo se basa en los métodos de Marco, Luis (y los
+que estos heredan de _AbstractPlayer_ para el inventario) y los enemigos.
+
+> Imaginemos que Marco y Luis se pasean juntos. <br>
 > Si Marco encuentra un Star y un Honey Syrup se ejecuta: <br>
 > _Marco.addItem(Star) <br>
 > _Marco.addItem(Honey Syrup) <br>
