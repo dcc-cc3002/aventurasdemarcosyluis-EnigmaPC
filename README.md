@@ -97,7 +97,9 @@ El ataque es calculado con la fórmula de la sección 1.1.3 del
 pero con una modificación de redondeo, pues para limpiar código, la parte del
 cálculo con el ATK del personaje atacante con su LVL y la DEF del personaje atacado, 
 se condensa en el método ***preDamage*** (en _AbstractEntities_):
-![Calculo del daño](assets/Dano.png)
+
+![Calculo del daño](assets/Dano.png) 
+
 Además, el resultado final también se redondea y se transforma a entero.
 
 ## Funcionamiento y Lógica del Programa
