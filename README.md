@@ -41,5 +41,17 @@ Aquí se testean los ataques de los enemigos hacia los players. <br>
 
 ### Intrucciones
 Puede acceder a cada lugar del código haciendo click en las anteriores referencias. Por ejemplo,
-si quiere observar el código del modelo Luis, debe hacer 
+si quiere observar el código del modelo Luis, debe hacer click en **[MODEL_players]** de la sección anterior,
+el cual le llevará al package que contiene el modelo Luis. <br>
+
+Se recomienda ejecutar los test uno por uno, dirigiéndose al package donde
+se encuentra el test, haciendo click encima del nombre, luego otro click en **[Run 'Test' in...]**.<br>
+
+Si se requiere revisar el coverage de los test del código, diríjase a la carpeta **[test]**, haga click derecho sobre ella,
+busque **[More Run/Debug]** y haga click en **[Run 'Test' With Coverage]**.
+
+### Supuestos
+
+
+
 
