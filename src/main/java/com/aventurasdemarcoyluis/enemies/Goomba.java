@@ -50,7 +50,7 @@ public class Goomba extends AbstractEnemy implements IAttackedByLuis {
      */
     @Override
     public void attackedByLuis(Luis luis, IAttacks attack) {
-        if (attack.hurtsSpiny()) {
+        if (attack.hurtsSpiny()) { // Entonces el ataque es Martillo
             if (!attack.attackFailed()) {
                 this.getDamage(this.damageToHurt(luis, attack));
             }
@@ -66,7 +66,7 @@ public class Goomba extends AbstractEnemy implements IAttackedByLuis {
      */
     @Override
     public void attackedByMarco(Marco marco, IAttacks attack) {
-        if (attack.hurtsSpiny()) {
+        if (attack.hurtsSpiny()) { // Entonces el ataque es Martillo
             if (!attack.attackFailed()) {
                 this.getDamage(this.damageToHurt(marco, attack));
             }
