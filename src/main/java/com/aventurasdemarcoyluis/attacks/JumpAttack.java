@@ -42,14 +42,4 @@ public class JumpAttack extends AbstractAttackType {
     public boolean hurtsSpiny() {
         return false;
     }
-
-    /**
-     * Permite que Salto le haga cierto daño a un enemigo
-     * @param enemy Enemigo que recibe el daño
-     * @param damageToHurt Daño que se le hace al enemigo
-     */
-    @Override
-    public void hurts(IEnemy enemy, double damageToHurt) {
-        enemy.getDamage(damageToHurt);
-    }
 }

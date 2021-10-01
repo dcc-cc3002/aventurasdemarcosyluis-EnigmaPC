@@ -52,7 +52,9 @@ public class Spiny extends AbstractEnemy implements IAttackedByLuis {
     @Override
     public void attackedByLuis(Luis luis, IAttacks attack) {
         if (attack.hurtsSpiny()) {
-            attack.hurts(this, this.damageToHurt(luis, attack));
+            if (!attack.attackFailed()) {
+                this.getDamage(this.damageToHurt(luis, attack));
+            }
         } else {
             luis.getDamage(luis.damageThornsSpiny());
         }
@@ -67,7 +69,9 @@ public class Spiny extends AbstractEnemy implements IAttackedByLuis {
     @Override
     public void attackedByMarco(Marco marco, IAttacks attack) {
         if (attack.hurtsSpiny()) {
-            attack.hurts(this, this.damageToHurt(marco, attack));
+            if (!attack.attackFailed()) {
+                this.getDamage(this.damageToHurt(marco, attack));
+            }
         } else {
             marco.getDamage(marco.damageThornsSpiny());
         }

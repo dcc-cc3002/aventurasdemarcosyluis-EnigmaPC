@@ -7,7 +7,7 @@ public interface IAttacks {
     int getFPCost();
     double getK();
 
+    boolean attackFailed();
     boolean hurtsBoo();
     boolean hurtsSpiny();
-    void hurts(IEnemy enemy, double damageToHurt);
 }

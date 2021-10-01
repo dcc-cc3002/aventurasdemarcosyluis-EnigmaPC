@@ -36,6 +36,17 @@ public abstract class AbstractAttackType implements IAttacks {
     }
 
     /**
+     * Determina si un ataque con fallará o no.
+     * Posee un 25 % de posibilidades de fallar.
+     * @return Verdadero si el ataque falla, Falso si no.
+     */
+    @Override
+    public boolean attackFailed() {
+        int dado = (int) (Math.random()*4);
+        return dado == 0;
+    }
+
+    /**
      * Determina si un tipo de ataque es igual a otra.
      * Se comparan tanto el costo en FP como la constante K de daño.
      * @param obj Tipo de ataque a comparar

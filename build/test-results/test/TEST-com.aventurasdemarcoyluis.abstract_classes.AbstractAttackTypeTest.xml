@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.aventurasdemarcoyluis.abstract_classes.AbstractAttackTypeTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-10-01T01:02:47" hostname="LAPTOP-BPDICMJD" time="0.041">
+<testsuite name="com.aventurasdemarcoyluis.abstract_classes.AbstractAttackTypeTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-10-01T01:49:48" hostname="LAPTOP-BPDICMJD" time="0.02">
   <properties/>
-  <testcase name="testHashCode()" classname="com.aventurasdemarcoyluis.abstract_classes.AbstractAttackTypeTest" time="0.038"/>
-  <testcase name="testEquals()" classname="com.aventurasdemarcoyluis.abstract_classes.AbstractAttackTypeTest" time="0.002"/>
+  <testcase name="attackFailedTest()" classname="com.aventurasdemarcoyluis.abstract_classes.AbstractAttackTypeTest" time="0.016"/>
+  <testcase name="testHashCode()" classname="com.aventurasdemarcoyluis.abstract_classes.AbstractAttackTypeTest" time="0.001"/>
+  <testcase name="testEquals()" classname="com.aventurasdemarcoyluis.abstract_classes.AbstractAttackTypeTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

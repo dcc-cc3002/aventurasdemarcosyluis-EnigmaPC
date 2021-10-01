@@ -49,7 +49,7 @@ public class Boo extends AbstractEnemy {
     @Override
     public void attackedByMarco(Marco marco, IAttacks attack) {
         if (attack.hurtsBoo()) {
-            attack.hurts(this, this.damageToHurt(marco, attack));
+            this.getDamage(this.damageToHurt(marco, attack));
         } else {
             this.dodge();
         }
