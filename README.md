@@ -39,7 +39,7 @@ funcionalidad de las características que poseen los players.  <br>
   - [TEST_enemies](src/test/java/com/aventurasdemarcoyluis/enemies):
 Aquí se testean los ataques de los enemigos hacia los players. <br>
 
-### Intrucciones
+## Intrucciones
 Puede acceder a cada lugar del código haciendo click en las anteriores referencias. Por ejemplo,
 si quiere observar el código del modelo Luis, debe hacer click en **[MODEL_players]** de la sección anterior,
 el cual le llevará al package que contiene el modelo Luis. <br>
@@ -50,7 +50,7 @@ se encuentra el test, haciendo click encima del nombre y luego otro click en **[
 Si se requiere revisar el coverage de los test del código, diríjase a la carpeta **[test]**, haga click derecho sobre ella,
 busque **[More Run/Debug]** y haga click en **[Run 'Test' With Coverage]**.
 
-### Supuestos
+## Supuestos
 Siguiendo la tabla de ataques descrita en la sección 1.1.5 del
 [Enunciado](https://www.u-cursos.cl/ingenieria/2021/2/CC3002/1/tareas/r/2021091617049EBCB4003D150FF0__Enunciado_Tarea_01.pdf)
 se hacen los siguientes supuestos de ataque:
@@ -62,9 +62,18 @@ se hacen los siguientes supuestos de ataque:
 Además se considera que:
 
 - Los enemigos no pueden usar objetos.
+- Inicialmente el inventario de los jugadores está vacío.
+- Un jugador no puede ocupar un item que no esté en su inventario.
+- Un jugador no puede tener cantidades negativas de un item en su inventario.
+- Al usar un item, este se consume y se reduce la cantidad en el inventario.
+- Los enemigos no tienen **Puntos de Ataque (FP)** (estos son igual a 0), es decir,
+ellos saben que pueden atacar siempre y cuando no estén muertos.
 - Ninguna de las estadísticas de las entidades (enemigos y players) es negativa.
     - En definitiva, los métodos para la **Vida (HP)** y los **Puntos de Ataque (FP)**
   no permiten que estos sean menores a 0 ni mayores que el máximo (**maxHP** y **maxFP**).
+- Cada clase sabe sus restricciones, por ejemplo, **Luis** sabe que no puede atacar a **Boo**
+  (y no lo intenta) y **Boo** sabe que no puede atacar a **Marco** (y no lo intenta) 
+[esto se explicará mejor después].
 
 Para simular de mejor manera las peleas:
 
@@ -77,8 +86,14 @@ El ataque es calculado con la fórmula de la sección 1.1.3 del
 [Enunciado](https://www.u-cursos.cl/ingenieria/2021/2/CC3002/1/tareas/r/2021091617049EBCB4003D150FF0__Enunciado_Tarea_01.pdf)
 pero con una modificación de redondeo, pues para limpiar código, la parte del
 cálculo con el ATK del personaje atacante con su LVL y la DEF del personaje atacado, 
-se condensa en el método ***preDamage*** (en _AbstractEntities_)
+se condensa en el método ***preDamage*** (en _AbstractEntities_):
 ![Calculo del daño](assets/Dano.png)
+
+## Funcionamiento y Lógica del Programa
+
+Tomando en cuenta los supuestos mencionados en la sección anterior. 
+
+
 
 
 
