@@ -1,8 +1,6 @@
 package com.aventurasdemarcoyluis.items;
 
-import com.aventurasdemarcoyluis.abstract_classes.AbstractAttackType;
 import com.aventurasdemarcoyluis.abstract_classes.AbstractItem;
-import com.aventurasdemarcoyluis.attacks.JumpAttack;
 import com.aventurasdemarcoyluis.interfaces.IPlayer;
 
 /**

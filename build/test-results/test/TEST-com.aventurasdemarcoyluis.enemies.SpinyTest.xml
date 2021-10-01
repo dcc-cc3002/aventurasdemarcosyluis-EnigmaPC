@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.aventurasdemarcoyluis.enemies.SpinyTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-01T05:44:22" hostname="LAPTOP-BPDICMJD" time="0.001">
+<testsuite name="com.aventurasdemarcoyluis.enemies.SpinyTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-01T07:03:04" hostname="LAPTOP-BPDICMJD" time="0.002">
   <properties/>
-  <testcase name="attack()" classname="com.aventurasdemarcoyluis.enemies.SpinyTest" time="0.001"/>
+  <testcase name="attack()" classname="com.aventurasdemarcoyluis.enemies.SpinyTest" time="0.002"/>
   <system-out><![CDATA[Luis es atacado por Spiny y recibe 25 de daño
 Spiny no puede atacar
 Marco es atacado por Spiny y recibe 13 de daño

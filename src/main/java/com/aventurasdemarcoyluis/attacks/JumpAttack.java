@@ -1,7 +1,6 @@
 package com.aventurasdemarcoyluis.attacks;
 
 import com.aventurasdemarcoyluis.abstract_classes.AbstractAttackType;
-import com.aventurasdemarcoyluis.interfaces.IEnemy;
 
 /**
  * <b>Clase JumpAttack:</b> <br>

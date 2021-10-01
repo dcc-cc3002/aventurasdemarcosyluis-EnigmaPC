@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.aventurasdemarcoyluis.players.LuisTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-10-01T05:44:22" hostname="LAPTOP-BPDICMJD" time="0.006">
+<testsuite name="com.aventurasdemarcoyluis.players.LuisTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-10-01T07:03:04" hostname="LAPTOP-BPDICMJD" time="0.011">
   <properties/>
-  <testcase name="attackTest()" classname="com.aventurasdemarcoyluis.players.LuisTest" time="0.003"/>
-  <testcase name="attackedBySpinyTest()" classname="com.aventurasdemarcoyluis.players.LuisTest" time="0.001"/>
+  <testcase name="attackTest()" classname="com.aventurasdemarcoyluis.players.LuisTest" time="0.004"/>
+  <testcase name="attackedBySpinyTest()" classname="com.aventurasdemarcoyluis.players.LuisTest" time="0.002"/>
   <testcase name="attackedByGoombaTest()" classname="com.aventurasdemarcoyluis.players.LuisTest" time="0.001"/>
-  <testcase name="attackedByBooTest()" classname="com.aventurasdemarcoyluis.players.LuisTest" time="0.001"/>
-  <system-out><![CDATA[Luis usa Martillo y le hace 22 de daño a Goomba
-Luis usa Martillo, pero ha fallado
-Luis usa Martillo y le hace 46 de daño a Spiny
+  <testcase name="attackedByBooTest()" classname="com.aventurasdemarcoyluis.players.LuisTest" time="0.002"/>
+  <system-out><![CDATA[Luis usa Martillo y le hace 23 de daño a Goomba
+Luis usa Martillo y le hace 23 de daño a Goomba
+Luis usa Martillo y le hace 47 de daño a Spiny
 Luis usa Salto y le hace 15 de daño a Goomba
 Luis usa Salto y le hace 15 de daño a Goomba
 Luis usa Salto y le hace 15 de daño a Goomba
 Luis usa Salto y le hace 15 de daño a Goomba
 Luis no puede atacar
 Spiny se protege con sus pinchos
-Spiny le hace 3 de daño a Luis
+Spiny le hace 3 de daño a Luis con sus pinchos
 Spiny se protege con sus pinchos
-Spiny le hace 2 de daño a Luis
+Spiny le hace 3 de daño a Luis con sus pinchos
 Luis no puede atacar
 Spiny se protege con sus pinchos
-Spiny le hace 2 de daño a Luis
+Spiny le hace 3 de daño a Luis con sus pinchos
 Luis no puede atacar
 Luis no puede atacar
 Luis no puede atacar

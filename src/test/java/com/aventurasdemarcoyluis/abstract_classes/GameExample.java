@@ -7,7 +7,6 @@ import com.aventurasdemarcoyluis.enemies.Goomba;
 import com.aventurasdemarcoyluis.enemies.Spiny;
 import com.aventurasdemarcoyluis.items.HoneySyrup;
 import com.aventurasdemarcoyluis.items.RedMushroom;
-import com.aventurasdemarcoyluis.items.Star;
 import com.aventurasdemarcoyluis.players.Luis;
 import com.aventurasdemarcoyluis.players.Marco;
 
@@ -37,7 +36,6 @@ public class GameExample {
         // Items
         HoneySyrup honeySyrup = new HoneySyrup();
         RedMushroom redMushroom = new RedMushroom();
-        Star star = new Star();
 
         System.out.println("==========================================================================");
         System.out.println("Marco:" + " HP = " + marco.getHP()+ "/" + marco.getMaxHP()

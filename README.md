@@ -13,8 +13,9 @@ en donde se programaron
 todas las clases, métodos, interfaces, etc. Se divide en: <br>
 
   - [MODEL_abstract_classes](src/main/java/com/aventurasdemarcoyluis/abstract_classes):
-  En este package se encuentran todas las clases abstractas creadas y una clase ejecutable de ejemplo de juego.
-Las cuales referencian a cada modelo: **Item** _(AbstractItem)_, **Entidad** _(AbstractEntities)_,
+  En este package se encuentran todas las clases abstractas creadas y una clase ejecutable de ejemplo de juego 
+[GAME_EXAMPLE](src/test/java/com/aventurasdemarcoyluis/abstract_classes/GameExample.java).
+Las clases abstractas referencian a cada modelo: **Item** _(AbstractItem)_, **Entidad** _(AbstractEntities)_,
   **Enemigo** _(AbstractEnemy)_, **Player** _(AbstractPlayer)_, **Tipo de Ataque** _(AbstractAttackType)_. <br>
   - [MODEL_interfaces](src/main/java/com/aventurasdemarcoyluis/interfaces):
   En este package se encuentran todas las interfaces ocupadas. <br>
@@ -49,6 +50,10 @@ se encuentra el test, haciendo click encima del nombre y luego otro click en **[
 
 Si se requiere revisar el coverage de los test del código, diríjase a la carpeta **[test]**, haga click derecho sobre ella,
 busque **[More Run/Debug]** y haga click en **[Run 'Test' With Coverage]**.
+
+El archivo ejecutable de ejemplo se encuentra en 
+[GAME_EXAMPLE](src/test/java/com/aventurasdemarcoyluis/abstract_classes/GameExample.java). Si se quiere revisar 
+un enfrentamiento entre las entidades jugador v/s enemigos, usando items y todo, se recomienda ejecutar. 
 
 ## Supuestos
 Siguiendo la tabla de ataques descrita en la sección 1.1.5 del
@@ -94,7 +99,6 @@ se condensa en el método ***preDamage*** (en _AbstractEntities_):
 ![Calculo del daño](assets/Dano.png)
 
 ## Funcionamiento y Lógica del Programa
-
 Tomando en cuenta los supuestos mencionados en la sección anterior. Se realizarán
 algunos ejemplos de las funcionalidades de algunos métodos.
 
@@ -118,7 +122,7 @@ del programa se pueden revisar los tests de los Jugadores
 se imprimirá en pantalla lo que sucede.
 
 Además, se añade la Clase Ejecutable 
-[GAME_EXAMPLE](src/main/java/com/aventurasdemarcoyluis/abstract_classes/GameExample.java)
+[GAME_EXAMPLE](src/test/java/com/aventurasdemarcoyluis/abstract_classes/GameExample.java)
 la cual contiene un código  ejecutable bastante visual parecido al que se presenta a continuación.
 
 > Imaginemos que Marco y Luis se pasean juntos. <br>
@@ -200,6 +204,9 @@ la cual contiene un código  ejecutable bastante visual parecido al que se prese
 > ¡Luis ahora tiene suficiente vida para ir de copas con Marco! <br>
 > Todos son felices. Marco y Luis se besan. <br>
 
+## Anotaciones
+Por favor notar que, como se menciona anteriormente. El uso de prints está hecho meramente para ejemplificar
+un pequeño programa para esta entrega. Estos se eliminarán en las próximas tareas. 
 
 
 

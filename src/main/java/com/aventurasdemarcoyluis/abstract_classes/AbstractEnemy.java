@@ -3,7 +3,6 @@ package com.aventurasdemarcoyluis.abstract_classes;
 import com.aventurasdemarcoyluis.interfaces.IAttacks;
 import com.aventurasdemarcoyluis.interfaces.IEnemy;
 import com.aventurasdemarcoyluis.interfaces.IPlayer;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * <b>Clase abstracta Enemy:</b> <br>

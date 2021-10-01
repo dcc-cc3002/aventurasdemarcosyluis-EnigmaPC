@@ -16,7 +16,7 @@ import com.aventurasdemarcoyluis.interfaces.IObject;
  */
 public abstract class AbstractItem implements IObject {
     // Campos
-    private String name;
+    private final String name;
 
     /**
      * <b>Constructor:</b> <br>
@@ -36,9 +36,7 @@ public abstract class AbstractItem implements IObject {
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
-        if (!(obj instanceof AbstractItem)) return false;
-
-        AbstractItem that = (AbstractItem) obj;
+        if (!(obj instanceof AbstractItem that)) return false;
 
         return name.equals(that.name);
     }

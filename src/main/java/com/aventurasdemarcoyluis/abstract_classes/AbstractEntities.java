@@ -1,7 +1,6 @@
 package com.aventurasdemarcoyluis.abstract_classes;
 
 import com.aventurasdemarcoyluis.interfaces.IEntities;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * <b>Clase abstracta Entities:</b> <br>
