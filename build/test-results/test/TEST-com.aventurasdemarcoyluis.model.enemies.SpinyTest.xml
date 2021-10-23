@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.aventurasdemarcoyluis.model.enemies.SpinyTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-23T23:32:17" hostname="LAPTOP-BPDICMJD" time="0.008">
+  <properties/>
+  <testcase name="attack()" classname="com.aventurasdemarcoyluis.model.enemies.SpinyTest" time="0.008"/>
+  <system-out><![CDATA[Luis es atacado por Spiny y recibe 25 de daño
+Spiny no puede atacar
+Marco es atacado por Spiny y recibe 13 de daño
+Marco es atacado por Spiny y recibe 13 de daño
+Marco es atacado por Spiny y recibe 13 de daño
+Marco es atacado por Spiny y recibe 13 de daño
+Spiny no puede atacar
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

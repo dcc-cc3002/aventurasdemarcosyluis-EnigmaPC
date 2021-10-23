@@ -5,6 +5,8 @@ import com.aventurasdemarcoyluis.model.players.Luis;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 class BooTest extends BaseTest {
 
     @BeforeEach

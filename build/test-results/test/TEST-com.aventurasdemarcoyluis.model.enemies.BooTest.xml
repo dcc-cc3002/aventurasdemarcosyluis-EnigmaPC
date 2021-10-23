@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.aventurasdemarcoyluis.model.enemies.BooTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-23T23:32:17" hostname="LAPTOP-BPDICMJD" time="0.027">
+  <properties/>
+  <testcase name="attackTest()" classname="com.aventurasdemarcoyluis.model.enemies.BooTest" time="0.027"/>
+  <system-out><![CDATA[Luis es atacado por Boo y recibe 23 de daño
+Boo no puede atacar
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

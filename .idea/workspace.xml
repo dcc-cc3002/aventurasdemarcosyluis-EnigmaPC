@@ -11,79 +11,15 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/abstract_classes/AbstractAttackType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/abstract_classes/AbstractEnemy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/abstract_classes/AbstractEntities.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/abstract_classes/AbstractItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/abstract_classes/AbstractPlayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/attacks/HammerAttack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/attacks/JumpAttack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/enemies/Boo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/enemies/Goomba.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/enemies/Spiny.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/interfaces/IAttackedByBoo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/interfaces/IAttackedByLuis.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/interfaces/IAttacks.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/interfaces/IEnemy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/interfaces/IEntities.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/interfaces/IObject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/interfaces/IPlayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/items/Baul.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/items/HoneySyrup.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/items/RedMushroom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/players/Luis.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/players/Marco.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/aventurasdemarcoyluis/abstract_classes/AbstractAttackTypeTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/aventurasdemarcoyluis/abstract_classes/AbstractEnemyTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/aventurasdemarcoyluis/abstract_classes/AbstractEntitiesTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/aventurasdemarcoyluis/abstract_classes/AbstractItemTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/aventurasdemarcoyluis/abstract_classes/AbstractPlayerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/aventurasdemarcoyluis/abstract_classes/BaseTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/aventurasdemarcoyluis/abstract_classes/GameExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/aventurasdemarcoyluis/enemies/BooTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/aventurasdemarcoyluis/enemies/GoombaTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/aventurasdemarcoyluis/enemies/SpinyTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/aventurasdemarcoyluis/items/BaulTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/aventurasdemarcoyluis/players/LuisTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/aventurasdemarcoyluis/players/MarcoTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/abstract_classes/AbstractAttackType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/abstract_classes/AbstractAttackType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/abstract_classes/AbstractEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/abstract_classes/AbstractEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/abstract_classes/AbstractEntities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/abstract_classes/AbstractEntities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/abstract_classes/AbstractItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/abstract_classes/AbstractItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/abstract_classes/AbstractPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/abstract_classes/AbstractPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/attacks/HammerAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/attacks/HammerAttack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/attacks/JumpAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/attacks/JumpAttack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/enemies/Boo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/enemies/Boo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/enemies/Goomba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/enemies/Goomba.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/enemies/Spiny.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/enemies/Spiny.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/interfaces/IAttackedByBoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/interfaces/IAttackedByBoo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/interfaces/IAttackedByLuis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/interfaces/IAttackedByLuis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/interfaces/IAttacks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/interfaces/IAttacks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/interfaces/IEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/interfaces/IEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/interfaces/IEntities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/interfaces/IEntities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/interfaces/IObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/interfaces/IObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/interfaces/IPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/interfaces/IPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/items/Baul.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/items/Baul.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/items/HoneySyrup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/items/HoneySyrup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/items/RedMushroom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/items/RedMushroom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/players/Luis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/players/Luis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/players/Marco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/players/Marco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/abstract_classes/AbstractAttackTypeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/abstract_classes/AbstractAttackTypeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/abstract_classes/AbstractEnemyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/abstract_classes/AbstractEnemyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/abstract_classes/AbstractEntitiesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/abstract_classes/AbstractEntitiesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/abstract_classes/AbstractItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/abstract_classes/AbstractItemTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/abstract_classes/AbstractPlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/abstract_classes/AbstractPlayerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/abstract_classes/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/abstract_classes/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/abstract_classes/GameExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/abstract_classes/GameExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/enemies/BooTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/enemies/BooTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/enemies/GoombaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/enemies/GoombaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/enemies/SpinyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/enemies/SpinyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/items/BaulTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/items/BaulTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/players/LuisTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/players/LuisTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/players/MarcoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/players/MarcoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/abstract_classes/AbstractEntitiesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/abstract_classes/AbstractEntitiesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/abstract_classes/AbstractItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/abstract_classes/AbstractItemTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/abstract_classes/AbstractPlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/abstract_classes/AbstractPlayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/abstract_classes/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/abstract_classes/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/enemies/BooTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/enemies/BooTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/enemies/GoombaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/enemies/GoombaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/enemies/SpinyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/enemies/SpinyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/items/BaulTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/model/items/BaulTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,6 +232,7 @@
       <workItem from="1632991802838" duration="593000" />
       <workItem from="1635000588772" duration="9330000" />
       <workItem from="1635031087141" duration="248000" />
+      <workItem from="1635031561007" duration="366000" />
     </task>
     <servers />
   </component>
@@ -316,7 +253,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AventurasdeMarcoyLuis$Tests_in__com_aventurasdemarcoyluis_.ic" NAME="Tests in 'com.aventurasdemarcoyluis' Coverage Results" MODIFIED="1633057545675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/AventurasdeMarcoyLuis$Tests_in__AventurasdeMarcoyLuis_test_.ic" NAME="Tests in 'AventurasdeMarcoyLuis.test' Coverage Results" MODIFIED="1635030798545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/AventurasdeMarcoyLuis$Tests_in__AventurasdeMarcoyLuis_test_.ic" NAME="Tests in 'AventurasdeMarcoyLuis.test' Coverage Results" MODIFIED="1635031794745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/AventurasdeMarcoyLuis$Tests_in__com_aventurasdemarcoyluis_abstract_classes_.ic" NAME="Tests in 'com.aventurasdemarcoyluis.abstract_classes' Coverage Results" MODIFIED="1633062455671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

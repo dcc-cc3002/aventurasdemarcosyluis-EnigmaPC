@@ -11,6 +11,7 @@ import com.aventurasdemarcoyluis.model.enemies.Boo;
 import com.aventurasdemarcoyluis.model.items.HoneySyrup;
 import com.aventurasdemarcoyluis.model.items.RedMushroom;
 
+
 public class BaseTest {
     public Marco marco;
     public Marco marco2;
