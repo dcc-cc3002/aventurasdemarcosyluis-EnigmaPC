@@ -4,6 +4,7 @@ import com.aventurasdemarcoyluis.attacks.HammerAttack;
 import com.aventurasdemarcoyluis.attacks.JumpAttack;
 import com.aventurasdemarcoyluis.enemies.Goomba;
 import com.aventurasdemarcoyluis.enemies.Spiny;
+import com.aventurasdemarcoyluis.items.Baul;
 import com.aventurasdemarcoyluis.items.HoneySyrup;
 import com.aventurasdemarcoyluis.items.RedMushroom;
 import com.aventurasdemarcoyluis.players.Luis;
@@ -34,60 +35,6 @@ class AbstractPlayerTest extends BaseTest {
         // Ataques
         hammer = new HammerAttack();
         jump = new JumpAttack();
-    }
-
-    /**
-     * En este test se probarán en conjunto los métodos:
-     * {@code addItem},
-     * {@code amountOfItem},
-     * {@code removeItem},
-     * {@code hasItem}.
-     * {@code useItem}
-     * Los cuales se relacionan entre sí
-     */
-    @Test
-    void inventoryTest() {
-        // Marco y Luis son players los cuales tienen inventario
-        // como también pueden tener items, testeamos con ellos.
-
-        // Inicialmente el inventario no tiene ningún item.
-        assertEquals(marco.hasItem(honeySyrup), false);
-        assertEquals(marco.hasItem(redMushroom), false);
-
-        // Añadimos algunos items:
-        marco.addItem(honeySyrup, 5);
-        marco.addItem(redMushroom, 4);
-
-        // Ahora Marco debe tener estos items y con la cantidad añadida
-        assertEquals(marco.hasItem(honeySyrup), true);
-        assertEquals(marco.hasItem(redMushroom), true);
-        assertEquals(marco.amountOfItem(honeySyrup), 5);
-        assertEquals(marco.amountOfItem(redMushroom), 4);
-
-        // Si removemos algunos items:
-        marco.removeItem(honeySyrup, 2); // Ahora debe tener 3 honeySyrup
-        marco.removeItem(redMushroom, 2); // Ahora debe tener 2 redMushroom
-        marco.removeItem(honeySyrup, -5); // Esto no debe hacer nada pues
-        // no se pueden remover -5 items.
-
-        // Ahora Marco debe tener estos items y con la cantidad añadida
-        assertEquals(marco.hasItem(honeySyrup), true);
-        assertEquals(marco.hasItem(redMushroom), true);
-        assertEquals(marco.amountOfItem(honeySyrup), 3);
-        assertEquals(marco.amountOfItem(redMushroom), 2);
-
-        // Ahora se testeará useItem, el cual debe disminuir la cantidad de
-        // items según el item que se use.
-        marco.useItem(honeySyrup);
-        assertEquals(marco.amountOfItem(honeySyrup), 2);
-        marco.useItem(honeySyrup);
-        assertEquals(marco.amountOfItem(honeySyrup), 1);
-        marco.useItem(honeySyrup);
-        assertEquals(marco.amountOfItem(honeySyrup), 0);
-        marco.useItem(redMushroom);
-        assertEquals(marco.amountOfItem(redMushroom), 1);
-        marco.useItem(redMushroom);
-        assertEquals(marco.amountOfItem(redMushroom), 0);
     }
 
     @Test
@@ -139,8 +86,7 @@ class AbstractPlayerTest extends BaseTest {
 
     /**
      * Se testará:
-     * {@code useHoneySyrup} por sí solo y
-     * {@code useItem} que invocará el uso de honeySyrup.
+     * {@code useHoneySyrup} por sí solo
      */
     @Test
     void useHoneySyrup() {
@@ -149,16 +95,11 @@ class AbstractPlayerTest extends BaseTest {
         marco.setFP(20); // FP = 20, MaxFP = 42
         luis.setFP(0); // FP = 0, MaxFP = 2
         luis2.setFP(0); // FP = 0, MaxFP = 7
-        // Los jugadores tienen inicialmente el inventario vacío,
-        // así que les damos algunos items.
-        marco.addItem(honeySyrup,2);
-        luis.addItem(honeySyrup,1);
-        luis2.addItem(honeySyrup,4);
         // Probamos que los FP aumenten si son menos que el maxFP
         assertEquals(marco.getFP(),20);
         marco.useHoneySyrup();
         assertEquals(marco.getFP(),23);
-        marco.useItem(honeySyrup);
+        marco.useHoneySyrup();
         assertEquals(marco.getFP(),26);
         // Probamos que los FP no sobrepasen el maxFP
         assertEquals(luis.getFP(),0);
@@ -169,7 +110,7 @@ class AbstractPlayerTest extends BaseTest {
         assertEquals(luis2.getFP(),0);
         luis2.useHoneySyrup();
         assertEquals(luis2.getFP(),3);
-        luis2.useItem(honeySyrup);
+        luis2.useHoneySyrup();
         assertEquals(luis2.getFP(),6);
         luis2.useHoneySyrup();
         assertEquals(luis2.getFP(),7); // Llegó al máximo de FP
@@ -185,8 +126,7 @@ class AbstractPlayerTest extends BaseTest {
 
     /**
      * Se testará:
-     * {@code useRedMushroom} por sí solo y
-     * {@code useItem} que invocará el uso de redMushroom.
+     * {@code useRedMushroom} por sí solo
      */
     @Test
     void useRedMushroom() {
@@ -195,16 +135,11 @@ class AbstractPlayerTest extends BaseTest {
         marco.setHP(30); // Vida = 30, MaxVida = 57, 10% = 5.7 aprox 6
         luis.setHP(0); // Vida = 0, MaxVida = 2, 10% = 0.2 aprox 0
         luis2.setHP(13); // Vida = 13, MaxVida = 18, 10% = 1.8 aprox 2
-        // Los jugadores tienen inicialmente el inventario vacío,
-        // así q les damos algunos items.
-        marco.addItem(redMushroom,2);
-        luis.addItem(redMushroom,1);
-        luis2.addItem(redMushroom,4);
         // Probamos que la vida aumente si el 10% > 0
         assertEquals(marco.getHP(),30);
         marco.useRedMushroom();
         assertEquals(marco.getHP(),36);
-        marco.useItem(redMushroom);
+        marco.useRedMushroom();
         assertEquals(marco.getHP(),42);
         // Probamos que la vida no aumente si el 10% = 0
         assertEquals(luis.getHP(),0);
@@ -215,7 +150,7 @@ class AbstractPlayerTest extends BaseTest {
         assertEquals(luis2.getHP(),13);
         luis2.useRedMushroom();
         assertEquals(luis2.getHP(),15);
-        luis2.useItem(redMushroom);
+        luis2.useRedMushroom();
         assertEquals(luis2.getHP(),17);
         luis2.useRedMushroom();
         assertEquals(luis2.getHP(),18); // Llegó al máximo de vida
@@ -265,57 +200,5 @@ class AbstractPlayerTest extends BaseTest {
         // Volvemos a setear los FP para que no afecte el código
         marco.setFP(42);
         luis2.setFP(7);
-    }
-
-    @Test
-    void testEquals() {
-        // Sabemos por los test de AbstractEntities que se cumple que
-        // marco =/= luis, goomba =/= spiny, spiny =/= marco, etc.
-        // Ahora se probará que marco =/= marco2, si tienen distinto inventario
-        // o estado (cambio de FP, invenciblidad, etc), aunque tengan las mismas estadísticas.
-        // Primero, sabemos que marco y marco2 tienen las mismas estadísticas,
-        // inventario (vacío) y estado, por lo que son iguales.
-        assertTrue(marco.equals(marco2));
-        // Si añadimos items, ya no son iguales
-        marco.addItem(honeySyrup,1);
-        assertFalse(marco.equals(marco2));
-        // Si añadimos los mismos items, sí.
-        marco2.addItem(honeySyrup,1);
-        assertTrue(marco.equals(marco2));
-        // Si cambia el estado de uno, ya no son iguales
-        marco.useItem(honeySyrup);
-        assertFalse(marco.equals(marco2));
-        // Si cambia el estado del otro al mismo, son iguales
-        marco2.useItem(honeySyrup);
-        assertTrue(marco.equals(marco2));
-        // Si se cambia algun estado FP, HP, etc, ya no son iguales
-        marco.useFPtoAttack(hammer);
-        assertFalse(marco.equals(marco2));
-        // Si el otro sí ocupa el mismo ataque, sí.
-        marco2.useFPtoAttack(hammer);
-        assertTrue(marco.equals(marco2));
-    }
-
-    @Test
-    void testHashCode() {
-        assertEquals(marco.hashCode(),marco2.hashCode());
-        // Si añadimos items, ya no son iguales
-        marco.addItem(honeySyrup,1);
-        assertNotEquals(marco.hashCode(),marco2.hashCode());
-        // Si añadimos los mismos items, sí.
-        marco2.addItem(honeySyrup,1);
-        assertEquals(marco.hashCode(),marco2.hashCode());
-        // Si cambia el estado de uno, ya no son iguales
-        marco.useItem(honeySyrup);
-        assertNotEquals(marco.hashCode(),marco2.hashCode());
-        // Si cambia el estado del otro al mismo, son iguales
-        marco2.useItem(honeySyrup);
-        assertEquals(marco.hashCode(),marco2.hashCode());
-        // Si se cambia algun estado FP, HP, etc, ya no son iguales
-        marco.useFPtoAttack(hammer);
-        assertNotEquals(marco.hashCode(),marco2.hashCode());
-        // Si el otro sí ocupa el mismo ataque, sí.
-        marco2.useFPtoAttack(hammer);
-        assertEquals(marco.hashCode(),marco2.hashCode());
     }
 }

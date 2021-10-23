@@ -5,6 +5,7 @@ import com.aventurasdemarcoyluis.attacks.JumpAttack;
 import com.aventurasdemarcoyluis.enemies.Boo;
 import com.aventurasdemarcoyluis.enemies.Goomba;
 import com.aventurasdemarcoyluis.enemies.Spiny;
+import com.aventurasdemarcoyluis.items.Baul;
 import com.aventurasdemarcoyluis.items.HoneySyrup;
 import com.aventurasdemarcoyluis.items.RedMushroom;
 import com.aventurasdemarcoyluis.players.Luis;
@@ -37,6 +38,9 @@ public class GameExample {
         HoneySyrup honeySyrup = new HoneySyrup();
         RedMushroom redMushroom = new RedMushroom();
 
+        // Baul
+        Baul baul = new Baul(2,3);
+
         System.out.println("==========================================================================");
         System.out.println("Marco:" + " HP = " + marco.getHP()+ "/" + marco.getMaxHP()
                 + " FP = " +marco.getFP() + "/" + marco.getMaxFP());
@@ -48,9 +52,7 @@ public class GameExample {
         System.out.println("==========================================================================");
         System.out.println("Marco y Luis pasean juntos por la pradera.");
         System.out.println("Marco se encuentra 2 Honey Syrup");
-        marco.addItem(honeySyrup,2);
         System.out.println("Luis se encuentra 3 Red Mushroom");
-        luis.addItem(redMushroom,3);
         System.out.println("   ");
         System.out.println("Aparece un Goomba salvaje!");
         System.out.println("Marco decide atacar a Goomba con Salto");
@@ -99,9 +101,9 @@ public class GameExample {
         System.out.println("Descubierta su debilidad, aunque el ataque falle Spiny se va corriendo.");
         System.out.println("Boo despierta de su letargo para atormentar a los jugadores.");
         System.out.println("Luis y Marco se asustan. Luis decide tomarse todos sus Red Mushroom");
-        luis.useItem(redMushroom);
-        luis.useItem(redMushroom);
-        luis.useItem(redMushroom);
+        luis.useItem(redMushroom, baul);
+        luis.useItem(redMushroom, baul);
+        luis.useItem(redMushroom, baul);
         System.out.println("Luis:" + " HP = " + luis.getHP()+ "/" + luis.getMaxHP()
                 + " FP = " +luis.getFP() + "/" + luis.getMaxFP());
         System.out.println("   ");
@@ -150,8 +152,8 @@ public class GameExample {
         System.out.println("   ");
         System.out.println("Luis se rie de Marco");
         System.out.println("Marco decide consumir todos sus Honey Syrup");
-        marco.useItem(honeySyrup);
-        marco.useItem(honeySyrup);
+        marco.useItem(honeySyrup, baul);
+        marco.useItem(honeySyrup, baul);
         System.out.println("Y ahora sí tiene una lucha a muerte con King Goomba");
         System.out.println("   ");
         marco.attack(kingGoomba,hammer);

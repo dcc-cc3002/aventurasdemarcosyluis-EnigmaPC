@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.aventurasdemarcoyluis.items.BaulTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-10-23T22:58:58" hostname="LAPTOP-BPDICMJD" time="0.004">
+  <properties/>
+  <testcase name="baulEmptyCompleteTest()" classname="com.aventurasdemarcoyluis.items.BaulTest" time="0.002"/>
+  <testcase name="baulCompleteTest()" classname="com.aventurasdemarcoyluis.items.BaulTest" time="0.001"/>
+  <system-out><![CDATA[Marco ha usado Honey Syrup
+Marco ha usado Honey Syrup
+Marco ha usado Honey Syrup
+Marco ha usado Red Mushroom
+Marco ha usado Red Mushroom
+Marco ha usado Honey Syrup
+Marco ha usado Honey Syrup
+Marco ha usado Honey Syrup
+Marco ha usado Red Mushroom
+Marco ha usado Red Mushroom
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

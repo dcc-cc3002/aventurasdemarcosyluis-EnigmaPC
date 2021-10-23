@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.aventurasdemarcoyluis.players.MarcoTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-10-23T14:56:37" hostname="LAPTOP-BPDICMJD" time="0.034">
+<testsuite name="com.aventurasdemarcoyluis.players.MarcoTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-10-23T22:58:58" hostname="LAPTOP-BPDICMJD" time="0.007">
   <properties/>
-  <testcase name="attackedBySpiny()" classname="com.aventurasdemarcoyluis.players.MarcoTest" time="0.025"/>
-  <testcase name="attack()" classname="com.aventurasdemarcoyluis.players.MarcoTest" time="0.004"/>
-  <testcase name="attackedByGoomba()" classname="com.aventurasdemarcoyluis.players.MarcoTest" time="0.003"/>
+  <testcase name="attackedBySpiny()" classname="com.aventurasdemarcoyluis.players.MarcoTest" time="0.001"/>
+  <testcase name="attack()" classname="com.aventurasdemarcoyluis.players.MarcoTest" time="0.003"/>
+  <testcase name="attackedByGoomba()" classname="com.aventurasdemarcoyluis.players.MarcoTest" time="0.001"/>
   <system-out><![CDATA[Marco es atacado por Spiny y recibe 2 de daño
 Marco es atacado por Spiny y recibe 2 de daño
 Marco es atacado por Spiny y recibe 2 de daño
@@ -12,7 +12,7 @@ Marco es atacado por Spiny y recibe 2 de daño
 Marco es atacado por Spiny y recibe 2 de daño
 Marco usa Martillo y le hace 21 de daño a Goomba
 Marco usa Martillo y le hace 21 de daño a Goomba
-Marco usa Martillo y le hace 45 de daño a Spiny
+Marco usa Martillo, pero ha fallado
 Se ha esquivado el ataque
 Marco usa Salto y le hace 14 de daño a Goomba
 Marco usa Salto y le hace 14 de daño a Goomba

@@ -38,7 +38,7 @@ public class Spiny extends AbstractEnemy implements IAttackedByLuis {
      * @param player Jugador que está siendo atacado
      */
     public void attack(IPlayer player) {
-        if (this.isNotDead() && player.isNotDead() && !player.isInvincible()) {
+        if (this.isNotDead() && player.isNotDead()) {
             player.attackedBySpiny(this);
         } else {
             System.out.println("Spiny no puede atacar");

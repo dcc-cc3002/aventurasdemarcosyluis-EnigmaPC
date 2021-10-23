@@ -4,16 +4,12 @@ import com.aventurasdemarcoyluis.interfaces.IAttacks;
 import com.aventurasdemarcoyluis.interfaces.IEnemy;
 import com.aventurasdemarcoyluis.interfaces.IObject;
 import com.aventurasdemarcoyluis.interfaces.IPlayer;
-
-import java.util.Hashtable;
+import com.aventurasdemarcoyluis.items.Baul;
 
 /**
  * <b>Clase abstracta Player:</b> <br>
  * Modela el tipo de entidad JUGADOR <br>
  * Se heredan los campos de la clase madre AbstractEntities.
- * Y se añaden los siguientes: <br>
- * <b>invincible</b>: Si el jugador está en modo invencible <br>
- * <b>inventory</b>: Inventario del jugador <br>
  *
  * @author Andrea PC
  *
@@ -21,8 +17,6 @@ import java.util.Hashtable;
  * @see com.aventurasdemarcoyluis.players.Luis
  * */
 public abstract class AbstractPlayer extends AbstractEntities implements IPlayer {
-    // Campos
-    private Hashtable<IObject, Integer> inventory; // Variable para colocar items
 
     /**
      * <b>Constructor:</b> <br>
@@ -36,7 +30,6 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
      */
     public AbstractPlayer(int level, int attack, int defense, int maxHealPoints, int maxFightPoints, String name) {
         super(level, attack, defense, maxHealPoints, maxFightPoints, name);
-        this.inventory = new Hashtable<>(3);
     }
 
     /**
@@ -44,68 +37,10 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
      */
     protected void levelUP() {
         this.LVL++;
-        this.ATK = (int) Math.floor(this.ATK*(1.15));
-        this.DEF = (int) Math.floor(this.DEF*(1.15));
-        this.maxFP = (int) Math.floor(this.maxFP*(1.15));
-        this.maxHP = (int) Math.floor(this.maxHP*(1.15));
-    }
-
-    /**
-     * Añade cierta cantidad de items al inventario.
-     * Si la cantidad es negativa, no hace nada (no se puede añadir cantidades negativas)
-     * @param item Item que se quiere añadir
-     * @param amount Cantidad
-     */
-    protected void addItem(IObject item, int amount) {
-        if (amount > 0) {
-            if (this.hasItem(item)) {
-                int amountFinal = inventory.get(item);
-                amountFinal += amount;
-                inventory.replace(item,amountFinal);
-            } else {
-                inventory.put(item, amount);
-            }
-        }
-    }
-
-    /**
-     * Entrega la cantidad existente en el inventario de cierto item
-     * @param item Item del que se requiere conocer la cantidad
-     * @return Cantidad del item en el inventario
-     */
-    protected int amountOfItem(IObject item) {
-        if (this.hasItem(item)) {
-            return inventory.get(item);
-        } else {
-            return 0;
-        }
-    }
-
-    /**
-     * Remueve la cantidad que se requiera de cierto item en el inventario.
-     * Si la cantidad es negativa, no hace nada (no se puede remover una cantidad negativa)
-     * @param item Item que se quiere remover
-     * @param amount Cantidad
-     */
-    protected void removeItem(IObject item, int amount) {
-        if (this.hasItem(item)) {
-            int amountFinal = inventory.get(item);
-            amountFinal -= amount;
-            if (amount > 0) {
-                if (amountFinal <= 0) {
-                    inventory.remove(item);
-                } else {
-                    inventory.replace(item, amountFinal);
-                }
-            }
-        }
-    }
-
-    /**
-     * Determina si un item está en el inventario (si hay existencias)
-     */
-    protected boolean hasItem(IObject item) {
-        return inventory.containsKey(item);
+        this.ATK = (int) Math.round(this.ATK*(1.15));
+        this.DEF = (int) Math.round(this.DEF*(1.15));
+        this.maxFP = (int) Math.round(this.maxFP*(1.15));
+        this.maxHP = (int) Math.round(this.maxHP*(1.15));
     }
 
     /**
@@ -156,10 +91,10 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
      * El item que se use se consume del inventario.
      * @param item Item que se quiere usar.
      */
-    public void useItem(IObject item) {
-        if (hasItem(item)) {
+    public void useItem(IObject item, Baul baul) {
+        if (baul.hasItem(item)) {
             item.use(this);
-            this.removeItem(item, 1);
+            baul.removeItem(item, 1);
         }
     }
 
@@ -182,31 +117,5 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
     public void useFPtoAttack(IAttacks attack) {
         int nuevoFP = this.getFP() - attack.getFPCost();
         this.setFP(nuevoFP);
-    }
-
-    /**
-     * Determina si un jugador es igual a otro.
-     * Se comparan tanto inventario como estado de invencibilidad.
-     * @param obj Jugador a comparar
-     * @return Si el jugador a comparar tiene el mismo inventario y
-     * estado de invencibilidad que el otro (this)
-     */
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (!(obj instanceof AbstractPlayer that)) return false;
-        if (!super.equals(obj)) return false;
-        return inventory.equals(that.inventory);
-    }
-
-    /**
-     * Entrega el hashCode de un jugador (inventario y estado de invencibilidad)
-     * @return hashCode de un jugador
-     */
-    @Override
-    public int hashCode() {
-        int result = super.hashCode();
-        result = 31 * result + inventory.hashCode();
-        return result;
     }
 }
