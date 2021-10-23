@@ -16,8 +16,8 @@ import com.aventurasdemarcoyluis.interfaces.IAttacks;
  */
 public abstract class AbstractAttackType implements IAttacks {
     // Campos
-    public int FPCost;
-    public double K;
+    protected int FPCost;
+    protected double K;
 
     /**
      * Entrega el costo en FP de ocupar un tipo de ataque

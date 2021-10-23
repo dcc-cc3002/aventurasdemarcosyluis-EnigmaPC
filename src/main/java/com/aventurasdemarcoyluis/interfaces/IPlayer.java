@@ -9,13 +9,10 @@ import com.aventurasdemarcoyluis.enemies.Spiny;
  * Red Mushroom y Star.
  */
 public interface IPlayer extends IEntities {
-    void setInvincible(boolean b);
     void useHoneySyrup();
     void useRedMushroom();
-    void useStar();
     String getName();
 
     void attackedByGoomba(Goomba goomba);
     void attackedBySpiny(Spiny spiny);
-    boolean isInvincible();
 }

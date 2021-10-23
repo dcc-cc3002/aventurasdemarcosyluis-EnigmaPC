@@ -12,7 +12,6 @@ import com.aventurasdemarcoyluis.interfaces.IObject;
  *
  * @see com.aventurasdemarcoyluis.items.HoneySyrup
  * @see com.aventurasdemarcoyluis.items.RedMushroom
- * @see com.aventurasdemarcoyluis.items.Star
  */
 public abstract class AbstractItem implements IObject {
     // Campos

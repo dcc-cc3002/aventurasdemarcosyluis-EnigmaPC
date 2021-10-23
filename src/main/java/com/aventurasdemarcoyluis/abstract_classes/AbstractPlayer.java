@@ -40,6 +40,17 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
     }
 
     /**
+     * Simula la subida de nivel de un player.
+     */
+    protected void levelUP() {
+        this.LVL++;
+        this.ATK = (int) Math.floor(this.ATK*(1.15));
+        this.DEF = (int) Math.floor(this.DEF*(1.15));
+        this.maxFP = (int) Math.floor(this.maxFP*(1.15));
+        this.maxHP = (int) Math.floor(this.maxHP*(1.15));
+    }
+
+    /**
      * Añade cierta cantidad de items al inventario.
      * Si la cantidad es negativa, no hace nada (no se puede añadir cantidades negativas)
      * @param item Item que se quiere añadir
@@ -185,8 +196,6 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
         if (this == obj) return true;
         if (!(obj instanceof AbstractPlayer that)) return false;
         if (!super.equals(obj)) return false;
-
-        if (isInvincible() != that.isInvincible()) return false;
         return inventory.equals(that.inventory);
     }
 
@@ -197,7 +206,6 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
     @Override
     public int hashCode() {
         int result = super.hashCode();
-        result = 31 * result + (isInvincible() ? 1 : 0);
         result = 31 * result + inventory.hashCode();
         return result;
     }

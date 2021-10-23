@@ -22,14 +22,14 @@ import com.aventurasdemarcoyluis.interfaces.IEntities;
  */
 public abstract class AbstractEntities implements IEntities {
     // Campos
-    private final int LVL;
-    private final int ATK;
-    private final int DEF;
-    private final int maxHP;
-    private final int maxFP;
+    protected int LVL;
+    protected int ATK;
+    protected int DEF;
+    protected int maxHP;
+    protected int maxFP;
     private int HP;
     private int FP;
-    private final String name;
+    protected final String name;
 
     /**
      * <b>Constructor:</b> <br>
@@ -138,6 +138,7 @@ public abstract class AbstractEntities implements IEntities {
     public int getHP() {
         return this.HP;
     }
+
 
     /**
      * Entrega el Nivel de la entidad

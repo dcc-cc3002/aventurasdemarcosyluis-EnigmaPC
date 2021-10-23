@@ -11,7 +11,6 @@ import com.aventurasdemarcoyluis.interfaces.IPlayer;
  * @author Andrea PC
  *
  * @see HoneySyrup
- * @see Star
  * @see AbstractItem
  */
 public class RedMushroom extends AbstractItem {
