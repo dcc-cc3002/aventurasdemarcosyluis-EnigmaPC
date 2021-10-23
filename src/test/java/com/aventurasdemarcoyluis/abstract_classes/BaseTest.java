@@ -8,7 +8,6 @@ import com.aventurasdemarcoyluis.enemies.Goomba;
 import com.aventurasdemarcoyluis.enemies.Spiny;
 import com.aventurasdemarcoyluis.enemies.Boo;
 import com.aventurasdemarcoyluis.items.HoneySyrup;
-import com.aventurasdemarcoyluis.items.Star;
 import com.aventurasdemarcoyluis.items.RedMushroom;
 
 public class BaseTest {
@@ -24,7 +23,6 @@ public class BaseTest {
     public Boo boo2;
     public HoneySyrup honeySyrup;
     public RedMushroom redMushroom;
-    public Star star;
     public HammerAttack hammer;
     public JumpAttack jump;
 }

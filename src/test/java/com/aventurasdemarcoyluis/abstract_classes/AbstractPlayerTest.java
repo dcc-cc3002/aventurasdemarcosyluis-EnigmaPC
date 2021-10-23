@@ -6,7 +6,6 @@ import com.aventurasdemarcoyluis.enemies.Goomba;
 import com.aventurasdemarcoyluis.enemies.Spiny;
 import com.aventurasdemarcoyluis.items.HoneySyrup;
 import com.aventurasdemarcoyluis.items.RedMushroom;
-import com.aventurasdemarcoyluis.items.Star;
 import com.aventurasdemarcoyluis.players.Luis;
 import com.aventurasdemarcoyluis.players.Marco;
 import org.junit.jupiter.api.BeforeEach;
@@ -26,7 +25,6 @@ class AbstractPlayerTest extends BaseTest {
 
         // Items
         honeySyrup = new HoneySyrup();
-        star = new Star();
         redMushroom = new RedMushroom();
 
         // Enemigos
@@ -53,36 +51,28 @@ class AbstractPlayerTest extends BaseTest {
         // como también pueden tener items, testeamos con ellos.
 
         // Inicialmente el inventario no tiene ningún item.
-        assertEquals(marco.hasItem(star), false);
         assertEquals(marco.hasItem(honeySyrup), false);
         assertEquals(marco.hasItem(redMushroom), false);
 
         // Añadimos algunos items:
-        marco.addItem(star, 1);
         marco.addItem(honeySyrup, 5);
         marco.addItem(redMushroom, 4);
 
         // Ahora Marco debe tener estos items y con la cantidad añadida
-        assertEquals(marco.hasItem(star), true);
         assertEquals(marco.hasItem(honeySyrup), true);
         assertEquals(marco.hasItem(redMushroom), true);
-        assertEquals(marco.amountOfItem(star), 1);
         assertEquals(marco.amountOfItem(honeySyrup), 5);
         assertEquals(marco.amountOfItem(redMushroom), 4);
 
         // Si removemos algunos items:
-        marco.removeItem(star, 5); // Ahora no debe tener estrellas
-        // como tenía 1 estrella y se quieren eliminar 5, solo se elimina 1.
         marco.removeItem(honeySyrup, 2); // Ahora debe tener 3 honeySyrup
         marco.removeItem(redMushroom, 2); // Ahora debe tener 2 redMushroom
         marco.removeItem(honeySyrup, -5); // Esto no debe hacer nada pues
         // no se pueden remover -5 items.
 
         // Ahora Marco debe tener estos items y con la cantidad añadida
-        assertEquals(marco.hasItem(star), false);
         assertEquals(marco.hasItem(honeySyrup), true);
         assertEquals(marco.hasItem(redMushroom), true);
-        assertEquals(marco.amountOfItem(star), 0);
         assertEquals(marco.amountOfItem(honeySyrup), 3);
         assertEquals(marco.amountOfItem(redMushroom), 2);
 
@@ -240,37 +230,6 @@ class AbstractPlayerTest extends BaseTest {
     }
 
     /**
-     * Se testará:
-     * {@code useStar} por sí solo y
-     * {@code useItem} que invocará el uso de star.
-     */
-    @Test
-    void useStar() {
-        // Hace que el personaje que la consuma entre al estado invencible.
-        // Inicialmente ningún personaje está en el estado invencible
-        // ni tienen items.
-        assertFalse(marco.isInvincible());
-        assertFalse(luis.isInvincible());
-        marco.addItem(star,2);
-        luis.addItem(star,2);
-        // Usamos y ahora deben estar en estado invencible
-        marco.useStar();
-        luis.useStar();
-        assertTrue(marco.isInvincible());
-        assertTrue(luis.isInvincible());
-        // Seteamos no invencible y ahora probamos con useItem
-        marco.setInvincible(false);
-        luis.setInvincible(false);
-        marco.useItem(star);
-        luis.useItem(star);
-        assertTrue(marco.isInvincible());
-        assertTrue(luis.isInvincible());
-        // Seteamos no invencible para que no afecte el código
-        marco.setInvincible(false);
-        luis.setInvincible(false);
-    }
-
-    /**
      * Se prueban:
      * {@code attackCost} de AbstractPlayer y
      * {@code getFPCost} de AbstractAttackType.
@@ -318,16 +277,16 @@ class AbstractPlayerTest extends BaseTest {
         // inventario (vacío) y estado, por lo que son iguales.
         assertTrue(marco.equals(marco2));
         // Si añadimos items, ya no son iguales
-        marco.addItem(star,1);
+        marco.addItem(honeySyrup,1);
         assertFalse(marco.equals(marco2));
         // Si añadimos los mismos items, sí.
-        marco2.addItem(star,1);
+        marco2.addItem(honeySyrup,1);
         assertTrue(marco.equals(marco2));
         // Si cambia el estado de uno, ya no son iguales
-        marco.useItem(star);
+        marco.useItem(honeySyrup);
         assertFalse(marco.equals(marco2));
         // Si cambia el estado del otro al mismo, son iguales
-        marco2.useItem(star);
+        marco2.useItem(honeySyrup);
         assertTrue(marco.equals(marco2));
         // Si se cambia algun estado FP, HP, etc, ya no son iguales
         marco.useFPtoAttack(hammer);
@@ -341,16 +300,16 @@ class AbstractPlayerTest extends BaseTest {
     void testHashCode() {
         assertEquals(marco.hashCode(),marco2.hashCode());
         // Si añadimos items, ya no son iguales
-        marco.addItem(star,1);
+        marco.addItem(honeySyrup,1);
         assertNotEquals(marco.hashCode(),marco2.hashCode());
         // Si añadimos los mismos items, sí.
-        marco2.addItem(star,1);
+        marco2.addItem(honeySyrup,1);
         assertEquals(marco.hashCode(),marco2.hashCode());
         // Si cambia el estado de uno, ya no son iguales
-        marco.useItem(star);
+        marco.useItem(honeySyrup);
         assertNotEquals(marco.hashCode(),marco2.hashCode());
         // Si cambia el estado del otro al mismo, son iguales
-        marco2.useItem(star);
+        marco2.useItem(honeySyrup);
         assertEquals(marco.hashCode(),marco2.hashCode());
         // Si se cambia algun estado FP, HP, etc, ya no son iguales
         marco.useFPtoAttack(hammer);

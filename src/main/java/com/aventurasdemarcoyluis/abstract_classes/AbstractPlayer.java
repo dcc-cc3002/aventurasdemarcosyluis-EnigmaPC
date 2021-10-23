@@ -22,7 +22,6 @@ import java.util.Hashtable;
  * */
 public abstract class AbstractPlayer extends AbstractEntities implements IPlayer {
     // Campos
-    private boolean invincible;
     private Hashtable<IObject, Integer> inventory; // Variable para colocar items
 
     /**
@@ -38,7 +37,6 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
     public AbstractPlayer(int level, int attack, int defense, int maxHealPoints, int maxFightPoints, String name) {
         super(level, attack, defense, maxHealPoints, maxFightPoints, name);
         this.inventory = new Hashtable<>(3);
-        this.invincible = false;
     }
 
     /**
@@ -100,22 +98,6 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
     }
 
     /**
-     * Determina si un jugador es invencible o no.
-     * @return Verdadero si es invencible, Falso si no.
-     */
-    public boolean isInvincible() {
-        return invincible;
-    }
-
-    /**
-     * Establece la invencibilidad del jugador.
-     * @param bool Verdadero si se quiere hacer invencible, Falso si no.
-     */
-    public void setInvincible(boolean bool) {
-        this.invincible = bool;
-    }
-
-    /**
      * Determina si un jugador tiene suficientes FP para atacar con cierto ataque.
      * Para atacar los FP tienen que ser mayores al costo del ataque.
      * @param attack Ataque utilizado
@@ -147,14 +129,6 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
         int HP = this.getHP();
         int newHP = (int) Math.round(HP + amountOfHeal);
         this.setHP(newHP);
-    }
-
-    /**
-     * Usa el item Star.
-     * Hace que el personaje que la consuma entre al estado invencible.
-     */
-    public void useStar() {
-        this.setInvincible(true);
     }
 
     /**

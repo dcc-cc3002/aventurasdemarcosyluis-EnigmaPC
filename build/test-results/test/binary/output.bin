@@ -1,98 +1,35 @@
-Marco ha usado Honey Syrup
-Luis ha usado Honey Syrup
-Marco ha usado Red Mushroom
-Luis ha usado Red Mushroom
-Marco ha usado Honey Syrup
-Marco ha usado Honey Syrup
-Marco ha usado Honey Syrup
-Marco ha usado Red Mushroom
-Marco ha usado Red Mushroom
-Marco ha usado Star
-Luis ha usado Star
-Marco ha usado Star
-Marco ha usado Star
-Marco ha usado Star
-Marco ha usado Star
-.Luis es atacado por Boo y recibe 23 de daño
-Boo no puede atacar
-1Luis es atacado por Goomba y recibe 13 de daño
-1Luis es atacado por Goomba y recibe 13 de daño
-Goomba no puede atacar
-1Marco es atacado por Goomba y recibe 7 de daño
-1Marco es atacado por Goomba y recibe 7 de daño
-1Marco es atacado por Goomba y recibe 7 de daño
- 0Luis es atacado por Spiny y recibe 25 de daño
- Spiny no puede atacar
- 1Marco es atacado por Spiny y recibe 13 de daño
- 1Marco es atacado por Spiny y recibe 13 de daño
- 1Marco es atacado por Spiny y recibe 13 de daño
- 1Marco es atacado por Spiny y recibe 13 de daño
- Spiny no puede atacar
-"!2Luis usa Martillo y le hace 23 de daño a Goomba
-"!$Luis usa Martillo, pero ha fallado
-"!1Luis usa Martillo y le hace 47 de daño a Spiny
-"!/Luis usa Salto y le hace 15 de daño a Goomba
-"!/Luis usa Salto y le hace 15 de daño a Goomba
-"!/Luis usa Salto y le hace 15 de daño a Goomba
-"!/Luis usa Salto y le hace 15 de daño a Goomba
-"!Luis no puede atacar
-"!"Spiny se protege con sus pinchos
-"!1Spiny le hace 3 de daño a Luis con sus pinchos
-"!"Spiny se protege con sus pinchos
-"!1Spiny le hace 3 de daño a Luis con sus pinchos
-"!Luis no puede atacar
-"!"Spiny se protege con sus pinchos
-"!1Spiny le hace 3 de daño a Luis con sus pinchos
-"!Luis no puede atacar
-"!Luis no puede atacar
-"!Luis no puede atacar
-"#/Luis es atacado por Spiny y recibe 4 de daño
-"#/Luis es atacado por Spiny y recibe 4 de daño
-"#/Luis es atacado por Spiny y recibe 4 de daño
-"#/Luis es atacado por Spiny y recibe 4 de daño
-"#/Luis es atacado por Spiny y recibe 4 de daño
-"#/Luis es atacado por Spiny y recibe 4 de daño
-"$1Luis es atacado por Goomba y recibe 30 de daño
-"$1Luis es atacado por Goomba y recibe 30 de daño
-"$1Luis es atacado por Goomba y recibe 30 de daño
-"%.Luis es atacado por Boo y recibe 11 de daño
-"%.Luis es atacado por Boo y recibe 11 de daño
-"%.Luis es atacado por Boo y recibe 11 de daño
-"%.Luis es atacado por Boo y recibe 11 de daño
-"%.Luis es atacado por Boo y recibe 11 de daño
-"%.Luis es atacado por Boo y recibe 11 de daño
-'&0Marco es atacado por Spiny y recibe 2 de daño
-'&0Marco es atacado por Spiny y recibe 2 de daño
-'&0Marco es atacado por Spiny y recibe 2 de daño
-'&0Marco es atacado por Spiny y recibe 2 de daño
-'&0Marco es atacado por Spiny y recibe 2 de daño
-'&0Marco es atacado por Spiny y recibe 2 de daño
-'(3Marco usa Martillo y le hace 21 de daño a Goomba
-'(%Marco usa Martillo, pero ha fallado
-'(2Marco usa Martillo y le hace 45 de daño a Spiny
-'(Se ha esquivado el ataque
-'(0Marco usa Salto y le hace 14 de daño a Goomba
-'(0Marco usa Salto y le hace 14 de daño a Goomba
-'(0Marco usa Salto y le hace 14 de daño a Goomba
-'(0Marco usa Salto y le hace 14 de daño a Goomba
-'("Spiny se protege con sus pinchos
-'(2Spiny le hace 3 de daño a Marco con sus pinchos
-'("Spiny se protege con sus pinchos
-'(2Spiny le hace 3 de daño a Marco con sus pinchos
-'("Spiny se protege con sus pinchos
-'(2Spiny le hace 3 de daño a Marco con sus pinchos
-'("Spiny se protege con sus pinchos
-'(2Spiny le hace 3 de daño a Marco con sus pinchos
-'(-Marco usa Salto y le hace 22 de daño a Boo
-'(Marco no puede atacar
-'("Spiny se protege con sus pinchos
-'(2Spiny le hace 2 de daño a Marco con sus pinchos
-'(Marco no puede atacar
-'("Spiny se protege con sus pinchos
-'(2Spiny le hace 2 de daño a Marco con sus pinchos
-'(Marco no puede atacar
-'(Marco no puede atacar
-')2Marco es atacado por Goomba y recibe 29 de daño
-')2Marco es atacado por Goomba y recibe 29 de daño
-')2Marco es atacado por Goomba y recibe 29 de daño
-')2Marco es atacado por Goomba y recibe 29 de daño
+0Marco es atacado por Spiny y recibe 2 de daño
+0Marco es atacado por Spiny y recibe 2 de daño
+0Marco es atacado por Spiny y recibe 2 de daño
+0Marco es atacado por Spiny y recibe 2 de daño
+0Marco es atacado por Spiny y recibe 2 de daño
+0Marco es atacado por Spiny y recibe 2 de daño
+3Marco usa Martillo y le hace 21 de daño a Goomba
+3Marco usa Martillo y le hace 21 de daño a Goomba
+2Marco usa Martillo y le hace 45 de daño a Spiny
+Se ha esquivado el ataque
+0Marco usa Salto y le hace 14 de daño a Goomba
+0Marco usa Salto y le hace 14 de daño a Goomba
+0Marco usa Salto y le hace 14 de daño a Goomba
+0Marco usa Salto y le hace 14 de daño a Goomba
+"Spiny se protege con sus pinchos
+2Spiny le hace 3 de daño a Marco con sus pinchos
+"Spiny se protege con sus pinchos
+2Spiny le hace 3 de daño a Marco con sus pinchos
+"Spiny se protege con sus pinchos
+2Spiny le hace 3 de daño a Marco con sus pinchos
+"Spiny se protege con sus pinchos
+2Spiny le hace 3 de daño a Marco con sus pinchos
+-Marco usa Salto y le hace 22 de daño a Boo
+Marco no puede atacar
+"Spiny se protege con sus pinchos
+2Spiny le hace 2 de daño a Marco con sus pinchos
+Marco no puede atacar
+"Spiny se protege con sus pinchos
+2Spiny le hace 2 de daño a Marco con sus pinchos
+Marco no puede atacar
+Marco no puede atacar
+2Marco es atacado por Goomba y recibe 29 de daño
+2Marco es atacado por Goomba y recibe 29 de daño
+2Marco es atacado por Goomba y recibe 29 de daño
+2Marco es atacado por Goomba y recibe 29 de daño
