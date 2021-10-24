@@ -156,11 +156,6 @@ class AbstractPlayerTest extends BaseTest {
         assertEquals(luis2.getHP(),luis2.getMaxHP());
         luis2.useRedMushroom();
         assertEquals(luis2.getHP(),luis2.getMaxHP());
-
-        // Seteamos la vida otra vez para que no afecte el código
-        marco.setHP(57);
-        luis.setHP(2);
-        luis2.setHP(18);
     }
 
     /**
@@ -195,9 +190,5 @@ class AbstractPlayerTest extends BaseTest {
         assertEquals(luis2.getFP(), 1);
         luis2.useFPtoAttack(hammer);
         assertEquals(luis2.getFP(), 0); // Sobran -1 de FP pero llega a 0.
-
-        // Volvemos a setear los FP para que no afecte el código
-        marco.setFP(42);
-        luis2.setFP(7);
     }
 }

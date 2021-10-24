@@ -2,6 +2,8 @@ package com.aventurasdemarcoyluis.model.attacks;
 
 import com.aventurasdemarcoyluis.model.abstract_classes.AbstractAttackType;
 
+import java.util.Random;
+
 /**
  * <b>Clase HammerAttack:</b> <br>
  * Modela el ataque Martillo <br>
@@ -22,6 +24,7 @@ public class HammerAttack extends AbstractAttackType {
     public HammerAttack() {
         this.FPCost = 2;
         this.K = 1.5;
+        this.random = new Random();
     }
 
     /**

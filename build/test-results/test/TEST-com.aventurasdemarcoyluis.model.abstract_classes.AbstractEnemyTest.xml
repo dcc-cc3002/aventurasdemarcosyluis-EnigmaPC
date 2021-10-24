@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.aventurasdemarcoyluis.model.abstract_classes.AbstractEnemyTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-23T23:32:17" hostname="LAPTOP-BPDICMJD" time="0.011">
-  <properties/>
-  <testcase name="damageToHurt()" classname="com.aventurasdemarcoyluis.model.abstract_classes.AbstractEnemyTest" time="0.011"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

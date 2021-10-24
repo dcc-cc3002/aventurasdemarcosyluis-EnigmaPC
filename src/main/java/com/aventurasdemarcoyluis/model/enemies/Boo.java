@@ -50,7 +50,7 @@ public class Boo extends AbstractEnemy {
      */
     @Override
     public void attackedByMarco(Marco marco, IAttacks attack) {
-        if (attack.hurtsBoo()) {
+        if (attack.hurtsBoo()) { // Se usa Salto
             System.out.println("Marco usa Salto y le hace "+(int) Math.round(this.damageToHurt(marco, attack))
                     +" de daño a Boo");
             this.getDamage(this.damageToHurt(marco, attack));

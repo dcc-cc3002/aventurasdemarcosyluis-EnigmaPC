@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.aventurasdemarcoyluis.model.players.MarcoTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-10-23T23:32:17" hostname="LAPTOP-BPDICMJD" time="0.032">
+<testsuite name="com.aventurasdemarcoyluis.model.players.MarcoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-10-24T04:31:01" hostname="LAPTOP-BPDICMJD" time="0.022">
   <properties/>
-  <testcase name="attackedBySpiny()" classname="com.aventurasdemarcoyluis.model.players.MarcoTest" time="0.018"/>
-  <testcase name="attack()" classname="com.aventurasdemarcoyluis.model.players.MarcoTest" time="0.007"/>
-  <testcase name="attackedByGoomba()" classname="com.aventurasdemarcoyluis.model.players.MarcoTest" time="0.006"/>
-  <system-out><![CDATA[Marco es atacado por Spiny y recibe 2 de daño
-Marco es atacado por Spiny y recibe 2 de daño
-Marco es atacado por Spiny y recibe 2 de daño
-Marco es atacado por Spiny y recibe 2 de daño
-Marco es atacado por Spiny y recibe 2 de daño
-Marco es atacado por Spiny y recibe 2 de daño
+  <testcase name="attack()" classname="com.aventurasdemarcoyluis.model.players.MarcoTest" time="0.022"/>
+  <system-out><![CDATA[Marco usa Martillo y le hace 21 de daño a Goomba
+Marco usa Martillo, pero ha fallado
 Marco usa Martillo, pero ha fallado
 Marco usa Martillo y le hace 21 de daño a Goomba
 Marco usa Martillo y le hace 45 de daño a Spiny
@@ -35,10 +29,6 @@ Spiny se protege con sus pinchos
 Spiny le hace 2 de daño a Marco con sus pinchos
 Marco no puede atacar
 Marco no puede atacar
-Marco es atacado por Goomba y recibe 29 de daño
-Marco es atacado por Goomba y recibe 29 de daño
-Marco es atacado por Goomba y recibe 29 de daño
-Marco es atacado por Goomba y recibe 29 de daño
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

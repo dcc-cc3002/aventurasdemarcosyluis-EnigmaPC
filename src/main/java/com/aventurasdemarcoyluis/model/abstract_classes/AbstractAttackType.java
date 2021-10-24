@@ -2,6 +2,8 @@ package com.aventurasdemarcoyluis.model.abstract_classes;
 
 import com.aventurasdemarcoyluis.model.interfaces.IAttacks;
 
+import java.util.Random;
+
 /**
  * <b>Clase abstracta AttackType:</b> <br>
  * Modela los ataques que tendrán los jugadores <br>
@@ -18,6 +20,7 @@ public abstract class AbstractAttackType implements IAttacks {
     // Campos
     protected int FPCost;
     protected double K;
+    protected Random random;
 
     /**
      * Entrega el costo en FP de ocupar un tipo de ataque
@@ -42,8 +45,16 @@ public abstract class AbstractAttackType implements IAttacks {
      */
     @Override
     public boolean attackFailed() {
-        int dado = (int) (Math.random()*4);
+        int dado = random.nextInt(5);
         return dado == 0;
+    }
+
+    /**
+     * Se establece la semilla para el ataque. Creado exclusivamente para testeo.
+     * @param seed Semilla a plantar
+     */
+    public void setSeed(int seed) {
+        random.setSeed(seed);
     }
 
     /**

@@ -31,21 +31,4 @@ class AbstractAttackTypeTest extends BaseTest {
         assertEquals(hammer.hashCode(),hammer.hashCode());
         assertEquals(jump.hashCode(),jump.hashCode());
     }
-
-    /**
-     * Creado para revisar que la probabilidad de fallo sea de un 25%.
-     * Siguiendo la ley de los grandes números
-     */
-    @Test
-    void attackFailedTest() {
-        int counterFailed = 0;
-        int counter = 0;
-        while (counter <= 10000) {
-            if (hammer.attackFailed()) {
-                counterFailed += 1;
-            } counter += 1;
-        }
-        double probability = counterFailed/10000.0;
-        assertTrue(probability < 0.28 && probability > 0.22);
-    }
 }

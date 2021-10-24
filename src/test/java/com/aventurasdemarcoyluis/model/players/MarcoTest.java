@@ -16,7 +16,7 @@ class MarcoTest extends BaseTest {
     @BeforeEach
     void setUp() {
         // Luis
-        marco = new Marco(19,22,16,59,11);
+        marco = new Marco(19,22,16,59,13);
 
         // Enemigos
         goomba = new Goomba(24,26,29,49);
@@ -36,28 +36,40 @@ class MarcoTest extends BaseTest {
         // spiny, daño martillo = 45, salto no le hace daño
         // boo, daño martillo no le hace daño, salto = 33
 
-        // Marco ataca con Martillo
+
+        // TESTEO DE MARTILLO
+        // Se prueba la semilla 3, la cual genera los siguientes enteros entre
+        // 1 y 4 en 7 llamadas:
+        // 4 - 0 - 0 - 1 - 3 - 2 - 4
+        // Si sale 0, el ataque falla (se elige que 0 sea el fallo)
+        hammer.setSeed(3);
+
         // Goomba
         marco.attack(goomba,hammer);
-        assertTrue(goomba.getHP() == 49 || goomba.getHP() == 28);
-        assertTrue(marco.getFP() == 11 || marco.getFP() == 9);
+        assertTrue(goomba.getHP() == 28);
+        assertTrue(marco.getFP() == 11);
+        marco.attack(goomba,hammer); // Ataque Fallido
+        assertTrue(goomba.getHP() == 28);
+        assertTrue(marco.getFP() == 9);
+        marco.attack(goomba,hammer); // Ataque Fallido
+        assertTrue(goomba.getHP() == 28);
+        assertTrue(marco.getFP() == 7);
         marco.attack(goomba,hammer);
-        assertTrue(goomba.getHP() == 49 || goomba.getHP() == 28
-                || goomba.getHP() == 7);
-        assertTrue(marco.getFP() == 11 || marco.getFP() == 9
-                || marco.getFP() == 7);
+        assertTrue(goomba.getHP() == 7);
+        assertTrue(marco.getFP() == 5);
+
         // Spiny
         marco.attack(spiny,hammer);
-        assertTrue(spiny.getHP() == 0 || spiny.getHP() == 19);
-        assertTrue(marco.getFP() == 11 || marco.getFP() == 9
-                || marco.getFP() == 7 || marco.getFP() == 5);
+        assertTrue(spiny.getHP() == 0);
+        assertTrue(marco.getFP() == 3);
+
+
         // Boo no le hace nada martillo
         marco.attack(boo,hammer);
         assertTrue(boo.getHP() == 19);
-        assertTrue(marco.getFP() == 11 || marco.getFP() == 9
-                || marco.getFP() == 7 || marco.getFP() == 5 || marco.getFP() == 3);
+        assertTrue(marco.getFP() == 1);
 
-        // Marco ataca con Salto
+        // TESTEO DE SALTO
         goomba = new Goomba(24,26,29,49);
         spiny = new Spiny(11,5,14,19);
         boo = new Boo(14,16,19,19);

@@ -16,7 +16,7 @@ class LuisTest extends BaseTest {
     @BeforeEach
     void setUp() {
         // Luis
-        luis = new Luis(20,23,17,60,7);
+        luis = new Luis(20,23,17,60,12);
 
         // Enemigos
         goomba = new Goomba(25,27,30,50);
@@ -35,23 +35,41 @@ class LuisTest extends BaseTest {
         // goomba, daño martillo = 23, salto = 15
         // spiny, daño martillo = 35, salto no le hace daño
 
-        // Luis ataca con Martillo
-        // Goomba
-        luis.attack(goomba,hammer);
-        assertTrue(goomba.getHP() == 50 || goomba.getHP() == 27);
-        assertTrue(luis.getFP() == 7 || luis.getFP() == 5);
-        luis.attack(goomba,hammer);
-        assertTrue(goomba.getHP() == 50 || goomba.getHP() == 27
-                || goomba.getHP() == 4);
-        assertTrue(luis.getFP() == 7 || luis.getFP() == 5
-                || luis.getFP() == 3);
-        // Spiny
-        luis.attack(spiny,hammer);
-        assertTrue(spiny.getHP() == 0 || spiny.getHP() == 20);
-        assertTrue(luis.getFP() == 7 || luis.getFP() == 5
-                || luis.getFP() == 3 || luis.getFP() == 1);
 
-        // Luis ataca con Salto
+        // TESTE0 DE MARTILLO
+        // Se prueba la semilla 0, la cual genera los siguientes enteros entre
+        // 1 y 4 en 7 llamadas:
+        // 0 - 3 - 4 - 2 - 0 - 3 - 1
+        // Si sale 0, el ataque falla (se elige que 0 sea el fallo)
+        hammer.setSeed(0);
+
+        // Goomba
+        luis.attack(goomba,hammer); // Ataque Fallido
+        assertTrue(goomba.getHP() == 50);
+        assertTrue(luis.getFP() == 10);
+
+        luis.attack(goomba,hammer);
+        assertTrue(goomba.getHP() == 27);
+        assertTrue(luis.getFP() == 8);
+
+        luis.attack(goomba,hammer);
+        assertTrue(goomba.getHP() == 4);
+        assertTrue(luis.getFP() == 6);
+
+        luis.attack(goomba,hammer);
+        assertTrue(goomba.getHP() == 0);
+        assertTrue(luis.getFP() == 4);
+
+        // Spiny
+        luis.attack(spiny,hammer); // Ataque Fallido
+        assertTrue(spiny.getHP() == 20);
+        assertTrue(luis.getFP() == 2);
+
+        luis.attack(spiny,hammer);
+        assertTrue(spiny.getHP() == 0);
+        assertTrue(luis.getFP() == 0);
+
+        // TESTEO DE SALTO
         goomba = new Goomba(25,27,30,50);
         spiny = new Spiny(13,6,15,20);
         luis = new Luis(20,23,17,60,7);
@@ -87,7 +105,7 @@ class LuisTest extends BaseTest {
         assertTrue(spiny.getHP() == 20);
         assertTrue(luis.getFP() == 1);
         assertTrue(luis.getHP() == 54);
-        luis.attack(spiny,jump);
+        luis.attack(spiny,jump); // Pero con salto si puede atacar y se le resta vida
         assertTrue(spiny.getHP() == 20);
         assertTrue(luis.getFP() == 0);
         assertTrue(luis.getHP() == 51);
