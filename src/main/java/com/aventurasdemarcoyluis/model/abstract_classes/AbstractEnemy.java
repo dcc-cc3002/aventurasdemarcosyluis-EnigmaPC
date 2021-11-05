@@ -32,6 +32,14 @@ public abstract class AbstractEnemy extends AbstractEntities implements IEnemy {
     }
 
     /**
+     * Determina si la entidad es un jugador
+     * @return False
+     */
+    public boolean isPlayer() {
+        return false;
+    }
+
+    /**
      * Entrega la cantidad de daño que un jugador podría hacerle a un enemigo (this) con
      * cierto tipo de ataque. Calculado como
      * (Constante K del ataque)*(ATK del Jugador)*((LVL del Jugador)/(DEF del Enemigo))

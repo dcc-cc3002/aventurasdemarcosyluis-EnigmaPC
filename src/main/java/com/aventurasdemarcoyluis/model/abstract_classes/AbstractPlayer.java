@@ -33,6 +33,14 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
     }
 
     /**
+     * Determina si la entidad es un jugador
+     * @return Verdadero
+     */
+    public boolean isPlayer() {
+        return true;
+    }
+
+    /**
      * Simula la subida de nivel de un player.
      */
     protected void levelUP() {

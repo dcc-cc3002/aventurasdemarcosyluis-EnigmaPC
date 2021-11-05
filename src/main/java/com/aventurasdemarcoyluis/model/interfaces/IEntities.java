@@ -7,4 +7,6 @@ public interface IEntities {
     int getATK();
     int getLVL();
     boolean isNotDead();
+
+    boolean isPlayer();
 }
