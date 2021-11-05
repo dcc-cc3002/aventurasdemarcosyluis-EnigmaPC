@@ -6,6 +6,8 @@ import com.aventurasdemarcoyluis.model.interfaces.IObject;
 import com.aventurasdemarcoyluis.model.interfaces.IPlayer;
 import com.aventurasdemarcoyluis.model.items.Baul;
 
+import java.util.Random;
+
 /**
  * <b>Clase abstracta Player:</b> <br>
  * Modela el tipo de entidad JUGADOR <br>
@@ -17,7 +19,6 @@ import com.aventurasdemarcoyluis.model.items.Baul;
  * @see com.aventurasdemarcoyluis.model.players.Luis
  * */
 public abstract class AbstractPlayer extends AbstractEntities implements IPlayer {
-
     /**
      * <b>Constructor:</b> <br>
      * Modela un jugador
@@ -30,6 +31,13 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
      */
     public AbstractPlayer(int level, int attack, int defense, int maxHealPoints, int maxFightPoints, String name) {
         super(level, attack, defense, maxHealPoints, maxFightPoints, name);
+    }
+
+    /**
+     * Retorna un valor entero aleatorio entre [2,4]
+     */
+    public int roll() {
+        return random.nextInt(3)+2;
     }
 
     /**

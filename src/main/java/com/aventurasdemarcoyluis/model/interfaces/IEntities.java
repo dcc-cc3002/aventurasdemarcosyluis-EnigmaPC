@@ -9,4 +9,6 @@ public interface IEntities {
     boolean isNotDead();
 
     boolean isPlayer();
+
+    int roll();
 }

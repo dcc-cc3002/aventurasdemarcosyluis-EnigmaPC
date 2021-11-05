@@ -2,6 +2,8 @@ package com.aventurasdemarcoyluis.model.abstract_classes;
 
 import com.aventurasdemarcoyluis.model.interfaces.IEntities;
 
+import java.util.Random;
+
 /**
  * <b>Clase abstracta Entities:</b> <br>
  * Modela las entidades que interactuarán entre ellas y el mundo <br>
@@ -30,6 +32,7 @@ public abstract class AbstractEntities implements IEntities {
     private int HP;
     private int FP;
     protected final String name;
+    protected Random random;
 
     /**
      * <b>Constructor:</b> <br>
