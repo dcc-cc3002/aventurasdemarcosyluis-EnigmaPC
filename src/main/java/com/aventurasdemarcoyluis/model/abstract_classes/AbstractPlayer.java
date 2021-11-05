@@ -34,10 +34,11 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
     }
 
     /**
-     * Retorna un valor entero aleatorio entre [2,4]
+     * Retorna un valor entero aleatorio entre [0,2]
+     * Modela la decisión
      */
     public int roll() {
-        return random.nextInt(3)+2;
+        return random.nextInt(3);
     }
 
     /**

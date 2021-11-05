@@ -43,7 +43,7 @@ public class Baul {
      * @param item Item que se quiere añadir
      * @param amount Cantidad
      */
-    protected void addItem(IObject item, int amount) {
+    public void addItem(IObject item, int amount) {
         if (amount > 0) {
             int amountFinal = storage.get(item);
             amountFinal += amount;
@@ -76,6 +76,14 @@ public class Baul {
                 storage.replace(item, amountFinal);
             }
         }
+    }
+
+    /**
+     * Entrega los elementos que hay en el baúl
+     * @return Hashtable con los elementos del baúl
+     */
+    public Hashtable<IObject, Integer> getStorage() {
+        return storage;
     }
 
     /**

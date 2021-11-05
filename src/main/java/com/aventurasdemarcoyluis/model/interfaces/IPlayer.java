@@ -2,6 +2,7 @@ package com.aventurasdemarcoyluis.model.interfaces;
 
 import com.aventurasdemarcoyluis.model.enemies.Goomba;
 import com.aventurasdemarcoyluis.model.enemies.Spiny;
+import com.aventurasdemarcoyluis.model.items.Baul;
 
 /**
  * Interfaz para los Players. Todos los jugadores pueden ser atacados
@@ -15,4 +16,5 @@ public interface IPlayer extends IEntities {
 
     void attackedByGoomba(Goomba goomba);
     void attackedBySpiny(Spiny spiny);
+    void useItem(IObject item, Baul baul);
 }

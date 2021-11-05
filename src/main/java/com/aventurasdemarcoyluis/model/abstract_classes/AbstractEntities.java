@@ -56,6 +56,14 @@ public abstract class AbstractEntities implements IEntities {
     }
 
     /**
+     * Se establece la semilla para el método roll en AbstractPlayer y AbstractEnemy. Creado exclusivamente para testeo.
+     * @param seed Semilla a plantar
+     */
+    public void setSeed(int seed) {
+        random.setSeed(seed);
+    }
+
+    /**
      * Creado principalmente para referenciar el "esquivar"
      */
     public void dodge() {
