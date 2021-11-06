@@ -6,7 +6,6 @@ import com.aventurasdemarcoyluis.model.interfaces.IObject;
 import com.aventurasdemarcoyluis.model.interfaces.IPlayer;
 import com.aventurasdemarcoyluis.model.items.Baul;
 
-import java.util.Random;
 
 /**
  * <b>Clase abstracta Player:</b> <br>
@@ -52,7 +51,7 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
     /**
      * Simula la subida de nivel de un player.
      */
-    protected void levelUP() {
+    public void levelUP() {
         this.LVL++;
         this.ATK = (int) Math.round(this.ATK*(1.15));
         this.DEF = (int) Math.round(this.DEF*(1.15));

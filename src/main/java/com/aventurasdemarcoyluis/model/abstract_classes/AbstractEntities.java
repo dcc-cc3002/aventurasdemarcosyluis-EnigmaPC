@@ -134,7 +134,7 @@ public abstract class AbstractEntities implements IEntities {
      * @param nuevoHP Cantidad de HP que se quieren establecer (idealmente
      *                un entero positivo)
      */
-    protected void setHP(int nuevoHP) {
+    public void setHP(int nuevoHP) {
         if (nuevoHP <= 0) {
             this.HP = 0;
         } else {
@@ -179,7 +179,7 @@ public abstract class AbstractEntities implements IEntities {
      * Entrega la cantidad máxima de HP que tiene la entidad
      * @return Cantidad máxima de HP
      */
-    protected int getMaxHP() {
+    public int getMaxHP() {
         return maxHP;
     }
 

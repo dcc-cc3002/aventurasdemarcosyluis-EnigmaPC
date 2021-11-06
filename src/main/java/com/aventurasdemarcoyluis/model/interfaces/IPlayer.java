@@ -17,4 +17,7 @@ public interface IPlayer extends IEntities {
     void attackedByGoomba(Goomba goomba);
     void attackedBySpiny(Spiny spiny);
     void useItem(IObject item, Baul baul);
+    void levelUP();
+    int getMaxHP();
+    void setHP(int maxHP);
 }
