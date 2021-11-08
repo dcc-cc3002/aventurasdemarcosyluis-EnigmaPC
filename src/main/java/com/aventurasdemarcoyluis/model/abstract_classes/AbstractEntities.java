@@ -105,7 +105,7 @@ public abstract class AbstractEntities implements IEntities {
      * @param nuevoFP Cantidad de FP que se quieren establecer (idealmente un
      *                entero positivo)
      */
-    protected void setFP(int nuevoFP) {
+    public void setFP(int nuevoFP) {
         if (nuevoFP <= 0) {
             this.FP = 0;
         } else {
@@ -180,7 +180,7 @@ public abstract class AbstractEntities implements IEntities {
      * Entrega la cantidad máxima de FP que tiene la entidad
      * @return Cantidad máxima de FP
      */
-    protected int getMaxFP() {
+    public int getMaxFP() {
         return maxFP;
     }
 

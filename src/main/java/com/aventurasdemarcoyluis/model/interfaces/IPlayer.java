@@ -19,6 +19,8 @@ public interface IPlayer extends IEntities {
     void levelUP();
     int getMaxHP();
     void setHP(int maxHP);
+    void setFP(int nuevoFP);
+    int getMaxFP();
     boolean isLuis();
 
     String playerToString();

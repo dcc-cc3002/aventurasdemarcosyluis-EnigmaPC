@@ -323,33 +323,33 @@ public class GameController {
         addItemBaul(redMushroom, 1);
         if (nivelBatalla < 3) {
             for (int i = 0; i < 3; i++) {
-                int amount = (random.nextInt(3)*nivelBatalla);
+                int amount = ((random.nextInt(3)+3)*nivelBatalla);
                 int lvle = lvl - amount;
                 int atke = atk - amount;
                 int defe = def - amount;
-                int hpe = hp - amount;
+                int hpe = hp/2 - amount;
                 IEnemy enemy = generateEnemy(lvle, atke, defe, hpe);
                 listOfCharacters.add(enemy);
             }
         }
         else if (nivelBatalla >= 3 && nivelBatalla < 5) {
             for (int i = 0; i < 5; i++) {
-                int amount = (random.nextInt(5)*nivelBatalla);
+                int amount = ((random.nextInt(5)+3)*nivelBatalla);
                 int lvle = lvl - amount;
                 int atke = atk - amount;
                 int defe = def - amount;
-                int hpe = hp - amount;
+                int hpe = hp/2 - amount;
                 IEnemy enemy = generateEnemy(lvle, atke, defe, hpe);
                 listOfCharacters.add(enemy);
             }
         }
         else if (nivelBatalla == 5) {
             for (int i = 0; i < 6; i++) {
-                int amount = (random.nextInt(6))*nivelBatalla;
+                int amount = (random.nextInt(6)+3)*nivelBatalla;
                 int lvle = lvl - amount;
                 int atke = atk - amount;
                 int defe = def - amount;
-                int hpe = hp - amount;
+                int hpe = hp/2 - amount;
                 IEnemy enemy = generateEnemy(lvle, atke, defe, hpe);
                 listOfCharacters.add(enemy);
             }
@@ -366,6 +366,7 @@ public class GameController {
         for (IPlayer player : listOfPlayers) {
             player.levelUP();
             player.setHP(player.getMaxHP());
+            player.setFP(player.getMaxFP());
         }
     }
 
