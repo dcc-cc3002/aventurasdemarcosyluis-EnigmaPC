@@ -37,8 +37,6 @@ public class Boo extends AbstractEnemy {
     public void attack(Luis luis) {
         if (this.isNotDead() && luis.isNotDead()) {
             luis.attackedByBoo(this);
-        } else {
-            System.out.println("Boo no puede atacar");
         }
     }
 
@@ -51,11 +49,7 @@ public class Boo extends AbstractEnemy {
     @Override
     public void attackedByMarco(Marco marco, IAttacks attack) {
         if (attack.hurtsBoo()) { // Se usa Salto
-            System.out.println("Marco usa Salto y le hace "+(int) Math.round(this.damageToHurt(marco, attack))
-                    +" de daño a Boo");
             this.getDamage(this.damageToHurt(marco, attack));
-        } else {
-            this.dodge();
         }
     }
 

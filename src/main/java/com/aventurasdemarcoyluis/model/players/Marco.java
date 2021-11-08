@@ -41,8 +41,6 @@ public class Marco extends AbstractPlayer {
         if (this.enoughFP(attack) && this.isNotDead() && enemy.isNotDead()) {
             this.useFPtoAttack(attack);
             enemy.attackedByMarco(this, attack);
-        } else {
-            System.out.println("Marco no puede atacar");
         }
     }
 
@@ -53,7 +51,6 @@ public class Marco extends AbstractPlayer {
     @Override
     public void attackedByGoomba(Goomba goomba) {
         double damageDeal = this.enemyDoDamage(goomba);
-        System.out.println("Marco es atacado por Goomba y recibe "+(int) Math.round(damageDeal)+" de daño");
         this.getDamage(damageDeal);
     }
 
@@ -64,7 +61,6 @@ public class Marco extends AbstractPlayer {
     @Override
     public void attackedBySpiny(Spiny spiny) {
         double damageDeal = this.enemyDoDamage(spiny);
-        System.out.println("Marco es atacado por Spiny y recibe "+(int) Math.round(damageDeal)+" de daño");
         this.getDamage(damageDeal);
     }
 

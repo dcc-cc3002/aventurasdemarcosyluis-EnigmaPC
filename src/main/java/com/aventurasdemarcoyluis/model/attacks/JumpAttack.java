@@ -22,6 +22,7 @@ public class JumpAttack extends AbstractAttackType {
     public JumpAttack() {
         this.FPCost = 1;
         this.K = 1;
+        this.name = "Salto";
     }
 
     /**

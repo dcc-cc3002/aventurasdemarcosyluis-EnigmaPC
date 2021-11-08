@@ -10,6 +10,8 @@ import java.util.Random;
  * Los campos que posee la clase son: <br>
  * <b>FPCost</b>: Costo en FP de ocupar un tipo de ataque <br>
  * <b>K</b>: Constante K de daño del tipo de ataque <br>
+ * <b>random</b>: Número random para hacer la probabilidad de fallo <br>
+ * <b>name</b>: Nombre del ataque <br>
  *
  * @author Andrea PC
  *
@@ -21,6 +23,15 @@ public abstract class AbstractAttackType implements IAttacks {
     protected int FPCost;
     protected double K;
     protected Random random;
+    protected String name;
+
+    /**
+     * Retorna el nombre del ataque
+     * @return nombre del ataque
+     */
+    public String getName() {
+        return this.name;
+    }
 
     /**
      * Entrega el costo en FP de ocupar un tipo de ataque

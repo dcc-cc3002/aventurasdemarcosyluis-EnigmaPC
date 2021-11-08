@@ -13,7 +13,7 @@ import java.util.Hashtable;
  * @author Andrea PC
  */
 public class Baul {
-    private Hashtable<IObject, Integer> storage = new Hashtable<>(2);; // Variable para colocar items
+    private Hashtable<IObject, Integer> storage = new Hashtable<>(2); // Variable para colocar items
 
     /**
      * <b>Constructor:</b> <br>

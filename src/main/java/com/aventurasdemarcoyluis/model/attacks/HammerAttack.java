@@ -25,6 +25,7 @@ public class HammerAttack extends AbstractAttackType {
         this.FPCost = 2;
         this.K = 1.5;
         this.random = new Random();
+        this.name = "Martillo";
     }
 
     /**

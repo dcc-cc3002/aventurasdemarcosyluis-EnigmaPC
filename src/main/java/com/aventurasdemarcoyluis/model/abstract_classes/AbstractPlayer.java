@@ -32,6 +32,10 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
         super(level, attack, defense, maxHealPoints, maxFightPoints, name);
     }
 
+    /**
+     * Transforma las características del player a string
+     * @return String con los datos del player
+     */
     public String playerToString() {
         return this.name+" | nivel: "+this.LVL+", ataque: "+this.ATK+", defensa: "+this.DEF+", vida: "+
                 this.getHP()+", fp: "+this.getFP();

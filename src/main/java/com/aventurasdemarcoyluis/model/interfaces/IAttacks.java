@@ -10,4 +10,5 @@ public interface IAttacks {
     boolean attackFailed();
     boolean hurtsBoo();
     boolean hurtsSpiny();
+    String getName();
 }

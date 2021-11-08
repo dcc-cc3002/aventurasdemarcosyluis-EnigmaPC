@@ -13,4 +13,6 @@ public interface IEntities {
     String getName();
 
     int getDEF();
+
+    int getHP();
 }

@@ -64,13 +64,6 @@ public abstract class AbstractEntities implements IEntities {
     }
 
     /**
-     * Creado principalmente para referenciar el "esquivar"
-     */
-    public void dodge() {
-        System.out.println("Se ha esquivado el ataque");
-    }
-
-    /**
      * Entrega el nombre de la entidad.
      * @return Nombre de la entidad.
      */
