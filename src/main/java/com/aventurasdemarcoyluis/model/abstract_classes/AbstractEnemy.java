@@ -31,6 +31,10 @@ public abstract class AbstractEnemy extends AbstractEntities implements IEnemy {
         super(level, attack, defense, maxHealPoints, 0, name);
     }
 
+    public String enemyToString() {
+        return this.name+" | nivel: "+this.LVL+", ataque: "+this.ATK+", defensa: "+this.DEF+", vida: "+this.getHP();
+    }
+
     /**
      * Retorna un valor entero aleatorio entre [0,1]
      */

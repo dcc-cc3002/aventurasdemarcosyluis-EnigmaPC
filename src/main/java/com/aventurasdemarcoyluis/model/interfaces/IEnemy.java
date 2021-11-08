@@ -8,4 +8,6 @@ import com.aventurasdemarcoyluis.model.players.Marco;
  */
 public interface IEnemy extends IEntities {
     void attackedByMarco(Marco marco, IAttacks attack);
+    boolean isBoo();
+    String enemyToString();
 }

@@ -58,4 +58,15 @@ public class Boo extends AbstractEnemy {
             this.dodge();
         }
     }
+
+    /**
+     * Si es Boo entrega Verdadero
+     * @return Verdadero
+     */
+    @Override
+    public boolean isBoo() {
+        return true;
+    }
+
+
 }

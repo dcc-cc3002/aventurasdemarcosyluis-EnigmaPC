@@ -82,4 +82,13 @@ public class Luis extends AbstractPlayer implements IAttackedByBoo {
         System.out.println("Luis es atacado por Spiny y recibe "+(int) Math.round(damageDeal)+" de daño");
         this.getDamage(damageDeal);
     }
+
+    /**
+     * Si es Luis entrega verdadero
+     * @return Verdadero
+     */
+    @Override
+    public boolean isLuis() {
+        return true;
+    }
 }

@@ -7,4 +7,5 @@ import com.aventurasdemarcoyluis.model.players.Luis;
  */
 public interface IAttackedByLuis extends IEntities {
     void attackedByLuis(Luis luis, IAttacks attack);
+    void attack(IPlayer player);
 }

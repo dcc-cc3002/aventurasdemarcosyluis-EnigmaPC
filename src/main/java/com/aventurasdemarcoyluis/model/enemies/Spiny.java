@@ -92,4 +92,13 @@ public class Spiny extends AbstractEnemy implements IAttackedByLuis {
             marco.getDamage(marco.damageThornsSpiny());
         }
     }
+
+    /**
+     * Si es Boo entrega Verdadero
+     * @return False
+     */
+    @Override
+    public boolean isBoo() {
+        return false;
+    }
 }

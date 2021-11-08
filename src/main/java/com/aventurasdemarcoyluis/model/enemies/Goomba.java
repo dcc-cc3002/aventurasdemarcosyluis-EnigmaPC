@@ -88,4 +88,13 @@ public class Goomba extends AbstractEnemy implements IAttackedByLuis {
             this.getDamage(this.damageToHurt(marco, attack));
         }
     }
+
+    /**
+     * Si es Boo entrega Verdadero
+     * @return False
+     */
+    @Override
+    public boolean isBoo() {
+        return false;
+    }
 }

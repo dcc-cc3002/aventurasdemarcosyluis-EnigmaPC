@@ -67,4 +67,13 @@ public class Marco extends AbstractPlayer {
         System.out.println("Marco es atacado por Spiny y recibe "+(int) Math.round(damageDeal)+" de daño");
         this.getDamage(damageDeal);
     }
+
+    /**
+     * Si es Luis entrega verdadero
+     * @return False
+     */
+    @Override
+    public boolean isLuis() {
+        return false;
+    }
 }
