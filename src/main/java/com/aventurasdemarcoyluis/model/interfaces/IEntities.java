@@ -10,5 +10,7 @@ public interface IEntities {
 
     boolean isPlayer();
 
-    int roll();
+    String getName();
+
+    int getDEF();
 }

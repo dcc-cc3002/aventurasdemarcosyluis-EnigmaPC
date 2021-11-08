@@ -32,12 +32,9 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
         super(level, attack, defense, maxHealPoints, maxFightPoints, name);
     }
 
-    /**
-     * Retorna un valor entero aleatorio entre [0,2]
-     * Modela la decisión
-     */
-    public int roll() {
-        return random.nextInt(3);
+    public String playerToString() {
+        return this.name+" | nivel: "+this.LVL+", ataque: "+this.ATK+", defensa: "+this.DEF+", vida: "+
+                this.getHP()+", fp: "+this.getFP();
     }
 
     /**

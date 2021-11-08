@@ -12,7 +12,6 @@ import com.aventurasdemarcoyluis.model.items.Baul;
 public interface IPlayer extends IEntities {
     void useHoneySyrup();
     void useRedMushroom();
-    String getName();
 
     void attackedByGoomba(Goomba goomba);
     void attackedBySpiny(Spiny spiny);
@@ -21,4 +20,6 @@ public interface IPlayer extends IEntities {
     int getMaxHP();
     void setHP(int maxHP);
     boolean isLuis();
+
+    String playerToString();
 }

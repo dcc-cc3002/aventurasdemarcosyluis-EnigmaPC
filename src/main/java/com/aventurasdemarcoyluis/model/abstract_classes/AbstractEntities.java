@@ -31,7 +31,7 @@ public abstract class AbstractEntities implements IEntities {
     protected int maxFP;
     private int HP;
     private int FP;
-    protected final String name;
+    protected String name;
     protected Random random;
 
     /**
@@ -171,7 +171,7 @@ public abstract class AbstractEntities implements IEntities {
      * Entrega el Poder de Defensa de la entidad
      * @return Poder de Defensa de la entidad
      */
-    int getDEF() {
+    public int getDEF() {
         return DEF;
     }
 
