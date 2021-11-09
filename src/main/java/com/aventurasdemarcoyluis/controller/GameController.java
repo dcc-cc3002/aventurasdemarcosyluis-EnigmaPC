@@ -337,7 +337,9 @@ public class GameController {
     public void Battle() {
         turn = 1;
         round = 1;
-        playersSetNewBattle();
+        if (nivelBatalla > 1) {
+            playersSetNewBattle();
+        }
         listOfCharacters.clear();
         for (IPlayer player : listOfPlayers) {
             listOfCharacters.add(player);
