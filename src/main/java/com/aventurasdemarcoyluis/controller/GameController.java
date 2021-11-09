@@ -455,8 +455,14 @@ public class GameController {
                 luis.attack(enemy, attack);
                 int hpnew = enemy.getHP();
                 int hpnewA = luis.getHP();
-                out.println("Luis ataca a "+enemy.getName()+" con "+attack.getName()+
-                        " | Vida Previa Enemigo: "+hpprev+", Vida Nueva Enemigo: "+hpnew);
+                if (hpprev-hpnew == 0) {
+                    out.println("Luis ataca a "+enemy.getName()+" con "+attack.getName()+
+                            " pero el ataque falla");
+                }
+                if (hpprev-hpnew > 0) {
+                    out.println("Luis ataca a "+enemy.getName()+" con "+attack.getName()+
+                            " | Vida Previa Enemigo: "+hpprev+", Vida Nueva Enemigo: "+hpnew);
+                }
                 if (defender.isSpiny()) {
                     if (!attack.hurtsSpiny()) {
                         out.println("Spiny se defiende con sus pinchos!" +
@@ -473,8 +479,14 @@ public class GameController {
             marco.attack(defender, attack);
             int hpnew = defender.getHP();
             int hpnewA = marco.getHP();
-            out.println("Marco ataca a "+defender.getName()+" con "+attack.getName()+
-                    " | Vida Previa Enemigo: "+hpprev+", Vida Nueva Enemigo: "+hpnew);
+            if (hpprev-hpnew == 0) {
+                out.println("Marco ataca a "+defender.getName()+" con "+attack.getName()+
+                        " pero el ataque falla");
+            }
+            if (hpprev-hpnew > 0) {
+                out.println("Marco ataca a "+defender.getName()+" con "+attack.getName()+
+                        " | Vida Previa Enemigo: "+hpprev+", Vida Nueva Enemigo: "+hpnew);
+            }
             if (defender.isSpiny()) {
                 if (!attack.hurtsSpiny()) {
                     out.println("Spiny se defiende con sus pinchos!" +

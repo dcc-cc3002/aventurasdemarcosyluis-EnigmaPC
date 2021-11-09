@@ -19,11 +19,6 @@ class GameControllerTest {
         controller.setSeedRandomEnemy(15);
         controller.setSeedRandom(20);
         controller.setSeedAttack(30);
-    }
-
-    @Test
-    void escenarioWinnable() {
-        checkEscenario();
         // Nivel Batalla 1:
         // 1 Boo | nivel: 14, ataque: 18, defensa: 14, vida: 37
         // 2 Spiny | nivel: 15, ataque: 17, defensa: 15, vida: 36
@@ -58,8 +53,11 @@ class GameControllerTest {
         // Si primer número es 1:
         // Segundo número: 1 para HoneySyrup, 2 para RedMushroom
         // Si primer número es 2:
-        // Se pasa
+        // El jugador pasa.
+    }
 
+    @Test
+    void escenarioWinnable() {
         // Números:
         // Batalla 1
         // 0 - 1 - 2
@@ -70,6 +68,7 @@ class GameControllerTest {
         // 0 - 1 - 1
         // 0 - 1 - 1
         // 0 - 1 - 1
+        //"0\n1\n2\n0\n2\n1\n0\n1\n2\n0\n2\n1\n0\n1\n2\n0\n1\n1\n0\n1\n1\n0\n1\n1\n"
 
         // Batalla 2
         // 0 - 1 - 2
@@ -79,17 +78,99 @@ class GameControllerTest {
         // 0 - 1 - 2
         // 0 - 1 - 1
         // 0 - 1 - 1
+        //"0\n1\n2\n0\n2\n1\n0\n1\n2\n0\n2\n1\n0\n1\n2\n0\n1\n1\n0\n1\n1\n"
+
+        // Batalla 3
         // 0 - 1 - 1
-        // 
+        // 0 - 1 - 1
+        // 0 - 1 - 1
+        // 0 - 1 - 1
+        // 0 - 1 - 1
+        // 0 - 1 - 1
+        // 0 - 1 - 1
+        // 0 - 1 - 1
+        // 0 - 1 - 1
+        // 0 - 1 - 1
+        // 1 - 1 Se ocupa honeySyrup
+        // 0 - 1 - 1
+        // "0\n1\n1\n0\n1\n1\n0\n1\n1\n0\n1\n1\n0\n1\n1\n0\n1\n1\n"+
+        // "0\n1\n1\n0\n1\n1\n0\n1\n1\n0\n1\n1\n1\n1\n0\n1\n1\n"
+
+        // Batalla 4
+        // 0 - 4 - 2
+        // 0 - 1 - 1
+        // 0 - 1 - 2
+        // 0 - 1 - 1
+        // 0 - 1 - 1
+        // 0 - 1 - 1
+        // 0 - 1 - 1
+        // 0 - 1 - 1
+        // 0 - 2 - 1
+        // 0 - 2 - 1
+        // 0 - 2 - 1
+        // 0 - 2 - 1
+        // 0 - 1 - 2
+        // 0 - 1 - 2
+        //"0\n4\n2\n0\n1\n1\n0\n1\n2\n0\n1\n1\n0\n1\n1\n0\n1\n1\n0\n1\n1\n0\n1\n1\n"+
+        //"0\n2\n1\n0\n2\n1\n0\n2\n1\n0\n2\n1\n0\n1\n2\n0\n1\n2\n"
+
+
+        // Batalla 5
+        // 0 - 1 - 1
+        // 0 - 1 - 1
+        // 0 - 1 - 1
+        // 0 - 1 - 1
+        // 0 - 1 - 1
+        // 0 - 1 - 1
+        // 0 - 1 - 1
+        // 0 - 1 - 1
+        // 0 - 1 - 2
+        // 0 - 1 - 2
+        // 0 - 1 - 2
+        // 0 - 1 - 1
+        // 0 - 1 - 2
+        // 0 - 1 - 2
+        // 1 - 1 Se ocupa honeySyrup
+        // 0 - 1 - 2
+        // 0 - 1 - 2
+        // 0 - 1 - 2
+        // 1 - 1 Se ocupa honeySyrup
+        // 0 - 1 - 2
+        // "0\n1\n1\n0\n1\n1\n0\n1\n1\n0\n1\n1\n0\n1\n1\n0\n1\n1\n0\n1\n"+
+        // "1\n0\n1\n1\n0\n1\n2\n0\n1\n2\n0\n1\n2\n0\n1\n1\n0\n1\n2\n0\n1\n2\n1\n1\n"+
+        // "0\n1\n2\n0\n1\n2\n0\n1\n2\n1\n1\n0\n1\n2\n"
+
+        checkEscenario("0\n1\n2\n0\n2\n1\n0\n1\n2\n0\n2\n1\n0\n1\n2\n0\n1\n1\n0\n1\n1\n0\n1\n1\n"+
+                "0\n1\n2\n0\n2\n1\n0\n1\n2\n0\n2\n1\n0\n1\n2\n0\n1\n1\n0\n1\n1\n"+
+                "0\n1\n1\n0\n1\n1\n0\n1\n1\n0\n1\n1\n0\n1\n1\n0\n1\n1\n"+
+                "0\n1\n1\n0\n1\n1\n0\n1\n1\n0\n1\n1\n1\n1\n0\n1\n1\n"+
+                "0\n4\n2\n0\n1\n1\n0\n1\n2\n0\n1\n1\n0\n1\n1\n0\n1\n1\n0\n1\n1\n0\n1\n1\n"+
+                "0\n2\n1\n0\n2\n1\n0\n2\n1\n0\n2\n1\n0\n1\n2\n0\n1\n2\n"+
+                "0\n1\n1\n0\n1\n1\n0\n1\n1\n0\n1\n1\n0\n1\n1\n0\n1\n1\n0\n1\n"+
+                "1\n0\n1\n1\n0\n1\n2\n0\n1\n2\n0\n1\n2\n0\n1\n1\n0\n1\n2\n0\n1\n2\n1\n1\n"+
+                "0\n1\n2\n0\n1\n2\n0\n1\n2\n1\n1\n0\n1\n2\n");
         assertTrue(controller.winGame());
+    }
 
-
-
+    @Test
+    void escenarioNotWinnable() {
+        // Batalla 1
+        // 2
+        // 2
+        // 2
+        // 2
+        // 2
+        // 2
+        // 2
+        // 2
+        // 2
+        checkEscenario("2\n2\n2\n2\n2\n2\n2\n2\n2\n");
+        assertFalse(controller.winGame());
     }
 
     // Creado para checkear escenario
     public void checkEscenario(String stringNum) {
-        controller.escenario(NullOutputStream,new BufferedReader(new StringReader(stringNum)));
+        controller.escenario(new PrintStream(new NullOutputStream()),new BufferedReader(new StringReader(stringNum)));
     }
 
 }

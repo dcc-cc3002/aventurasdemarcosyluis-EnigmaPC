@@ -43,6 +43,7 @@ class LuisTest extends BaseTest {
         // 1 y 4 en 7 llamadas:
         // 0 - 3 - 4 - 2 - 0 - 3 - 1
         // Si sale 0, el ataque falla (se elige que 0 sea el fallo)
+        hammer.setSeed(0);
 
         // Goomba
         luis.attack(goomba,hammer); // Ataque Fallido
