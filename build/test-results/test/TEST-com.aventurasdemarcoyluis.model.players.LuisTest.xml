@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.aventurasdemarcoyluis.model.players.LuisTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-11-09T02:17:04" hostname="LAPTOP-BPDICMJD" time="0.005">
+  <properties/>
+  <testcase name="attackTest()" classname="com.aventurasdemarcoyluis.model.players.LuisTest" time="0.0"/>
+  <testcase name="isLuis()" classname="com.aventurasdemarcoyluis.model.players.LuisTest" time="0.0"/>
+  <testcase name="attackedBySpinyTest()" classname="com.aventurasdemarcoyluis.model.players.LuisTest" time="0.0"/>
+  <testcase name="attackedByGoombaTest()" classname="com.aventurasdemarcoyluis.model.players.LuisTest" time="0.0"/>
+  <testcase name="attackedByBooTest()" classname="com.aventurasdemarcoyluis.model.players.LuisTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

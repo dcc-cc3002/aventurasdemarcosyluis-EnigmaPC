@@ -691,10 +691,19 @@ public class GameController {
             IEnemy enemy = searchEnemyNum(stringToInt);
             IPlayer player = (IPlayer) getTurnEntity();
             if (stringToInt2 == 1) {
-                attackEnemy(player, enemy, hammerAttack);
+                if (player.enoughFP(hammerAttack)) {
+                    attackEnemy(player, enemy, hammerAttack);
+                } else {
+                    out.println(player.getName()+" no tiene suficientes FP para atacar con "+ hammerAttack.getName());
+                }
             }
             else if (stringToInt2 == 2) {
-                attackEnemy(player, enemy, jumpAttack);
+                if (player.enoughFP(jumpAttack)) {
+                    attackEnemy(player, enemy, jumpAttack);
+                }
+                else {
+                    out.println(player.getName()+" no tiene suficientes FP para atacar con "+ jumpAttack.getName());
+                }
             }
         }
         catch (IOError e) {

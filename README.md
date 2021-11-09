@@ -95,7 +95,7 @@ Para simular de mejor manera las peleas:
 
 - Con el PrintStream adecuado se añadieron mensajes que printean las interacciones de items y pelea 
 entre los jugadores y enemigos dentro del 
-[GAME_EXAMPLE](src/test/java/com/aventurasdemarcoyluis/controller/GameExample.java). Por ejemplo, al atacar a Spiny con un Salto se lanzará un mensaje que dirá "Spiny se 
+[GAME_EXAMPLE](src/main/java/com/aventurasdemarcoyluis/controller/GameExample.java). Por ejemplo, al atacar a Spiny con un Salto se lanzará un mensaje que dirá "Spiny se 
 protege con sus pinchos!".
 
 El ataque es calculado con la fórmula de la sección 1.1.3 del

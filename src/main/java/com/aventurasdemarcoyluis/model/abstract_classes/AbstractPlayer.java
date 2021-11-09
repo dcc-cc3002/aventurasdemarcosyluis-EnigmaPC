@@ -66,7 +66,7 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
      * @param attack Ataque utilizado
      * @return Verdadero si puede atacar, Falso si no.
      */
-    protected boolean enoughFP(IAttacks attack) {
+    public boolean enoughFP(IAttacks attack) {
         return this.getFP() >= attack.getFPCost();
     }
 

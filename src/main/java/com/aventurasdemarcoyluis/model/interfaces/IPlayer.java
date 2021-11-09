@@ -24,4 +24,6 @@ public interface IPlayer extends IEntities {
     boolean isLuis();
 
     String playerToString();
+
+    boolean enoughFP(IAttacks attack);
 }
