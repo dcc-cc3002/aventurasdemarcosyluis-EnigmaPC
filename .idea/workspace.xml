@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb1cecac-0d8b-43a1-b081-26a65a9d4f9e" name="Changes" comment="" />
+    <list default="true" id="bb1cecac-0d8b-43a1-b081-26a65a9d4f9e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/controller/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/controller/GameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/model/interfaces/IPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/model/interfaces/IPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/abstract_classes/AbstractPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/abstract_classes/AbstractPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/interfaces/IPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/interfaces/IPlayer.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,9 +56,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="JUnit5 Test Class" />
         <option value="Class" />
-        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -65,9 +83,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="com.aventurasdemarcoyluis.abstract_classes.BaseTest" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -75,24 +97,30 @@
       <recent name="com.aventurasdemarcoyluis.enemies" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
       <recent name="com.aventurasdemarcoyluis.abstract_classes.BaseTest" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.aventurasdemarcoyluis" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.aventurasdemarcoyluis.controller" />
+      <recent name="com.aventurasdemarcoyluis.items" />
       <recent name="com.aventurasdemarcoyluis.enemies" />
       <recent name="com.aventurasdemarcoyluis.abstract_classes" />
       <recent name="com.aventurasdemarcoyluis.players" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.aventurasdemarcoyluis.controller" />
+    </key>
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'AventurasdeMarcoyLuis.test'">
+  <component name="RunManager" selected="Application.GameExample">
     <configuration name="GameExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.aventurasdemarcoyluis.abstract_classes.GameExample" />
-      <module name="AventurasdeMarcoyLuis.test" />
+      <option name="MAIN_CLASS_NAME" value="com.aventurasdemarcoyluis.controller.GameExample" />
+      <module name="AventurasdeMarcoyLuis.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.aventurasdemarcoyluis.abstract_classes.*" />
+          <option name="PATTERN" value="com.aventurasdemarcoyluis.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -100,12 +128,46 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpinyTest.attack" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="GameExampleV2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.aventurasdemarcoyluis.controller.GameExampleV2" />
+      <module name="AventurasdeMarcoyLuis.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.aventurasdemarcoyluis.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameControllerTest.escenarioNotWinnable" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.aventurasdemarcoyluis.enemies.SpinyTest.attack&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.aventurasdemarcoyluis.controller.GameControllerTest.escenarioNotWinnable&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="GameControllerTest.escenarioWinnable" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.aventurasdemarcoyluis.controller.GameControllerTest.escenarioWinnable&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -163,34 +225,13 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="Tests in 'com.aventurasdemarcoyluis.abstract_classes'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.aventurasdemarcoyluis.abstract_classes.*&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Tests in 'AventurasdeMarcoyLuis.test'" />
-        <item itemvalue="Application.GameExample" />
-        <item itemvalue="Gradle.Tests in 'com.aventurasdemarcoyluis.abstract_classes'" />
         <item itemvalue="Gradle.Tests in 'com.aventurasdemarcoyluis'" />
-        <item itemvalue="Gradle.SpinyTest.attack" />
+        <item itemvalue="Gradle.Tests in 'AventurasdeMarcoyLuis.test'" />
+        <item itemvalue="Gradle.GameControllerTest.escenarioWinnable" />
+        <item itemvalue="Gradle.GameControllerTest.escenarioNotWinnable" />
+        <item itemvalue="Application.GameExample" />
       </list>
     </recent_temporary>
   </component>
@@ -203,6 +244,13 @@
       <option name="presentableId" value="Default" />
       <updated>1632991800153</updated>
       <workItem from="1632991802838" duration="593000" />
+      <workItem from="1635000588772" duration="9330000" />
+      <workItem from="1635031087141" duration="248000" />
+      <workItem from="1635031561007" duration="10020000" />
+      <workItem from="1635101688330" duration="756000" />
+      <workItem from="1636086841617" duration="1512000" />
+      <workItem from="1636143126690" duration="14789000" />
+      <workItem from="1636378531143" duration="35467000" />
     </task>
     <servers />
   </component>
@@ -219,10 +267,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/AventurasdeMarcoyLuis$Tests_in__com_aventurasdemarcoyluis_.ic" NAME="Tests in 'com.aventurasdemarcoyluis' Coverage Results" MODIFIED="1633057545675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/AventurasdeMarcoyLuis$Tests_in__AventurasdeMarcoyLuis_test_.ic" NAME="Tests in 'AventurasdeMarcoyLuis.test' Coverage Results" MODIFIED="1633074009414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/AventurasdeMarcoyLuis$Tests_in__com_aventurasdemarcoyluis_.ic" NAME="Tests in 'com.aventurasdemarcoyluis' Coverage Results" MODIFIED="1636424222669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/AventurasdeMarcoyLuis$Tests_in__AventurasdeMarcoyLuis_test_.ic" NAME="Tests in 'AventurasdeMarcoyLuis.test' Coverage Results" MODIFIED="1636423510115" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/AventurasdeMarcoyLuis$Tests_in__com_aventurasdemarcoyluis_abstract_classes_.ic" NAME="Tests in 'com.aventurasdemarcoyluis.abstract_classes' Coverage Results" MODIFIED="1633062455671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/AventurasdeMarcoyLuis$Tests_in__com_aventurasdemarcoyluis_model_.ic" NAME="Tests in 'com.aventurasdemarcoyluis.model' Coverage Results" MODIFIED="1636412857373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.aventurasdemarcoyluis.model.abstract_classes.AbstractPlayerTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2021-11-09T02:17:04" hostname="LAPTOP-BPDICMJD" time="0.01">
+  <properties/>
+  <testcase name="useHoneySyrup()" classname="com.aventurasdemarcoyluis.model.abstract_classes.AbstractPlayerTest" time="0.001"/>
+  <testcase name="useRedMushroom()" classname="com.aventurasdemarcoyluis.model.abstract_classes.AbstractPlayerTest" time="0.001"/>
+  <testcase name="playerToString()" classname="com.aventurasdemarcoyluis.model.abstract_classes.AbstractPlayerTest" time="0.001"/>
+  <testcase name="useFPtoAttack()" classname="com.aventurasdemarcoyluis.model.abstract_classes.AbstractPlayerTest" time="0.0"/>
+  <testcase name="isPlayer()" classname="com.aventurasdemarcoyluis.model.abstract_classes.AbstractPlayerTest" time="0.0"/>
+  <testcase name="damageThornsSpiny()" classname="com.aventurasdemarcoyluis.model.abstract_classes.AbstractPlayerTest" time="0.0"/>
+  <testcase name="levelUP()" classname="com.aventurasdemarcoyluis.model.abstract_classes.AbstractPlayerTest" time="0.0"/>
+  <testcase name="enemyDoDamage()" classname="com.aventurasdemarcoyluis.model.abstract_classes.AbstractPlayerTest" time="0.0"/>
+  <testcase name="enoughFP()" classname="com.aventurasdemarcoyluis.model.abstract_classes.AbstractPlayerTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
