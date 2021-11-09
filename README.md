@@ -2,6 +2,7 @@
 _Estudiante: Andrea Palma_ <br>
 _Curso: CC3002_ <br>
 
+Actualizado el día 08-11-2021 (Tarea 2)
 
 ## Generalidades
 El código base creado se encuentra en el package
@@ -57,7 +58,7 @@ Si se requiere revisar el coverage de los test del código, diríjase a la carpe
 busque **[More Run/Debug]** y haga click en **[Run 'Test' With Coverage]**.
 
 El archivo ejecutable de ejemplo se encuentra en 
-[GAME_EXAMPLE](src/test/java/com/aventurasdemarcoyluis/controller/GameExample.java). Si se quiere revisar 
+[GAME_EXAMPLE](src/main/java/com/aventurasdemarcoyluis/controller/GameExample.java). Si se quiere revisar 
 un enfrentamiento entre las entidades jugador v/s enemigos, usando items y todo, se recomienda ejecutar. 
 
 ## Supuestos

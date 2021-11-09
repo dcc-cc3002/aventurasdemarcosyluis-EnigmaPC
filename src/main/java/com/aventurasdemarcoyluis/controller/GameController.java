@@ -211,7 +211,11 @@ public class GameController {
      * @param item Item a utilizar
      */
     public void usePlayerItem(IPlayer player, IObject item) {
-        player.useItem(item,baul);
+        if (baul.hasItem(item)) {
+            player.useItem(item,baul);
+        } else {
+            out.println("No hay suficientes existencias de "+item.getName());
+        }
     }
 
     /**
