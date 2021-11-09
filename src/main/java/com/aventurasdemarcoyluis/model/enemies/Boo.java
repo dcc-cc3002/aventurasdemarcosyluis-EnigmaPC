@@ -62,5 +62,13 @@ public class Boo extends AbstractEnemy {
         return true;
     }
 
+    /**
+     * Si es Spiny entrega Verdadero
+     * @return False
+     */
+    @Override
+    public boolean isSpiny() {
+        return false;
+    }
 
 }

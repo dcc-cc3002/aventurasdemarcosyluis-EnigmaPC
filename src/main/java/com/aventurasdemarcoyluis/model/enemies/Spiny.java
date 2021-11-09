@@ -86,4 +86,13 @@ public class Spiny extends AbstractEnemy implements IAttackedByLuis {
     public boolean isBoo() {
         return false;
     }
+
+    /**
+     * Si es Spiny entrega Verdadero
+     * @return Verdadero
+     */
+    @Override
+    public boolean isSpiny() {
+        return true;
+    }
 }

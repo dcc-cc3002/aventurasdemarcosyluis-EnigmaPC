@@ -37,6 +37,20 @@ class AbstractPlayerTest extends BaseTest {
     }
 
     @Test
+    void isPlayer() {
+        assertTrue(marco.isPlayer());
+        assertTrue(luis.isPlayer());
+        assertTrue(marco2.isPlayer());
+        assertTrue(luis2.isPlayer());
+    }
+
+    @Test
+    void playerToString() {
+        assertEquals(marco.playerToString(), "Marco | nivel: 16, ataque: 28, defensa: 31, vida: 57, fp: 42");
+        assertEquals(luis.playerToString(), "Luis | nivel: 4, ataque: 10, defensa: 25, vida: 2, fp: 2");
+    }
+
+    @Test
     void enoughFP() {
         // Un player puede atacar si tiene más de 0 FP
         assertTrue(marco.enoughFP(hammer)); // marco tiene 42 FP
@@ -190,5 +204,24 @@ class AbstractPlayerTest extends BaseTest {
         assertEquals(luis2.getFP(), 1);
         luis2.useFPtoAttack(hammer);
         assertEquals(luis2.getFP(), 0); // Sobran -1 de FP pero llega a 0.
+    }
+
+    @Test
+    void levelUP() {
+        //marco = new Marco(16,28,31,57,42);
+        //luis = new Luis(4,10,25,2,2);
+        marco.levelUP();
+        assertEquals(marco.getLVL(),17);
+        assertEquals(marco.getATK(),32);
+        assertEquals(marco.getDEF(),36);
+        assertEquals(marco.getMaxHP(),66);
+        assertEquals(marco.getMaxFP(),48);
+
+        luis.levelUP();
+        assertEquals(luis.getLVL(),5);
+        assertEquals(luis.getATK(),12);
+        assertEquals(luis.getDEF(),29);
+        assertEquals(luis.getMaxHP(),2);
+        assertEquals(luis.getMaxFP(),2);
     }
 }

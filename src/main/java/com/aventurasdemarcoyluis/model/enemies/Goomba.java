@@ -83,4 +83,13 @@ public class Goomba extends AbstractEnemy implements IAttackedByLuis {
     public boolean isBoo() {
         return false;
     }
+
+    /**
+     * Si es Spiny entrega Verdadero
+     * @return False
+     */
+    @Override
+    public boolean isSpiny() {
+        return false;
+    }
 }

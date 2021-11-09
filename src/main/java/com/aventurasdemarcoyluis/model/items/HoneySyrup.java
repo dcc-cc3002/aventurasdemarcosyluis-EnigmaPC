@@ -29,7 +29,6 @@ public class HoneySyrup extends AbstractItem {
      */
     @Override
     public void use(IPlayer player) {
-        System.out.println(player.getName()+" ha usado Honey Syrup");
         player.useHoneySyrup();
     }
 }

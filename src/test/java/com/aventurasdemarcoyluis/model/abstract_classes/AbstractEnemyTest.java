@@ -9,8 +9,7 @@ import com.aventurasdemarcoyluis.model.players.Marco;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class AbstractEnemyTest extends BaseTest {
 
@@ -26,6 +25,18 @@ class AbstractEnemyTest extends BaseTest {
         // Ataques
         hammer = new HammerAttack();
         jump = new JumpAttack();
+    }
+
+    @Test
+    void isPlayer() {
+        assertFalse(goomba.isPlayer());
+        assertFalse(spiny.isPlayer());
+    }
+
+    @Test
+    void enemyToString() {
+        assertEquals(goomba.enemyToString(), "Goomba | nivel: 8, ataque: 9, defensa: 11, vida: 40");
+        assertEquals(spiny.enemyToString(), "Spiny | nivel: 16, ataque: 24, defensa: 35, vida: 50");
     }
 
     @Test

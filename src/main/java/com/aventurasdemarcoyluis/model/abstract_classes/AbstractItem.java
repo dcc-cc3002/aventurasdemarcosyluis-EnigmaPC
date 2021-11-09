@@ -26,6 +26,10 @@ public abstract class AbstractItem implements IObject {
         this.name = aName;
     }
 
+    public String getName() {
+        return this.name;
+    }
+
     /**
      * Determina si un item es igual a otro.
      * Solamente se compara el nombre.

@@ -22,9 +22,19 @@ class AbstractEntitiesTest extends BaseTest {
         boo = new Boo(9, 13, 11, 35);
 
         marco2 = new Marco(7, 8, 15, 6, 4);
+        marco3 = new Marco(8, 9, 11, 40, 24);
         goomba2 = new Goomba(8, 9, 11, 40);
         spiny2 = new Spiny(16, 24, 35, 50);
         boo2 = new Boo(3, 6, 6, 35);
+    }
+
+    @Test
+    void getNameTest() {
+        assertEquals(marco.getName(),"Marco");
+        assertEquals(goomba.getName(),"Goomba");
+        assertEquals(spiny.getName(),"Spiny");
+        assertEquals(boo2.getName(),"Boo");
+        assertEquals(luis.getName(),"Luis");
     }
 
     @Test
@@ -94,6 +104,7 @@ class AbstractEntitiesTest extends BaseTest {
     @Test
     void testHashCode() {
         assertNotEquals(marco.hashCode(),marco2.hashCode()); // Diferentes
+        assertNotEquals(marco.hashCode(),marco3.hashCode()); // Diferentes
         assertNotEquals(marco.hashCode(),luis.hashCode()); // Diferentes
         assertNotEquals(marco.hashCode(),goomba2.hashCode()); // Diferentes
         assertNotEquals(luis.hashCode(),boo.hashCode()); // Diferentes

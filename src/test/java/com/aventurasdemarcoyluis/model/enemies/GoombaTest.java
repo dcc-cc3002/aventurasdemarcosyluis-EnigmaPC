@@ -38,4 +38,14 @@ class GoombaTest extends BaseTest {
         goomba.attack(marco);
         assertEquals(marco.getHP(),29);
     }
+
+    @Test
+    void isBoo() {
+        assertFalse(goomba.isBoo());
+    }
+
+    @Test
+    void isSpiny() {
+        assertFalse(goomba.isSpiny());
+    }
 }

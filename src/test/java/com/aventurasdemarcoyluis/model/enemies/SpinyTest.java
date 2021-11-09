@@ -40,4 +40,14 @@ class SpinyTest extends BaseTest {
         spiny.attack(marco);
         assertEquals(marco.getHP(),0);
     }
+
+    @Test
+    void isBoo() {
+        assertFalse(spiny.isBoo());
+    }
+
+    @Test
+    void isSpiny() {
+        assertTrue(spiny.isSpiny());
+    }
 }

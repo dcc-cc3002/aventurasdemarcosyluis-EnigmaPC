@@ -16,6 +16,15 @@ class AbstractItemTest extends BaseTest {
     }
 
     @Test
+    void getNameTest() {
+        assertEquals(honeySyrup.getName(),honeySyrup.getName());
+        assertNotEquals(honeySyrup.getName(),redMushroom.getName());
+        assertEquals(redMushroom.getName(),redMushroom.getName());
+        assertEquals(redMushroom.getName(),"RedMushroom");
+        assertEquals(honeySyrup.getName(),"HoneySyrup");
+    }
+
+    @Test
     void testEquals() {
         assertFalse(honeySyrup.equals(redMushroom));
         assertTrue(honeySyrup.equals(honeySyrup));

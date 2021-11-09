@@ -27,4 +27,14 @@ class BooTest extends BaseTest {
         boo.attack(luis);
         assertEquals(luis.getHP(),0);
     }
+
+    @Test
+    void isBoo() {
+        assertTrue(boo.isBoo());
+    }
+
+    @Test
+    void isSpiny() {
+        assertFalse(boo.isSpiny());
+    }
 }

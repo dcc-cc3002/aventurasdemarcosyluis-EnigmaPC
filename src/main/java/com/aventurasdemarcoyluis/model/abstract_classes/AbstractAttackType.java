@@ -78,9 +78,8 @@ public abstract class AbstractAttackType implements IAttacks {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (!(obj instanceof AbstractAttackType that)) return false;
-
-        if (getFPCost() != that.getFPCost()) return false;
-        return Double.compare(that.getK(), getK()) == 0;
+        if (!name.equals(that.name)) return false;
+        return getFPCost() != that.getFPCost();
     }
 
     /**

@@ -171,4 +171,9 @@ class MarcoTest extends BaseTest {
         marco.attackedBySpiny(spiny);
         assertEquals(marco.getHP(),47);
     }
+
+    @Test
+    void isLuis() {
+        assertFalse(marco.isLuis());
+    }
 }

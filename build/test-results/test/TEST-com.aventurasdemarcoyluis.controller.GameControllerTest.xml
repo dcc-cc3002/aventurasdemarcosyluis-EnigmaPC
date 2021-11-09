@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.aventurasdemarcoyluis.controller.GameControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-08T23:25:51" hostname="LAPTOP-BPDICMJD" time="0.021">
+  <properties/>
+  <testcase name="escenario()" classname="com.aventurasdemarcoyluis.controller.GameControllerTest" time="0.021"/>
+  <system-out><![CDATA[0
+2
+1
+0
+1
+2
+2
+1
+2
+1
+1
+1
+2
+2
+0
+2
+1
+1
+1
+1
+0
+0
+1
+2
+1
+1
+2
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

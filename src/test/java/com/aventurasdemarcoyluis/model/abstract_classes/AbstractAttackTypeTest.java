@@ -17,6 +17,15 @@ class AbstractAttackTypeTest extends BaseTest {
     }
 
     @Test
+    void getNameTest() {
+        assertEquals(hammer.getName(),hammer.getName());
+        assertEquals(hammer.getName(),"Martillo");
+        assertNotEquals(hammer.getName(),jump.getName());
+        assertEquals(jump.getName(),jump.getName());
+        assertEquals(jump.getName(),"Salto");
+    }
+
+    @Test
     void testEquals() {
         assertFalse(hammer.equals(jump));
         assertFalse(jump.equals(hammer));

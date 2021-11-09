@@ -15,6 +15,7 @@ import com.aventurasdemarcoyluis.model.items.RedMushroom;
 public class BaseTest {
     public Marco marco;
     public Marco marco2;
+    public Marco marco3;
     public Luis luis;
     public Luis luis2;
     public Goomba goomba;

@@ -48,6 +48,8 @@ public class GameController {
     private BufferedReader in;
     private PrintStream out;
     private Random random;
+    private HammerAttack hammerAttack = new HammerAttack();
+    private JumpAttack jumpAttack = new JumpAttack();
 
 
     /**
@@ -65,6 +67,30 @@ public class GameController {
         turn = 1;
         round = 1;
         baul = new Baul(3, 3);
+    }
+
+    /**
+     * Se establece la semilla para el ataque martillo. Creado exclusivamente para testeo.
+     * @param seed Semilla a plantar
+     */
+    public void setSeedAttack(int seed) {
+        hammerAttack.setSeed(seed);
+    }
+
+    /**
+     * Se establece la semilla para el número random. Creado exclusivamente para testeo.
+     * @param seed Semilla a plantar
+     */
+    public void setSeedRandom(int seed) {
+        random.setSeed(seed);
+    }
+
+    /**
+     * Se establece la semilla para el número random. Creado exclusivamente para testeo.
+     * @param seed Semilla a plantar
+     */
+    public void setSeedRandomEnemy(int seed) {
+        randomEnemy.setSeed(seed);
     }
 
     /**
@@ -287,9 +313,13 @@ public class GameController {
             round++;
             out.println("=======================================================");
             out.println("Ronda "+round);
+            setTurn(1);
+            playersInGame();
+            tryToStart();
+        } else {
+            setTurn(turn + 1);
+            tryToStart();
         }
-        setTurn(turn + 1);
-        tryToStart();
     }
 
     /**
@@ -323,21 +353,21 @@ public class GameController {
         addItemBaul(redMushroom, 1);
         if (nivelBatalla < 3) {
             for (int i = 0; i < 3; i++) {
-                int amount = ((random.nextInt(3)+3)*nivelBatalla);
+                int amount = ((random.nextInt(3)+1));
                 int lvle = lvl - amount;
-                int atke = atk - amount;
+                int atke = atk + amount;
                 int defe = def - amount;
-                int hpe = hp/2 - amount;
+                int hpe = hp/2 + amount;
                 IEnemy enemy = generateEnemy(lvle, atke, defe, hpe);
                 listOfCharacters.add(enemy);
             }
         }
         else if (nivelBatalla >= 3 && nivelBatalla < 5) {
             for (int i = 0; i < 5; i++) {
-                int amount = ((random.nextInt(5)+3)*nivelBatalla);
+                int amount = ((random.nextInt(3)+5));
                 int lvle = lvl - amount;
-                int atke = atk - amount;
-                int defe = def - amount;
+                int atke = atk + amount/3;
+                int defe = def - amount/3;
                 int hpe = hp/2 - amount;
                 IEnemy enemy = generateEnemy(lvle, atke, defe, hpe);
                 listOfCharacters.add(enemy);
@@ -345,16 +375,17 @@ public class GameController {
         }
         else if (nivelBatalla == 5) {
             for (int i = 0; i < 6; i++) {
-                int amount = (random.nextInt(6)+3)*nivelBatalla;
+                int amount = (random.nextInt(7)+3);
                 int lvle = lvl - amount;
-                int atke = atk - amount;
-                int defe = def - amount;
+                int atke = atk + amount/3;
+                int defe = def - amount/3;
                 int hpe = hp/2 - amount;
                 IEnemy enemy = generateEnemy(lvle, atke, defe, hpe);
                 listOfCharacters.add(enemy);
             }
         }
         setTurn(turn);
+        playersInGame();
         tryToStart();
     }
 
@@ -420,18 +451,36 @@ public class GameController {
             if (!defender.isBoo()) {
                 IAttackedByLuis enemy = (IAttackedByLuis) defender;
                 int hpprev = enemy.getHP();
+                int hpprevA = luis.getHP();
                 luis.attack(enemy, attack);
                 int hpnew = enemy.getHP();
+                int hpnewA = luis.getHP();
                 out.println("Luis ataca a "+enemy.getName()+" con "+attack.getName()+
                         " | Vida Previa Enemigo: "+hpprev+", Vida Nueva Enemigo: "+hpnew);
+                if (defender.isSpiny()) {
+                    if (!attack.hurtsSpiny()) {
+                        out.println("Spiny se defiende con sus pinchos!" +
+                                " | Vida Previa Luis: "+hpprevA+", Vida Nueva Luis: "+hpnewA);
+                    }
+                }
+            } else {
+                out.println("Luis no puede atacar a Boo!");
             }
         } else {
             int hpprev = defender.getHP();
+            int hpprevA = attacker.getHP();
             Marco marco = (Marco) attacker;
             marco.attack(defender, attack);
             int hpnew = defender.getHP();
+            int hpnewA = marco.getHP();
             out.println("Marco ataca a "+defender.getName()+" con "+attack.getName()+
                     " | Vida Previa Enemigo: "+hpprev+", Vida Nueva Enemigo: "+hpnew);
+            if (defender.isSpiny()) {
+                if (!attack.hurtsSpiny()) {
+                    out.println("Spiny se defiende con sus pinchos!" +
+                            " | Vida Previa Marco: "+hpprevA+", Vida Nueva Marco: "+hpnewA);
+                }
+            }
         }
     }
 
@@ -450,13 +499,15 @@ public class GameController {
                 int hpnew = luis.getHP();
                 out.println("Boo ataca a "+luis.getName()+
                         " | Vida Previa Luis: "+hpprev+", Vida Nueva Luis: "+hpnew);
+            } else {
+                out.println("Boo no puede atacar a Marco!");
             }
         } else {
             int hpprev = defender.getHP();
             IAttackedByLuis enemy = (IAttackedByLuis) attacker;
             enemy.attack(defender);
             int hpnew = defender.getHP();
-            out.println("Boo ataca a "+defender.getName()+
+            out.println(enemy.getName()+" ataca a "+defender.getName()+
                     " | Vida Previa "+defender.getName()+": "+hpprev+
                     ", Vida Nueva "+defender.getName()+": "+hpnew);
         }
@@ -593,22 +644,16 @@ public class GameController {
      */
     public void electionUseItem(String numItem) {
         int stringToInt = Integer.parseInt(numItem);
-        HoneySyrup honeySyrup = addHoneySyrup();
-        RedMushroom redMushroom = addRedMushroom();
         IPlayer player = (IPlayer) getTurnEntity();
         if (stringToInt == 1) {
-            try {
-                usePlayerItem(player, honeySyrup);
-            } catch (IOError error) {
-                error.printStackTrace();
-            }
+            IObject item = addHoneySyrup();
+            usePlayerItem(player, item);
+            out.println(player.getName()+" ha usado "+item.getName());
         }
         else if (stringToInt == 2) {
-            try {
-                usePlayerItem(player, redMushroom);
-            }catch (IOError error) {
-                error.printStackTrace();
-            }
+            IObject item = addRedMushroom();
+            usePlayerItem(player, item);
+            out.println(player.getName()+" ha usado "+item.getName());
         }
     }
 
@@ -629,11 +674,9 @@ public class GameController {
             IEnemy enemy = searchEnemyNum(stringToInt);
             IPlayer player = (IPlayer) getTurnEntity();
             if (stringToInt2 == 1) {
-                HammerAttack hammerAttack = new HammerAttack();
                 attackEnemy(player, enemy, hammerAttack);
             }
             else if (stringToInt2 == 2) {
-                JumpAttack jumpAttack = new JumpAttack();
                 attackEnemy(player, enemy, jumpAttack);
             }
         }
@@ -675,7 +718,6 @@ public class GameController {
      * jugador o enemigo.
      */
     public void tryToStart() {
-        playersInGame();
         IEntities entity = getTurnEntity();
         if (entity.isPlayer()) {
             playerElection();
@@ -694,8 +736,9 @@ public class GameController {
         controller.setPrintStream(out);
         controller.setBufferedReader(inInit);
 
-        controller.addMarco(16,13,15,60,14);
-        controller.addLuis(14,15,12,63,16);
+        //Datos fijos, pueden ir cambiando según se requiera pero mientras se quedarán así.
+        controller.addMarco(16,13,15,60,7);
+        controller.addLuis(14,15,12,63,9);
 
         out.println("=======================================================");
         out.println("Nivel de Batalla: "+nivelBatalla);
