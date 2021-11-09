@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.aventurasdemarcoyluis.controller.GameControllerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-11-09T01:04:57" hostname="LAPTOP-BPDICMJD" time="0.118">
+<testsuite name="com.aventurasdemarcoyluis.controller.GameControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-09T01:52:43" hostname="LAPTOP-BPDICMJD" time="0.083">
   <properties/>
-  <testcase name="escenarioNotWinnable()" classname="com.aventurasdemarcoyluis.controller.GameControllerTest" time="0.089"/>
-  <testcase name="escenarioWinnable()" classname="com.aventurasdemarcoyluis.controller.GameControllerTest" time="0.028"/>
+  <testcase name="escenarioWinnable()" classname="com.aventurasdemarcoyluis.controller.GameControllerTest" time="0.083"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

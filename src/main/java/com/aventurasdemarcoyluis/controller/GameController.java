@@ -213,6 +213,7 @@ public class GameController {
     public void usePlayerItem(IPlayer player, IObject item) {
         if (baul.hasItem(item)) {
             player.useItem(item,baul);
+            out.println(player.getName()+" ha usado "+item.getName());
         } else {
             out.println("No hay suficientes existencias de "+item.getName());
         }
@@ -343,6 +344,10 @@ public class GameController {
         round = 1;
         if (nivelBatalla > 1) {
             playersSetNewBattle();
+            HoneySyrup honeySyrup = addHoneySyrup();
+            RedMushroom redMushroom = addRedMushroom();
+            addItemBaul(honeySyrup, 1);
+            addItemBaul(redMushroom, 1);
         }
         listOfCharacters.clear();
         for (IPlayer player : listOfPlayers) {
@@ -353,10 +358,6 @@ public class GameController {
         int atk = player.getATK();
         int def = player.getDEF();
         int hp = player.getMaxHP();
-        HoneySyrup honeySyrup = addHoneySyrup();
-        RedMushroom redMushroom = addRedMushroom();
-        addItemBaul(honeySyrup, 1);
-        addItemBaul(redMushroom, 1);
         if (nivelBatalla < 3) {
             for (int i = 0; i < 3; i++) {
                 int amount = ((random.nextInt(3)+1));
@@ -666,12 +667,10 @@ public class GameController {
         if (stringToInt == 1) {
             IObject item = addHoneySyrup();
             usePlayerItem(player, item);
-            out.println(player.getName()+" ha usado "+item.getName());
         }
         else if (stringToInt == 2) {
             IObject item = addRedMushroom();
             usePlayerItem(player, item);
-            out.println(player.getName()+" ha usado "+item.getName());
         }
     }
 
@@ -755,8 +754,8 @@ public class GameController {
         controller.setBufferedReader(inInit);
 
         //Datos fijos, pueden ir cambiando según se requiera pero mientras se quedarán así.
-        controller.addMarco(16,13,15,60,7);
-        controller.addLuis(14,15,12,63,9);
+        controller.addMarco(17,15,17,69,8);
+        controller.addLuis(15,17,14,72,10);
 
         out.println("=======================================================");
         out.println("Nivel de Batalla: "+nivelBatalla);

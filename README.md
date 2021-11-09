@@ -116,8 +116,8 @@ Tenemos a Marco y Luis como jugadores derivados de la clase abstracta _AbstractP
 y a Goomba, Boo y Spiny como enemigos derivados de la clase abstracta _AbstractEnemy_.
 
 La Batalla comienza con un Marco y Luis predeterminado: <br>
-> Marco | nivel: 16, ataque: 13, defensa: 15, vida: 60, fp: 7 <br>
-> Luis | nivel: 14, ataque: 15, defensa: 12, vida: 63, fp: 9 <br>
+> Marco | nivel: 17, ataque: 15, defensa: 17, vida: 69, fp: 8 <br>
+> Luis | nivel: 15, ataque: 17, defensa: 14, vida: 72, fp: 10
 
 Y en el baúl de objetos se encuentran 3 Honey Syrup y 3 Red Mushroom.
 
