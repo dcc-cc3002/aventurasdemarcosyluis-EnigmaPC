@@ -13,8 +13,8 @@ public class WaitFight extends Phase{
         this.canIChoose=false;
         this.canFight=false;
         this.canIfinish=false;
-        this.WaitTOFight=true;
-        this.Battle=false;;
+        this.WaitTOFight =true;
+        this.WaitToChooseItem=false;
     }
 
     @Override
@@ -26,12 +26,6 @@ public class WaitFight extends Phase{
     @Override
     public void selectAttack() throws InvalidElectionException, IOException {
         controller.electionAttack2();
-    }
-
-
-    @Override
-    public void toElectionPhase() {
-        changePhase(new ElectionPhase());
     }
 
     @Override

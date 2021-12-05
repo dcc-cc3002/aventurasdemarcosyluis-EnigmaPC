@@ -3,7 +3,6 @@ package com.aventurasdemarcoyluis.controller.phases;
 import com.aventurasdemarcoyluis.controller.GameController;
 import com.aventurasdemarcoyluis.model.interfaces.IAttacks;
 import com.aventurasdemarcoyluis.model.interfaces.IEnemy;
-import com.aventurasdemarcoyluis.model.interfaces.IEntities;
 import com.aventurasdemarcoyluis.model.interfaces.IPlayer;
 
 import java.io.IOException;
@@ -16,7 +15,6 @@ public class Phase {
     public boolean canIfinish;
     public boolean WaitTOFight;
     public boolean WaitToChooseItem;
-    public boolean Battle;
 
     public void setController(GameController controller){
         this.controller=controller;
@@ -60,6 +58,12 @@ public class Phase {
         }
     }
 
+    public void selectItem() throws InvalidStateException, InvalidElectionException, IOException {
+        if(!WaitToChooseItem){
+            throw new InvalidStateException("No puedes pelear en: " + toString());
+        }
+    }
+
     public void endTurn() throws InvalidStateException {
         if(!canIfinish){
             throw new InvalidStateException("No puedes terminar el turno en " + this.toString());
@@ -88,7 +92,7 @@ public class Phase {
                 "No se puede cambiar de " + this.toString() + "a la fase StartPhase");
     }
 
-    public void toWaitAttackPhase() throws InvalidTransitionException, IOException, InvalidElectionException {
+    public void toWaitAttackPhase() throws InvalidTransitionException, InvalidElectionException {
         throw new InvalidTransitionException(
                 "No se puede cambiar de " + this.toString() + "a la fase WaitAttackPhase");
     }
@@ -96,6 +100,11 @@ public class Phase {
     public void toAttackPhase(IPlayer attacker, IEnemy opponent, IAttacks selectedAttack) throws InvalidTransitionException {
         throw new InvalidTransitionException(
                 "No se puede cambiar de " + this.toString() + "a la fase AttackPhase");
+    }
+
+    public void toWaitSelectItemPhase() throws InvalidTransitionException {
+        throw new InvalidTransitionException(
+                "No se puede cambiar de " + this.toString() + "a la fase WaitSelectItemPhase");
     }
 
 

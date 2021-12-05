@@ -7,8 +7,12 @@
     <list default="true" id="bb1cecac-0d8b-43a1-b081-26a65a9d4f9e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/AttackPhase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/AttackPhase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/ElectionPhase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/ElectionPhase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/Phase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/Phase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/UseItemPhase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/UseItemPhase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/WaitFight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/WaitFight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/WaitSelectItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/WaitSelectItem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,7 +249,7 @@
       <workItem from="1638351151801" duration="9640000" />
       <workItem from="1638680346362" duration="576000" />
       <workItem from="1638684176386" duration="3064000" />
-      <workItem from="1638712089474" duration="10800000" />
+      <workItem from="1638712089474" duration="12223000" />
     </task>
     <servers />
   </component>

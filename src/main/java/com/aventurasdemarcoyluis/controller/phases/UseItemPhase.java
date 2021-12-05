@@ -2,20 +2,19 @@ package com.aventurasdemarcoyluis.controller.phases;
 
 import com.aventurasdemarcoyluis.model.interfaces.IAttacks;
 import com.aventurasdemarcoyluis.model.interfaces.IEnemy;
+import com.aventurasdemarcoyluis.model.interfaces.IObject;
 import com.aventurasdemarcoyluis.model.interfaces.IPlayer;
 
-public class AttackPhase extends Phase {
-    IPlayer attacker;
-    IEnemy opponent;
-    IAttacks attack;
+public class UseItemPhase extends Phase {
+    IPlayer player;
+    IObject item;
 
-    public AttackPhase(IPlayer attacker, IEnemy victim, IAttacks ataque) {
+    public UseItemPhase(IPlayer jugador, IObject object) {
         this.canIChoose=false;
         this.canFight=true;
         this.canIStart=false;
-        this.attacker=attacker;
-        this.opponent=victim;
-        this.attack = ataque;
+        this.player=jugador;
+        this.item=object;
     }
 
     @Override
