@@ -15,4 +15,8 @@ public interface IEntities {
     int getDEF();
 
     int getHP();
+
+    int rollForAttack();
+
+    int rollForChoose();
 }

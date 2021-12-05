@@ -36,7 +36,7 @@ public class Luis extends AbstractPlayer implements IAttackedByBoo {
     }
 
     /**
-     * Permite a Luis atacar a los enemigo que pueden ser atacados por él con cierto ataque. Solo si
+     * Permite a Luis atacar a los enemigos que pueden ser atacados por él con cierto ataque. Solo si
      * Luis tiene suficientes FP para atacar y ni Luis ni el enemigo están muertos.
      * @param enemy Enemigo a atacar
      * @param attack Ataque utilizado

@@ -32,6 +32,7 @@ public abstract class AbstractEntities implements IEntities {
     private int HP;
     private int FP;
     protected String name;
+    protected Random random;
 
     /**
      * <b>Constructor:</b> <br>

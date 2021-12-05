@@ -1,5 +1,8 @@
 package com.aventurasdemarcoyluis.controller;
 
+import com.aventurasdemarcoyluis.controller.phases.InvalidElectionException;
+import com.aventurasdemarcoyluis.controller.phases.InvalidTransitionException;
+import com.aventurasdemarcoyluis.controller.phases.Phase;
 import com.aventurasdemarcoyluis.model.attacks.HammerAttack;
 import com.aventurasdemarcoyluis.model.attacks.JumpAttack;
 import com.aventurasdemarcoyluis.model.enemies.Boo;
@@ -43,6 +46,7 @@ public class GameController {
     private int nivelBatalla;
     private int turn;
     private IEntities turnEntity;
+    private IEntities turnEntEnemy;
     private int round;
     private Random randomEnemy;
     private BufferedReader in;
@@ -50,6 +54,7 @@ public class GameController {
     private Random random;
     private HammerAttack hammerAttack = new HammerAttack();
     private JumpAttack jumpAttack = new JumpAttack();
+    private Phase phase;
 
 
     /**
@@ -107,6 +112,14 @@ public class GameController {
      */
     public void setPrintStream(PrintStream out1) {
         this.out = out1;
+    }
+
+    /**
+     * Se obtiene el Print Stream elegido
+     * @return PrintStream
+     */
+    public PrintStream getPrintStream() {
+        return out;
     }
 
     /**
@@ -289,6 +302,21 @@ public class GameController {
     }
 
     /**
+     * Método que entrega quien se debe defender de un ataque (ya sea jugador o enemigo)
+     * @return Personaje que se defiende
+     */
+    public IEntities getTurnEntEnemy() {
+        return turnEntEnemy;
+    }
+
+    /**
+     * Método que entrega la lista de jugadores en un turno.
+     */
+    public ArrayList<IEntities> getListTurn() {
+        return listOfCharacters;
+    }
+
+    /**
      * Método para finalizar un turno.
      * Una vez finalizado el turno pueden pasar 4 situaciones: <br>
      * 1) Se gana la batalla por lo que se debe aumentar el nivel de batalla. <br>
@@ -314,7 +342,7 @@ public class GameController {
             out.println("Los jugadores han perdido ;(!");
             return;
         }
-        else if (turn % listOfCharacters.size() == 0) {
+        else if (turn % getListTurn().size() == 0) {
             round++;
             out.println("=======================================================");
             out.println("Ronda "+round);
@@ -343,7 +371,7 @@ public class GameController {
         turn = 1;
         round = 1;
         if (nivelBatalla > 1) {
-            playersSetNewBattle();
+            playerRecover();
             HoneySyrup honeySyrup = addHoneySyrup();
             RedMushroom redMushroom = addRedMushroom();
             addItemBaul(honeySyrup, 1);
@@ -400,7 +428,7 @@ public class GameController {
      * Método que permite a los jugadores regenerar vida y (para los no activos) volver al juego para
      * la siguiente batalla.
      */
-    public void playersSetNewBattle() {
+    public void playerRecover() {
         for (IPlayer player : listOfPlayers) {
             player.levelUP();
             player.setHP(player.getMaxHP());
@@ -573,6 +601,21 @@ public class GameController {
     }
 
     /**
+     * Método que setea quien debe defenderse del que atacará (si es que debe atacar)
+     * @param num Número del defensor según jugadores o enemigos
+     */
+    public void setEnemy(int num) {
+        if (getTurnEntity().isPlayer()) {
+            IEnemy enemy = searchEnemyNum(num);
+            this.turnEntEnemy = enemy;
+        }
+        else {
+            IPlayer enemy = searchPlayerNum(num);
+            this.turnEntEnemy = enemy;
+        }
+    }
+
+    /**
      * Método que imprime en pantalla los enemigos que se pueden atacar y sus atributos
      */
     public void enemiesToAttack() {
@@ -733,7 +776,8 @@ public class GameController {
     public void enemyElection() {
         int amountOfPlayers = amountOfPlayers();
         int election = random.nextInt(amountOfPlayers);
-        IPlayer player = searchPlayerNum(election);
+        setEnemy(election);
+        IPlayer player = (IPlayer) getTurnEntEnemy();
         IEnemy enemy = (IEnemy) getTurnEntity();
         attackPlayer(enemy,player);
         finishTurn();
@@ -751,6 +795,120 @@ public class GameController {
             enemyElection();
         }
     }
+
+    /**
+     * Método que permite a un jugador atacar a un enemigo con cierto ataque.
+     * @param player Jugador que ataca
+     * @param enemy Enemigo que defiende
+     * @param attack Ataque utilizado
+     */
+    public void attackEnemyWith(IPlayer player, IEnemy enemy, IAttacks attack) {
+        if (player.enoughFP(attack)) {
+            attackEnemy(player, enemy, attack);
+        } else {
+            out.println(player.getName()+" no tiene suficientes FP para atacar con "+ attack.getName());
+        }
+    }
+
+    ///////////////////////////////////////////////////
+
+    /**
+     * Cambia la phase en el controlador
+     * @param phase nueva phase
+     */
+    public void setPhase(Phase phase) {
+        this.phase = phase;
+        phase.setController(this);
+    }
+
+    public void tryToChoose(){
+        try {
+            phase.election();
+        } catch (InvalidElectionException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void electionTurn1() throws IOException {
+        out.println("Estas ocupando a "+getTurnEntity().getName());
+        out.println("Presiona 0 para atacar, 1 para elegir un item y 2 para pasar");
+        String line = this.getIn().readLine(); // InputStreamReader o StringReader (según lo seteado)
+        if (line.length() == 0) return;
+        int stringToInt = Integer.parseInt(line);
+        if (stringToInt == 0) { // ATAQUE
+            try {
+                phase.toAttackPhase();
+            } catch (InvalidTransitionException e) {
+                e.printStackTrace();
+            }
+        }
+        else if (stringToInt == 1) { // OCUPAR ITEM
+            try {
+                phase.tSelectItemPhase();
+            } catch (InvalidTransitionException e) {
+                e.printStackTrace();
+            }
+        }
+        else if (stringToInt == 2) { // PASAR
+            try {
+                phase.toPassPhase();
+            } catch (InvalidTransitionException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void electionAttack1() throws IOException {
+        out.println("Presiona cualquiera de las teclas desde" +
+                " 1 hasta "+amountOfEnemies()+" para elegir al enemigo por atacar");
+        enemiesToAttack();
+        String line = this.getIn().readLine();
+        out.println("Elige el ataque: 1 para Martillo, 2 para Salto ");
+        String line2 = this.getIn().readLine();
+        int stringToInt = Integer.parseInt(line);
+        int stringToInt2 = Integer.parseInt(line2);
+        setEnemy(stringToInt);
+        IEnemy enemy = (IEnemy) getTurnEntEnemy();
+        IPlayer player = (IPlayer) getTurnEntity();
+        if (stringToInt2 == 1) {
+            attackEnemyWith(player, enemy, hammerAttack);
+        }
+        else if (stringToInt2 == 2) {
+            attackEnemyWith(player, enemy, jumpAttack);
+        }
+    }
+
+    public void electionUseItem1() throws IOException {
+        out.println("Presiona 1 para ocupar HoneySyrup o 2 para ocupar RedMushroom");
+        itemsToUse();
+        String line = this.getIn().readLine();
+        int stringToInt = Integer.parseInt(line);
+        IPlayer player = (IPlayer) getTurnEntity();
+        if (stringToInt == 1) {
+            IObject item = addHoneySyrup();
+            usePlayerItem(player, item);
+        }
+        else if (stringToInt == 2) {
+            IObject item = addRedMushroom();
+            usePlayerItem(player, item);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /**
      * Modelamiento del escenario de juego fijo.

@@ -18,6 +18,8 @@ import com.aventurasdemarcoyluis.model.items.Baul;
  * @see com.aventurasdemarcoyluis.model.players.Luis
  * */
 public abstract class AbstractPlayer extends AbstractEntities implements IPlayer {
+    private boolean canIChoose;
+
     /**
      * <b>Constructor:</b> <br>
      * Modela un jugador
@@ -39,6 +41,20 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
     public String playerToString() {
         return this.name+" | nivel: "+this.LVL+", ataque: "+this.ATK+", defensa: "+this.DEF+", vida: "+
                 this.getHP()+", fp: "+this.getFP();
+    }
+
+    /**
+     * Retorna un valor uniformemente distribuido entre [1, 3]
+     */
+    public int rollForAttack() {
+        return random.nextInt(3) + 1;
+    }
+
+    /**
+     * Retorna un valor uniformemente distribuido entre [1, 3]
+     */
+    public int rollForChoose() {
+        return random.nextInt(3) + 1;
     }
 
     /**
@@ -134,5 +150,12 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
     public void useFPtoAttack(IAttacks attack) {
         int nuevoFP = this.getFP() - attack.getFPCost();
         this.setFP(nuevoFP);
+    }
+
+    public void setCanIChoose(boolean a){
+        this.canIChoose=a;
+    }
+    public boolean getCanIChoose(){
+        return canIChoose;
     }
 }
