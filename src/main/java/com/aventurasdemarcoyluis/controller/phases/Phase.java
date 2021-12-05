@@ -1,6 +1,10 @@
 package com.aventurasdemarcoyluis.controller.phases;
 
 import com.aventurasdemarcoyluis.controller.GameController;
+import com.aventurasdemarcoyluis.model.interfaces.IAttacks;
+import com.aventurasdemarcoyluis.model.interfaces.IEnemy;
+import com.aventurasdemarcoyluis.model.interfaces.IEntities;
+import com.aventurasdemarcoyluis.model.interfaces.IPlayer;
 
 import java.io.IOException;
 
@@ -23,16 +27,19 @@ public class Phase {
     }
 
     /**
-     * Method that
-     * @return the name of the actual Phase
+     * Metodo que retorna el nombre de la fase actual
+     * @return Nombre de la fase actual
      */
     public String toString(){
         return "Phase";
     }
 
-    public void start() throws InvalidTransitionException {
+    public void start() throws InvalidStateException, InvalidTransitionException {
+        if (!controller.getTurnEntity().isPlayer()) {
+            controller.enemyElection();
+        }
         if(!canIStart){
-            throw new InvalidTransitionException("You can't start at"+ toString());
+            throw new InvalidStateException("No puedes empezar en"+ toString());
         }
         else{
             toElectionPhase();
@@ -40,16 +47,57 @@ public class Phase {
         }
     }
 
-    public void election() throws InvalidElectionException, IOException {
+    public void election() throws InvalidStateException, IOException {
         if (!canIChoose) {
-            throw new InvalidElectionException("No puedes elegir en" + toString());
+            throw new InvalidStateException("No puedes elegir en" + toString());
         }
         controller.electionTurn1();
+    }
+
+    public void selectAttack() throws InvalidStateException, InvalidElectionException, IOException {
+        if(!WaitTOFight){
+            throw new InvalidStateException("No puedes pelear en: " + toString());
+        }
+    }
+
+    public void endTurn() throws InvalidStateException {
+        if(!canIfinish){
+            throw new InvalidStateException("No puedes terminar el turno en " + this.toString());
+        }
+        controller.finishTurn();
+    }
+
+    public void attack() throws InvalidStateException {
+        if (!canFight) {
+            throw new InvalidStateException("No puedes atacar ahora.");
+        }
     }
 
     public void toElectionPhase() throws InvalidTransitionException {
         throw new InvalidTransitionException(
                 "No se puede cambiar de " + this.toString() + " a la fase ElectionPhase");
     }
+
+    public void toEndTurnPhase() throws InvalidTransitionException {
+        throw new InvalidTransitionException(
+                "No se puede cambiar de " + this.toString() + " a la fase EndTurn");
+    }
+
+    public void toStartPhase() throws InvalidTransitionException {
+        throw new InvalidTransitionException(
+                "No se puede cambiar de " + this.toString() + "a la fase StartPhase");
+    }
+
+    public void toWaitAttackPhase() throws InvalidTransitionException, IOException, InvalidElectionException {
+        throw new InvalidTransitionException(
+                "No se puede cambiar de " + this.toString() + "a la fase WaitAttackPhase");
+    }
+
+    public void toAttackPhase(IPlayer attacker, IEnemy opponent, IAttacks selectedAttack) throws InvalidTransitionException {
+        throw new InvalidTransitionException(
+                "No se puede cambiar de " + this.toString() + "a la fase AttackPhase");
+    }
+
+
 
 }

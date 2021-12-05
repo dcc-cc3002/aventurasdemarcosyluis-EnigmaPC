@@ -1,6 +1,7 @@
 package com.aventurasdemarcoyluis.controller;
 
 import com.aventurasdemarcoyluis.controller.phases.InvalidElectionException;
+import com.aventurasdemarcoyluis.controller.phases.InvalidStateException;
 import com.aventurasdemarcoyluis.controller.phases.InvalidTransitionException;
 import com.aventurasdemarcoyluis.controller.phases.Phase;
 import com.aventurasdemarcoyluis.model.attacks.HammerAttack;
@@ -616,6 +617,14 @@ public class GameController {
     }
 
     /**
+     * Método que setea el Personaje que lleva el turno
+     */
+    public void setTurnEntity() {
+        IEntities ent = getTurnEntity();
+        this.turnEntity = ent;
+    }
+
+    /**
      * Método que imprime en pantalla los enemigos que se pueden atacar y sus atributos
      */
     public void enemiesToAttack() {
@@ -773,27 +782,14 @@ public class GameController {
     /**
      * Método que permite elegir aleatoriamente un jugador para que un enemigo lo ataque.
      */
-    public void enemyElection() {
+    public void enemyElection() throws InvalidTransitionException {
         int amountOfPlayers = amountOfPlayers();
         int election = random.nextInt(amountOfPlayers);
         setEnemy(election);
-        IPlayer player = (IPlayer) getTurnEntEnemy();
-        IEnemy enemy = (IEnemy) getTurnEntity();
+        IPlayer player = (IPlayer) turnEntEnemy;
+        IEnemy enemy = (IEnemy) turnEntity;
         attackPlayer(enemy,player);
-        finishTurn();
-    }
-
-    /**
-     * Método que permite a la entidad que posee el turno elegir lo que hará según si es
-     * jugador o enemigo.
-     */
-    public void tryToStart() {
-        IEntities entity = getTurnEntity();
-        if (entity.isPlayer()) {
-            playerElection();
-        } else {
-            enemyElection();
-        }
+        phase.toEndTurnPhase();
     }
 
     /**
@@ -821,10 +817,46 @@ public class GameController {
         phase.setController(this);
     }
 
+    /**
+     * Entidad intenta iniciar el turno
+     */
+    public void tryToStart() {
+        try {
+            setTurnEntity();
+            phase.start();
+        } catch (InvalidStateException | InvalidTransitionException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void tryToChoose(){
         try {
             phase.election();
-        } catch (InvalidElectionException | IOException e) {
+        } catch (IOException | InvalidStateException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void tryToSelectAttack() {
+        try {
+            phase.selectAttack();
+        } catch (InvalidStateException | InvalidElectionException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void tryToAttack() {
+        try {
+            phase.attack();
+        } catch (InvalidStateException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void tryToEndTurn(){
+        try {
+            phase.endTurn();
+        } catch (InvalidStateException e) {
             e.printStackTrace();
         }
     }
@@ -837,24 +869,55 @@ public class GameController {
         int stringToInt = Integer.parseInt(line);
         if (stringToInt == 0) { // ATAQUE
             try {
-                phase.toAttackPhase();
-            } catch (InvalidTransitionException e) {
+                phase.toWaitAttackPhase();
+            } catch (InvalidTransitionException | InvalidElectionException e) {
                 e.printStackTrace();
             }
         }
         else if (stringToInt == 1) { // OCUPAR ITEM
             try {
-                phase.tSelectItemPhase();
+                phase.toWaitSelectItemPhase();
             } catch (InvalidTransitionException e) {
                 e.printStackTrace();
             }
         }
         else if (stringToInt == 2) { // PASAR
             try {
-                phase.toPassPhase();
+                phase.toEndTurnPhase();
             } catch (InvalidTransitionException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    public void electionAttack2() throws IOException, InvalidElectionException {
+        out.println("Presiona cualquiera de las teclas desde" +
+                " 1 hasta " + amountOfEnemies() + " para elegir al enemigo por atacar");
+        enemiesToAttack();
+        String line = this.getIn().readLine();
+        out.println("Elige el ataque: 1 para Martillo, 2 para Salto ");
+        String line2 = this.getIn().readLine();
+        int stringToInt = Integer.parseInt(line);
+        int stringToInt2 = Integer.parseInt(line2);
+        setEnemy(stringToInt);
+        IEnemy enemy = (IEnemy) getTurnEntEnemy();
+        IPlayer player = (IPlayer) getTurnEntity();
+        if (stringToInt2 == 1) {
+            try {
+                phase.toAttackPhase(player,enemy,hammerAttack);
+            } catch (InvalidTransitionException e) {
+                e.printStackTrace();
+            }
+        }
+        else if (stringToInt2 == 2) {
+            try {
+                phase.toAttackPhase(player,enemy,jumpAttack);
+            } catch (InvalidTransitionException e) {
+                e.printStackTrace();
+            }
+        }
+        else {
+            throw new InvalidElectionException("No hay nada para elegir con "+stringToInt2);
         }
     }
 

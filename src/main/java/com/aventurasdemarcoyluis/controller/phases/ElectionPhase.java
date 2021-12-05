@@ -1,5 +1,7 @@
 package com.aventurasdemarcoyluis.controller.phases;
 
+import java.io.IOException;
+
 public class ElectionPhase extends Phase{
     public ElectionPhase(){
         this.canIStart=false;
@@ -18,10 +20,6 @@ public class ElectionPhase extends Phase{
         return "Moving_Phase";
     }
 
-    @Override
-    public void toWaitPathPhase() {
-        changePhase(new WaitPath());
-    }
 
     @Override
     public void toWaitHomePhase() {
@@ -29,8 +27,9 @@ public class ElectionPhase extends Phase{
     }
 
     @Override
-    public void toWaitFigthPhase(IUnit attacker, IUnit victim) {
-        changePhase(new WaitFight(attacker, victim));
+    public void toWaitAttackPhase() throws IOException, InvalidElectionException {
+        changePhase(new WaitFight());
+        controller.tryToSelectAttack();
     }
 
     @Override
