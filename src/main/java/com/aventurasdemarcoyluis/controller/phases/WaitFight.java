@@ -12,6 +12,7 @@ public class WaitFight extends Phase{
         this.canIStart=false;
         this.canIChoose=false;
         this.canFight=false;
+        this.canUseItem=false;
         this.canIfinish=false;
         this.WaitTOFight =true;
         this.WaitToChooseItem=false;

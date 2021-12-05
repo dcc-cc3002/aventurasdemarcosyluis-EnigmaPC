@@ -1,9 +1,6 @@
 package com.aventurasdemarcoyluis.controller;
 
-import com.aventurasdemarcoyluis.controller.phases.InvalidElectionException;
-import com.aventurasdemarcoyluis.controller.phases.InvalidStateException;
-import com.aventurasdemarcoyluis.controller.phases.InvalidTransitionException;
-import com.aventurasdemarcoyluis.controller.phases.Phase;
+import com.aventurasdemarcoyluis.controller.phases.*;
 import com.aventurasdemarcoyluis.model.attacks.HammerAttack;
 import com.aventurasdemarcoyluis.model.attacks.JumpAttack;
 import com.aventurasdemarcoyluis.model.enemies.Boo;
@@ -73,6 +70,8 @@ public class GameController {
         turn = 1;
         round = 1;
         baul = new Baul(3, 3);
+        phase= new Phase();
+        setPhase(new StartPhase());
     }
 
     /**
@@ -697,7 +696,7 @@ public class GameController {
                 finishTurn();
             }
             else if (stringToInt == 2) {
-                out.println("El jugador "+turnEntity.getName()+" ha pasado.");
+                out.println("El jugador "+getTurnEntity().getName()+" ha pasado.");
                 finishTurn();
             }
         }
@@ -786,8 +785,8 @@ public class GameController {
         int amountOfPlayers = amountOfPlayers();
         int election = random.nextInt(amountOfPlayers);
         setEnemy(election);
-        IPlayer player = (IPlayer) turnEntEnemy;
-        IEnemy enemy = (IEnemy) turnEntity;
+        IPlayer player = (IPlayer) getTurnEntEnemy();
+        IEnemy enemy = (IEnemy) getTurnEntity();
         attackPlayer(enemy,player);
         phase.toEndTurnPhase();
     }
@@ -845,6 +844,14 @@ public class GameController {
         }
     }
 
+    public void tryToSelectItem() {
+        try {
+            phase.selectItem();
+        } catch (InvalidElectionException | InvalidStateException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void tryToAttack() {
         try {
             phase.attack();
@@ -853,10 +860,18 @@ public class GameController {
         }
     }
 
+    public void tryToUseItem() {
+        try {
+            phase.useItem();
+        } catch (InvalidStateException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void tryToEndTurn(){
         try {
             phase.endTurn();
-        } catch (InvalidStateException e) {
+        } catch (InvalidStateException | InvalidTransitionException e) {
             e.printStackTrace();
         }
     }
@@ -921,57 +936,34 @@ public class GameController {
         }
     }
 
-    public void electionAttack1() throws IOException {
-        out.println("Presiona cualquiera de las teclas desde" +
-                " 1 hasta "+amountOfEnemies()+" para elegir al enemigo por atacar");
-        enemiesToAttack();
-        String line = this.getIn().readLine();
-        out.println("Elige el ataque: 1 para Martillo, 2 para Salto ");
-        String line2 = this.getIn().readLine();
-        int stringToInt = Integer.parseInt(line);
-        int stringToInt2 = Integer.parseInt(line2);
-        setEnemy(stringToInt);
-        IEnemy enemy = (IEnemy) getTurnEntEnemy();
-        IPlayer player = (IPlayer) getTurnEntity();
-        if (stringToInt2 == 1) {
-            attackEnemyWith(player, enemy, hammerAttack);
-        }
-        else if (stringToInt2 == 2) {
-            attackEnemyWith(player, enemy, jumpAttack);
-        }
-    }
-
-    public void electionUseItem1() throws IOException {
+    public void electionUseItem1() throws IOException, InvalidElectionException {
         out.println("Presiona 1 para ocupar HoneySyrup o 2 para ocupar RedMushroom");
         itemsToUse();
         String line = this.getIn().readLine();
         int stringToInt = Integer.parseInt(line);
         IPlayer player = (IPlayer) getTurnEntity();
         if (stringToInt == 1) {
+            try {
+                IObject item = addHoneySyrup();
+                phase.toUseItemPhase(player, item);
+            } catch (InvalidTransitionException e) {
+                e.printStackTrace();
+            }
             IObject item = addHoneySyrup();
             usePlayerItem(player, item);
         }
         else if (stringToInt == 2) {
-            IObject item = addRedMushroom();
-            usePlayerItem(player, item);
+            try {
+                IObject item = addRedMushroom();
+                phase.toUseItemPhase(player, item);
+            } catch (InvalidTransitionException e) {
+                e.printStackTrace();
+            }
+        }
+        else {
+            throw new InvalidElectionException("No hay nada para elegir con "+stringToInt);
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     /**
      * Modelamiento del escenario de juego fijo.

@@ -5,16 +5,15 @@ public class EndTurn extends Phase{
         this.canIStart=false;
         this.canIChoose=false;
         this.canFight=false;
+        this.canUseItem=false;
         this.canIfinish=true;
         this.WaitTOFight =false;
         this.WaitToChooseItem=false;
-        this.Battle=false;
     }
 
     @Override
-    public void endTurn() throws InvalidStateException {
+    public void endTurn() throws InvalidStateException, InvalidTransitionException {
        super.endTurn();
-       toStartPhase();
     }
 
     @Override

@@ -13,6 +13,7 @@ public class WaitSelectItem extends Phase{
         this.canIStart=false;
         this.canIChoose=false;
         this.canFight=false;
+        this.canUseItem=false;
         this.canIfinish=false;
         this.WaitTOFight=false;
         this.WaitToChooseItem=true;

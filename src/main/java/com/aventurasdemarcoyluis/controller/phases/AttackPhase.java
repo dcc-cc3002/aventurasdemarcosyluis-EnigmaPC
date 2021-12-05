@@ -12,6 +12,7 @@ public class AttackPhase extends Phase {
     public AttackPhase(IPlayer attacker, IEnemy victim, IAttacks ataque) {
         this.canIChoose=false;
         this.canFight=true;
+        this.canUseItem=false;
         this.canIStart=false;
         this.attacker=attacker;
         this.opponent=victim;

@@ -5,10 +5,10 @@ public class StartPhase extends Phase{
         this.canIStart=true;
         this.canIChoose=false;
         this.canFight=false;
+        this.canUseItem=false;
         this.canIfinish=false;
         this.WaitTOFight =false;
         this.WaitToChooseItem=false;
-        this.Battle=false;
     }
 
     @Override

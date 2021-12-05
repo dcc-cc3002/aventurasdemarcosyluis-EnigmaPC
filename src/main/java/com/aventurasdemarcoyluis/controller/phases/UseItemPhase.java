@@ -11,7 +11,7 @@ public class UseItemPhase extends Phase {
 
     public UseItemPhase(IPlayer jugador, IObject object) {
         this.canIChoose=false;
-        this.canFight=true;
+        this.canUseItem=true;
         this.canIStart=false;
         this.player=jugador;
         this.item=object;
@@ -19,12 +19,12 @@ public class UseItemPhase extends Phase {
 
     @Override
     public String toString() {
-        return "Fase de Ataque";
+        return "Fase de Usar Item";
     }
 
     @Override
-    public void attack(){
-        controller.attackEnemyWith(attacker,opponent,attack);
+    public void useItem(){
+        controller.usePlayerItem(player,item);
         toEndTurnPhase();
         controller.tryToEndTurn();
     }

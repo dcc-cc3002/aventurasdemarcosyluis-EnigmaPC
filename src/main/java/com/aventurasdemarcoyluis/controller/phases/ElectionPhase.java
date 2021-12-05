@@ -7,6 +7,7 @@ public class ElectionPhase extends Phase{
         this.canIStart=false;
         this.canIChoose=true;
         this.canFight=false;
+        this.canUseItem=false;
         this.canIfinish=false;
         this.WaitTOFight =false;
         this.WaitToChooseItem=false;
@@ -35,5 +36,6 @@ public class ElectionPhase extends Phase{
     @Override
     public void toEndTurnPhase(){
         changePhase(new EndTurn());
+        controller.tryToEndTurn();
     }
 }

@@ -170,7 +170,7 @@ class GameControllerTest {
 
     // Creado para checkear escenario
     public void checkEscenario(String stringNum) {
-        controller.escenario(new PrintStream(new NullOutputStream()),new BufferedReader(new StringReader(stringNum)));
+        controller.escenario(System.out,new BufferedReader(new StringReader(stringNum)));
     }
 
 }

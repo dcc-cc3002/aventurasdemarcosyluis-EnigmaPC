@@ -3,6 +3,7 @@ package com.aventurasdemarcoyluis.controller.phases;
 import com.aventurasdemarcoyluis.controller.GameController;
 import com.aventurasdemarcoyluis.model.interfaces.IAttacks;
 import com.aventurasdemarcoyluis.model.interfaces.IEnemy;
+import com.aventurasdemarcoyluis.model.interfaces.IObject;
 import com.aventurasdemarcoyluis.model.interfaces.IPlayer;
 
 import java.io.IOException;
@@ -10,6 +11,7 @@ import java.io.IOException;
 public class Phase {
     protected GameController controller ;
     public boolean canFight;
+    public boolean canUseItem;
     public boolean canIStart;
     public boolean canIChoose;
     public boolean canIfinish;
@@ -33,10 +35,14 @@ public class Phase {
     }
 
     public void start() throws InvalidStateException, InvalidTransitionException {
-        if (!controller.getTurnEntity().isPlayer()) {
+        if (controller.looseBattle()) {
+            return;
+        }
+        else if (!controller.getTurnEntity().isPlayer()) {
+            toElectionPhase();
             controller.enemyElection();
         }
-        if(!canIStart){
+        else if(!canIStart){
             throw new InvalidStateException("No puedes empezar en"+ toString());
         }
         else{
@@ -64,15 +70,22 @@ public class Phase {
         }
     }
 
-    public void endTurn() throws InvalidStateException {
+    public void endTurn() throws InvalidStateException, InvalidTransitionException {
         if(!canIfinish){
             throw new InvalidStateException("No puedes terminar el turno en " + this.toString());
         }
+        toStartPhase();
         controller.finishTurn();
     }
 
     public void attack() throws InvalidStateException {
         if (!canFight) {
+            throw new InvalidStateException("No puedes atacar ahora.");
+        }
+    }
+
+    public void useItem() throws InvalidStateException {
+        if (!canUseItem) {
             throw new InvalidStateException("No puedes atacar ahora.");
         }
     }
@@ -105,6 +118,11 @@ public class Phase {
     public void toWaitSelectItemPhase() throws InvalidTransitionException {
         throw new InvalidTransitionException(
                 "No se puede cambiar de " + this.toString() + "a la fase WaitSelectItemPhase");
+    }
+
+    public void toUseItemPhase(IPlayer jugador, IObject object) throws InvalidTransitionException {
+        throw new InvalidTransitionException(
+                "No se puede cambiar de " + this.toString() + "a la fase AttackPhase");
     }
 
 
