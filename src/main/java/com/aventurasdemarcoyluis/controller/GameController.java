@@ -115,14 +115,6 @@ public class GameController {
     }
 
     /**
-     * Se obtiene el Print Stream elegido
-     * @return PrintStream
-     */
-    public PrintStream getPrintStream() {
-        return out;
-    }
-
-    /**
      * Método que crea un Luis
      * @param level nivel
      * @param attack ataque
@@ -251,16 +243,13 @@ public class GameController {
     public IEnemy generateEnemy(int level, int attack, int defense, int maxHealPoints) {
         int dice = randomEnemy.nextInt(3);
         if (dice == 0) {
-            Boo boo = addBoo(level, attack, defense, maxHealPoints);
-            return boo;
+            return addBoo(level, attack, defense, maxHealPoints);
         }
         else if (dice == 1) {
-            Goomba goomba = addGoomba(level, attack, defense, maxHealPoints);
-            return goomba;
+            return addGoomba(level, attack, defense, maxHealPoints);
         }
         else {
-            Spiny spiny = addSpiny(level, attack, defense, maxHealPoints);
-            return spiny;
+            return addSpiny(level, attack, defense, maxHealPoints);
         }
     }
 
@@ -311,6 +300,7 @@ public class GameController {
 
     /**
      * Método que entrega la lista de jugadores en un turno.
+     * @return lista de jugadores en el turno
      */
     public ArrayList<IEntities> getListTurn() {
         return listOfCharacters;
@@ -571,8 +561,7 @@ public class GameController {
         for (IEntities entity : listOfCharacters) {
             if (!entity.isPlayer()) {
                 if (num == counter) {
-                    IEnemy enemy = (IEnemy) entity;
-                    return enemy;
+                    return (IEnemy) entity;
                 }
                 counter++;
             }
@@ -591,8 +580,7 @@ public class GameController {
         for (IEntities entity : listOfCharacters) {
             if (entity.isPlayer()) {
                 if (num == counter) {
-                    IPlayer player = (IPlayer) entity;
-                    return player;
+                    return (IPlayer) entity;
                 }
                 counter++;
             }
@@ -606,12 +594,10 @@ public class GameController {
      */
     public void setEnemy(int num) {
         if (getTurnEntity().isPlayer()) {
-            IEnemy enemy = searchEnemyNum(num);
-            this.turnEntEnemy = enemy;
+            this.turnEntEnemy = searchEnemyNum(num);
         }
         else {
-            IPlayer enemy = searchPlayerNum(num);
-            this.turnEntEnemy = enemy;
+            this.turnEntEnemy = searchPlayerNum(num);
         }
     }
 
@@ -619,8 +605,7 @@ public class GameController {
      * Método que setea el Personaje que lleva el turno
      */
     public void setTurnEntity() {
-        IEntities ent = getTurnEntity();
-        this.turnEntity = ent;
+        this.turnEntity = getTurnEntity();
     }
 
     /**
@@ -667,119 +652,10 @@ public class GameController {
         return in;
     }
 
-    /**
-     * Turno de elección para los jugadores.
-     * Se recibe un string numérico y según ese string es lo que hará el jugador. <br>
-     * Si recibe 0 significa que el jugador entrará al modo ataque.
-     * Si recibe 1 significa que el jugador entrará al modo elegir item.
-     * Si recibe 2 significa que el jugador pasará el turno
-     * @param string Número de la elección
-     */
-    public void electionTurn(String string) {
-        try {
-            int stringToInt = Integer.parseInt(string);
-            if (stringToInt == 0) {
-                out.println("Presiona cualquiera de las teclas desde" +
-                        " 1 hasta "+amountOfEnemies()+" para elegir al enemigo por atacar");
-                enemiesToAttack();
-                String line = this.getIn().readLine();
-                out.println("Elige el ataque: 1 para Martillo, 2 para Salto ");
-                String line2 = this.getIn().readLine();
-                this.electionAttack(line, line2);
-                finishTurn();
-            }
-            else if (stringToInt == 1) {
-                out.println("Presiona 1 para ocupar HoneySyrup o 2 para ocupar RedMushroom");
-                itemsToUse();
-                String line = this.getIn().readLine();
-                this.electionUseItem(line);
-                finishTurn();
-            }
-            else if (stringToInt == 2) {
-                out.println("El jugador "+getTurnEntity().getName()+" ha pasado.");
-                finishTurn();
-            }
-        }
-        catch (IOError | IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * Elección del item a usar para el jugador.
-     * Se recibe un string numérico que representa el item a usar.
-     * Si recibe 1 se usará honeySyrup
-     * Si recibe 2 se usará redMushroom
-     * @param numItem Número que representa el item a usar
-     */
-    public void electionUseItem(String numItem) {
-        int stringToInt = Integer.parseInt(numItem);
-        IPlayer player = (IPlayer) getTurnEntity();
-        if (stringToInt == 1) {
-            IObject item = addHoneySyrup();
-            usePlayerItem(player, item);
-        }
-        else if (stringToInt == 2) {
-            IObject item = addRedMushroom();
-            usePlayerItem(player, item);
-        }
-    }
-
-    /**
-     * Elección del ataque a usar para el jugador sobre cierto enemigo.
-     * Se recibe un string numérico que representa el número del enemigo a atacar y otro
-     * string numérico para el ataque a utilizar. <br>
-     * Se buscar el enemigo según el string del número del enemigo.
-     * Si se recibe 1 para el parámetro de ataque se utilizará Martillo
-     * Si se recibe 2 para el parámetro de ataque se utilizará Salto
-     * @param numEnemy Número del enemigo a atacar
-     * @param numAttack Número del ataque elegido
-     */
-    public void electionAttack(String numEnemy, String numAttack) {
-        try {
-            int stringToInt = Integer.parseInt(numEnemy);
-            int stringToInt2 = Integer.parseInt(numAttack);
-            IEnemy enemy = searchEnemyNum(stringToInt);
-            IPlayer player = (IPlayer) getTurnEntity();
-            if (stringToInt2 == 1) {
-                if (player.enoughFP(hammerAttack)) {
-                    attackEnemy(player, enemy, hammerAttack);
-                } else {
-                    out.println(player.getName()+" no tiene suficientes FP para atacar con "+ hammerAttack.getName());
-                }
-            }
-            else if (stringToInt2 == 2) {
-                if (player.enoughFP(jumpAttack)) {
-                    attackEnemy(player, enemy, jumpAttack);
-                }
-                else {
-                    out.println(player.getName()+" no tiene suficientes FP para atacar con "+ jumpAttack.getName());
-                }
-            }
-        }
-        catch (IOError e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * Método que introduce la elección de atacar, elegir un item o pasar.
-     * Para posteriormente ocupar los métodos de elección correspondientes.
-     */
-    public void playerElection() {
-        try {
-            out.println("Estas ocupando a "+getTurnEntity().getName());
-            out.println("Presiona 0 para atacar, 1 para elegir un item y 2 para pasar");
-            String line = this.getIn().readLine(); // InputStreamReader o StringReader (según lo seteado)
-            if (line.length() == 0) return;
-            this.electionTurn(line);
-        }
-        catch (IOException e) {
-        }
-    }
 
     /**
      * Método que permite elegir aleatoriamente un jugador para que un enemigo lo ataque.
+     * @throws InvalidTransitionException Si la fase en la que está no es la correcta (ElectionPhase)
      */
     public void enemyElection() throws InvalidTransitionException {
         int amountOfPlayers = amountOfPlayers();
@@ -806,6 +682,8 @@ public class GameController {
     }
 
     ///////////////////////////////////////////////////
+    // FASES
+    ///////////////////////////////////////////////////
 
     /**
      * Cambia la phase en el controlador
@@ -828,14 +706,20 @@ public class GameController {
         }
     }
 
+    /**
+     * Jugador intenta tomar una decisión: Atacar, Usar Item o Pasar
+     */
     public void tryToChoose(){
         try {
             phase.election();
-        } catch (IOException | InvalidStateException e) {
+        } catch (IOException | InvalidStateException | InvalidElectionException e) {
             e.printStackTrace();
         }
     }
 
+    /**
+     * Jugador intenta elegir un ataque: Martillo o Salto
+     */
     public void tryToSelectAttack() {
         try {
             phase.selectAttack();
@@ -844,6 +728,9 @@ public class GameController {
         }
     }
 
+    /**
+     * Jugador intenta elegir un item: RedMushroom o HoneySyrup
+     */
     public void tryToSelectItem() {
         try {
             phase.selectItem();
@@ -852,6 +739,9 @@ public class GameController {
         }
     }
 
+    /**
+     * Jugador intenta atacar
+     */
     public void tryToAttack() {
         try {
             phase.attack();
@@ -860,6 +750,9 @@ public class GameController {
         }
     }
 
+    /**
+     * Jugador intenta usar un item
+     */
     public void tryToUseItem() {
         try {
             phase.useItem();
@@ -868,6 +761,9 @@ public class GameController {
         }
     }
 
+    /**
+     * Entidad intenta terminar el turno
+     */
     public void tryToEndTurn(){
         try {
             phase.endTurn();
@@ -876,7 +772,12 @@ public class GameController {
         }
     }
 
-    public void electionTurn1() throws IOException {
+    /**
+     * El Jugador elige qué hacer: 0-Ataca, 1-UsaItem, 2-Pasa
+     * @throws IOException Error de escritura
+     * @throws InvalidElectionException Error de elección (si elige un número que no está)
+     */
+    public void electionTurn() throws IOException, InvalidElectionException {
         out.println("Estas ocupando a "+getTurnEntity().getName());
         out.println("Presiona 0 para atacar, 1 para elegir un item y 2 para pasar");
         String line = this.getIn().readLine(); // InputStreamReader o StringReader (según lo seteado)
@@ -903,9 +804,17 @@ public class GameController {
                 e.printStackTrace();
             }
         }
+        else {
+            throw new InvalidElectionException("No hay nada para elegir con "+stringToInt);
+        }
     }
 
-    public void electionAttack2() throws IOException, InvalidElectionException {
+    /**
+     * Jugador elige un ataque: 1-Martillo, 2-Salto
+     * @throws IOException Error de escritura
+     * @throws InvalidElectionException Error de elección (si elige un número que no está)
+     */
+    public void electionAttack() throws IOException, InvalidElectionException {
         out.println("Presiona cualquiera de las teclas desde" +
                 " 1 hasta " + amountOfEnemies() + " para elegir al enemigo por atacar");
         enemiesToAttack();
@@ -936,7 +845,12 @@ public class GameController {
         }
     }
 
-    public void electionUseItem1() throws IOException, InvalidElectionException {
+    /**
+     * Jugador elige un item: 1-HoneySyrup, 2-RedMushroom
+     * @throws IOException Error de escritura
+     * @throws InvalidElectionException Error de elección (si elige un número que no está)
+     */
+    public void electionUseItem() throws IOException, InvalidElectionException {
         out.println("Presiona 1 para ocupar HoneySyrup o 2 para ocupar RedMushroom");
         itemsToUse();
         String line = this.getIn().readLine();
@@ -970,7 +884,26 @@ public class GameController {
      * @param out PrintStream elegido.
      * @param inInit BufferedReader elegido.
      */
-    public void escenario(PrintStream out, BufferedReader inInit) {
+    public void escenaryToPlay(PrintStream out, BufferedReader inInit) {
+        GameController controller = this;
+        controller.setPrintStream(out);
+        controller.setBufferedReader(inInit);
+
+        //Datos fijos, pueden ir cambiando según se requiera pero mientras se quedarán así.
+        controller.addMarco(1,20,17,69,8);
+        controller.addLuis(1,21,14,72,10);
+
+        out.println("=======================================================");
+        out.println("Nivel de Batalla: "+nivelBatalla);
+        controller.Battle();
+    }
+
+    /**
+     * Modelamiento del escenario de ganar rápido.
+     * @param out PrintStream elegido.
+     * @param inInit BufferedReader elegido.
+     */
+    public void escenaryTestAttack(PrintStream out, BufferedReader inInit) {
         GameController controller = this;
         controller.setPrintStream(out);
         controller.setBufferedReader(inInit);

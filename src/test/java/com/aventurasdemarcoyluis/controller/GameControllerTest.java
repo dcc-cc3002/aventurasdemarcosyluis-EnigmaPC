@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import java.io.BufferedReader;
 import java.io.PrintStream;
 import java.io.StringReader;
-import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -170,7 +169,7 @@ class GameControllerTest {
 
     // Creado para checkear escenario
     public void checkEscenario(String stringNum) {
-        controller.escenario(System.out,new BufferedReader(new StringReader(stringNum)));
+        controller.escenaryTestAttack(new PrintStream(new NullOutputStream()),new BufferedReader(new StringReader(stringNum)));
     }
 
 }

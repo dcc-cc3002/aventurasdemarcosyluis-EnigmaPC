@@ -9,6 +9,9 @@ import java.io.OutputStream;
  */
 public class NullOutputStream extends OutputStream {
 
+	/**
+	 * Constructor vacío
+	 */
 	public NullOutputStream() {
 		super();
 	}

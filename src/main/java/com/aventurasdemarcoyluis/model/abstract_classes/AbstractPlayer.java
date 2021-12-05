@@ -151,11 +151,4 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
         int nuevoFP = this.getFP() - attack.getFPCost();
         this.setFP(nuevoFP);
     }
-
-    public void setCanIChoose(boolean a){
-        this.canIChoose=a;
-    }
-    public boolean getCanIChoose(){
-        return canIChoose;
-    }
 }

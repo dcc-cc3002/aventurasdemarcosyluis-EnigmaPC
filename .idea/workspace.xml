@@ -1,20 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="4" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb1cecac-0d8b-43a1-b081-26a65a9d4f9e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/controller/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/controller/GameController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/controller/GameExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/controller/GameExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/controller/NullOutputStream.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/controller/NullOutputStream.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/controller/phases/AttackPhase.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/controller/phases/AttackPhase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/controller/phases/ElectionPhase.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/controller/phases/ElectionPhase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/controller/phases/EndTurn.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/controller/phases/EndTurn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/controller/phases/Phase.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/controller/phases/Phase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/controller/phases/StartPhase.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/controller/phases/StartPhase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/controller/phases/UseItemPhase.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/controller/phases/UseItemPhase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/controller/phases/WaitFight.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/controller/phases/WaitSelectItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/controller/phases/WaitSelectItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/model/abstract_classes/AbstractPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/model/abstract_classes/AbstractPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/model/items/Baul.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/aventurasdemarcoyluis/model/items/Baul.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/aventurasdemarcoyluis/controller/GameControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/aventurasdemarcoyluis/controller/GameControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.aventurasdemarcoyluis.controller.GameControllerTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.aventurasdemarcoyluis.controller.GameControllerTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.aventurasdemarcoyluis.controller.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/com.aventurasdemarcoyluis.controller.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.aventurasdemarcoyluis.controller.GameControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.aventurasdemarcoyluis.controller.GameControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/GameExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/GameExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/NullOutputStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/NullOutputStream.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/AttackPhase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/AttackPhase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/ElectionPhase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/ElectionPhase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/EndTurn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/EndTurn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/InvalidElectionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/InvalidElectionException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/InvalidStateException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/InvalidStateException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/InvalidTransitionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/InvalidTransitionException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/Phase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/Phase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/StartPhase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/StartPhase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/UseItemPhase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/UseItemPhase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/WaitFight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/WaitFight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/WaitFight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/WaitAttackPhase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/WaitSelectItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/controller/phases/WaitSelectItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/abstract_classes/AbstractPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/abstract_classes/AbstractPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/items/Baul.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aventurasdemarcoyluis/model/items/Baul.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/controller/GameControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aventurasdemarcoyluis/controller/GameControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +106,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="5" />
   </component>
   <component name="ProjectId" id="1yqvB17ocYs3bN18xBSDSUDpKaO" />
   <component name="ProjectViewState">
@@ -212,10 +256,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.GameControllerTest" />
+        <item itemvalue="Gradle.Tests in 'AventurasdeMarcoyLuis.test'" />
         <item itemvalue="Gradle.GameControllerTest.escenarioWinnable" />
         <item itemvalue="Gradle.GameControllerTest.escenarioNotWinnable" />
         <item itemvalue="Application.GameExample" />
-        <item itemvalue="Gradle.Tests in 'AventurasdeMarcoyLuis.test'" />
       </list>
     </recent_temporary>
   </component>
@@ -239,6 +283,7 @@
       <workItem from="1638680346362" duration="576000" />
       <workItem from="1638684176386" duration="3064000" />
       <workItem from="1638712089474" duration="16170000" />
+      <workItem from="1638734894825" duration="6525000" />
     </task>
     <servers />
   </component>

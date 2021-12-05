@@ -1,21 +1,32 @@
 package com.aventurasdemarcoyluis.controller.phases;
 
+/**
+ * Fase de inicio de turno
+ */
 public class StartPhase extends Phase{
+
+    /**
+     * Constructor.
+     * Solo canIStart es true
+     */
     public StartPhase(){
-        this.canIStart=true;
-        this.canIChoose=false;
-        this.canFight=false;
+        this.canIStart =true;
+        this.canIChoose =false;
+        this.canAttack =false;
         this.canUseItem=false;
-        this.canIfinish=false;
-        this.WaitTOFight =false;
-        this.WaitToChooseItem=false;
+        this.canIEndTurn =false;
+        this.WaitToAttack =false;
+        this.WaitToUseItem =false;
     }
 
     @Override
     public String toString() {
-        return "Start_Phase";
+        return "StartPhase";
     }
 
+    /**
+     * Permite ir a la fase de elección
+     */
     @Override
     public void toElectionPhase() {
         changePhase(new ElectionPhase());
