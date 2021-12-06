@@ -31,6 +31,7 @@ Las cuales referencian a cada modelo: **Item** _(AbstractItem)_, **Entidad** _(A
 - [CONTROLLER_main](src/main/java/com/aventurasdemarcoyluis/controller): Aquí se encuentra el controlador que
 implementa las reglas y el flujo del juego. Posee además una clase 
 [GAME_EXAMPLE](src/main/java/com/aventurasdemarcoyluis/controller/GameExample.java) con la cual se puede jugar.<br>
+Tambien se encuentra el paquete con las fases [PHASES](src/main/java/com/aventurasdemarcoyluis/phases).
 - [TEST_main](src/test/java/com/aventurasdemarcoyluis): Aquí se encuentran todos los test realizados
 sobre el modelo y el controlador.<br>
 Dentro del paquete "controller" se testea el controlador. Se puede observar una situación
@@ -140,8 +141,28 @@ misma batalla. Las opciones son:
 > 2 : Si se quiere utilizar Red Mushroom <br>
 > (Esto se visualiza en el método electionUseItem)
 
+## Fases
+
+En esta tarea se implementaron las fases. Se creó la fase de inicio de Turno (***StartPhase***), la cual es compartida
+tanto por los jugadores como por los enemigos. Luego se creó la fase de elección (***ElectionPhase***) en donde si
+eres enemigo te permite atacar a un jugador aleatorio sin afectar el flujo del juego y, si eres jugador te permite
+elegir entre atacar, elegir un item o pasar el turno. Opciones:
+
+- Si se pasa el turno, entonces se entra a la fase de término de turno (***EndTurnPhase***).
+- Si se elige elegir un item, entonces se entra a la fase de elección de item (***WaitSelectItemPhase***).
+Una vez que se elija el item se entra a la fase de uso del item (***UseItemPhase***). Cuando se
+termine de ocupar el item, se redirigirá a la fase de término de turno (***EndTurnPhase***).
+- Si se elige atacar, entonces se entra a la fase de seleccion del enemigo (***WaitAttackPhase***). Una vez
+elegido el enemigo a atacar se entra a la fase de ataque al enemigo (***AttackPhase***). Cuando se
+termine de atacar, se redirigirá a la fase de término de turno (***EndTurnPhase***).
+
+Una vez terminado el turno, se revisará si el nivel de batalla es igual a 6. Si es así, entonces se ha
+ganado el juego. Si el nivel de batalla es menor a 6 y los jugadores no murieron, se sigue al siguiente nivel de batalla.
+Si los jugadores murieron, se termina el juego. 
+
+Lo anterior también aplica para cada ronda.
+
 ## Anotaciones
-- El modo de juego no es definitivo, es solo para esta tarea.
 - Tuve que usar casteos pues no se me ocurrió otra manera de generar mi código.
 - Creé varias funciones para evitar usar "is instance of" como isPlayer() o isBoo(). Pero la gran
 mayoría de estas funciones solo las hice para que quedara bonito el juego. 

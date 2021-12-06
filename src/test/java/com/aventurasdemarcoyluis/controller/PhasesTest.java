@@ -4,12 +4,7 @@ import com.aventurasdemarcoyluis.controller.phases.*;
 import com.aventurasdemarcoyluis.model.abstract_classes.BaseTest;
 import com.aventurasdemarcoyluis.model.attacks.HammerAttack;
 import com.aventurasdemarcoyluis.model.attacks.JumpAttack;
-import com.aventurasdemarcoyluis.model.enemies.Boo;
-import com.aventurasdemarcoyluis.model.enemies.Goomba;
-import com.aventurasdemarcoyluis.model.enemies.Spiny;
-import com.aventurasdemarcoyluis.model.interfaces.IEntities;
 import com.aventurasdemarcoyluis.model.interfaces.IPlayer;
-import com.aventurasdemarcoyluis.model.players.Luis;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +12,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.StringReader;
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -239,7 +233,7 @@ public class PhasesTest extends BaseTest {
 
     @Test
     void testENDTURNxChoose() {
-        controller.setPhase(new EndTurn());
+        controller.setPhase(new EndTurnPhase());
         assertEquals("EndTurnPhase",controller.getCurrentPhase());
 
         controller.setTurn(1);

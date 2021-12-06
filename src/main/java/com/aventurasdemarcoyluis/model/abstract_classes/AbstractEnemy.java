@@ -40,20 +40,6 @@ public abstract class AbstractEnemy extends AbstractEntities implements IEnemy {
     }
 
     /**
-     * Retorna un valor uniformemente distribuido entre [1, 2]
-     */
-    public int rollForAttack() {
-        return random.nextInt(2) + 1;
-    }
-
-    /**
-     * Retorna 1
-     */
-    public int rollForChoose() {
-        return 1;
-    }
-
-    /**
      * Determina si la entidad es un jugador
      * @return False
      */

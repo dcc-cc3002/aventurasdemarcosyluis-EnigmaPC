@@ -3,8 +3,6 @@ package com.aventurasdemarcoyluis.controller.phases;
 import com.aventurasdemarcoyluis.model.interfaces.IObject;
 import com.aventurasdemarcoyluis.model.interfaces.IPlayer;
 
-import java.io.IOException;
-
 /**
  * Fase para usar un item
  */
@@ -50,6 +48,6 @@ public class UseItemPhase extends Phase {
      */
     @Override
     public void toEndTurnPhase() {
-        changePhase(new EndTurn());
+        changePhase(new EndTurnPhase());
     }
 }

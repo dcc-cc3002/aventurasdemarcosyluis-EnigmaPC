@@ -47,7 +47,7 @@ public class ElectionPhase extends Phase{
      */
     @Override
     public void toEndTurnPhase(){
-        changePhase(new EndTurn());
+        changePhase(new EndTurnPhase());
         controller.tryToEndTurn();
     }
 }

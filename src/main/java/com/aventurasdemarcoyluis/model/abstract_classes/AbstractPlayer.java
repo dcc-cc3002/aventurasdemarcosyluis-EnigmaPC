@@ -43,20 +43,6 @@ public abstract class AbstractPlayer extends AbstractEntities implements IPlayer
     }
 
     /**
-     * Retorna un valor uniformemente distribuido entre [1, 3]
-     */
-    public int rollForAttack() {
-        return random.nextInt(3) + 1;
-    }
-
-    /**
-     * Retorna un valor uniformemente distribuido entre [1, 3]
-     */
-    public int rollForChoose() {
-        return random.nextInt(3) + 1;
-    }
-
-    /**
      * Determina si la entidad es un jugador
      * @return Verdadero
      */

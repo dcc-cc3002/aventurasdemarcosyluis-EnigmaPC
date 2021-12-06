@@ -3,13 +3,13 @@ package com.aventurasdemarcoyluis.controller.phases;
 /**
  * Fase de término del turno
  */
-public class EndTurn extends Phase{
+public class EndTurnPhase extends Phase{
 
     /**
      * Constructor
      * Solo canIEndTurn es true
      */
-    public EndTurn(){
+    public EndTurnPhase(){
         this.canIStart =false;
         this.canIChoose =false;
         this.canAttack =false;

@@ -51,6 +51,6 @@ public class AttackPhase extends Phase {
      */
     @Override
     public void toEndTurnPhase() {
-        changePhase(new EndTurn());
+        changePhase(new EndTurnPhase());
     }
 }
