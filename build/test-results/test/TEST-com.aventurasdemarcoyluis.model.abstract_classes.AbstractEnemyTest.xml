@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.aventurasdemarcoyluis.model.abstract_classes.AbstractEnemyTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-12-06T01:56:52" hostname="LAPTOP-BPDICMJD" time="0.005">
+  <properties/>
+  <testcase name="enemyToString()" classname="com.aventurasdemarcoyluis.model.abstract_classes.AbstractEnemyTest" time="0.001"/>
+  <testcase name="damageToHurt()" classname="com.aventurasdemarcoyluis.model.abstract_classes.AbstractEnemyTest" time="0.001"/>
+  <testcase name="isPlayer()" classname="com.aventurasdemarcoyluis.model.abstract_classes.AbstractEnemyTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

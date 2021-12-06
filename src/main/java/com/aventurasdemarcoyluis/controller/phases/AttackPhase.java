@@ -33,7 +33,7 @@ public class AttackPhase extends Phase {
 
     @Override
     public String toString() {
-        return "Fase de Ataque";
+        return "AttackPhase";
     }
 
     /**

@@ -282,7 +282,7 @@ public class GameController {
      */
     public int amountOfEnemies() {
         int counter = 0;
-        for (IEntities entity : listOfCharacters) {
+        for (IEntities entity : getListTurn()) {
             if (!entity.isPlayer()) {
                 counter++;
             }
@@ -308,11 +308,19 @@ public class GameController {
     }
 
     /**
-     * Método que entrega la lista de jugadores en un turno.
+     * Método que entrega la lista de entidades en un turno.
      * @return lista de jugadores en el turno
      */
     public ArrayList<IEntities> getListTurn() {
         return listOfCharacters;
+    }
+
+    /**
+     * Método que entrega la lista de jugadores en un turno.
+     * @return lista de jugadores en el turno
+     */
+    public ArrayList<IPlayer> getListTurnPlayers() {
+        return listOfPlayers;
     }
 
     /**
@@ -384,9 +392,9 @@ public class GameController {
             addItemBaul(honeySyrup, 1);
             addItemBaul(redMushroom, 1);
         }
-        listOfCharacters.clear();
+        getListTurn().clear();
         for (IPlayer player : listOfPlayers) {
-            listOfCharacters.add(player);
+            getListTurn().add(player);
         }
         IPlayer player = listOfPlayers.get(0);
         int lvl = player.getLVL();
@@ -396,34 +404,34 @@ public class GameController {
         if (nivelBatalla < 3) {
             for (int i = 0; i < 3; i++) {
                 int amount = ((random.nextInt(3)+1));
-                int lvle = nivelBatalla;
+                int lvle = lvl - amount;
                 int atke = atk + amount;
                 int defe = def - amount;
                 int hpe = hp/2 + amount;
                 IEnemy enemy = generateEnemy(lvle, atke, defe, hpe);
-                listOfCharacters.add(enemy);
+                getListTurn().add(enemy);
             }
         }
         else if (nivelBatalla >= 3 && nivelBatalla < 5) {
             for (int i = 0; i < 5; i++) {
                 int amount = ((random.nextInt(3)+5));
-                int lvle = nivelBatalla;
+                int lvle = lvl - amount;
                 int atke = atk + amount/3;
                 int defe = def - amount/3;
                 int hpe = hp/2 - amount;
                 IEnemy enemy = generateEnemy(lvle, atke, defe, hpe);
-                listOfCharacters.add(enemy);
+                getListTurn().add(enemy);
             }
         }
         else if (nivelBatalla == 5) {
             for (int i = 0; i < 6; i++) {
                 int amount = (random.nextInt(7)+3);
-                int lvle = nivelBatalla;
+                int lvle = lvl - amount;
                 int atke = atk + amount/3;
                 int defe = def - amount/3;
                 int hpe = hp/2 - amount;
                 IEnemy enemy = generateEnemy(lvle, atke, defe, hpe);
-                listOfCharacters.add(enemy);
+                getListTurn().add(enemy);
             }
         }
         setTurn(turn);
@@ -695,6 +703,14 @@ public class GameController {
     ///////////////////////////////////////////////////
 
     /**
+     * Retorna la fase en la que está
+     * @return
+     */
+    public Phase getPhase() {
+        return phase;
+    }
+
+    /**
      * Cambia la phase en el controlador
      * @param phase nueva phase
      */
@@ -889,18 +905,18 @@ public class GameController {
     }
 
     /**
-     * Modelamiento del escenario de juego fijo.
+     * Modelamiento del escenario de tipo normal.
      * @param out PrintStream elegido.
      * @param inInit BufferedReader elegido.
      */
-    public void escenaryToPlay(PrintStream out, BufferedReader inInit) {
+    public void escenaryTestNormal(PrintStream out, BufferedReader inInit) {
         GameController controller = this;
         controller.setPrintStream(out);
         controller.setBufferedReader(inInit);
 
         //Datos fijos, pueden ir cambiando según se requiera pero mientras se quedarán así.
-        controller.addMarco(1,20,17,69,8);
-        controller.addLuis(1,21,14,72,10);
+        controller.addMarco(17,15,17,69,8);
+        controller.addLuis(15,17,14,72,10);
 
         out.println("=======================================================");
         out.println("Nivel de Batalla: "+nivelBatalla);
@@ -918,8 +934,8 @@ public class GameController {
         controller.setBufferedReader(inInit);
 
         //Datos fijos, pueden ir cambiando según se requiera pero mientras se quedarán así.
-        controller.addMarco(17,15,17,69,8);
-        controller.addLuis(15,17,14,72,10);
+        controller.addMarco(17,90,17,69,8);
+        controller.addLuis(15,100,14,72,10);
 
         out.println("=======================================================");
         out.println("Nivel de Batalla: "+nivelBatalla);

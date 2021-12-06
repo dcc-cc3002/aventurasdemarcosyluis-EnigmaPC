@@ -27,7 +27,7 @@ public class WaitAttackPhase extends Phase{
 
     @Override
     public String toString() {
-        return "WaitFightPhase";
+        return "WaitAttackPhase";
     }
 
     /**

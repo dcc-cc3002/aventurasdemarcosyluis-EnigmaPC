@@ -45,10 +45,12 @@ class GameControllerTest {
         // 4 Goomba | nivel: 14, ataque: 28, defensa: 28, vida: 53
         // 5 Boo | nivel: 12, ataque: 29, defensa: 27, vida: 51
         // 6 Boo | nivel: 14, ataque: 28, defensa: 28, vida: 53
+
         // Combinación de numeros:
         // Primer número: 0 ataque, 1 seleccion de item, 2 pasar
         // Si primer número 0:
         // Segundo número: Se elige el enemigo según el número (los enemigos se eliminan a medida que mueren)
+        // Tercer número: 1 para Martillo, 2 para Salto
         // Si primer número es 1:
         // Segundo número: 1 para HoneySyrup, 2 para RedMushroom
         // Si primer número es 2:
@@ -171,7 +173,7 @@ class GameControllerTest {
 
     // Creado para checkear escenario
     public void checkEscenario(String stringNum) {
-        controller.escenaryTestAttack(new PrintStream(new NullOutputStream()),new BufferedReader(new StringReader(stringNum)));
+        controller.escenaryTestNormal(new PrintStream(new NullOutputStream()),new BufferedReader(new StringReader(stringNum)));
     }
 
 }
