@@ -88,6 +88,8 @@ public class Baul {
 
     /**
      * Determina si un item está en el almacenaje (SI HAY EXISTENCIAS)
+     * @param item Item a buscar
+     * @return Verdadero si está, falso si no.
      */
     public boolean hasItem(IObject item) {
         return (storage.get(item) > 0);

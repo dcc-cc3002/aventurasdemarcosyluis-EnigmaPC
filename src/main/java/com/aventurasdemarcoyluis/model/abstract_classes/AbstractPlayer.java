@@ -18,6 +18,7 @@ import com.aventurasdemarcoyluis.model.items.Baul;
  * @see com.aventurasdemarcoyluis.model.players.Luis
  * */
 public abstract class AbstractPlayer extends AbstractEntities implements IPlayer {
+
     /**
      * <b>Constructor:</b> <br>
      * Modela un jugador

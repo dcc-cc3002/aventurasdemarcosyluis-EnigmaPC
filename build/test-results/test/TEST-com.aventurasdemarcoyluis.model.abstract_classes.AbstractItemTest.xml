@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.aventurasdemarcoyluis.model.abstract_classes.AbstractItemTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-11-09T02:17:04" hostname="LAPTOP-BPDICMJD" time="0.004">
+<testsuite name="com.aventurasdemarcoyluis.model.abstract_classes.AbstractItemTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-12-06T02:19:33" hostname="LAPTOP-BPDICMJD" time="0.003">
   <properties/>
-  <testcase name="getNameTest()" classname="com.aventurasdemarcoyluis.model.abstract_classes.AbstractItemTest" time="0.001"/>
+  <testcase name="getNameTest()" classname="com.aventurasdemarcoyluis.model.abstract_classes.AbstractItemTest" time="0.0"/>
   <testcase name="testHashCode()" classname="com.aventurasdemarcoyluis.model.abstract_classes.AbstractItemTest" time="0.001"/>
   <testcase name="testEquals()" classname="com.aventurasdemarcoyluis.model.abstract_classes.AbstractItemTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>

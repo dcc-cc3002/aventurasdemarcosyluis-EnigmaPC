@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.aventurasdemarcoyluis.model.items.BaulTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-11-09T02:17:04" hostname="LAPTOP-BPDICMJD" time="0.002">
+<testsuite name="com.aventurasdemarcoyluis.model.items.BaulTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-12-06T02:19:33" hostname="LAPTOP-BPDICMJD" time="0.002">
   <properties/>
-  <testcase name="baulEmptyCompleteTest()" classname="com.aventurasdemarcoyluis.model.items.BaulTest" time="0.001"/>
+  <testcase name="baulEmptyCompleteTest()" classname="com.aventurasdemarcoyluis.model.items.BaulTest" time="0.0"/>
   <testcase name="baulCompleteTest()" classname="com.aventurasdemarcoyluis.model.items.BaulTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
