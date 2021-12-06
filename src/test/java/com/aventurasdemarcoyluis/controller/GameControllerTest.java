@@ -149,6 +149,7 @@ class GameControllerTest {
                 "1\n0\n1\n1\n0\n1\n2\n0\n1\n2\n0\n1\n2\n0\n1\n1\n0\n1\n2\n0\n1\n2\n1\n1\n"+
                 "0\n1\n2\n0\n1\n2\n0\n1\n2\n1\n1\n0\n1\n2\n");
         assertTrue(controller.winGame());
+        assertEquals("StartPhase",controller.getCurrentPhase());
     }
 
     @Test
@@ -165,6 +166,7 @@ class GameControllerTest {
         // 2
         checkEscenario("2\n2\n2\n2\n2\n2\n2\n2\n2\n");
         assertFalse(controller.winGame());
+        assertEquals("StartPhase",controller.getCurrentPhase());
     }
 
     // Creado para checkear escenario

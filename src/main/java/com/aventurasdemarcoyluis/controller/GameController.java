@@ -55,6 +55,7 @@ public class GameController {
     private Phase phase;
 
 
+
     /**
      * Constructor del Controlador <br>
      * Modela al controlador. <br>
@@ -112,6 +113,14 @@ public class GameController {
      */
     public void setPrintStream(PrintStream out1) {
         this.out = out1;
+    }
+
+    /**
+     * Devuelve el nombre de fase en la que se encuentra
+     * @return nombre
+     */
+    public String getCurrentPhase(){
+        return phase.toString();
     }
 
     /**
@@ -307,10 +316,18 @@ public class GameController {
     }
 
     /**
+     * Método que determina si el juego se ganó o no.
+     * @return Verdadero si ganaron los jugadores, falso si es indeterminado.
+     */
+    public boolean winGame() {
+        return nivelBatalla == 6;
+    }
+
+    /**
      * Método para finalizar un turno.
      * Una vez finalizado el turno pueden pasar 4 situaciones: <br>
      * 1) Se gana la batalla por lo que se debe aumentar el nivel de batalla. <br>
-     * 2) Si se gana la batlla y el nivel de batalla es 6 termina el juego (el tope es 5) <br>
+     * 2) Si se gana la batalla y el nivel de batalla es 6 termina el juego (el tope es 5) <br>
      * 3) Se puede perder la batalla, es decir mueren todos los jugadores. <br>
      * 4) Aún no se gana ni pierde la batalla por lo que se continúa jugando y se pasa a la
      * siguiente ronda. <br>
@@ -379,7 +396,7 @@ public class GameController {
         if (nivelBatalla < 3) {
             for (int i = 0; i < 3; i++) {
                 int amount = ((random.nextInt(3)+1));
-                int lvle = lvl - amount;
+                int lvle = nivelBatalla;
                 int atke = atk + amount;
                 int defe = def - amount;
                 int hpe = hp/2 + amount;
@@ -390,7 +407,7 @@ public class GameController {
         else if (nivelBatalla >= 3 && nivelBatalla < 5) {
             for (int i = 0; i < 5; i++) {
                 int amount = ((random.nextInt(3)+5));
-                int lvle = lvl - amount;
+                int lvle = nivelBatalla;
                 int atke = atk + amount/3;
                 int defe = def - amount/3;
                 int hpe = hp/2 - amount;
@@ -401,7 +418,7 @@ public class GameController {
         else if (nivelBatalla == 5) {
             for (int i = 0; i < 6; i++) {
                 int amount = (random.nextInt(7)+3);
-                int lvle = lvl - amount;
+                int lvle = nivelBatalla;
                 int atke = atk + amount/3;
                 int defe = def - amount/3;
                 int hpe = hp/2 - amount;
@@ -454,14 +471,6 @@ public class GameController {
      */
     public boolean looseBattle() {
         return amountOfPlayers() == 0;
-    }
-
-    /**
-     * Método que permite saber si se ha ganado el juego o no.
-     * @return Si se llega al nivel 6 retorna Verdadero, sino Falso.
-     */
-    public boolean winGame() {
-        return nivelBatalla == 6;
     }
 
     /**
@@ -682,7 +691,7 @@ public class GameController {
     }
 
     ///////////////////////////////////////////////////
-    // FASES
+    // FASES Y OBSERVER
     ///////////////////////////////////////////////////
 
     /**

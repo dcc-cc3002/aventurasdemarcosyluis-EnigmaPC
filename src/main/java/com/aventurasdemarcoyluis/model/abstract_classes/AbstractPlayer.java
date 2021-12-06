@@ -18,7 +18,6 @@ import com.aventurasdemarcoyluis.model.items.Baul;
  * @see com.aventurasdemarcoyluis.model.players.Luis
  * */
 public abstract class AbstractPlayer extends AbstractEntities implements IPlayer {
-    private boolean canIChoose;
 
     /**
      * <b>Constructor:</b> <br>

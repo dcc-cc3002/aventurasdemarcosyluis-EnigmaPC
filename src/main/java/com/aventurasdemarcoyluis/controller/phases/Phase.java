@@ -125,10 +125,7 @@ public class Phase {
      * @throws InvalidTransitionException Si está en una fase incorrecta
      */
     public void endTurn() throws InvalidStateException, InvalidTransitionException {
-        if (controller.looseBattle()) {
-            return;
-        }
-        else if(!canIEndTurn){
+        if(!canIEndTurn){
             throw new InvalidStateException("No puedes terminar el turno en " + this.toString());
         }
         toStartPhase();
