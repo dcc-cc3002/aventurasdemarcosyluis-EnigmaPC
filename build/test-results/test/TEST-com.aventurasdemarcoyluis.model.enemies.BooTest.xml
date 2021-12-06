@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.aventurasdemarcoyluis.model.enemies.BooTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-12-06T01:56:52" hostname="LAPTOP-BPDICMJD" time="0.003">
+<testsuite name="com.aventurasdemarcoyluis.model.enemies.BooTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-12-06T02:19:33" hostname="LAPTOP-BPDICMJD" time="0.004">
   <properties/>
   <testcase name="attackTest()" classname="com.aventurasdemarcoyluis.model.enemies.BooTest" time="0.001"/>
   <testcase name="isBoo()" classname="com.aventurasdemarcoyluis.model.enemies.BooTest" time="0.0"/>
-  <testcase name="isSpiny()" classname="com.aventurasdemarcoyluis.model.enemies.BooTest" time="0.0"/>
+  <testcase name="isSpiny()" classname="com.aventurasdemarcoyluis.model.enemies.BooTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.aventurasdemarcoyluis.controller.PhasesTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2021-12-06T01:56:52" hostname="LAPTOP-BPDICMJD" time="0.193">
+<testsuite name="com.aventurasdemarcoyluis.controller.PhasesTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2021-12-06T02:19:33" hostname="LAPTOP-BPDICMJD" time="0.081">
   <properties/>
-  <testcase name="waitSelectItemPhase()" classname="com.aventurasdemarcoyluis.controller.PhasesTest" time="0.092"/>
-  <testcase name="testSELECTItemXAtaque()" classname="com.aventurasdemarcoyluis.controller.PhasesTest" time="0.02"/>
+  <testcase name="waitSelectItemPhase()" classname="com.aventurasdemarcoyluis.controller.PhasesTest" time="0.016"/>
+  <testcase name="testSELECTItemXAtaque()" classname="com.aventurasdemarcoyluis.controller.PhasesTest" time="0.008"/>
   <testcase name="testSTARTxUSEItem()" classname="com.aventurasdemarcoyluis.controller.PhasesTest" time="0.007"/>
-  <testcase name="testElectionXENDTURN()" classname="com.aventurasdemarcoyluis.controller.PhasesTest" time="0.007"/>
-  <testcase name="waitAttackPhase()" classname="com.aventurasdemarcoyluis.controller.PhasesTest" time="0.025"/>
+  <testcase name="testElectionXENDTURN()" classname="com.aventurasdemarcoyluis.controller.PhasesTest" time="0.005"/>
+  <testcase name="waitAttackPhase()" classname="com.aventurasdemarcoyluis.controller.PhasesTest" time="0.007"/>
   <testcase name="testENDTURNxChoose()" classname="com.aventurasdemarcoyluis.controller.PhasesTest" time="0.006"/>
-  <testcase name="testElectionXSTART()" classname="com.aventurasdemarcoyluis.controller.PhasesTest" time="0.008"/>
-  <testcase name="electionPhase()" classname="com.aventurasdemarcoyluis.controller.PhasesTest" time="0.008"/>
-  <testcase name="testSTARTxATTACK()" classname="com.aventurasdemarcoyluis.controller.PhasesTest" time="0.004"/>
-  <testcase name="testSELECTAtaqueXItem()" classname="com.aventurasdemarcoyluis.controller.PhasesTest" time="0.003"/>
+  <testcase name="testElectionXSTART()" classname="com.aventurasdemarcoyluis.controller.PhasesTest" time="0.004"/>
+  <testcase name="electionPhase()" classname="com.aventurasdemarcoyluis.controller.PhasesTest" time="0.01"/>
+  <testcase name="testSTARTxATTACK()" classname="com.aventurasdemarcoyluis.controller.PhasesTest" time="0.005"/>
+  <testcase name="testSELECTAtaqueXItem()" classname="com.aventurasdemarcoyluis.controller.PhasesTest" time="0.005"/>
   <system-out><![CDATA[Presiona cualquiera de las teclas desde 1 hasta 2 para elegir al enemigo por atacar
 1 Goomba | nivel: 25, ataque: 27, defensa: 30, vida: 50
 2 Spiny | nivel: 13, ataque: 6, defensa: 15, vida: 20
@@ -34,9 +34,9 @@ Marco ha usado HoneySyrup
 	at com.aventurasdemarcoyluis.controller.GameController.tryToStart(GameController.java:728)
 	at com.aventurasdemarcoyluis.controller.GameController.finishTurn(GameController.java:369)
 	at com.aventurasdemarcoyluis.controller.phases.Phase.endTurn(Phase.java:132)
-	at com.aventurasdemarcoyluis.controller.phases.EndTurn.endTurn(EndTurn.java:34)
+	at com.aventurasdemarcoyluis.controller.phases.EndTurnPhase.endTurn(EndTurnPhase.java:34)
 	at com.aventurasdemarcoyluis.controller.GameController.tryToEndTurn(GameController.java:794)
-	at com.aventurasdemarcoyluis.controller.phases.UseItemPhase.useItem(UseItemPhase.java:45)
+	at com.aventurasdemarcoyluis.controller.phases.UseItemPhase.useItem(UseItemPhase.java:43)
 	at com.aventurasdemarcoyluis.controller.GameController.tryToUseItem(GameController.java:783)
 	at com.aventurasdemarcoyluis.controller.phases.WaitSelectItem.toUseItemPhase(WaitSelectItem.java:50)
 	at com.aventurasdemarcoyluis.controller.GameController.electionUseItem(GameController.java:887)
@@ -50,9 +50,9 @@ Marco ha usado HoneySyrup
 	at com.aventurasdemarcoyluis.controller.GameController.tryToStart(GameController.java:728)
 	at com.aventurasdemarcoyluis.controller.GameController.finishTurn(GameController.java:369)
 	at com.aventurasdemarcoyluis.controller.phases.Phase.endTurn(Phase.java:132)
-	at com.aventurasdemarcoyluis.controller.phases.EndTurn.endTurn(EndTurn.java:34)
+	at com.aventurasdemarcoyluis.controller.phases.EndTurnPhase.endTurn(EndTurnPhase.java:34)
 	at com.aventurasdemarcoyluis.controller.GameController.tryToEndTurn(GameController.java:794)
-	at com.aventurasdemarcoyluis.controller.phases.UseItemPhase.useItem(UseItemPhase.java:45)
+	at com.aventurasdemarcoyluis.controller.phases.UseItemPhase.useItem(UseItemPhase.java:43)
 	at com.aventurasdemarcoyluis.controller.GameController.tryToUseItem(GameController.java:783)
 	at com.aventurasdemarcoyluis.controller.phases.WaitSelectItem.toUseItemPhase(WaitSelectItem.java:50)
 	at com.aventurasdemarcoyluis.controller.GameController.electionUseItem(GameController.java:897)
@@ -66,8 +66,8 @@ Marco ha usado HoneySyrup
 	at com.aventurasdemarcoyluis.controller.GameController.tryToStart(GameController.java:728)
 	at com.aventurasdemarcoyluis.controller.GameController.Battle(GameController.java:439)
 	at com.aventurasdemarcoyluis.controller.GameController.escenaryTestAttack(GameController.java:942)
-	at com.aventurasdemarcoyluis.controller.PhasesTest.escenary(PhasesTest.java:320)
-	at com.aventurasdemarcoyluis.controller.PhasesTest.waitSelectItemPhase(PhasesTest.java:116)
+	at com.aventurasdemarcoyluis.controller.PhasesTest.escenary(PhasesTest.java:314)
+	at com.aventurasdemarcoyluis.controller.PhasesTest.waitSelectItemPhase(PhasesTest.java:110)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -161,7 +161,7 @@ Marco ha usado HoneySyrup
 com.aventurasdemarcoyluis.controller.phases.InvalidTransitionException: No se puede cambiar de WaitSelectItemPhasea la fase AttackPhase
 	at com.aventurasdemarcoyluis.controller.phases.Phase.toAttackPhase(Phase.java:201)
 	at com.aventurasdemarcoyluis.controller.GameController.electionAttack(GameController.java:863)
-	at com.aventurasdemarcoyluis.controller.PhasesTest.testSELECTItemXAtaque(PhasesTest.java:156)
+	at com.aventurasdemarcoyluis.controller.PhasesTest.testSELECTItemXAtaque(PhasesTest.java:150)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -255,7 +255,7 @@ com.aventurasdemarcoyluis.controller.phases.InvalidTransitionException: No se pu
 com.aventurasdemarcoyluis.controller.phases.InvalidTransitionException: No se puede cambiar de StartPhasea la fase UseItemPhase
 	at com.aventurasdemarcoyluis.controller.phases.Phase.toUseItemPhase(Phase.java:221)
 	at com.aventurasdemarcoyluis.controller.GameController.electionUseItem(GameController.java:887)
-	at com.aventurasdemarcoyluis.controller.PhasesTest.testSTARTxUSEItem(PhasesTest.java:209)
+	at com.aventurasdemarcoyluis.controller.PhasesTest.testSTARTxUSEItem(PhasesTest.java:203)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -349,7 +349,7 @@ com.aventurasdemarcoyluis.controller.phases.InvalidTransitionException: No se pu
 com.aventurasdemarcoyluis.controller.phases.InvalidStateException: No puedes terminar el turno en ElectionPhase
 	at com.aventurasdemarcoyluis.controller.phases.Phase.endTurn(Phase.java:129)
 	at com.aventurasdemarcoyluis.controller.GameController.tryToEndTurn(GameController.java:794)
-	at com.aventurasdemarcoyluis.controller.PhasesTest.testElectionXENDTURN(PhasesTest.java:313)
+	at com.aventurasdemarcoyluis.controller.PhasesTest.testElectionXENDTURN(PhasesTest.java:307)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -452,8 +452,8 @@ com.aventurasdemarcoyluis.controller.phases.InvalidElectionException: No hay nad
 	at com.aventurasdemarcoyluis.controller.GameController.tryToStart(GameController.java:728)
 	at com.aventurasdemarcoyluis.controller.GameController.Battle(GameController.java:439)
 	at com.aventurasdemarcoyluis.controller.GameController.escenaryTestAttack(GameController.java:942)
-	at com.aventurasdemarcoyluis.controller.PhasesTest.escenary(PhasesTest.java:320)
-	at com.aventurasdemarcoyluis.controller.PhasesTest.waitAttackPhase(PhasesTest.java:130)
+	at com.aventurasdemarcoyluis.controller.PhasesTest.escenary(PhasesTest.java:314)
+	at com.aventurasdemarcoyluis.controller.PhasesTest.waitAttackPhase(PhasesTest.java:124)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -547,7 +547,7 @@ com.aventurasdemarcoyluis.controller.phases.InvalidElectionException: No hay nad
 com.aventurasdemarcoyluis.controller.phases.InvalidStateException: No puedes elegir enEndTurnPhase
 	at com.aventurasdemarcoyluis.controller.phases.Phase.election(Phase.java:92)
 	at com.aventurasdemarcoyluis.controller.GameController.tryToChoose(GameController.java:739)
-	at com.aventurasdemarcoyluis.controller.PhasesTest.testENDTURNxChoose(PhasesTest.java:261)
+	at com.aventurasdemarcoyluis.controller.PhasesTest.testENDTURNxChoose(PhasesTest.java:255)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -641,7 +641,7 @@ com.aventurasdemarcoyluis.controller.phases.InvalidStateException: No puedes ele
 com.aventurasdemarcoyluis.controller.phases.InvalidStateException: No puedes empezar enElectionPhase
 	at com.aventurasdemarcoyluis.controller.phases.Phase.start(Phase.java:76)
 	at com.aventurasdemarcoyluis.controller.GameController.tryToStart(GameController.java:728)
-	at com.aventurasdemarcoyluis.controller.PhasesTest.testElectionXSTART(PhasesTest.java:287)
+	at com.aventurasdemarcoyluis.controller.PhasesTest.testElectionXSTART(PhasesTest.java:281)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -740,7 +740,7 @@ com.aventurasdemarcoyluis.controller.phases.InvalidElectionException: No hay nad
 	at com.aventurasdemarcoyluis.controller.GameController.tryToStart(GameController.java:728)
 	at com.aventurasdemarcoyluis.controller.GameController.finishTurn(GameController.java:369)
 	at com.aventurasdemarcoyluis.controller.phases.Phase.endTurn(Phase.java:132)
-	at com.aventurasdemarcoyluis.controller.phases.EndTurn.endTurn(EndTurn.java:34)
+	at com.aventurasdemarcoyluis.controller.phases.EndTurnPhase.endTurn(EndTurnPhase.java:34)
 	at com.aventurasdemarcoyluis.controller.GameController.tryToEndTurn(GameController.java:794)
 	at com.aventurasdemarcoyluis.controller.phases.AttackPhase.attack(AttackPhase.java:46)
 	at com.aventurasdemarcoyluis.controller.GameController.tryToAttack(GameController.java:772)
@@ -756,7 +756,7 @@ com.aventurasdemarcoyluis.controller.phases.InvalidElectionException: No hay nad
 	at com.aventurasdemarcoyluis.controller.GameController.tryToStart(GameController.java:728)
 	at com.aventurasdemarcoyluis.controller.GameController.finishTurn(GameController.java:369)
 	at com.aventurasdemarcoyluis.controller.phases.Phase.endTurn(Phase.java:132)
-	at com.aventurasdemarcoyluis.controller.phases.EndTurn.endTurn(EndTurn.java:34)
+	at com.aventurasdemarcoyluis.controller.phases.EndTurnPhase.endTurn(EndTurnPhase.java:34)
 	at com.aventurasdemarcoyluis.controller.GameController.tryToEndTurn(GameController.java:794)
 	at com.aventurasdemarcoyluis.controller.phases.AttackPhase.attack(AttackPhase.java:46)
 	at com.aventurasdemarcoyluis.controller.GameController.tryToAttack(GameController.java:772)
@@ -772,8 +772,8 @@ com.aventurasdemarcoyluis.controller.phases.InvalidElectionException: No hay nad
 	at com.aventurasdemarcoyluis.controller.GameController.tryToStart(GameController.java:728)
 	at com.aventurasdemarcoyluis.controller.GameController.Battle(GameController.java:439)
 	at com.aventurasdemarcoyluis.controller.GameController.escenaryTestAttack(GameController.java:942)
-	at com.aventurasdemarcoyluis.controller.PhasesTest.escenary(PhasesTest.java:320)
-	at com.aventurasdemarcoyluis.controller.PhasesTest.electionPhase(PhasesTest.java:82)
+	at com.aventurasdemarcoyluis.controller.PhasesTest.escenary(PhasesTest.java:314)
+	at com.aventurasdemarcoyluis.controller.PhasesTest.electionPhase(PhasesTest.java:76)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -869,8 +869,8 @@ com.aventurasdemarcoyluis.controller.phases.InvalidStateException: No puedes emp
 	at com.aventurasdemarcoyluis.controller.GameController.tryToStart(GameController.java:728)
 	at com.aventurasdemarcoyluis.controller.GameController.Battle(GameController.java:439)
 	at com.aventurasdemarcoyluis.controller.GameController.escenaryTestAttack(GameController.java:942)
-	at com.aventurasdemarcoyluis.controller.PhasesTest.escenary(PhasesTest.java:320)
-	at com.aventurasdemarcoyluis.controller.PhasesTest.electionPhase(PhasesTest.java:97)
+	at com.aventurasdemarcoyluis.controller.PhasesTest.escenary(PhasesTest.java:314)
+	at com.aventurasdemarcoyluis.controller.PhasesTest.electionPhase(PhasesTest.java:91)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -964,7 +964,7 @@ com.aventurasdemarcoyluis.controller.phases.InvalidStateException: No puedes emp
 com.aventurasdemarcoyluis.controller.phases.InvalidStateException: No puedes atacar ahora.
 	at com.aventurasdemarcoyluis.controller.phases.Phase.attack(Phase.java:141)
 	at com.aventurasdemarcoyluis.controller.GameController.tryToAttack(GameController.java:772)
-	at com.aventurasdemarcoyluis.controller.PhasesTest.testSTARTxATTACK(PhasesTest.java:235)
+	at com.aventurasdemarcoyluis.controller.PhasesTest.testSTARTxATTACK(PhasesTest.java:229)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1058,7 +1058,7 @@ com.aventurasdemarcoyluis.controller.phases.InvalidStateException: No puedes ata
 com.aventurasdemarcoyluis.controller.phases.InvalidTransitionException: No se puede cambiar de WaitAttackPhasea la fase UseItemPhase
 	at com.aventurasdemarcoyluis.controller.phases.Phase.toUseItemPhase(Phase.java:221)
 	at com.aventurasdemarcoyluis.controller.GameController.electionUseItem(GameController.java:887)
-	at com.aventurasdemarcoyluis.controller.PhasesTest.testSELECTAtaqueXItem(PhasesTest.java:183)
+	at com.aventurasdemarcoyluis.controller.PhasesTest.testSELECTAtaqueXItem(PhasesTest.java:177)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
